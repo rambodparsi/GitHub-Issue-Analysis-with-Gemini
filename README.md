@@ -1,5 +1,6 @@
 # GitHub developers’ issue label vs. Gemini issue label prediction
 ## Tracing GitHub artifacts end-to-end and classifying UI issues with Gemini
+## Case study on Mastodon web application
 
 ### Goal
 Help GitHub developers label issues more consistently and act on them faster by using an LLM (Gemini) to predict UI vs. Other for real issues, then trace each labeled issue back to its PR(s) and commit(s). 
