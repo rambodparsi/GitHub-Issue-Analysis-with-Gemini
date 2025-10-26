@@ -1,0 +1,7 @@
+series,source,label_class,count
+v4.2,gemini_pred_label,None,0
+v4.2,gemini_pred_label,Other,142
+v4.2,gemini_pred_label,UI,13
+v4.2,github_label,None,41
+v4.2,github_label,Other,108
+v4.2,github_label,UI,6

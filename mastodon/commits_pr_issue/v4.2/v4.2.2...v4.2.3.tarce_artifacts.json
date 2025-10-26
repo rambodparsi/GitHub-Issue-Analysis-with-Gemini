@@ -1,0 +1,72 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.2",
+  "compare": "v4.2.3",
+  "counts": {
+    "commits": 2,
+    "prs": 1,
+    "issues": 0,
+    "commit_pr": 2,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.2...v4.2.3.compare.json",
+    "commits": "commits/v4.2/v4.2.2...v4.2.3.commits.json",
+    "pulls": "pulls/v4.2/v4.2.2...v4.2.3.pulls.json",
+    "issues": "issues/v4.2/v4.2.2...v4.2.3.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "71b60b09f494ddd4670128cf252b6372a293a51e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/71b60b09f494ddd4670128cf252b6372a293a51e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/71b60b09f494ddd4670128cf252b6372a293a51e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-12-05T13:15:33Z",
+          "commit_title": "Update dependency json-ld to v3.3.1"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28237,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28237",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28237",
+          "state": "closed",
+          "merged_at": "2023-12-05T14:35:05Z",
+          "pr_title": "Bump version to v4.2.3",
+          "pr_body": "### Fixed\r\n\r\n- Fix dependency on `json-canonicalization` version that has been made unavailable since last release",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "90371a4fc4da90c692e632b3231d804e310de916",
+          "html_url": "https://github.com/mastodon/mastodon/commit/90371a4fc4da90c692e632b3231d804e310de916",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/90371a4fc4da90c692e632b3231d804e310de916",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-12-05T13:21:18Z",
+          "commit_title": "Bump version to v4.2.3"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28237,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28237",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28237",
+          "state": "closed",
+          "merged_at": "2023-12-05T14:35:05Z",
+          "pr_title": "Bump version to v4.2.3",
+          "pr_body": "### Fixed\r\n\r\n- Fix dependency on `json-canonicalization` version that has been made unavailable since last release",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

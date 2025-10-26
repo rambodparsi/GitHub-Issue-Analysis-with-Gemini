@@ -1,0 +1,514 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.5",
+  "compare": "v4.4.6",
+  "counts": {
+    "commits": 19,
+    "prs": 12,
+    "issues": 2,
+    "commit_pr": 14,
+    "commit_pr_issue": 2
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.5...v4.4.6.compare.json",
+    "commits": "commits/v4.4/v4.4.5...v4.4.6.commits.json",
+    "pulls": "pulls/v4.4/v4.4.5...v4.4.6.pulls.json",
+    "issues": "issues/v4.4/v4.4.5...v4.4.6.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "6ae1b4fae9fc12730804afd65edb3d33e696fc40",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6ae1b4fae9fc12730804afd65edb3d33e696fc40",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6ae1b4fae9fc12730804afd65edb3d33e696fc40",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-10-02T13:51:47Z",
+          "commit_title": "Allow quotes to be displayed in the featured carousel (#36335)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36335,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36335",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36335",
+          "state": "closed",
+          "merged_at": "2025-10-02T14:04:33Z",
+          "pr_title": "Allow quotes to be displayed in the featured carousel",
+          "pr_body": "### Changes proposed in this PR:\r\n- Fixes quotes not being displayed in the featured carousel, a bug [reported here](https://mastodon.catgirl.cloud/@49016/115283277279892944)\r\n   \r\n   I also checked for other potential omissions, but the `StatusContainer` component is now exclusively being used inside of the `StatusQuoteManager` component, meaning that all other occurrances of statuses should now be using the correct component.\r\n\r\n### Screenshots\r\n\r\n<img width=\"612\" height=\"471\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b03a2598-708a-4b97-8c52-c0e9f860e281\" />\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cb0065cfe9fe01a26ea8c09d945c95b5e7b2646c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cb0065cfe9fe01a26ea8c09d945c95b5e7b2646c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cb0065cfe9fe01a26ea8c09d945c95b5e7b2646c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-03T17:30:23Z",
+          "commit_title": "Fix redirect to external object when URL is missing or malformed (#36347)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36347,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36347",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36347",
+          "state": "closed",
+          "merged_at": "2025-10-03T17:42:56Z",
+          "pr_title": "Fix redirect to external object when URL is missing or malformed",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "636ecd1d038507e2856c527b2901436b8869ed42",
+          "html_url": "https://github.com/mastodon/mastodon/commit/636ecd1d038507e2856c527b2901436b8869ed42",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/636ecd1d038507e2856c527b2901436b8869ed42",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-10-07T12:50:40Z",
+          "commit_title": "Display quotes in email notifications (#36379)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36379,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36379",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36379",
+          "state": "closed",
+          "merged_at": "2025-10-07T13:06:48Z",
+          "pr_title": "Display quotes in email notifications",
+          "pr_body": "Fixes MAS-522\r\n\r\n### Changes proposed in this PR:\r\n- Displays quotes in email notifications\r\n\r\n### Screenshots\r\n\r\n<details>\r\n<summary><b>Source quote post</b></summary>\r\n\r\n<img width=\"600\" height=\"722\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6479e014-a31c-4d86-b566-9203f8772db1\" />  \r\n\r\n</details>\r\n\r\n**HTML email**\r\n\r\n<img width=\"759\" height=\"793\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d74e1030-47a6-4d29-929e-e85b2acab076\" />  \r\n\r\n**Plaintext email**\r\n\r\n```\r\nAdmin Duck 🦆with a nice Quack,\r\n\r\nYour post was quoted by dion_test6:\r\n\r\n> It's bringing branches for building a blue box to bounce around in\r\n> \r\n> Bla blar\r\n>\r\n>> Behold the busy budgerigar\r\n>> \r\n>> He workin\r\n\r\nView: http://localhost:3000/web/@dion_test6/115332219918638033\r\n\r\n\r\n---\r\n\r\nMastodon hosted on localhost\r\nChange email preferences: http://localhost:3000/settings/preferences\r\n```",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4c12c2ed609ff3e3c698acf56caac4907506e707",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4c12c2ed609ff3e3c698acf56caac4907506e707",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4c12c2ed609ff3e3c698acf56caac4907506e707",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-09-30T07:27:09Z",
+          "commit_title": "Add integration tests for mastodon-streaming (#36025)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36025,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36025",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36025",
+          "state": "closed",
+          "merged_at": "2025-09-30T07:41:08Z",
+          "pr_title": "Add integration tests for mastodon-streaming",
+          "pr_body": "This adds ruby-based integration tests to the streaming server component, where we use a ruby websocket client to connect to the streaming server and then assert properties of the connection during specs.\r\n\r\nThe code is a little gnarly due to how [websocket-driver](https://github.com/faye/websocket-driver-ruby/tree/main) APIs are designed, but it does work fairly reliably from what I can tell.\r\n\r\nReason for another suite type is because these tests are likely a lot more brittle than our other tests. They're not quite \"system\" tests, but something beyond that.\r\n\r\nThe goal here isn't to write unit tests for the streaming server, which we do need to do, but rather to check that the streaming server does the right thing when we expect it to do something from ruby land (for instance, revoking an access token should terminate the streaming server connections that are using that access token)\r\n\r\nWe may want some basic tests for eventsource connections too, but I'm happy to leave that to another day, since the code paths should be mostly the same.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d8ddf9548527ecd56f0261fe9772f6281a7e13b7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d8ddf9548527ecd56f0261fe9772f6281a7e13b7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d8ddf9548527ecd56f0261fe9772f6281a7e13b7",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T12:31:51Z",
+          "commit_title": "Fix JSON payload being potentially mutated when processing interaction policies (#36392)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36392,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36392",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36392",
+          "state": "closed",
+          "merged_at": "2025-10-08T12:46:00Z",
+          "pr_title": "Fix JSON payload being potentially mutated when processing interaction policies",
+          "pr_body": "I'm not sure if that ever caused issues in practice, but we don't want to mutate the payload while parsing it.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "3c725240fd1940df6839a1f493882aaada68458d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3c725240fd1940df6839a1f493882aaada68458d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3c725240fd1940df6839a1f493882aaada68458d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T12:54:39Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "670316499fb4439a28d93aca2f40617dfb9bb2b0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/670316499fb4439a28d93aca2f40617dfb9bb2b0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/670316499fb4439a28d93aca2f40617dfb9bb2b0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T12:55:30Z",
+          "commit_title": "Update dependency `uri`"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d9113976c8287c11e8762aee87f55118babfda2a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d9113976c8287c11e8762aee87f55118babfda2a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d9113976c8287c11e8762aee87f55118babfda2a",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-10-09T08:08:29Z",
+          "commit_title": "Use tag filter for pending tag count on admin dashboard (#36404)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36412,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36412",
+          "state": "closed",
+          "merged_at": "2025-10-09T15:37:23Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The last two commits are extracted from #36381",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36404,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36404",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36404",
+          "state": "closed",
+          "merged_at": "2025-10-09T08:22:12Z",
+          "pr_title": "Use tag filter for pending tag count on admin dashboard",
+          "pr_body": "Same idea as https://github.com/mastodon/mastodon/pull/35120 - which fixed this issue on the trends/tags page in admin area, but not on the dashboard.\r\n\r\nFixes https://github.com/mastodon/mastodon/issues/34785\r\n\r\nPossible followup here:\r\n\r\n- This code is now repeated in both controllers. Not huge issue with just two spots, but could get out of sync again ... maybe extract these to some sort of presenter/facade (or at minimum, new class method on tagfilter?)\r\n- Or even beyond that, extract the entirety of the various \"get some pending/unresolved counts of stuff across the admin area\" type stuff to somewhere? Used on maybe 5-6 views.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34785,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34785",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34785,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34785",
+          "state": "closed",
+          "issue_title": "5 Pending hashtags, but there's nothing there",
+          "issue_body": "### Steps to reproduce the problem\n\nI do not know what caused this.\n\nVisit `/admin/trends/tags?status=pending_review` on your instance\n\n### Expected behaviour\n\nEither 0 pending hashtags or 5 hashtags listed\n\n### Actual behaviour\n\n5 pending hashtags but 0 hashtags listed\n\n### Detailed description\n\n![Image](https://github.com/user-attachments/assets/a4d5c655-8427-4526-9148-966e7de3ff57)\n\nI noticed this a while after upgrading my server to the git main.\n\n### Mastodon instance\n\nhttps://ailbhean.co-shaoghal.net\n\n### Mastodon version\n\n4e2aa78a561c2f81ac6fe86c3e32c656f87572d9\n\n### Browser name and version\n\nFirefox 138.0.4\n\n### Operating system\n\nLinux Mint 21.3 (Client), Debian 12 Bookworm (Server)\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "67575e59e664b0ed63e78d05ee52fabc6b917b4d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/67575e59e664b0ed63e78d05ee52fabc6b917b4d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/67575e59e664b0ed63e78d05ee52fabc6b917b4d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-09T09:53:45Z",
+          "commit_title": "Fix quote post state sometimes not being updated through streaming server (#36408)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36412,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36412",
+          "state": "closed",
+          "merged_at": "2025-10-09T15:37:23Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The last two commits are extracted from #36381",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36408,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36408",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36408",
+          "state": "closed",
+          "merged_at": "2025-10-09T10:06:21Z",
+          "pr_title": "Fix quote post state sometimes not being updated through streaming server",
+          "pr_body": "Fixes #36305\r\n\r\nQuotes of third-party posts made on a third-party server discovered before approval would not have their approval properly streamed.\r\n\r\nThis PR adds the distribution logic for the implicit update case as well as the async recheck case, that previously did not trigger distribution of a streaming event.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 36305,
+              "html_url": "https://github.com/mastodon/mastodon/issues/36305",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 36305,
+          "html_url": "https://github.com/mastodon/mastodon/issues/36305",
+          "state": "closed",
+          "issue_title": "Quotes not updating from \"This post is pending aproval...\"",
+          "issue_body": "### Steps to reproduce the problem\n\n 1. Using Mastodon Web app (in this case advanced view) follow somebody who then quote's a toot (on a different instance to the person you are following)\n 2. Quote toot is displayed with \"This post is pending approval from the original author\" message for the quoted toot\n 3. It never appears to update once approval is granted by original instance\n\n\n### Expected behaviour\n\nThe quote toot is updated when approval is received without intervention of the user\n\n### Actual behaviour\n\nQuoted toot only shows up on a reload of the web interface\n\n### Detailed description\n\nExample post https://mastodon.social/@pfefferle/115294155613916199\n\n(This may be a bad example as I believe the original post is from a WordPress instance with the ActivityPub plugin, but I have seen the same with other quoted posts over the last few days)\n\nI am still waiting for that quoted post to be approved an hour after it appeared in my timeline, so it is no longer likely to be visible when/if it ever gets approved.\n\nBut this also raises the question, if a post is quoted by a very popular user with followers on many different instances, does that pose a problem for the original posts instance? e.g. can it trigger DDoS of a small instance?\n\n### Mastodon instance\n\nbluetoot.hardill.me.uk\n\n### Mastodon version\n\nv4.4.5\n\n### Browser name and version\n\nChrome 140.0.7339.207 (Official Build) (64-bit)\n\n### Operating system\n\nFedroa 41\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "activitypub",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "a186bad399fa7a3ad8347defc2d7ae688bc10d73",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a186bad399fa7a3ad8347defc2d7ae688bc10d73",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a186bad399fa7a3ad8347defc2d7ae688bc10d73",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-07T13:14:38Z",
+          "commit_title": "Fix `\"quote\": { \"type\": \"Tombstone\" }` being ignored"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36412,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36412",
+          "state": "closed",
+          "merged_at": "2025-10-09T15:37:23Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The last two commits are extracted from #36381",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d7d6407d4196ab6783485b20a3d9e2fbfc00ef01",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d7d6407d4196ab6783485b20a3d9e2fbfc00ef01",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d7d6407d4196ab6783485b20a3d9e2fbfc00ef01",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-09T13:55:49Z",
+          "commit_title": "Explicitly record Tombstone quotes as deleted"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36412,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36412",
+          "state": "closed",
+          "merged_at": "2025-10-09T15:37:23Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The last two commits are extracted from #36381",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e4bdbccba802318ebde6ab17f5adc1959bd82374",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e4bdbccba802318ebde6ab17f5adc1959bd82374",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e4bdbccba802318ebde6ab17f5adc1959bd82374",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-10-10T16:19:25Z",
+          "commit_title": "New Crowdin Translations for stable-4.4 (automated) (#36431)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36431,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36431",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36431",
+          "state": "closed",
+          "merged_at": "2025-10-10T16:19:26Z",
+          "pr_title": "New Crowdin Translations for stable-4.4 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "044a20f12d3b4d055a380d1b16e7e92d1e98c33e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/044a20f12d3b4d055a380d1b16e7e92d1e98c33e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/044a20f12d3b4d055a380d1b16e7e92d1e98c33e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:41:11Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36440,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36440",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36440",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:03:33Z",
+          "pr_title": "Update stable-4.4 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "679676536313480d451ff71ccf33154220f05520",
+          "html_url": "https://github.com/mastodon/mastodon/commit/679676536313480d451ff71ccf33154220f05520",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/679676536313480d451ff71ccf33154220f05520",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:42:06Z",
+          "commit_title": "Update dependency `openssl`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36440,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36440",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36440",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:03:33Z",
+          "pr_title": "Update stable-4.4 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8477bec2f2de08a7b03db98d87ab594e0c4bd9a0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8477bec2f2de08a7b03db98d87ab594e0c4bd9a0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8477bec2f2de08a7b03db98d87ab594e0c4bd9a0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:19:14Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1631fb80e8029d2c5425a03a2297b93f7e225217",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1631fb80e8029d2c5425a03a2297b93f7e225217",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1631fb80e8029d2c5425a03a2297b93f7e225217",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:20:23Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cbef4c9e659a26fb78c5626acc25e0fea5d9d2b7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cbef4c9e659a26fb78c5626acc25e0fea5d9d2b7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cbef4c9e659a26fb78c5626acc25e0fea5d9d2b7",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-10-13T12:20:57Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "adf291631ebc06e650cdcb06b9873e6a730ad913",
+          "html_url": "https://github.com/mastodon/mastodon/commit/adf291631ebc06e650cdcb06b9873e6a730ad913",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/adf291631ebc06e650cdcb06b9873e6a730ad913",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:43:01Z",
+          "commit_title": "Bump version to v4.4.6 (#36444)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36444,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36444",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36444",
+          "state": "closed",
+          "merged_at": "2025-10-13T12:43:01Z",
+          "pr_title": "Bump version to v4.4.6",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d7f4eca801bb702f487287eb218a9e7a133ee341",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d7f4eca801bb702f487287eb218a9e7a133ee341",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d7f4eca801bb702f487287eb218a9e7a133ee341",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T13:35:58Z",
+          "commit_title": "Fix streaming still being authorized for suspended accounts (#36449)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36449,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36449",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36449",
+          "state": "closed",
+          "merged_at": "2025-10-13T13:35:58Z",
+          "pr_title": "Fix streaming still being authorized for suspended accounts",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

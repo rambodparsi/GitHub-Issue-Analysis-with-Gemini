@@ -1,0 +1,863 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.1",
+  "compare": "v4.2.2",
+  "counts": {
+    "commits": 24,
+    "prs": 24,
+    "issues": 10,
+    "commit_pr": 24,
+    "commit_pr_issue": 9
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.1...v4.2.2.compare.json",
+    "commits": "commits/v4.2/v4.2.1...v4.2.2.commits.json",
+    "pulls": "pulls/v4.2/v4.2.1...v4.2.2.pulls.json",
+    "issues": "issues/v4.2/v4.2.1...v4.2.2.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "eea2654236966fee69c4f18217a6a62b1c66d2da",
+          "html_url": "https://github.com/mastodon/mastodon/commit/eea2654236966fee69c4f18217a6a62b1c66d2da",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/eea2654236966fee69c4f18217a6a62b1c66d2da",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-13T16:58:00Z",
+          "commit_title": "Fix format-dependent redirects being cached regardless of requested format (#27634)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27634,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27634",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27634",
+          "state": "closed",
+          "merged_at": "2023-11-13T16:58:01Z",
+          "pr_title": "Fix format-dependent redirects being cached regardless of requested format",
+          "pr_body": "Port #27632 to 4.2",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ef149674f093e97ffbeb12910e2ebdd668bed7c2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ef149674f093e97ffbeb12910e2ebdd668bed7c2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ef149674f093e97ffbeb12910e2ebdd668bed7c2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-23T12:27:07Z",
+          "commit_title": "Change Content-Security-Policy to be tighter on media paths (#26889)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26889,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26889",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26889",
+          "state": "closed",
+          "merged_at": "2023-10-23T12:27:07Z",
+          "pr_title": "Change Content-Security-Policy to be tighter on media paths",
+          "pr_body": "Related to #24177, which was fixed by broadening the CSP more than needed.\r\n\r\nIndeed, some of the occurrences of #24177 were because people used `example.com/bucket` as `S3_ALIAS_HOST`, which resulted in `https://example.com/bucket` in the CSP, forbidding access to anything that is not exactly `https://example.com/bucket`. This was fixed by broadening to `https://example.com/`, but `https://example.com/bucket/` (notice the trailing `/`) would have worked as well.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "156d32689b3d084a7fe9f0aa6a8788cd4e831f17",
+          "html_url": "https://github.com/mastodon/mastodon/commit/156d32689b3d084a7fe9f0aa6a8788cd4e831f17",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/156d32689b3d084a7fe9f0aa6a8788cd4e831f17",
+          "author_login": "gunchleoc",
+          "commit_author_date": "2023-09-28T08:13:44Z",
+          "commit_title": "Only strip country code when language not listed in SUPPORTED_LOCALES (#27099)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27099,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27099",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27099",
+          "state": "closed",
+          "merged_at": "2023-09-28T08:13:45Z",
+          "pr_title": "Only strip country code when language not listed in SUPPORTED_LOCALES",
+          "pr_body": "Fixes https://github.com/mastodon/mastodon/issues/27085\r\n\r\nFixes https://github.com/mastodon/mastodon/issues/27081\r\n\r\nThis should also go into the 4.2 branch as a patch.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": [
+            {
+              "number": 27081,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27081",
+              "relationship": "closes"
+            },
+            {
+              "number": 27085,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27085",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27081,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27081",
+          "state": "closed",
+          "issue_title": "Toots in Chinese regional variants are not rendered in the correct font",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Post a toot with language set to a specific zh locale code, e.g. `zh-tw`.\r\n2. Observe the post on Web.\r\n\r\n### Expected behaviour\r\n\r\nThe post is rendered in a font for `zh-tw`\r\n\r\n### Actual behaviour\r\n\r\nThe post is rendered in a font for `zh`\r\n\r\n### Detailed description\r\n\r\n(See technical details below)\r\n\r\n### Mastodon instance\r\n\r\nmastodon.social\r\n\r\n### Mastodon version\r\n\r\nv4.1.2\r\n\r\n### Browser name and version\r\n\r\nSafari Version 16.6 (18615.3.12.11.2)\r\n\r\n### Operating system\r\n\r\nmacOS 13.5.2 (22G91)\r\n\r\n### Technical details\r\n\r\nInspecting the generated HTML I can see\r\n\r\n```html\r\n<div class=\"status__content__text status__content__text--visible translate\" lang=\"zh\"><p>文字</p></div>\r\n```\r\n\r\nwith `lang=\"zh\"` being the problem there. The `lang` attribute should be marked with `zh-tw` to allow browsers to pick the right font.\r\n\r\n## Background\r\n\r\nAs part of [Han Unification](https://en.wikipedia.org/wiki/Han_unification), Unicode assigns one code point for all regional variants of the same character. Browsers and other text rendering technologies therefore rely on the context (user-specified toot locale, in this example) to pick the right font.\r\n\r\nThe same Wikipedia article illustrates this:\r\n\r\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Source_Han_Sans_Version_Difference.svg/2560px-Source_Han_Sans_Version_Difference.svg.png)\r\n\r\nThe resulting text rendering is not unreadable, but it would feel foreign and unprofessional to readers. That being said, I suspect the fix is also relatively trivial (don't even require a new UI) so overall ROI for fixing this issue should pass the bar.\r\n",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/web interface"
+          ]
+        },
+        {
+          "number": 27085,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27085",
+          "state": "closed",
+          "issue_title": "Setting Posting Language to `zh-tw` will change the default posting to `ZH` (Chinese) instead of the correct regional variant (`ZH-TW`)`",
+          "issue_body": "### Steps to reproduce the problem\n\n1. In `Preferences` -> `Others` -> `Posting Language` drop down, set it to `繁體中文（台灣）`(`ZH-tw`)\r\n2. Go back to `Home`\r\n3. The default posting language in the compose form becomes `ZH` instead of `ZH-tw`\r\n\r\n\n\n### Expected behaviour\n\nThe default posting language should become `ZH-TW`\n\n### Actual behaviour\n\nDefault changed to `ZH`\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\ng0v.social\n\n### Mastodon version\n\nv4.2.0\n\n### Browser name and version\n\nBrave v1.58.131 Chromium: 117.0.5938.92 (arm64)\n\n### Operating system\n\nMacOS 13.5.2\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "aa69ca74ed113e4f0526522931f24db55de90b9a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/aa69ca74ed113e4f0526522931f24db55de90b9a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/aa69ca74ed113e4f0526522931f24db55de90b9a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-06T15:46:04Z",
+          "commit_title": "Fix incorrect serialization of regional languages in `contentMap` (#27207)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27207,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27207",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27207",
+          "state": "closed",
+          "merged_at": "2023-10-06T15:46:04Z",
+          "pr_title": "Fix incorrect serialization of regional languages in `contentMap`",
+          "pr_body": "Fixes #27194",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 27194,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27194",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27194,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27194",
+          "state": "closed",
+          "issue_title": "Post language strings with country code are invalid according to BCP47",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Create a post with the language set to a locale with a country code (e.g. zh-HK)\r\n2. Obtain the JSON-LD of the post (e.g. using `curl -H \"Accept: application/json\"`)\r\n3. Note the keys of the `contentMap` object\r\n\n\n### Expected behaviour\n\nThe first key of the object should be a valid locale string in accordance with BCP47 (e.g. zh-HK)\n\n### Actual behaviour\n\nThe first key is in camel-case without a hyphen (e.g. zhHk)\n\n### Detailed description\n\nIntroduced by #27099. It seems like this is how languages are currently stored in the database, so some conversion is likely needed before sending a post to inboxes.\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\n_No response_\n\n### Technical details\n\n- Ruby version: 3.2.2\r\n- Node.js version: 18.17.1\r\n",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "cdedae6d63ff6ac21dd8810896d39f016fd8ec68",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cdedae6d63ff6ac21dd8810896d39f016fd8ec68",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cdedae6d63ff6ac21dd8810896d39f016fd8ec68",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-23T12:19:38Z",
+          "commit_title": "Fix some link anchors being recognized as hashtags (#27271)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27271,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27271",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27271",
+          "state": "closed",
+          "merged_at": "2023-10-23T12:19:39Z",
+          "pr_title": "Fix some link anchors being recognized as hashtags",
+          "pr_body": "Fixes #27175\r\n\r\nAlso refactor `HASHTAG_RE` to use a lookbehind, which seems to speed up the matching significantly.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 27175,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27175",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27175,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27175",
+          "state": "closed",
+          "issue_title": "Links with anchors in them create hashtags",
+          "issue_body": "### Steps to reproduce the problem\n\nPost this:\r\n\r\n> 21:45 Edinburgh to Perth due 23:06\r\n> Facilities on the 21:45 Edinburgh to Perth due 23:06.\r\n> http://www.journeycheck.com/scotrail/route?id=16801062571L71Y30051270923&action=search&from=&to=&savedRoute=&formTubeUpdateType=&formTubeUpdateLocation=Service+Updates&formTubeUpdatePeriod=#16801062571L71Y30051270923\n\n### Expected behaviour\n\nPost has no hashtags\n\n### Actual behaviour\n\nPost shows hashtag #16801062571L71Y30051270923 on the bottom\n\n### Detailed description\n\nWrote an RSS bot that is pulling links with hashtags in them. The end of the link is parsed as a hashtag\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/4095570/22494cbe-375b-4c53-8f31-f7575c43fd66)\r\n\n\n### Mastodon instance\n\nmastodon.scot\n\n### Mastodon version\n\nv4.2.0\n\n### Browser name and version\n\nFirefox 118.0\n\n### Operating system\n\nLinux Mint\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "8be33d4316c7ea828f8b10361d5189fde79c3295",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8be33d4316c7ea828f8b10361d5189fde79c3295",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8be33d4316c7ea828f8b10361d5189fde79c3295",
+          "author_login": "kmycode",
+          "commit_author_date": "2023-10-13T09:15:47Z",
+          "commit_title": "Fix when unfollow a tag, my post also disappears from the home timeline (#27391)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27391,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27391",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27391",
+          "state": "closed",
+          "merged_at": "2023-10-13T09:15:47Z",
+          "pr_title": "Fix when unfollow a tag, my post also disappears from the home timeline",
+          "pr_body": "When I unfollow a tag, at the same time the posts using that tag are removed from my home timeline. The exception to this is that the posts of the people I am following are not deleted. However, my own posts will be deleted.\r\nFixed this.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "13205b54fd69f8cce1975aff8e784aa2f24e82ff",
+          "html_url": "https://github.com/mastodon/mastodon/commit/13205b54fd69f8cce1975aff8e784aa2f24e82ff",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/13205b54fd69f8cce1975aff8e784aa2f24e82ff",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-16T13:24:14Z",
+          "commit_title": "Fix handling of `inLanguage` attribute in preview card processing (#27423)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27423,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27423",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27423",
+          "state": "closed",
+          "merged_at": "2023-10-16T13:24:15Z",
+          "pr_title": "Fix handling of `inLanguage` attribute in preview card processing",
+          "pr_body": "Fixes #27401",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 27401,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27401",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27401,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27401",
+          "state": "closed",
+          "issue_title": "LinkCrawlWorker NoMethodError undefined method 'to_sym'",
+          "issue_body": "### Steps to reproduce the problem\n\nStarting about one week ago, noticed these types of errors appearing in Sidekiq dead queue.\r\n\r\n```\r\nNoMethodError: undefined method `to_sym' for [{\"@type\"=>\"Language\", \"name\"=>\"Dutch\"}]:Array\r\nNoMethodError: undefined method `to_sym' for {\"@type\"=>\"Language\", \"name\"=>\"Indonesian\", \"alternateName\"=>\"id\"}:Hash\r\nNoMethodError: undefined method `to_sym' for {\"@type\"=>\"Language\", \"name\"=>\"Russian\", \"alternateName\"=>\"ru\"}:Hash\r\n```\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/3002053/fb435620-d815-45ea-a2cd-e989a9a9af0b)\r\n\r\n![CleanShot 2023-10-13 at 11 48 45@2x](https://github.com/mastodon/mastodon/assets/3002053/3ab07212-cab8-403a-a33b-c0acb29d3c97)\r\n\r\n\n\n### Expected behaviour\n\nNo errors\n\n### Actual behaviour\n\nThese errors\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nvmst.io\n\n### Mastodon version\n\nmain\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: (from `ruby --version`, eg. v3.2.2 +YJIT)\r\n- Node.js version: (from `node --version`, eg. v20)\r\n",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "700ae1f9183a01afe574687a91afb6e7a99825fc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/700ae1f9183a01afe574687a91afb6e7a99825fc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/700ae1f9183a01afe574687a91afb6e7a99825fc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-26T17:03:31Z",
+          "commit_title": "Fix report processing notice not mentioning the report number when performing a custom action (#27442)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27442,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27442",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27442",
+          "state": "closed",
+          "merged_at": "2023-10-26T17:03:48Z",
+          "pr_title": "Fix report processing notice not mentioning the report number when performing a custom action",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bece853e3cc45a7b8b8b19b78b6f772c65e80b2a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bece853e3cc45a7b8b8b19b78b6f772c65e80b2a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bece853e3cc45a7b8b8b19b78b6f772c65e80b2a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-27T08:35:21Z",
+          "commit_title": "Fix error and incorrect URLs in `/api/v1/accounts/:id/featured_tags` for remote accounts (#27459)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27459,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27459",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27459",
+          "state": "closed",
+          "merged_at": "2023-10-27T08:35:38Z",
+          "pr_title": "Fix error and incorrect URLs in `/api/v1/accounts/:id/featured_tags` for remote accounts",
+          "pr_body": "The code generating URLs for featured tags was only correct for local users, but was applied to remote users as well. In certain cases, no route can be generated for those remote users, causing a crash.\r\n\r\nWe ourselves don't use this URL for anything, and I'm not aware of any service that does. However, it is unfortunately documented and not marked as optional, so we probably can't safely remove it: https://docs.joinmastodon.org/entities/FeaturedTag/#url\r\n\r\nInstead, generate a valid URL for remote accounts as well, even though it does not make much sense and is probably unused.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c66ade7de80e72d1dfdd1833c04cb3be47754f71",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c66ade7de80e72d1dfdd1833c04cb3be47754f71",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c66ade7de80e72d1dfdd1833c04cb3be47754f71",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-20T08:45:46Z",
+          "commit_title": "Fix processing LDSigned activities from actors with unknown public keys (#27474)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27474,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27474",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27474",
+          "state": "closed",
+          "merged_at": "2023-10-20T08:45:47Z",
+          "pr_title": "Fix processing LDSigned activities from actors with unknown public keys",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d5bc10b711dede8c84087de9240eea85c14ab7b0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d5bc10b711dede8c84087de9240eea85c14ab7b0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d5bc10b711dede8c84087de9240eea85c14ab7b0",
+          "author_login": "renchap",
+          "commit_author_date": "2023-10-19T11:22:44Z",
+          "commit_title": "The `class` props should be `className` (#27462)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27462,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27462",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27462",
+          "state": "closed",
+          "merged_at": "2023-10-19T11:22:44Z",
+          "pr_title": "The `class` props should be `className`",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4fc252354624d5b0fbafd86251204cc19edc525d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4fc252354624d5b0fbafd86251204cc19edc525d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4fc252354624d5b0fbafd86251204cc19edc525d",
+          "author_login": "renchap",
+          "commit_author_date": "2023-10-19T17:36:08Z",
+          "commit_title": "Do not display the navigation banner in the logo container (#27476)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27476,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27476",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27476",
+          "state": "closed",
+          "merged_at": "2023-10-19T17:36:09Z",
+          "pr_title": "Do not display the navigation banner in the logo container",
+          "pr_body": "Related to #27092",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4c3870647414f4cbd05373b0767d79e89a0db9a2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4c3870647414f4cbd05373b0767d79e89a0db9a2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4c3870647414f4cbd05373b0767d79e89a0db9a2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-25T13:55:57Z",
+          "commit_title": "Fix batch attachment deletion when using OpenStack Swift (#27554)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27554,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27554",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27554",
+          "state": "closed",
+          "merged_at": "2023-10-25T13:56:14Z",
+          "pr_title": "Fix batch attachment deletion when using OpenStack Swift",
+          "pr_body": "Fixes an issue introduced by #23302. `directory` is a private method.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "de86e822f4f51d7e20a59d48b2c7e66431e374fe",
+          "html_url": "https://github.com/mastodon/mastodon/commit/de86e822f4f51d7e20a59d48b2c7e66431e374fe",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/de86e822f4f51d7e20a59d48b2c7e66431e374fe",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-26T13:09:48Z",
+          "commit_title": "Fix error when trying to delete already-deleted file with OpenStack Swift (#27569)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27569,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27569",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27569",
+          "state": "closed",
+          "merged_at": "2023-10-26T13:10:04Z",
+          "pr_title": "Fix error when trying to delete already-deleted file with OpenStack Swift",
+          "pr_body": "Fixes #27568",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 27568,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27568",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27568,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27568",
+          "state": "closed",
+          "issue_title": "Ignore not found media files in AttachmentBatch deletion with OpenStack Swift",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Manually delete a media file/directory from the OpenStack Swift object storage (to simulate a missing file)\r\n2. Run AttachmentBatch deletion that would attempt to delete that file\n\n### Expected behaviour\n\nLog error and continue\n\n### Actual behaviour\n\nStops AttachmentBatch deletion\n\n### Detailed description\n\nWith the fix introduced in #27554 AttachmentBatch deletion is working but it introduces a couple of problems.\r\n\r\nIf OpenStack Swift object storage stops fails to respond either due to a server error (500 or similar) or in my case because it hit the maximum requests per minute (429 Too Many Requests), the object may be deleted in the object storage but the database not updated to reflect that.\r\n\r\nThe next time you attempt to run AttachmentBatch deletion where that media is again marked for deletion, the process exits because the file is missing \"Expected(204) <=> Actual(404 Not Found)\".\r\n\r\nNote that a file may also be missing for other reasons, like failing to properly upload or some other error. So, it would be good to just ignore files that were missing but continue to fail if other errors from the object storage (500, 429, etc). Possibly something similar to what we see on the filesystem storage https://github.com/mastodon/mastodon/blob/863ba46b00ea8b736e7473264e54b73029cafb60/app/lib/attachment_batch.rb#L72-L74\n\n### Mastodon instance\n\nSeveral\n\n### Mastodon version\n\nv4.2.1 + #27554\n\n### Technical details\n\nOpenStack Swift Object Storage with #27554 \r\n",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "e6f4c91c5c7a28b5185f31c0dc5b58c242f4270f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e6f4c91c5c7a28b5185f31c0dc5b58c242f4270f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e6f4c91c5c7a28b5185f31c0dc5b58c242f4270f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-27T14:04:51Z",
+          "commit_title": "Fix hashtag matching pattern matching some URLs (#27584)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27584,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27584",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27584",
+          "state": "closed",
+          "merged_at": "2023-10-27T14:05:07Z",
+          "pr_title": "Fix hashtag matching pattern matching some URLs",
+          "pr_body": "Fixes #27552\r\n\r\nFollow-up to #27271",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 27552,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27552",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27552,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27552",
+          "state": "closed",
+          "issue_title": "hash-tag bar appears on posts ending with (containing?) a link with a fragment",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. post `lets go https://gcc.gnu.org/bugzilla/show_bug.cgi?id=111895#c4`\r\n\r\n### Expected behaviour\r\n\r\nthe post contains `lets go https://gcc.gnu.org/bugzilla/show_bug.cgi?id=111895#c4`\r\n\r\n### Actual behaviour\r\n\r\nthe post contains `lets go https://gcc.gnu.org/bugzilla/show_bug.cgi?id=111895#c4`, then vertical space, then the hash-tag bar with `#c4` in it\r\n\r\n### Detailed description\r\n\r\ngithub is saying that \"Something went really wrong, and we can't process that file. Try again.\" for my screenshot, and it's refusing to accept URLs with a data scheme, so here's a data URL with a scrussy to open separately via pasting: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA54AAAEqAQAAAABVMLIAAAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxMAAAsTAQCanBgAAAfiSURBVHja7d3NTuNIAgfwsrxq94HBc0zUEB/2BYiQtkGb4HmAeQhakYbLiKaFNAoi3WUU7XIJ7StoaPIKjfrCqLMTt1jhC0uuHFZgFGl8GXUcRdo4il21VU6gE3oMgeCyNNRfAiWx5B/16Y9UCACPJ2+AaDFHPaB4rE3BAhBrrFFDxJh1/QqagrHHHMUkjOtXoCbr+u2hLn04yRhFvREbdRaGUNwbsVEHaxODqCbNd4zoa9XIXEP9yEsq6lZhGP37OxQ5+g/re9UbROemTyJHN5wJFQ2iHf8oalQqOhPzR4NolwFacybSR8NtGn314q9QH7FH573ohwy2hlEmU64XAwqwEQMKhyd8NujTOFDAUY5ydFxUFLbJ70XyM8sIRRQ9vUQ1Jqhga0AMXqHoDJuSihv6Yb257RbQ0klugVH1igs1u9XZ8RBa+m1VZYQ++en4h9nkTuloavmn1dUPjNAfjhdnp7e/MRI//u1/L1ihx98vtaZ3fGPuZesMMkOPl2and/5jrLysn8FZZujybPLn0tHi8l/3XrFC8fFSv/e2dlVW1QtLS63mjkfG6UWJ1ZDpzUYJthO++G/6bI7xUSa4qMjzg/hDX19c3dJhGHh184qHh4eHh4eHh+dannz1yjf0DDF5ABKi9ofbHwS9fnNjuo/OsUST1BIOwEyEqFpw5bql1ExDVbeNNwso6ZlqdecXN91yC0czkp14+HcznsDXnmw76nnNggSFKkp7JqzufHRzXQ/ZK1I7GQG6ul+aWp6bP/19JZfeNurpt+m35upm8mMi92zr6OXik+fJ0sOjuX2LoDOnE6BO0EOC/tN8sZk8SOQOt0yKPosAhe+9xHJiAH1B0LfJX9xPra1NgqrRoJnhklJ0N/nx1FjfMtesaEr6av5am168tVe3kx+Th6RN541o2hT+q997f4Pp8glMo08epr23U+yW0LwhtTreyemDj9MprzdOj9S0fvJmhqCQjlN/o1UqELTueif/jWCCeLoIBAP0b/vK9JHW+yHPHAAmIpn0ZQuoWv9tOIFOBfDLJqf3SgSoARTtcjkJXc6iDt2dcPmxmIeHh4eHhyfOQMwmgyc9gsWocKmBx70zTQaRbrznEFEELWZ0glmPNWJGnzJDv+MoRznKUY5ylKN/RlQtK0K3U5JrVZZotVqkaAMzRFf394vP3pWmfswxRHPvZ0SCJv78aCzVSzrSh+47v/Y7ZDtk0t1dv3asMkTp1WOwOFRkWVLCBdfNkC0qOPTBAp/wHwiVol+K+kfo+zjQgzjQShzor3Gg1VhQ7bEMGaxx9NGhggVWrp7Q/1ogGf0NxtXLKQCCgyKw6DmAQX5PkQfyCKio5aUNTzkcWKRPP3sh2NowKg+ikjaAim4PbdyCGsoVqhZdtYjU+m2oYjghqORdotIu2TBKSSm6ieCtaAqEoTK6H1pes7Vb2nQIHWpTeeGyTW9GB6p3tph/vqnn21pwOnpeq3eNdZRvN+2yI19g2W65WPcQQGoR6/DQhUJlHStmuYtINxA8bDb9RspQdRcaNVjzFNuR3dE60uZZvh2sYjk/P28RFK81OnbVUTq43G57uOZjAVeLuAZtD2uZdaza5S75hUSEax3fWgCEw4YMG5bScGVvNLSIXreRiA18fo6H0Wobe/jcxxs9tOH30WoXw8YlmiGo30fxHVAYoE2sZLoX2nota2XtirOwZlegMdU6y9pFew+0ztYaSpugZsWurNfyOCXpTSvrGAUgNLJ1QyYdQ9oryJkRqxepjkJLilKZdQOsm6rp25WVTNas4qJXP8si8fAMNNGrBkaAoNXNyroOA9T2LeAC9TNF8xTNyKkRUX3SoZ2OoHM9tObbBwQ9rOJNgmZwD11pIFq9ZtU+6KFas+Fb5FwdXqG7N6FgGBVsijqpfkmV82yvpBVJ3yUoLFLUe9UAKkV1Ur16XqYozlqiBTojlHT4AoqiImkzANyzVKb7SSPoXr9Nf32uZ0j1mrRNHW+tsWVTtEPRwktavShrmQZofkFJm+a+HQklI4/OSPgspbYODYKW/cveq3v1oPfuAc8Leq/SNTHpvXrQe5vYv2gggD9nMUUtifbetjsKWkS9CR+ilBKgst5Hy2RmqAfjlKAutFGAVsk41dU2RRsBCj9n+igdp3TM346So0ywoE3dS8n1AJV9OiM1yYy0ieo1MiPhFCjk6YwE5K5ZJjOSHsxIX1BI0Lol0hmpfTDOBdTAPEvjfJmNE+6dD+L3Q8UBVHFiQFVmqDVQUotfiXOUoxzlKEfjQ0VevRzl6P3Qx7Oa7vGskIxlAWosS21jWVTMw8PDw8PDw8PzqHPK6t8qDqN55qbkxYAK+64bB3rKHv3wbpt9m3ZF9qiYE70Y0HIM6As38ThQHh4eHh4eHh4enkeRwTfeRs6430Nzr3f4wm5TyCN++6Z0HzQ/JiqHo+HvlxfGRJXwjytPh+7CGxNVsXX5cZDrWQjbhYDGRCF2JCtskxX2h7rjou7kYsimjQdDldfWtR2EoTgMVbBzZ9QZ3kEYKuBP1h33PSoqF72wkqakkF4qYWM8VNIKoagc0kvFsA9MhaKT89bwNJgJ672hJb07+tWEnwkbp0rXjQi94bt7FN8Ja9MwtDEqmgifIe+MmuOjKGQXkhmGFkdFbzgifxeCCiG9YHLkpTDfPtxpyF/C/kweHh4eHh4eHp6Q/B8tfcJrc83nCAAAAABJRU5ErkJggg==>\r\n\r\n### Mastodon instance\r\n\r\n101010.pl\r\n\r\n### Mastodon version\r\n\r\nv4.3.0-alpha.0\r\n\r\n### Browser name and version\r\n\r\nfirefox deved 87.0b9 (64-bit)\r\n\r\n### Operating system\r\n\r\nwindows 10\r\n\r\n### Technical details\r\n\r\n_No response_",
+          "labels": [
+            "bug",
+            "status/confirmed",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "81d7cfd54467477e408b94a5a7cea67b1b9b7518",
+          "html_url": "https://github.com/mastodon/mastodon/commit/81d7cfd54467477e408b94a5a7cea67b1b9b7518",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/81d7cfd54467477e408b94a5a7cea67b1b9b7518",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-30T22:32:25Z",
+          "commit_title": "Fix posts from force-sensitized accounts being able to trend (#27620)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27620,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27620",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27620",
+          "state": "closed",
+          "merged_at": "2023-10-30T22:38:36Z",
+          "pr_title": "Fix posts from force-sensitized accounts being able to trend",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "54a07731d14ed3809375b31e2ce86e347afed271",
+          "html_url": "https://github.com/mastodon/mastodon/commit/54a07731d14ed3809375b31e2ce86e347afed271",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/54a07731d14ed3809375b31e2ce86e347afed271",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-02T14:58:37Z",
+          "commit_title": "Fix posts from threads received out-of-order sometimes not being inserted into timelines (#27653)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27653,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27653",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27653",
+          "state": "closed",
+          "merged_at": "2023-11-02T15:04:10Z",
+          "pr_title": "Fix posts from threads received out-of-order sometimes not being inserted into timelines",
+          "pr_body": "For a reply to be inserted into home and list timelines, its parent must be known, \r\n\r\nIn addition, slightly improve the reliability of `ThreadResolveWorker` by fetching the parent post from database, which may help with private posts and other fediverse software not allowing fetching them.\r\n\r\nNote that there are cases that are still not properly handled (strings of self-replies with an unknown parent)",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1076a6cd62a80f1e331980e7c81174fa1a67f435",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1076a6cd62a80f1e331980e7c81174fa1a67f435",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1076a6cd62a80f1e331980e7c81174fa1a67f435",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-06T09:28:14Z",
+          "commit_title": "Fix incoming status creation date not being restricted to standard ISO8601 (#27655)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27655,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27655",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27655",
+          "state": "closed",
+          "merged_at": "2023-11-06T09:33:46Z",
+          "pr_title": "Fix incoming status creation date not being restricted to standard ISO8601",
+          "pr_body": "Fixes #27639",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 27639,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27639",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27639,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27639",
+          "state": "closed",
+          "issue_title": "document_parsing_exception errors from a status with an invalid date",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Unclear how we acquired this status, but [this post](https://mk.itzti.li/notes/9la79fmeadxw63t4) arrived in our instance with an invalid timestamp:\r\n\r\n```\r\ncreated_at: Thu, 07 Nov 11968 17:22:13.599000000 UTC +00:00,\r\nupdated_at: Sat, 28 Oct 2023 15:09:01.341614000 UTC +00:00,\r\n```\r\n\r\n2. since then, a sidekiq job fails once per minute trying to deal with this status:\r\n\r\n```\r\nOct 31 15:05:09 - bundle[3249279]:       `{\"type\"=>\"document_parsing_exception\", \"reason\"=>\"[1:62] failed to parse field [last_status_at] of type [date] in document with id '47476'. Preview of field's value: '11968-11-07T17:22:13.599Z'\", \"caused_by\"=>{\"type\"=>\"illegal_argument_exception\", \"reason\"=>\"failed to parse date field [11968-11-07T17:22:13.599Z] with format [strict_date_optional_time||epoch_millis]\", \"caused_by\"=>{\"type\"=>\"date_time_parse_exception\", \"reason\"=>\"Failed to parse with all enclosed parsers\"}}}`\r\n```\n\n### Expected behaviour\n\nSidekiq should be able to deal with whatever statuses it might encounter\n\n### Actual behaviour\n\nSidekiq dies dealing with this status once per minute\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\ncosocial.ca\n\n### Mastodon version\n\nv4.2.0\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x86_64-linux]\r\n- Node.js version: v16.20.2\r\n",
+          "labels": [
+            "bug",
+            "activitypub",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "8d02e58ff42d28f62a354c1ce8282924d54c455f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8d02e58ff42d28f62a354c1ce8282924d54c455f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8d02e58ff42d28f62a354c1ce8282924d54c455f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-16T13:43:02Z",
+          "commit_title": "Fix upper border radius of onboarding columns (#27890)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27890,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27890",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27890",
+          "state": "closed",
+          "merged_at": "2023-11-16T13:48:27Z",
+          "pr_title": "Fix upper border radius of onboarding columns",
+          "pr_body": "The upper border of the scrollable component had a slight border-radius:\r\n![image](https://github.com/mastodon/mastodon/assets/384364/0df0c201-e74e-4a31-bb23-6defaa121803)\r\n\r\nThis PR fixes it:\r\n![image](https://github.com/mastodon/mastodon/assets/384364/5e7a5001-2c54-4710-8ef1-c107b732a4ed)",
+          "labels": [
+            "ui",
+            "area/web interface"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "252ea2fc67a8e95532c1887fc9f2842ddae189f3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/252ea2fc67a8e95532c1887fc9f2842ddae189f3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/252ea2fc67a8e95532c1887fc9f2842ddae189f3",
+          "author_login": "ShadowJonathan",
+          "commit_author_date": "2023-10-27T14:55:00Z",
+          "commit_title": "Have `Follow` activities bypass availability (#27586)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27586,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27586",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27586",
+          "state": "closed",
+          "merged_at": "2023-10-27T14:55:16Z",
+          "pr_title": "Have `Follow` activities bypass availability",
+          "pr_body": "This fixes https://github.com/mastodon/mastodon/issues/27458, and is related to (but does not resolve) https://github.com/Automattic/wordpress-activitypub/issues/523\r\n\r\nThis is in accordance with the suggestion I made here: https://github.com/mastodon/mastodon/issues/27525#issuecomment-1779880830\r\n\r\nThe consequences of this is that Follow requests can bounce around the queue for a while, without being affected by availability. They'll still be affected by stoplight, but those are temporary.\r\n\r\nA user could technically spam follows and have them enter the queue en-masse, but these would be short-circuited by stoplight all the same, so I don't think that has much impact. (Besides, users could still do this with the likes of fav-unfav or other activities, so there's not much increased risk)\r\n\r\n---\r\n\r\nThis PR is intended to help \"wedged\" federation, where a remote account is not \"accessible\" (or \"stuck in Follow Request state\") because the local server has stopped delivery for that server.\r\n\r\nThis is especially notable in cases where the remote server is a follow-along-like actor (such as a blog) which is not intended to have social dynamics, such as \"following back\", or \"mentioning\" the account out of the blue, which would've otherwise unwedged federation in other cases.\r\n\r\nThis PR adds a simple availability bypass to the delivery worker, which is only granted on the case of a user-initiated follow request.\r\n\r\nThese follow requests are then often accompanied by an authorisation, which then unwedges the delivery failure tracker, as it has now \"seen\" a response from that inbox. Normal federation can resume hereafter.\r\n\r\nBy effect, a `Follow` activity then becomes a SYN-like first step to re-establish federation after it has broken down or bugged via the availability tracker.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": [
+            {
+              "number": 27458,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27458",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27458,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27458",
+          "state": "closed",
+          "issue_title": "Stuck Follow Request when following a WordPress Profile",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Go to for example mastodon.art\r\n2. Search for `pfefferle@notiz.blog`\r\n3. Press \"Follow\" button\r\n\r\n\n\n### Expected behaviour\n\nMastodon user follows WordPress User\n\n### Actual behaviour\n\nProcess seem to be stuck (\"Cancel follow\")\n\n### Detailed description\n\nWe have received some reports (here is the [ticket](https://github.com/Automattic/wordpress-activitypub/issues/523) on the WordPress plugin repo) that the Follow process seems to be stuck and not accepted by the WordPress instance.\r\n\r\nDebugging on the WordPress site shows that when searching for the WordPress profile, all required endpoints (WebFinger, Followers, ...) are requested and the profile is displayed correctly in the Mastodon UI. However, after clicking the follow button, WordPress does not receive a follow request (or any other requests to the inbox), this also applies to a unfollow/re-follow. Sending an `accept` by hand, on the other hand, seems to work.\r\n\r\nAnother way to reset the follow process seems to be an @-reply. After sending an @-reply to the Mastodon profile,an unfollow/re-follow also seems to work.\r\n\r\nAn example profile: @pfefferle@notiz.blog\r\nAn example group: @notiz.blog@notiz.blog\r\n\r\nFor a few weeks now, the Mastodon UI has also been displaying a 500 error in the UI when requesting the internal featured-tags endpoint: https://mastodon.social/api/v1/accounts/[...]/featured_tags.\r\n\r\nHere is an example endpoint for the Featured Tags endpoint of WordPress: https://notiz.blog/wp-api/activitypub/1.0/users/0/collections/tags\n\n### Mastodon instance\n\nmastodon.art, mastodon.ie, twit.social\n\n### Mastodon version\n\nv4.2.1\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "e11100d7824258cafbd08b56945f340720a8029a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e11100d7824258cafbd08b56945f340720a8029a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e11100d7824258cafbd08b56945f340720a8029a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-27T13:25:54Z",
+          "commit_title": "Clamp dates when serializing to Elasticsearch API (#28081)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28081,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28081",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28081",
+          "state": "closed",
+          "merged_at": "2023-11-27T13:31:24Z",
+          "pr_title": "Clamp dates when serializing to Elasticsearch API",
+          "pr_body": "Follow-up to #27655",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "09115731d617c556135ac465421645ed54e92ca9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/09115731d617c556135ac465421645ed54e92ca9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/09115731d617c556135ac465421645ed54e92ca9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-24T09:31:28Z",
+          "commit_title": "Change GIF max matrix size error to explicitly mention GIF files (#27927)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27927,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27927",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27927",
+          "state": "closed",
+          "merged_at": "2023-11-24T09:31:44Z",
+          "pr_title": "Change GIF max matrix size error to explicitly mention GIF files",
+          "pr_body": null,
+          "labels": [
+            "area/media processing"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7b9496322fd726a70c6fec1eee77c8cd04f0fd9e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7b9496322fd726a70c6fec1eee77c8cd04f0fd9e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7b9496322fd726a70c6fec1eee77c8cd04f0fd9e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-30T11:45:54Z",
+          "commit_title": "Change dismissed banners to be stored server-side (#27055)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27055,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27055",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27055",
+          "state": "closed",
+          "merged_at": "2023-11-30T11:46:10Z",
+          "pr_title": "Change dismissed banners to be stored server-side",
+          "pr_body": "Fixes #25957\r\n\r\nStore dismissed banners server-side in addition to local-storage. LocalStorage is kept for now, to provide an upgrade path, but could be removed in the future.",
+          "labels": [
+            "area/web interface"
+          ],
+          "issue_refs": [
+            {
+              "number": 25957,
+              "html_url": "https://github.com/mastodon/mastodon/issues/25957",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 25957,
+          "html_url": "https://github.com/mastodon/mastodon/issues/25957",
+          "state": "closed",
+          "issue_title": "Completely useless post appearing at the top of timelines in the web client",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Visit your home timeline\r\n2. That's it, maybe you see it maybe you don't: intermittent\r\n\r\n\n\n### Expected behaviour\n\nNot having this post \n\n### Actual behaviour\n\nPost appears intermittently\n\n### Detailed description\n\nThere is a post which is not real. \r\n\r\nIt says \"This is your home base within Mastodon\". It appears at the top of your timeline. It serves no purpose whatsoever. It is extra annoying because it cannot be disabled and it appears intermittently. \r\n\r\n\n\n### Specifications\n\nBrave on Linux\r\nMastodon 4.1.4+nightly-20230711",
+          "labels": [
+            "bug"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "4b8fe9df73cf27db68f3c92178e37eff9deb3bd3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4b8fe9df73cf27db68f3c92178e37eff9deb3bd3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4b8fe9df73cf27db68f3c92178e37eff9deb3bd3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-11-27T14:00:52Z",
+          "commit_title": "Bump version to v4.2.2"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28082,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28082",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28082",
+          "state": "closed",
+          "merged_at": "2023-12-04T14:28:16Z",
+          "pr_title": "Bump version to v4.2.2",
+          "pr_body": "### Changed\r\n\r\n- Change dismissed banners to be stored server-side ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27055))\r\n- Change GIF max matrix size error to explicitly mention GIF files ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27927))\r\n- Change `Follow` activities delivery to bypass availability check ([ShadowJonathan](https://github.com/mastodon/mastodon/pull/27586))\r\n- Change single-column navigation notice to be displayed outside of the logo container ([renchap](https://github.com/mastodon/mastodon/pull/27462), [renchap](https://github.com/mastodon/mastodon/pull/27476))\r\n- Change Content-Security-Policy to be tighter on media paths ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26889))\r\n- Change post language code to include country code when relevant ([gunchleoc](https://github.com/mastodon/mastodon/pull/27099), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/27207))\r\n\r\n### Fixed\r\n\r\n- Fix upper border radius of onboarding columns ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27890))\r\n- Fix incoming status creation date not being restricted to standard ISO8601 ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27655), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/28081))\r\n- Fix some posts from threads received out-of-order sometimes not being inserted into timelines ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27653))\r\n- Fix posts from force-sensitized accounts being able to trend ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27620))\r\n- Fix error when trying to delete already-deleted file with OpenStack Swift ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27569))\r\n- Fix batch attachment deletion when using OpenStack Swift ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27554))\r\n- Fix processing LDSigned activities from actors with unknown public keys ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27474))\r\n- Fix error and incorrect URLs in `/api/v1/accounts/:id/featured_tags` for remote accounts ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27459))\r\n- Fix report processing notice not mentioning the report number when performing a custom action ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27442))\r\n- Fix handling of `inLanguage` attribute in preview card processing ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27423))\r\n- Fix own posts being removed from home timeline when unfollowing a used hashtag ([kmycode](https://github.com/mastodon/mastodon/pull/27391))\r\n- Fix some link anchors being recognized as hashtags ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27271), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/27584))\r\n- Fix format-dependent redirects being cached regardless of requested format ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27634))",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

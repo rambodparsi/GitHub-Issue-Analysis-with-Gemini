@@ -1,0 +1,979 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.0-rc1",
+  "compare": "v4.2.0-rc2",
+  "counts": {
+    "commits": 28,
+    "prs": 27,
+    "issues": 11,
+    "commit_pr": 26,
+    "commit_pr_issue": 10
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.0-rc1...v4.2.0-rc2.compare.json",
+    "commits": "commits/v4.2/v4.2.0-rc1...v4.2.0-rc2.commits.json",
+    "pulls": "pulls/v4.2/v4.2.0-rc1...v4.2.0-rc2.pulls.json",
+    "issues": "issues/v4.2/v4.2.0-rc1...v4.2.0-rc2.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "ef8ca2fd7231f331f6822955b518a25861663b87",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ef8ca2fd7231f331f6822955b518a25861663b87",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ef8ca2fd7231f331f6822955b518a25861663b87",
+          "author_login": "renchap",
+          "commit_author_date": "2023-09-14T21:11:36Z",
+          "commit_title": "Change Dockerfile to upgrade packages when building (#26922)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26922,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26922",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26922",
+          "state": "closed",
+          "merged_at": "2023-09-14T21:11:37Z",
+          "pr_title": "Change Dockerfile to upgrade packages when building",
+          "pr_body": "Also ensure that nightly & release images do not use the Docker cache, so `dist-upgrade` is always ran and we know those images use the latest packages.",
+          "labels": [
+            "docker"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "310341536435dc8d27c1ce2b8e3790caba56e8ec",
+          "html_url": "https://github.com/mastodon/mastodon/commit/310341536435dc8d27c1ce2b8e3790caba56e8ec",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/310341536435dc8d27c1ce2b8e3790caba56e8ec",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-15T07:09:22Z",
+          "commit_title": "Update dependency @babel/core to v7.22.19 (#26920)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26920,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26920",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26920",
+          "state": "closed",
+          "merged_at": "2023-09-15T07:09:23Z",
+          "pr_title": "Update dependency @babel/core to v7.22.19",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [@babel/core](https://babel.dev/docs/en/next/babel-core) ([source](https://togithub.com/babel/babel)) | [`7.22.17` -> `7.22.19`](https://renovatebot.com/diffs/npm/@babel%2fcore/7.22.17/7.22.19) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@babel%2fcore/7.22.19?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@babel%2fcore/7.22.19?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@babel%2fcore/7.22.17/7.22.19?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@babel%2fcore/7.22.17/7.22.19?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>babel/babel (@&#8203;babel/core)</summary>\n\n### [`v7.22.19`](https://togithub.com/babel/babel/releases/tag/v7.22.19)\n\n[Compare Source](https://togithub.com/babel/babel/compare/v7.22.18...v7.22.19)\n\n#### v7.22.19 (2023-09-14)\n\nRe-published 7.22.18, due to a releasing error.\n\n### [`v7.22.18`](https://togithub.com/babel/babel/blob/HEAD/CHANGELOG.md#v72218-2023-09-14)\n\n[Compare Source](https://togithub.com/babel/babel/compare/v7.22.17...v7.22.18)\n\n##### :bug: Bug Fix\n\n-   `babel-helper-validator-identifier`\n    -   [#&#8203;15957](https://togithub.com/babel/babel/pull/15957) Update identifier name definitions to Unicode 15.1 ([@&#8203;JLHwung](https://togithub.com/JLHwung))\n-   `babel-helper-module-transforms`, `babel-plugin-transform-modules-amd`, `babel-plugin-transform-modules-commonjs`, `babel-plugin-transform-modules-umd`\n    -   [#&#8203;15898](https://togithub.com/babel/babel/pull/15898) Fix transform of named import with shadowed namespace import ([@&#8203;dhlolo](https://togithub.com/dhlolo))\n\n##### :leftwards_arrow_with_hook: Revert\n\n-   [#&#8203;15965](https://togithub.com/babel/babel/pull/15965) Revert Node.js 20.6.0 bug workaround ([@&#8203;nicolo-ribaudo](https://togithub.com/nicolo-ribaudo))\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "82015dbab6a6829b8532e152a713d673f28c6e52",
+          "html_url": "https://github.com/mastodon/mastodon/commit/82015dbab6a6829b8532e152a713d673f28c6e52",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/82015dbab6a6829b8532e152a713d673f28c6e52",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-15T08:03:55Z",
+          "commit_title": "Update dependency sass to v1.67.0 (#26914)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26914,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26914",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26914",
+          "state": "closed",
+          "merged_at": "2023-09-15T08:03:55Z",
+          "pr_title": "Update dependency sass to v1.67.0",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [sass](https://togithub.com/sass/dart-sass) | [`1.66.1` -> `1.67.0`](https://renovatebot.com/diffs/npm/sass/1.66.1/1.67.0) | [![age](https://developer.mend.io/api/mc/badges/age/npm/sass/1.67.0?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/sass/1.67.0?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/sass/1.66.1/1.67.0?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/sass/1.66.1/1.67.0?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>sass/dart-sass (sass)</summary>\n\n### [`v1.67.0`](https://togithub.com/sass/dart-sass/blob/HEAD/CHANGELOG.md#1670)\n\n[Compare Source](https://togithub.com/sass/dart-sass/compare/1.66.1...1.67.0)\n\n-   All functions defined in CSS Values and Units 4 are now once again parsed as\n    calculation objects: `round()`, `mod()`, `rem()`, `sin()`, `cos()`, `tan()`,\n    `asin()`, `acos()`, `atan()`, `atan2()`, `pow()`, `sqrt()`, `hypot()`,\n    `log()`, `exp()`, `abs()`, and `sign()`.\n\n    Unlike in 1.65.0, function calls are *not* locked into being parsed as\n    calculations or plain Sass functions at parse-time. This means that\n    user-defined functions will take precedence over CSS calculations of the same\n    name. Although the function names `calc()` and `clamp()` are still forbidden,\n    users may continue to freely define functions whose names overlap with other\n    CSS calculations (including `abs()`, `min()`, `max()`, and `round()` whose\n    names overlap with global Sass functions).\n\n-   As a consequence of the change in calculation parsing described above,\n    calculation functions containing interpolation are now parsed more strictly\n    than before. However, all interpolations that would have produced valid CSS\n    will continue to work, so this is not considered a breaking change.\n\n-   Interpolations in calculation functions that aren't used in a position that\n    could also have a normal calculation value are now deprecated. For example,\n    `calc(1px #{\"+ 2px\"})` is deprecated, but `calc(1px + #{\"2px\"})` is still\n    allowed. This deprecation is named `calc-interp`. See [the Sass website] for\n    more information.\n\n    [the Sass website]: https://sass-lang.com/d/calc-interp\n\n-   **Potentially breaking bug fix**: The importer used to load a given file is no\n    longer used to load absolute URLs that appear in that file. This was\n    unintented behavior that contradicted the Sass specification. Absolute URLs\n    will now correctly be loaded only from the global importer list. This applies\n    to the modern JS API, the Dart API, and the embedded protocol.\n\n##### Embedded Sass\n\n-   Substantially improve the embedded compiler's performance when compiling many\n    files or files that require many importer or function call round-trips with\n    the embedded host.\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 1670,
+              "html_url": "https://github.com/head/changelog.md/issues/1670",
+              "relationship": "references"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 1670,
+          "html_url": "https://github.com/mastodon/mastodon/issues/1670",
+          "state": "closed",
+          "issue_title": "500 on /api/v1/search",
+          "issue_body": "I manually installed on an arm64 (aarch64) machine at bd834add567fc0a0f3960385a7f9abe4324ff212. \r\n\r\nI get a HTTP 500 response when I use the search, the logs says\r\n``` NoMethodError: undefined method `n=' for #<OpenSSL::PKey::RSA:0x00007f900e0910>\r\nDid you mean?  n```\r\n\r\nPlus a stacktrace\r\n```\r\napp/services/follow_remote_account_service.rb:42:in `call'\r\napp/services/account_search_service.rb:21:in `call'\r\napp/services/search_service.rb:15:in `call'\r\napp/controllers/api/v1/search_controller.rb:7:in `index'\r\napp/controllers/concerns/localized.rb:24:in `block in set_locale'\r\napp/controllers/concerns/localized.rb:23:in `set_locale'\r\n```\r\n\r\nI'm not a Ruby person, but how I see it what is actually crashing is https://github.com/tootsuite/ostatus2/blob/master/lib/ostatus2/magic_key.rb#L8\r\n\r\nNow I'm wondering what I broke and why a `OpenSSL::PKey::RSA` should have a `n` field/method at all, because I don't see anything about that in the documentation. \r\n\r\nAny idea what is broken?\r\n\r\n* * * *\r\n\r\n- [x] I searched or browsed the repo’s other issues to ensure this is not a duplicate.\r\n",
+          "labels": [
+            "bug",
+            "expertise wanted"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "9693c271f1ee6c1786abc50617d0831c77c3ca9d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9693c271f1ee6c1786abc50617d0831c77c3ca9d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9693c271f1ee6c1786abc50617d0831c77c3ca9d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-15T08:23:24Z",
+          "commit_title": "Fix processing of `min_id` and `max_id` parameters in `/api/v2/search` (#26927)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26927,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26927",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26927",
+          "state": "closed",
+          "merged_at": "2023-09-15T08:23:25Z",
+          "pr_title": "Fix processing of `min_id` and `max_id` parameters in `/api/v2/search`",
+          "pr_body": "Fixes #26924",
+          "labels": [
+            "bug",
+            "area/search"
+          ],
+          "issue_refs": [
+            {
+              "number": 26924,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26924",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26924,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26924",
+          "state": "closed",
+          "issue_title": "Search API returns 500 internal server error if \"max_id\" is set",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Sign in to your mastodon.social account on the website, then open this link:\r\nhttps://mastodon.social/api/v2/search?q=apple&type=statuses&max_id=111065964141901733\r\n\r\n2. Without signing in to your account first, open the same link in a private browsing window.\r\n\r\n### Expected behaviour\r\n\r\n1. Get status code 200, and posts (search results) earlier than the max_id\r\n2. Get status code 401, unauthorized. (optional, 200 is fine imo)\r\n\r\n### Actual behaviour\r\n\r\n1. Get status code 500: internal server error. No search results.\r\n2. Get status code 200 with no search results.\r\n\r\n### Detailed description\r\n\r\nAPI doc: https://docs.joinmastodon.org/methods/search/#v2\r\n\r\nThis is reproducible on mastodon.social (v4.2.0-nightly.2023-09-13)\r\n\r\nWorks as expected (status code 200 with search results) when searching a hashtag. e.g. \"#apple\"\r\n\r\n### Mastodon instance\r\n\r\nmastodon.social\r\n\r\n### Mastodon version\r\n\r\nv4.2.0-nightly.2023-09-13\r\n\r\n### Technical details\r\n\r\n_No response_",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "5d93e98da433b76ba39bbe9f1f36814742e47230",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5d93e98da433b76ba39bbe9f1f36814742e47230",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5d93e98da433b76ba39bbe9f1f36814742e47230",
+          "author_login": "renchap",
+          "commit_author_date": "2023-09-15T08:44:01Z",
+          "commit_title": "Fix container build when cache is disabled (#26932)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26932,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26932",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26932",
+          "state": "closed",
+          "merged_at": "2023-09-15T08:44:01Z",
+          "pr_title": "Fix container build when cache is disabled",
+          "pr_body": "The current action was equivalent to `cache-to: false`, which Docker understood as \"cache to the `false` container on the registry\", which is not what we want.",
+          "labels": [
+            "docker"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e4f5114aaf9cea72df735443062c26803fee0ed6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e4f5114aaf9cea72df735443062c26803fee0ed6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e4f5114aaf9cea72df735443062c26803fee0ed6",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-15T17:52:28Z",
+          "commit_title": "Fix obsolete cache key in status cache invalidation logic (#26934)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26934,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26934",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26934",
+          "state": "closed",
+          "merged_at": "2023-09-15T17:52:28Z",
+          "pr_title": "Fix obsolete cache key in status cache invalidation logic",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2a4fcc51fd44cab3e837e43e8f8dd84fefb97729",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2a4fcc51fd44cab3e837e43e8f8dd84fefb97729",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2a4fcc51fd44cab3e837e43e8f8dd84fefb97729",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-15T17:53:28Z",
+          "commit_title": "Fix dismiss button overlapping with text in dismissable banners (#26935)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26935,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26935",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26935",
+          "state": "closed",
+          "merged_at": "2023-09-15T17:53:28Z",
+          "pr_title": "Fix dismiss button overlapping with text in dismissable banners",
+          "pr_body": "## Before\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/384364/56641987-aae4-4b96-bbda-cd7836463516)\r\n![image](https://github.com/mastodon/mastodon/assets/384364/acba7fa1-2967-4359-9a18-2e60c7cfec06)\r\n\r\n## After\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/384364/8efa4e7b-36ed-4ef5-ae53-eb9f21b18317)\r\n![image](https://github.com/mastodon/mastodon/assets/384364/ea02ea2b-353a-433b-9f66-2c1044ee32ee)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6273416292090b2f6bfda33f070cea325a1759df",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6273416292090b2f6bfda33f070cea325a1759df",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6273416292090b2f6bfda33f070cea325a1759df",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-15T17:54:32Z",
+          "commit_title": "Fix post edits not being forwarded as expected (#26936)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26936,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26936",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26936",
+          "state": "closed",
+          "merged_at": "2023-09-15T17:54:33Z",
+          "pr_title": "Fix post edits not being forwarded as expected",
+          "pr_body": "Fixes #26731\r\n\r\nThe decision whether to forward was based on the presence of a JSON-LD signature in the embedded object… but the signature is not on the embedded object but on the root activity.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": [
+            {
+              "number": 26731,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26731",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26731,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26731",
+          "state": "closed",
+          "issue_title": "Comment edits not propagating across instances as expected",
+          "issue_body": "### Steps to reproduce the problem\n\nImagine three users on three instances: User A on Instance A, who is mutually following User B from Instance B, and User C from Instance C who is mutually following with User B.  User A and User C are not following each other at all, nor is anyone from instance C following user A.\r\n\r\nSo the connection looks like...\r\nA <-> B <-> C\r\n...and there is no connection to User A from Instance C, thus making User A invisible to User C outside of the following interaction...\r\n\r\n1. User B makes a post on Instance B.\r\n2. User A responds to post from Instance A, then edits their own comment.\r\n3. User C, from Instance C, from which no one follows user A, looks at post by user A, and sees comment by user B.\r\n\n\n### Expected behaviour\n\nEdit from User A should proliferate to instant C, and be visible to user C\n\n### Actual behaviour\n\nEdit from User A does not proliferate to Instance C, so only the original post shows for User C\n\n### Detailed description\n\nAs described above, the edit to a comment should be proliferating, but is not.\n\n### Mastodon instance\n\nhttps://writing.exchange/@raccoon/110976535994429708\n\n### Mastodon version\n\nv4.1.6--ff3\n\n### Browser name and version\n\nChrome\n\n### Operating system\n\nAndroid\n\n### Technical details\n\nI think the operative part of this bug is that the post itself is being proliferated to a server which isn't following me, but the edit isn't similarly proliferated, so they see the version with the major typo, without the immediate edit.",
+          "labels": [
+            "bug",
+            "activitypub",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "04623e2f345c84091a85ebc15b28014dca0f59f7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/04623e2f345c84091a85ebc15b28014dca0f59f7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/04623e2f345c84091a85ebc15b28014dca0f59f7",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-18T06:34:04Z",
+          "commit_title": "Update babel monorepo to v7.22.20 (#26946)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26946,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26946",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26946",
+          "state": "closed",
+          "merged_at": "2023-09-18T06:34:05Z",
+          "pr_title": "Update babel monorepo to v7.22.20",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [@babel/core](https://babel.dev/docs/en/next/babel-core) ([source](https://togithub.com/babel/babel)) | [`7.22.19` -> `7.22.20`](https://renovatebot.com/diffs/npm/@babel%2fcore/7.22.19/7.22.20) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@babel%2fcore/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@babel%2fcore/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@babel%2fcore/7.22.19/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@babel%2fcore/7.22.19/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@babel/preset-env](https://babel.dev/docs/en/next/babel-preset-env) ([source](https://togithub.com/babel/babel)) | [`7.22.15` -> `7.22.20`](https://renovatebot.com/diffs/npm/@babel%2fpreset-env/7.22.15/7.22.20) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@babel%2fpreset-env/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@babel%2fpreset-env/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@babel%2fpreset-env/7.22.15/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@babel%2fpreset-env/7.22.15/7.22.20?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>babel/babel (@&#8203;babel/core)</summary>\n\n### [`v7.22.20`](https://togithub.com/babel/babel/blob/HEAD/CHANGELOG.md#v72220-2023-09-16)\n\n[Compare Source](https://togithub.com/babel/babel/compare/v7.22.19...v7.22.20)\n\n##### :house: Internal\n\n-   `babel-helper-validator-identifier`\n    -   [#&#8203;15973](https://togithub.com/babel/babel/pull/15973) Remove special-casing of U+200C and U+200D ([@&#8203;nicolo-ribaudo](https://togithub.com/nicolo-ribaudo))\n-   `babel-plugin-transform-dotall-regex`\n    -   [#&#8203;15974](https://togithub.com/babel/babel/pull/15974) Update Unicode test fixtures ([@&#8203;JLHwung](https://togithub.com/JLHwung))\n\n##### :leftwards_arrow_with_hook: Revert\n\n-   `babel-helper-remap-async-to-generator`, `babel-helper-wrap-function`, `babel-plugin-proposal-explicit-resource-management`, `babel-plugin-proposal-function-sent`, `babel-plugin-transform-async-generator-functions`, `babel-plugin-transform-async-to-generator`, `babel-plugin-transform-block-scoping`, `babel-plugin-transform-class-properties`, `babel-plugin-transform-classes`, `babel-plugin-transform-parameters`, `babel-plugin-transform-runtime`, `babel-preset-env`\n    -   [#&#8203;15979](https://togithub.com/babel/babel/pull/15979) Revert \"Improve output when wrapping functions\" ([@&#8203;jjonescz](https://togithub.com/jjonescz))\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about these updates again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8b5c61ae3a744fc847194fe784c5370c6208a012",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8b5c61ae3a744fc847194fe784c5370c6208a012",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8b5c61ae3a744fc847194fe784c5370c6208a012",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-18T06:52:49Z",
+          "commit_title": "Update formatjs monorepo (#26955)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26955,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26955",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26955",
+          "state": "closed",
+          "merged_at": "2023-09-18T06:52:50Z",
+          "pr_title": "Update formatjs monorepo",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [babel-plugin-formatjs](https://togithub.com/formatjs/formatjs) | [`10.5.5` -> `10.5.6`](https://renovatebot.com/diffs/npm/babel-plugin-formatjs/10.5.5/10.5.6) | [![age](https://developer.mend.io/api/mc/badges/age/npm/babel-plugin-formatjs/10.5.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/babel-plugin-formatjs/10.5.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/babel-plugin-formatjs/10.5.5/10.5.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/babel-plugin-formatjs/10.5.5/10.5.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [intl-messageformat](https://togithub.com/formatjs/formatjs) | [`10.5.2` -> `10.5.3`](https://renovatebot.com/diffs/npm/intl-messageformat/10.5.2/10.5.3) | [![age](https://developer.mend.io/api/mc/badges/age/npm/intl-messageformat/10.5.3?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/intl-messageformat/10.5.3?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/intl-messageformat/10.5.2/10.5.3?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/intl-messageformat/10.5.2/10.5.3?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [react-intl](https://formatjs.io/docs/react-intl) ([source](https://togithub.com/formatjs/formatjs)) | [`6.4.6` -> `6.4.7`](https://renovatebot.com/diffs/npm/react-intl/6.4.6/6.4.7) | [![age](https://developer.mend.io/api/mc/badges/age/npm/react-intl/6.4.7?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/react-intl/6.4.7?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/react-intl/6.4.6/6.4.7?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/react-intl/6.4.6/6.4.7?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>formatjs/formatjs (babel-plugin-formatjs)</summary>\n\n### [`v10.5.6`](https://togithub.com/formatjs/formatjs/releases/tag/babel-plugin-formatjs%4010.5.6)\n\n[Compare Source](https://togithub.com/formatjs/formatjs/compare/babel-plugin-formatjs@10.5.5...babel-plugin-formatjs@10.5.6)\n\n**Note:** Version bump only for package babel-plugin-formatjs\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n👻 **Immortal**: This PR will be recreated if closed unmerged. Get [config help](https://togithub.com/renovatebot/renovate/discussions) if that's undesired.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "392c07f2bf01743fdbf92abb555a4c558c7f4a31",
+          "html_url": "https://github.com/mastodon/mastodon/commit/392c07f2bf01743fdbf92abb555a4c558c7f4a31",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/392c07f2bf01743fdbf92abb555a4c558c7f4a31",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-18T07:37:29Z",
+          "commit_title": "Fix `Setting.authorized_fetch` not being properly taken into consideration (#26958)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26958,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26958",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26958",
+          "state": "closed",
+          "merged_at": "2023-09-18T07:37:29Z",
+          "pr_title": "Fix `Setting.authorized_fetch` not being properly taken into consideration",
+          "pr_body": "`Setting.authorized_fetch` is a boolean, so the comparison `== 'true'` was always false.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "893755f4cb8d88fc58e96f34b3bd30fa69365726",
+          "html_url": "https://github.com/mastodon/mastodon/commit/893755f4cb8d88fc58e96f34b3bd30fa69365726",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/893755f4cb8d88fc58e96f34b3bd30fa69365726",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-18T07:51:52Z",
+          "commit_title": "Fix error in Web UI when server rules cannot be fetched (#26957)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26957,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26957",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26957",
+          "state": "closed",
+          "merged_at": "2023-09-18T07:51:52Z",
+          "pr_title": "Fix error in Web UI when server rules cannot be fetched",
+          "pr_body": "Fixes #26947 (at least the client-side part)",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 26947,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26947",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26947,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26947",
+          "state": "closed",
+          "issue_title": "\" TypeError: i.get(...).isEmpty is not a function\" at \"about/index.jsx\"",
+          "issue_body": "### Steps to reproduce the problem\n\n1. I upgraded the instance to the version 4.2.0-rc1\r\n2. The main site loads but shows a 501 error \"isEmpty is not a function\" in the web console\n\n### Expected behaviour\n\nopen the home site\n\n### Actual behaviour\n\nserver error\n\n### Detailed description\n\nI upgraded the instance to the rc-1 and got a error that prevented the services to load (mastodon-streaming) the error was that ioredis was missing, that error was fixed by reinstalling nodeJS, deleting node_modules and re running \"yarn install\"  when I finally get it to work the site loads but shows this error message:\r\n\r\n```\r\nTypeError: i.get(...).isEmpty is not a function\r\nisEmpty (webpack:///app/javascript/mastodon/features/about/index.jsx:164:52)\r\nwi (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:3592:9)\r\ndi (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:3577:10)\r\nBc (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:1068:2)\r\nbd (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:5339:57)\r\nbd (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:5336:6)\r\nError(p (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:5325:19)\r\nXj (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:5115:84)\r\nlc.onCommitFiberUnmount (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:5136:31)\r\nfa (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:1927:89)\r\nd.hasOwnProperty (webpack:///node_modules/react-dom/cjs/react-dom.production.min.js:4519:386)\r\n```\r\n\r\nthe same message as [this other issue]( https://github.com/mastodon/mastodon/issues/28068) from today\r\n\r\nReinstalling yarn, ruby, node, npm and all packages doesn't change the problem, the error is the same after\n\n### Mastodon instance\n\nlaburo.social\n\n### Mastodon version\n\nv4.2.0-rc1\n\n### Browser name and version\n\nfirefox and chromium \n\n### Operating system\n\ndebian 9\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "bug",
+            "status/identified",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "4c1518a6f3b2b9b71833175bc7afc61cd6a95202",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4c1518a6f3b2b9b71833175bc7afc61cd6a95202",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4c1518a6f3b2b9b71833175bc7afc61cd6a95202",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-18T09:20:09Z",
+          "commit_title": "Fix Web UI making duplicate search queries when scrolling (#26959)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26959,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26959",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26959",
+          "state": "closed",
+          "merged_at": "2023-09-18T09:20:10Z",
+          "pr_title": "Fix Web UI making duplicate search queries when scrolling",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1b4902fabf1a43684552b3e5f57616174997b541",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1b4902fabf1a43684552b3e5f57616174997b541",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1b4902fabf1a43684552b3e5f57616174997b541",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2023-09-18T11:46:07Z",
+          "commit_title": "New Crowdin Translations (automated) (#26913)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26913,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26913",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26913",
+          "state": "closed",
+          "merged_at": "2023-09-18T11:46:08Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with Github Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in Github Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "200312e8bed0d91c576cabcdf2ffe0173778cccd",
+          "html_url": "https://github.com/mastodon/mastodon/commit/200312e8bed0d91c576cabcdf2ffe0173778cccd",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/200312e8bed0d91c576cabcdf2ffe0173778cccd",
+          "author_login": "xrobau",
+          "commit_author_date": "2023-09-18T15:41:32Z",
+          "commit_title": "Fix crash when viewing a moderation appeal and the moderator account has been deleted (#25900)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 25900,
+          "html_url": "https://github.com/mastodon/mastodon/pull/25900",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/25900",
+          "state": "closed",
+          "merged_at": "2023-09-18T15:41:33Z",
+          "pr_title": "Fix crash when viewing a moderation appeal and the moderator account has been deleted",
+          "pr_body": "Fixes #25899\r\n\r\nIf the reporting account is deleted, the account_id is nulled by the constraint. However, the view wasn't able to understand that.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 25899,
+              "html_url": "https://github.com/mastodon/mastodon/issues/25899",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 25899,
+          "html_url": "https://github.com/mastodon/mastodon/issues/25899",
+          "state": "closed",
+          "issue_title": "account_warnings.account_id is nulled when the reporter account is deleted",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\nWhen trying to view the admin page of the account below, an error is generated:\r\n\r\n```\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] ActionView::Template::Error (undefined method `username' for nil:NilClass):\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]      5:         = fa_icon 'warning'\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]      6:     .log-entry__content\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]      7:       .log-entry__title\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]      8:         = t(account_warning.action, scope: 'admin.strikes.actions', name: content_tag(:span, account_warning.account.username, class: 'username'), target: content_tag(:span, account_warning.target_account.pretty_acct, class: 'target')).html_safe\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]      9:       .log-entry__timestamp\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]     10:         %time.formatted{ datetime: account_warning.created_at.iso8601 }\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]     11:           = l(account_warning.created_at)\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd]\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] app/views/admin/account_warnings/_account_warning.html.haml:8\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] app/views/admin/account_warnings/_account_warning.html.haml:1\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] app/views/admin/accounts/show.html.haml:256\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] app/controllers/concerns/localized.rb:11:in `set_locale'\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] lib/mastodon/rack_middleware.rb:9:in `call'\r\n[ffc136ca-78d5-49f8-895d-19238e1b94bd] lib/public_file_server_middleware.rb:18:in `call'\r\n```\r\nhttps://github.com/mastodon/mastodon/blob/main/app/views/admin/account_warnings/_account_warning.html.haml#L8\r\n\r\nQuerying the account_warnings table, the reporter ID has been nulled:\r\n```\r\nmastodon=> select id,account_id,target_account_id,created_at from account_warnings where target_account_id=109367766060320746;\r\n id  | account_id | target_account_id  |         created_at\r\n-----+------------+--------------------+----------------------------\r\n 113 |            | 109367766060320746 | 2022-11-19 03:02:06.634367\r\n 114 |            | 109367766060320746 | 2022-11-19 03:31:17.633006\r\n 110 |            | 109367766060320746 | 2022-11-19 02:41:19.739124\r\n(3 rows)\r\n\r\nmastodon=>\r\n```\r\n\r\nIt appears that the foreign key here nullifies the account_id when the reporting account is deleted\r\n\r\nhttps://github.com/mastodon/mastodon/blob/main/db/schema.rb#L1163\r\n\r\nThere are currently 315 warnings WITH a null account_id, and 322 without, so it appears to have been happening for a while, but stopped in feb.\r\n\r\n```\r\nmastodon=> select max(created_at), min(created_at) from account_warnings where account_id is null;\r\n            max             |            min\r\n----------------------------+----------------------------\r\n 2023-02-16 06:12:50.031092 | 2022-11-16 09:56:26.437818\r\n(1 row)\r\n\r\nmastodon=>\r\n```\r\n\r\n\r\n### Expected behaviour\r\n\r\nNot have crashed\r\n\r\n### Actual behaviour\r\n\r\nCrashed\r\n\r\n### Detailed description\r\n\r\nI suspect this was brought upon by running an expire in (I assume) Feburary.\r\n\r\nAs the constraint explicitly says to null the account_id col, the view should be able to handle account_warning.account being null without crashing.\r\n\r\nMy workaround for the moment will just be to set the account_id to be target_account_id, but that won't fix it for someone else who runs an expire and then has no idea why they can't see the admin page of random accounts.\r\n\r\n\r\n### Specifications\r\n\r\nv4.1.4 ",
+          "labels": [
+            "bug",
+            "status/confirmed"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "67eaaa4b907add5d2e7047a51d1bac10354c77c9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/67eaaa4b907add5d2e7047a51d1bac10354c77c9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/67eaaa4b907add5d2e7047a51d1bac10354c77c9",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2023-09-19T08:41:48Z",
+          "commit_title": "New Crowdin Translations (automated) (#26966)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26966,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26966",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26966",
+          "state": "closed",
+          "merged_at": "2023-09-19T08:41:49Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with Github Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in Github Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6f9f9011537266a48aa4220f052120a2edbf82d2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6f9f9011537266a48aa4220f052120a2edbf82d2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6f9f9011537266a48aa4220f052120a2edbf82d2",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-19T09:03:42Z",
+          "commit_title": "Update dependency postcss to v8.4.30 (#26964)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26964,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26964",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26964",
+          "state": "closed",
+          "merged_at": "2023-09-19T09:03:43Z",
+          "pr_title": "Update dependency postcss to v8.4.30",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [postcss](https://postcss.org/) ([source](https://togithub.com/postcss/postcss)) | [`8.4.29` -> `8.4.30`](https://renovatebot.com/diffs/npm/postcss/8.4.29/8.4.30) | [![age](https://developer.mend.io/api/mc/badges/age/npm/postcss/8.4.30?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/postcss/8.4.30?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/postcss/8.4.29/8.4.30?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/postcss/8.4.29/8.4.30?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>postcss/postcss (postcss)</summary>\n\n### [`v8.4.30`](https://togithub.com/postcss/postcss/blob/HEAD/CHANGELOG.md#8430)\n\n[Compare Source](https://togithub.com/postcss/postcss/compare/8.4.29...8.4.30)\n\n-   Improved source map performance (by Romain Menke).\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 8430,
+              "html_url": "https://github.com/head/changelog.md/issues/8430",
+              "relationship": "references"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 8430,
+          "html_url": "https://github.com/mastodon/mastodon/issues/8430",
+          "state": "closed",
+          "issue_title": "Delay email notifications (cause of delete & redraft)",
+          "issue_body": "Delete & redraft is a killer feature, but there is one small annoyance. When using email notifications for mentions and someone used delete & redraft, you receive the email 2 or more times. It think the most cases can be solved with queuing and delaying email notifications for ~2 minutes. When a delete & redraft is used, the relevant email notification can then be removed before it's send.\r\n\r\n* * * *\r\n\r\n- [x] I searched or browsed the repo’s other issues to ensure this is not a duplicate.\r\n",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "c6a535a1974a1707d6621a5603b4cb028c4a3510",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c6a535a1974a1707d6621a5603b4cb028c4a3510",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c6a535a1974a1707d6621a5603b4cb028c4a3510",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-19T09:16:45Z",
+          "commit_title": "Update dependency node to 20.7 (#26963)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26963,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26963",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26963",
+          "state": "closed",
+          "merged_at": "2023-09-19T09:16:45Z",
+          "pr_title": "Update dependency node to 20.7",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Update | Change |\n|---|---|---|\n| [node](https://togithub.com/nodejs/node) | minor | `20.6` -> `20.7` |\n\n---\n\n### Release Notes\n\n<details>\n<summary>nodejs/node (node)</summary>\n\n### [`v20.7.0`](https://togithub.com/nodejs/node/releases/tag/v20.7.0): 2023-09-18, Version 20.7.0 (Current), @&#8203;UlisesGascon\n\n[Compare Source](https://togithub.com/nodejs/node/compare/v20.6.1...v20.7.0)\n\n##### Notable Changes\n\n-   \\[[`022f1b70c1`](https://togithub.com/nodejs/node/commit/022f1b70c1)] - **src**: support multiple `--env-file` declarations (Yagiz Nizipli) [#&#8203;49542](https://togithub.com/nodejs/node/pull/49542)\n-   \\[[`4a1d1cad61`](https://togithub.com/nodejs/node/commit/4a1d1cad61)] - **crypto**: update root certificates to NSS 3.93 (Node.js GitHub Bot) [#&#8203;49341](https://togithub.com/nodejs/node/pull/49341)\n-   \\[[`a1a65f593c`](https://togithub.com/nodejs/node/commit/a1a65f593c)] - **deps**: upgrade npm to 10.1.0 (npm team) [#&#8203;49570](https://togithub.com/nodejs/node/pull/49570)\n-   \\[[`6c2480cad9`](https://togithub.com/nodejs/node/commit/6c2480cad9)] - **(SEMVER-MINOR)** **deps**: upgrade npm to 10.0.0 (npm team) [#&#8203;49423](https://togithub.com/nodejs/node/pull/49423)\n-   \\[[`bef900e56b`](https://togithub.com/nodejs/node/commit/bef900e56b)] - **doc**: move and rename loaders section (Geoffrey Booth) [#&#8203;49261](https://togithub.com/nodejs/node/pull/49261)\n-   \\[[`db4ce8a593`](https://togithub.com/nodejs/node/commit/db4ce8a593)] - **doc**: add release key for Ulises Gascon (Ulises Gascón) [#&#8203;49196](https://togithub.com/nodejs/node/pull/49196)\n-   \\[[`11c85ffa98`](https://togithub.com/nodejs/node/commit/11c85ffa98)] - **(SEMVER-MINOR)** **lib**: add api to detect whether source-maps are enabled (翠 / green) [#&#8203;46391](https://togithub.com/nodejs/node/pull/46391)\n-   \\[[`ec51e25ed7`](https://togithub.com/nodejs/node/commit/ec51e25ed7)] - **src,permission**: add multiple allow-fs-\\* flags (Carlos Espa) [#&#8203;49047](https://togithub.com/nodejs/node/pull/49047)\n-   \\[[`efdc95fbc0`](https://togithub.com/nodejs/node/commit/efdc95fbc0)] - **(SEMVER-MINOR)** **test_runner**: expose location of tests (Colin Ihrig) [#&#8203;48975](https://togithub.com/nodejs/node/pull/48975)\n\n##### Commits\n\n-   \\[[`e84515594e`](https://togithub.com/nodejs/node/commit/e84515594e)] - **benchmark**: use `tmpdir.resolve()` (Livia Medeiros) [#&#8203;49137](https://togithub.com/nodejs/node/pull/49137)\n-   \\[[`f37444e896`](https://togithub.com/nodejs/node/commit/f37444e896)] - **bootstrap**: build code cache from deserialized isolate (Joyee Cheung) [#&#8203;49099](https://togithub.com/nodejs/node/pull/49099)\n-   \\[[`af6dc1754d`](https://togithub.com/nodejs/node/commit/af6dc1754d)] - **bootstrap**: do not generate code cache in an unfinalized isolate (Joyee Cheung) [#&#8203;49108](https://togithub.com/nodejs/node/pull/49108)\n-   \\[[`cade5716df`](https://togithub.com/nodejs/node/commit/cade5716df)] - **build**: add symlink to `compile_commands.json` file if needed (Juan José) [#&#8203;49260](https://togithub.com/nodejs/node/pull/49260)\n-   \\[[`34a2590b05`](https://togithub.com/nodejs/node/commit/34a2590b05)] - **build**: expand when we run internet tests (Michael Dawson) [#&#8203;49218](https://togithub.com/nodejs/node/pull/49218)\n-   \\[[`f637fd46ab`](https://togithub.com/nodejs/node/commit/f637fd46ab)] - **build**: fix typo `libray` -> `library` (configure.py) (michalbiesek) [#&#8203;49106](https://togithub.com/nodejs/node/pull/49106)\n-   \\[[`ef3d8dd493`](https://togithub.com/nodejs/node/commit/ef3d8dd493)] - **crypto**: remove webcrypto EdDSA key checks and properties (Filip Skokan) [#&#8203;49408](https://togithub.com/nodejs/node/pull/49408)\n-   \\[[`4a1d1cad61`](https://togithub.com/nodejs/node/commit/4a1d1cad61)] - **crypto**: update root certificates to NSS 3.93 (Node.js GitHub Bot) [#&#8203;49341](https://togithub.com/nodejs/node/pull/49341)\n-   \\[[`7eb10a38ea`](https://togithub.com/nodejs/node/commit/7eb10a38ea)] - **crypto**: remove getDefaultEncoding() (Tobias Nießen) [#&#8203;49170](https://togithub.com/nodejs/node/pull/49170)\n-   \\[[`772496c030`](https://togithub.com/nodejs/node/commit/772496c030)] - **crypto**: remove default encoding from DiffieHellman (Tobias Nießen) [#&#8203;49169](https://togithub.com/nodejs/node/pull/49169)\n-   \\[[`c795083232`](https://togithub.com/nodejs/node/commit/c795083232)] - **crypto**: remove default encoding from Hash/Hmac (Tobias Nießen) [#&#8203;49167](https://togithub.com/nodejs/node/pull/49167)\n-   \\[[`08197aa010`](https://togithub.com/nodejs/node/commit/08197aa010)] - **crypto**: remove default encoding from sign/verify (Tobias Nießen) [#&#8203;49145](https://togithub.com/nodejs/node/pull/49145)\n-   \\[[`a1a65f593c`](https://togithub.com/nodejs/node/commit/a1a65f593c)] - **deps**: upgrade npm to 10.1.0 (npm team) [#&#8203;49570](https://togithub.com/nodejs/node/pull/49570)\n-   \\[[`6c2480cad9`](https://togithub.com/nodejs/node/commit/6c2480cad9)] - **(SEMVER-MINOR)** **deps**: upgrade npm to 10.0.0 (npm team) [#&#8203;49423](https://togithub.com/nodejs/node/pull/49423)\n-   \\[[`84195d9584`](https://togithub.com/nodejs/node/commit/84195d9584)] - **deps**: add missing thread-common.c in uv.gyp (Santiago Gimeno) [#&#8203;49410](https://togithub.com/nodejs/node/pull/49410)\n-   \\[[`5b70b68b3d`](https://togithub.com/nodejs/node/commit/5b70b68b3d)] - **deps**: V8: cherry-pick [`eadaef5`](https://togithub.com/nodejs/node/commit/eadaef581c29) (Adam Majer) [#&#8203;49401](https://togithub.com/nodejs/node/pull/49401)\n-   \\[[`fe34d632e8`](https://togithub.com/nodejs/node/commit/fe34d632e8)] - **deps**: update zlib to 1.2.13.1-motley-f5fd0ad (Node.js GitHub Bot) [#&#8203;49252](https://togithub.com/nodejs/node/pull/49252)\n-   \\[[`db4ce8a593`](https://togithub.com/nodejs/node/commit/db4ce8a593)] - **doc**: add release key for Ulises Gascon (Ulises Gascón) [#&#8203;49196](https://togithub.com/nodejs/node/pull/49196)\n-   \\[[`e5f3a694cf`](https://togithub.com/nodejs/node/commit/e5f3a694cf)] - **doc**: fix node-api call example (Chengzhong Wu) [#&#8203;49395](https://togithub.com/nodejs/node/pull/49395)\n-   \\[[`021345a724`](https://togithub.com/nodejs/node/commit/021345a724)] - **doc**: add news issue for Diagnostics WG (Michael Dawson) [#&#8203;49306](https://togithub.com/nodejs/node/pull/49306)\n-   \\[[`f82347266b`](https://togithub.com/nodejs/node/commit/f82347266b)] - **doc**: clarify policy expectations (Rafael Gonzaga) [#&#8203;48947](https://togithub.com/nodejs/node/pull/48947)\n-   \\[[`73cfd9c895`](https://togithub.com/nodejs/node/commit/73cfd9c895)] - **doc**: add print results for examples in `StringDecoder` (Jungku Lee) [#&#8203;49326](https://togithub.com/nodejs/node/pull/49326)\n-   \\[[`63ab591416`](https://togithub.com/nodejs/node/commit/63ab591416)] - **doc**: update outdated reference to NIST SP 800-131A (Tobias Nießen) [#&#8203;49316](https://togithub.com/nodejs/node/pull/49316)\n-   \\[[`935dfe2afd`](https://togithub.com/nodejs/node/commit/935dfe2afd)] - **doc**: use `cjs` as block code's type in `MockTimers` (Deokjin Kim) [#&#8203;49309](https://togithub.com/nodejs/node/pull/49309)\n-   \\[[`7c0cd2fb87`](https://togithub.com/nodejs/node/commit/7c0cd2fb87)] - **doc**: update `options.filter` description for `fs.cp` (Shubham Pandey) [#&#8203;49289](https://togithub.com/nodejs/node/pull/49289)\n-   \\[[`f72e79ea67`](https://togithub.com/nodejs/node/commit/f72e79ea67)] - **doc**: add riscv64 to list of architectures (Stewart X Addison) [#&#8203;49284](https://togithub.com/nodejs/node/pull/49284)\n-   \\[[`d19c710064`](https://togithub.com/nodejs/node/commit/d19c710064)] - **doc**: avoid \"not currently recommended\" (Tobias Nießen) [#&#8203;49300](https://togithub.com/nodejs/node/pull/49300)\n-   \\[[`ae656101c0`](https://togithub.com/nodejs/node/commit/ae656101c0)] - **doc**: update module hooks docs (Geoffrey Booth) [#&#8203;49265](https://togithub.com/nodejs/node/pull/49265)\n-   \\[[`fefbdb92f2`](https://togithub.com/nodejs/node/commit/fefbdb92f2)] - **doc**: modify param description for end(),write() in `StringDecoder` (Jungku Lee) [#&#8203;49285](https://togithub.com/nodejs/node/pull/49285)\n-   \\[[`59e66a1ebe`](https://togithub.com/nodejs/node/commit/59e66a1ebe)] - **doc**: use NODE_API_SUPPORTED_VERSION_MAX in release doc (Cheng Zhao) [#&#8203;49268](https://togithub.com/nodejs/node/pull/49268)\n-   \\[[`ac3b88449b`](https://togithub.com/nodejs/node/commit/ac3b88449b)] - **doc**: fix typo in `stream.finished` documentation (Antoine du Hamel) [#&#8203;49271](https://togithub.com/nodejs/node/pull/49271)\n-   \\[[`7428ebf6c3`](https://togithub.com/nodejs/node/commit/7428ebf6c3)] - **doc**: update description for `percent_encode` sets in `WHATWG API` (Jungku Lee) [#&#8203;49258](https://togithub.com/nodejs/node/pull/49258)\n-   \\[[`bef900e56b`](https://togithub.com/nodejs/node/commit/bef900e56b)] - **doc**: move and rename loaders section (Geoffrey Booth) [#&#8203;49261](https://togithub.com/nodejs/node/pull/49261)\n-   \\[[`a22e0d9696`](https://togithub.com/nodejs/node/commit/a22e0d9696)] - **doc**: clarify use of Uint8Array for n-api (Fedor Indutny) [#&#8203;48742](https://togithub.com/nodejs/node/pull/48742)\n-   \\[[`1704f24cb9`](https://togithub.com/nodejs/node/commit/1704f24cb9)] - **doc**: add signature for `module.register` (Geoffrey Booth) [#&#8203;49251](https://togithub.com/nodejs/node/pull/49251)\n-   \\[[`5a363bb01b`](https://togithub.com/nodejs/node/commit/5a363bb01b)] - **doc**: caveat unavailability of `import.meta.resolve` in custom loaders (Jacob Smith) [#&#8203;49242](https://togithub.com/nodejs/node/pull/49242)\n-   \\[[`8101f2b259`](https://togithub.com/nodejs/node/commit/8101f2b259)] - **doc**: use same name in the doc as in the code (Hyunjin Kim) [#&#8203;49216](https://togithub.com/nodejs/node/pull/49216)\n-   \\[[`edf278d60d`](https://togithub.com/nodejs/node/commit/edf278d60d)] - **doc**: add notable-change label mention to PR template (Rafael Gonzaga) [#&#8203;49188](https://togithub.com/nodejs/node/pull/49188)\n-   \\[[`3df2251a6a`](https://togithub.com/nodejs/node/commit/3df2251a6a)] - **doc**: add h1 summary to security release process (Rafael Gonzaga) [#&#8203;49112](https://togithub.com/nodejs/node/pull/49112)\n-   \\[[`9fcd99a744`](https://togithub.com/nodejs/node/commit/9fcd99a744)] - **doc**: update to semver-minor releases by default (Rafael Gonzaga) [#&#8203;49175](https://togithub.com/nodejs/node/pull/49175)\n-   \\[[`777931f499`](https://togithub.com/nodejs/node/commit/777931f499)] - **doc**: fix wording in napi_async_init (Tobias Nießen) [#&#8203;49180](https://togithub.com/nodejs/node/pull/49180)\n-   \\[[`f45c8e10c0`](https://togithub.com/nodejs/node/commit/f45c8e10c0)] - **doc,test**: add known path resolution issue in permission model (Tobias Nießen) [#&#8203;49155](https://togithub.com/nodejs/node/pull/49155)\n-   \\[[`a6cfea3f74`](https://togithub.com/nodejs/node/commit/a6cfea3f74)] - **esm**: align sync and async load implementations (Antoine du Hamel) [#&#8203;49152](https://togithub.com/nodejs/node/pull/49152)\n-   \\[[`9fac310b33`](https://togithub.com/nodejs/node/commit/9fac310b33)] - **fs**: add the options param description in openAsBlob() (Yeseul Lee) [#&#8203;49308](https://togithub.com/nodejs/node/pull/49308)\n-   \\[[`92772a8175`](https://togithub.com/nodejs/node/commit/92772a8175)] - **fs**: remove redundant code in readableWebStream() (Deokjin Kim) [#&#8203;49298](https://togithub.com/nodejs/node/pull/49298)\n-   \\[[`88ba79b083`](https://togithub.com/nodejs/node/commit/88ba79b083)] - **fs**: make sure to write entire buffer (Robert Nagy) [#&#8203;49211](https://togithub.com/nodejs/node/pull/49211)\n-   \\[[`11c85ffa98`](https://togithub.com/nodejs/node/commit/11c85ffa98)] - **(SEMVER-MINOR)** **lib**: add api to detect whether source-maps are enabled (翠 / green) [#&#8203;46391](https://togithub.com/nodejs/node/pull/46391)\n-   \\[[`c12711ebfe`](https://togithub.com/nodejs/node/commit/c12711ebfe)] - **lib**: implement WeakReference on top of JS WeakRef (Joyee Cheung) [#&#8203;49053](https://togithub.com/nodejs/node/pull/49053)\n-   \\[[`9a0891f88d`](https://togithub.com/nodejs/node/commit/9a0891f88d)] - **meta**: bump step-security/harden-runner from 2.5.0 to 2.5.1 (dependabot\\[bot]) [#&#8203;49435](https://togithub.com/nodejs/node/pull/49435)\n-   \\[[`ae67f41ef1`](https://togithub.com/nodejs/node/commit/ae67f41ef1)] - **meta**: bump actions/checkout from 3.5.3 to 3.6.0 (dependabot\\[bot]) [#&#8203;49436](https://togithub.com/nodejs/node/pull/49436)\n-   \\[[`71b4411fb2`](https://togithub.com/nodejs/node/commit/71b4411fb2)] - **meta**: bump actions/setup-node from 3.7.0 to 3.8.1 (dependabot\\[bot]) [#&#8203;49434](https://togithub.com/nodejs/node/pull/49434)\n-   \\[[`83b7d3a395`](https://togithub.com/nodejs/node/commit/83b7d3a395)] - **meta**: remove modules team from CODEOWNERS (Benjamin Gruenbaum) [#&#8203;49412](https://togithub.com/nodejs/node/pull/49412)\n-   \\[[`81ff68c45c`](https://togithub.com/nodejs/node/commit/81ff68c45c)] - **meta**: move one or more collaborators to emeritus (Node.js GitHub Bot) [#&#8203;49264](https://togithub.com/nodejs/node/pull/49264)\n-   \\[[`ab975233cc`](https://togithub.com/nodejs/node/commit/ab975233cc)] - **meta**: mention nodejs/tsc when changing GH templates (Rafael Gonzaga) [#&#8203;49189](https://togithub.com/nodejs/node/pull/49189)\n-   \\[[`ceaa5494de`](https://togithub.com/nodejs/node/commit/ceaa5494de)] - **meta**: add test/reporters to codeowners (Chemi Atlow) [#&#8203;49186](https://togithub.com/nodejs/node/pull/49186)\n-   \\[[`de0a51b7cf`](https://togithub.com/nodejs/node/commit/de0a51b7cf)] - **net**: improve performance of isIPv4 and isIPv6 (Uzlopak) [#&#8203;49568](https://togithub.com/nodejs/node/pull/49568)\n-   \\[[`8d0913bf95`](https://togithub.com/nodejs/node/commit/8d0913bf95)] - **net**: use asserts in JS Socket Stream to catch races in future (Tim Perry) [#&#8203;49400](https://togithub.com/nodejs/node/pull/49400)\n-   \\[[`2486836a7d`](https://togithub.com/nodejs/node/commit/2486836a7d)] - **net**: fix crash due to simultaneous close/shutdown on JS Stream Sockets (Tim Perry) [#&#8203;49400](https://togithub.com/nodejs/node/pull/49400)\n-   \\[[`7a808340cd`](https://togithub.com/nodejs/node/commit/7a808340cd)] - **node-api**: fix compiler warning in node_api.h (Michael Graeb) [#&#8203;49103](https://togithub.com/nodejs/node/pull/49103)\n-   \\[[`30f26a99f4`](https://togithub.com/nodejs/node/commit/30f26a99f4)] - **permission**: ensure to resolve path when calling mkdtemp (RafaelGSS) [nodejs-private/node-private#440](https://togithub.com/nodejs-private/node-private/pull/440)\n-   \\[[`5051c75a5b`](https://togithub.com/nodejs/node/commit/5051c75a5b)] - **policy**: fix path to URL conversion (Antoine du Hamel) [#&#8203;49133](https://togithub.com/nodejs/node/pull/49133)\n-   \\[[`173aed4757`](https://togithub.com/nodejs/node/commit/173aed4757)] - **report**: fix recent coverity warning (Michael Dawson) [#&#8203;48954](https://togithub.com/nodejs/node/pull/48954)\n-   \\[[`d7ff78b442`](https://togithub.com/nodejs/node/commit/d7ff78b442)] - **sea**: generate code cache with deserialized isolate (Joyee Cheung) [#&#8203;49226](https://togithub.com/nodejs/node/pull/49226)\n-   \\[[`022f1b70c1`](https://togithub.com/nodejs/node/commit/022f1b70c1)] - **src**: support multiple `--env-file` declarations (Yagiz Nizipli) [#&#8203;49542](https://togithub.com/nodejs/node/pull/49542)\n-   \\[[`154b1c2115`](https://togithub.com/nodejs/node/commit/154b1c2115)] - **src**: don't overwrite environment from .env file (Phil Nash) [#&#8203;49424](https://togithub.com/nodejs/node/pull/49424)\n-   \\[[`dc4de1c69b`](https://togithub.com/nodejs/node/commit/dc4de1c69b)] - **src**: modify code for empty string (pluris) [#&#8203;49336](https://togithub.com/nodejs/node/pull/49336)\n-   \\[[`701c46f967`](https://togithub.com/nodejs/node/commit/701c46f967)] - **src**: remove unused PromiseWrap-related code (Joyee Cheung) [#&#8203;49335](https://togithub.com/nodejs/node/pull/49335)\n-   \\[[`4a094dc7af`](https://togithub.com/nodejs/node/commit/4a094dc7af)] - **src**: rename IsAnyByteSource to IsAnyBufferSource (Tobias Nießen) [#&#8203;49346](https://togithub.com/nodejs/node/pull/49346)\n-   \\[[`55d6649175`](https://togithub.com/nodejs/node/commit/55d6649175)] - **src**: support snapshot deserialization in RAIIIsolate (Joyee Cheung) [#&#8203;49226](https://togithub.com/nodejs/node/pull/49226)\n-   \\[[`dc092864ef`](https://togithub.com/nodejs/node/commit/dc092864ef)] - **src**: remove unused function `GetName()` in node_perf (Jungku Lee) [#&#8203;49244](https://togithub.com/nodejs/node/pull/49244)\n-   \\[[`f2552a410e`](https://togithub.com/nodejs/node/commit/f2552a410e)] - **src**: use ARES_SUCCESS instead of 0 (Jungku Lee) [#&#8203;49048](https://togithub.com/nodejs/node/pull/49048)\n-   \\[[`4a9ae31519`](https://togithub.com/nodejs/node/commit/4a9ae31519)] - **src**: add a condition if the argument of `DomainToUnicode` is empty (Jungku Lee) [#&#8203;49097](https://togithub.com/nodejs/node/pull/49097)\n-   \\[[`f460362cdf`](https://togithub.com/nodejs/node/commit/f460362cdf)] - **src**: remove C++ WeakReference implementation (Joyee Cheung) [#&#8203;49053](https://togithub.com/nodejs/node/pull/49053)\n-   \\[[`2a35383b3e`](https://togithub.com/nodejs/node/commit/2a35383b3e)] - **src**: use per-realm GetBindingData() wherever applicable (Joyee Cheung) [#&#8203;49007](https://togithub.com/nodejs/node/pull/49007)\n-   \\[[`184bbddcf5`](https://togithub.com/nodejs/node/commit/184bbddcf5)] - **src**: add per-realm GetBindingData() method (Joyee Cheung) [#&#8203;49007](https://togithub.com/nodejs/node/pull/49007)\n-   \\[[`e9946885f9`](https://togithub.com/nodejs/node/commit/e9946885f9)] - **src**: serialize both BaseObject slots (Joyee Cheung) [#&#8203;48996](https://togithub.com/nodejs/node/pull/48996)\n-   \\[[`ec51e25ed7`](https://togithub.com/nodejs/node/commit/ec51e25ed7)] - **src,permission**: add multiple allow-fs-\\* flags (Carlos Espa) [#&#8203;49047](https://togithub.com/nodejs/node/pull/49047)\n-   \\[[`8aac95de4b`](https://togithub.com/nodejs/node/commit/8aac95de4b)] - **stream**: improve tee perf by reduce `ReflectConstruct` usages (Raz Luvaton) [#&#8203;49546](https://togithub.com/nodejs/node/pull/49546)\n-   \\[[`0eea7fd8fb`](https://togithub.com/nodejs/node/commit/0eea7fd8fb)] - **stream**: use Buffer.from when constructor is a Buffer (Matthew Aitken) [#&#8203;49250](https://togithub.com/nodejs/node/pull/49250)\n-   \\[[`b961d9bd52`](https://togithub.com/nodejs/node/commit/b961d9bd52)] - **stream**: add `highWaterMark` for the map operator (Raz Luvaton) [#&#8203;49249](https://togithub.com/nodejs/node/pull/49249)\n-   \\[[`ca1384166d`](https://togithub.com/nodejs/node/commit/ca1384166d)] - **test**: fix warning for comment in embedtest (Jungku Lee) [#&#8203;49416](https://togithub.com/nodejs/node/pull/49416)\n-   \\[[`2a35782809`](https://togithub.com/nodejs/node/commit/2a35782809)] - **test**: simplify test-crypto-dh-group-setters (Tobias Nießen) [#&#8203;49404](https://togithub.com/nodejs/node/pull/49404)\n-   \\[[`6740f3c209`](https://togithub.com/nodejs/node/commit/6740f3c209)] - **test**: verify dynamic import call with absolute path strings (Chengzhong Wu) [#&#8203;49275](https://togithub.com/nodejs/node/pull/49275)\n-   \\[[`6ed47bd8fb`](https://togithub.com/nodejs/node/commit/6ed47bd8fb)] - **test**: reduce length in crypto keygen tests (Joyee Cheung) [#&#8203;49221](https://togithub.com/nodejs/node/pull/49221)\n-   \\[[`4faa30c553`](https://togithub.com/nodejs/node/commit/4faa30c553)] - **test**: split JWK async elliptic curve keygen tests (Joyee Cheung) [#&#8203;49221](https://togithub.com/nodejs/node/pull/49221)\n-   \\[[`e04a2603d8`](https://togithub.com/nodejs/node/commit/e04a2603d8)] - **test**: split test-crypto-keygen.js (Joyee Cheung) [#&#8203;49221](https://togithub.com/nodejs/node/pull/49221)\n-   \\[[`0d23c1d4ce`](https://togithub.com/nodejs/node/commit/0d23c1d4ce)] - **test**: rename test-crypto-modp1-error (Tobias Nießen) [#&#8203;49348](https://togithub.com/nodejs/node/pull/49348)\n-   \\[[`48e41569e2`](https://togithub.com/nodejs/node/commit/48e41569e2)] - **test**: migrate message source map tests from Python to JS (Yiyun Lei) [#&#8203;49238](https://togithub.com/nodejs/node/pull/49238)\n-   \\[[`a11e64e09c`](https://togithub.com/nodejs/node/commit/a11e64e09c)] - **test**: fix compiler warning in NodeCryptoEnv (Tobias Nießen) [#&#8203;49206](https://togithub.com/nodejs/node/pull/49206)\n-   \\[[`345543938f`](https://togithub.com/nodejs/node/commit/345543938f)] - **test**: handle EUNATCH (Abdirahim Musse) [#&#8203;48050](https://togithub.com/nodejs/node/pull/48050)\n-   \\[[`e391f4b197`](https://togithub.com/nodejs/node/commit/e391f4b197)] - **test**: use `tmpdir.resolve()` (Livia Medeiros) [#&#8203;49136](https://togithub.com/nodejs/node/pull/49136)\n-   \\[[`910378f93f`](https://togithub.com/nodejs/node/commit/910378f93f)] - **test**: reduce flakiness of `test-esm-loader-hooks` (Antoine du Hamel) [#&#8203;49248](https://togithub.com/nodejs/node/pull/49248)\n-   \\[[`4a85f70462`](https://togithub.com/nodejs/node/commit/4a85f70462)] - **test**: add spawnSyncAndExit() and spawnSyncAndExitWithoutError() (Joyee Cheung) [#&#8203;49200](https://togithub.com/nodejs/node/pull/49200)\n-   \\[[`9610008b79`](https://togithub.com/nodejs/node/commit/9610008b79)] - **test**: make test-perf-hooks more robust and work with workers (Joyee Cheung) [#&#8203;49197](https://togithub.com/nodejs/node/pull/49197)\n-   \\[[`dc8fff9a75`](https://togithub.com/nodejs/node/commit/dc8fff9a75)] - **test**: use gcUntil() in test-v8-serialize-leak (Joyee Cheung) [#&#8203;49168](https://togithub.com/nodejs/node/pull/49168)\n-   \\[[`ca9f801332`](https://togithub.com/nodejs/node/commit/ca9f801332)] - **test**: make WeakReference tests robust (Joyee Cheung) [#&#8203;49053](https://togithub.com/nodejs/node/pull/49053)\n-   \\[[`de103a4686`](https://togithub.com/nodejs/node/commit/de103a4686)] - **test**: add test for effect of UV_THREADPOOL_SIZE (Tobias Nießen) [#&#8203;49165](https://togithub.com/nodejs/node/pull/49165)\n-   \\[[`47d24f144b`](https://togithub.com/nodejs/node/commit/47d24f144b)] - **test**: use expectSyncExit{WithErrors} in snapshot tests (Joyee Cheung) [#&#8203;49020](https://togithub.com/nodejs/node/pull/49020)\n-   \\[[`c441f5a097`](https://togithub.com/nodejs/node/commit/c441f5a097)] - **test**: add expectSyncExitWithoutError() and expectSyncExit() utils (Joyee Cheung) [#&#8203;49020](https://togithub.com/nodejs/node/pull/49020)\n-   \\[[`4d184b5251`](https://togithub.com/nodejs/node/commit/4d184b5251)] - **test**: remove --no-warnings flag in test_runner fixtures (Raz Luvaton) [#&#8203;48989](https://togithub.com/nodejs/node/pull/48989)\n-   \\[[`25e967a90b`](https://togithub.com/nodejs/node/commit/25e967a90b)] - **test**: reorder test files fixtures for better understanding (Raz Luvaton) [#&#8203;48787](https://togithub.com/nodejs/node/pull/48787)\n-   \\[[`fac56dbcc0`](https://togithub.com/nodejs/node/commit/fac56dbcc0)] - **test,benchmark**: use `tmpdir.fileURL()` (Livia Medeiros) [#&#8203;49138](https://togithub.com/nodejs/node/pull/49138)\n-   \\[[`36763fa532`](https://togithub.com/nodejs/node/commit/36763fa532)] - **test_runner**: preserve original property descriptor (Erick Wendel) [#&#8203;49433](https://togithub.com/nodejs/node/pull/49433)\n-   \\[[`40e9fcdbea`](https://togithub.com/nodejs/node/commit/40e9fcdbea)] - **test_runner**: add support for setImmediate (Erick Wendel) [#&#8203;49397](https://togithub.com/nodejs/node/pull/49397)\n-   \\[[`23216f1935`](https://togithub.com/nodejs/node/commit/23216f1935)] - **test_runner**: report covered lines, functions and branches to reporters (Phil Nash) [#&#8203;49320](https://togithub.com/nodejs/node/pull/49320)\n-   \\[[`283f2806b1`](https://togithub.com/nodejs/node/commit/283f2806b1)] - **test_runner**: expose spec reporter as newable function (Chemi Atlow) [#&#8203;49184](https://togithub.com/nodejs/node/pull/49184)\n-   \\[[`546ad5f770`](https://togithub.com/nodejs/node/commit/546ad5f770)] - **test_runner**: reland run global after() hook earlier (Colin Ihrig) [#&#8203;49116](https://togithub.com/nodejs/node/pull/49116)\n-   \\[[`efdc95fbc0`](https://togithub.com/nodejs/node/commit/efdc95fbc0)] - **(SEMVER-MINOR)** **test_runner**: expose location of tests (Colin Ihrig) [#&#8203;48975](https://togithub.com/nodejs/node/pull/48975)\n-   \\[[`4bc0a8fe99`](https://togithub.com/nodejs/node/commit/4bc0a8fe99)] - **test_runner**: fix global after not failing the tests (Raz Luvaton) [#&#8203;48913](https://togithub.com/nodejs/node/pull/48913)\n-   \\[[`08738b2664`](https://togithub.com/nodejs/node/commit/08738b2664)] - **test_runner**: fix timeout in \\*Each hook failing further tests (Raz Luvaton) [#&#8203;48925](https://togithub.com/nodejs/node/pull/48925)\n-   \\[[`c2f1830f66`](https://togithub.com/nodejs/node/commit/c2f1830f66)] - **test_runner**: cleanup test timeout abort listener (Raz Luvaton) [#&#8203;48915](https://togithub.com/nodejs/node/pull/48915)\n-   \\[[`75333f38b2`](https://togithub.com/nodejs/node/commit/75333f38b2)] - **test_runner**: fix global before not called when no global test exists (Raz Luvaton) [#&#8203;48877](https://togithub.com/nodejs/node/pull/48877)\n-   \\[[`b28b85adf8`](https://togithub.com/nodejs/node/commit/b28b85adf8)] - **tls**: remove redundant code in onConnectSecure() (Deokjin Kim) [#&#8203;49457](https://togithub.com/nodejs/node/pull/49457)\n-   \\[[`83fc4dccbc`](https://togithub.com/nodejs/node/commit/83fc4dccbc)] - **tls**: refactor to use validateFunction (Deokjin Kim) [#&#8203;49422](https://togithub.com/nodejs/node/pull/49422)\n-   \\[[`8949cc79dd`](https://togithub.com/nodejs/node/commit/8949cc79dd)] - **tls**: ensure TLS Sockets are closed if the underlying wrap closes (Tim Perry) [#&#8203;49327](https://togithub.com/nodejs/node/pull/49327)\n-   \\[[`1df56e6f01`](https://togithub.com/nodejs/node/commit/1df56e6f01)] - **tools**: update eslint to 8.48.0 (Node.js GitHub Bot) [#&#8203;49343](https://togithub.com/nodejs/node/pull/49343)\n-   \\[[`ef50ec5b57`](https://togithub.com/nodejs/node/commit/ef50ec5b57)] - **tools**: update lint-md-dependencies (Node.js GitHub Bot) [#&#8203;49342](https://togithub.com/nodejs/node/pull/49342)\n-   \\[[`9a8fb4fc34`](https://togithub.com/nodejs/node/commit/9a8fb4fc34)] - **tools**: remove v8\\_dump_build_config action (Cheng Zhao) [#&#8203;49301](https://togithub.com/nodejs/node/pull/49301)\n-   \\[[`91b2d4314b`](https://togithub.com/nodejs/node/commit/91b2d4314b)] - **tools**: update lint-md-dependencies (Node.js GitHub Bot) [#&#8203;49253](https://togithub.com/nodejs/node/pull/49253)\n-   \\[[`b51946ebdd`](https://togithub.com/nodejs/node/commit/b51946ebdd)] - **tools**: fix github reporter appended multiple times (Moshe Atlow) [#&#8203;49199](https://togithub.com/nodejs/node/pull/49199)\n-   \\[[`ae40cb1612`](https://togithub.com/nodejs/node/commit/ae40cb1612)] - **url**: validate `pathToFileURL(path)` argument as string (LiviaMedeiros) [#&#8203;49161](https://togithub.com/nodejs/node/pull/49161)\n-   \\[[`e787673dcf`](https://togithub.com/nodejs/node/commit/e787673dcf)] - **url**: handle unicode hostname if empty (Yagiz Nizipli) [#&#8203;49396](https://togithub.com/nodejs/node/pull/49396)\n-   \\[[`6ee74be87f`](https://togithub.com/nodejs/node/commit/6ee74be87f)] - **vm**: store MicrotaskQueue in ContextifyContext directly (Joyee Cheung) [#&#8203;48982](https://togithub.com/nodejs/node/pull/48982)\n-   \\[[`0179c6dc8f`](https://togithub.com/nodejs/node/commit/0179c6dc8f)] - **worker**: protect against user mutating well-known prototypes (Antoine du Hamel) [#&#8203;49270](https://togithub.com/nodejs/node/pull/49270)\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 440,
+              "html_url": "https://github.com/nodejs-private/node-private/issues/440",
+              "relationship": "references"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 440,
+          "html_url": "https://github.com/mastodon/mastodon/issues/440",
+          "state": "closed",
+          "issue_title": "levels of posting privacy, and maintaining minimum confidentiality possible",
+          "issue_body": "this is a lot of big words, but i used them because otherwise i couldnt figure out how to shorten: \"minimum privacy possible in reply to private posts, and making sure that the people you are tooting to can see your post in the first place\"\r\n\r\n\r\nbasically, we have 3 settings right now, Unlisted, Public, and Private.\r\n\r\nat the unlisted level, you can toot to someone who doesn't follow you, and they can see, it\r\n\r\npublic is also the same, but, it shows up in searches for hashtags if a hashtag is in the toot. also this means anyone can see this toot by looking at your profile\r\n\r\nprivate is only followers\r\n\r\n\r\nprivacy is important, and a way to help secure this is to encourage maximum possible security on replying-to-posts.\r\n\r\nIDEALLY: private toots that reply to another private toot would only be visible when someone follows both parties but, that is not enforced currently. \r\n\r\nin the meantime, i suggest the following:\r\n\r\nwhenever you go to make a reply to a private toot, it defaults to private mode, if you both follow each other. if you DONT follow each other, it defaults to unlisted.\r\n\r\nto further help with such things, a related issue is that you cannot tell when someone does not follow you without using the third column, but theoretically, you could run a check whenever there is a @ mention in the toot, and \"if they follow you\" it will not warn you when you try to reply to them with a private toot, but IF they do not follow you, warn, by changing the color of the reply background to red, maybe, etc. this solves all the issues, and can scale easily into the future.\r\n\r\nif #422 comes into existence, the option for privacy level could dissappear for all reply toots, and it would automatically limit who could see the toots to only people who follow both.\r\n\r\nother related posts i personally have made, #371, #412 \r\n ",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "6eb6209d02514c5271238a23601be643c7b9f52d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6eb6209d02514c5271238a23601be643c7b9f52d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6eb6209d02514c5271238a23601be643c7b9f52d",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-19T10:24:26Z",
+          "commit_title": "Update DefinitelyTyped types (non-major) (#26953)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26953,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26953",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26953",
+          "state": "closed",
+          "merged_at": "2023-09-19T10:24:26Z",
+          "pr_title": "Update DefinitelyTyped types (non-major)",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [@types/babel__core](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/babel__core) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`7.20.1` -> `7.20.2`](https://renovatebot.com/diffs/npm/@types%2fbabel__core/7.20.1/7.20.2) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2fbabel__core/7.20.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2fbabel__core/7.20.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2fbabel__core/7.20.1/7.20.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2fbabel__core/7.20.1/7.20.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/jest](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jest) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`29.5.4` -> `29.5.5`](https://renovatebot.com/diffs/npm/@types%2fjest/29.5.4/29.5.5) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2fjest/29.5.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2fjest/29.5.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2fjest/29.5.4/29.5.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2fjest/29.5.4/29.5.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/js-yaml](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/js-yaml) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`4.0.5` -> `4.0.6`](https://renovatebot.com/diffs/npm/@types%2fjs-yaml/4.0.5/4.0.6) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2fjs-yaml/4.0.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2fjs-yaml/4.0.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2fjs-yaml/4.0.5/4.0.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2fjs-yaml/4.0.5/4.0.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/prop-types](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prop-types) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`15.7.5` -> `15.7.6`](https://renovatebot.com/diffs/npm/@types%2fprop-types/15.7.5/15.7.6) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2fprop-types/15.7.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2fprop-types/15.7.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2fprop-types/15.7.5/15.7.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2fprop-types/15.7.5/15.7.6?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/react](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`18.2.21` -> `18.2.22`](https://renovatebot.com/diffs/npm/@types%2freact/18.2.21/18.2.22) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2freact/18.2.22?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2freact/18.2.22?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2freact/18.2.21/18.2.22?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2freact/18.2.21/18.2.22?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/react-test-renderer](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-test-renderer) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`18.0.1` -> `18.0.2`](https://renovatebot.com/diffs/npm/@types%2freact-test-renderer/18.0.1/18.0.2) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2freact-test-renderer/18.0.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2freact-test-renderer/18.0.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2freact-test-renderer/18.0.1/18.0.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2freact-test-renderer/18.0.1/18.0.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@types/uuid](https://togithub.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/uuid) ([source](https://togithub.com/DefinitelyTyped/DefinitelyTyped)) | [`9.0.3` -> `9.0.4`](https://renovatebot.com/diffs/npm/@types%2fuuid/9.0.3/9.0.4) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@types%2fuuid/9.0.4?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@types%2fuuid/9.0.4?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@types%2fuuid/9.0.3/9.0.4?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@types%2fuuid/9.0.3/9.0.4?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - \"before 4am on Monday\" (UTC), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n👻 **Immortal**: This PR will be recreated if closed unmerged. Get [config help](https://togithub.com/renovatebot/renovate/discussions) if that's undesired.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript",
+            "typescript"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "fbfceb9c77b7163806ae82d588c7b2c1077b15c6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fbfceb9c77b7163806ae82d588c7b2c1077b15c6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fbfceb9c77b7163806ae82d588c7b2c1077b15c6",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2023-09-19T10:25:30Z",
+          "commit_title": "Add additional metrics for streaming (#26945)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26945,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26945",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26945",
+          "state": "closed",
+          "merged_at": "2023-09-19T10:25:30Z",
+          "pr_title": "Add additional metrics for streaming",
+          "pr_body": "This adds two new counters for `redis_messages_received_total` and `messages_sent_total` (per connection type).\r\n\r\nAlso fixes the initialization of the metrics such that they're zeroed out when the server starts, instead of being undefined, which is recommended as otherwise metrics can [disappear from prometheus](https://prometheus.io/docs/practices/instrumentation#avoid-missing-metrics) between restarts.\r\n\r\nFixes #26940",
+          "labels": [
+            "streaming"
+          ],
+          "issue_refs": [
+            {
+              "number": 26940,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26940",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26940,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26940",
+          "state": "closed",
+          "issue_title": "Add counter metrics to Streaming",
+          "issue_body": "### Pitch\n\nI've just spoken with a friend who works on prometheus, and he advised me on the two metrics I omitted from the streaming server metrics PR ( I was concerned about implementing without a correct understanding )\r\n\r\nThe two metrics to add in are:\r\n- total messages sent (by type)\r\n- total messages received off redis\n\n### Motivation\n\nThis will gives us better insights into load on the system, as field research has shown me that a lot of Mastodon deployments are not monitoring their redis databases.\r\n\r\n@ClearlyClaire / @Gargron I can do up the patch for this tomorrow, as it's about a 20 lines diff at max.",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "70cae19b6b8626a62072ad87309749d6813d9aca",
+          "html_url": "https://github.com/mastodon/mastodon/commit/70cae19b6b8626a62072ad87309749d6813d9aca",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/70cae19b6b8626a62072ad87309749d6813d9aca",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T10:25:39Z",
+          "commit_title": "Fix hashtag bar being sometimes incorrectly hidden (#26960)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26960,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26960",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26960",
+          "state": "closed",
+          "merged_at": "2023-09-19T10:25:40Z",
+          "pr_title": "Fix hashtag bar being sometimes incorrectly hidden",
+          "pr_body": "Fixes #26797",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 26797,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26797",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26797,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26797",
+          "state": "closed",
+          "issue_title": "Some posts are experiencing hashtags not showing in v.4.2.0",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n  I don't know how to reproduce it. Write the address of the post where the issue is occurring instead.\r\n1. original (v4.1.6) - https://duk.space/@Karin_Official/111012571140369639\r\n![image](https://github.com/mastodon/mastodon/assets/205521/0512e9de-4247-46b0-8366-760d7dd55612)\r\n2. issue posts\r\n- v4.2.0-nightly.2023-09-04 - https://mastodon.social/@Karin_Official@duk.space/111012571713629170\r\n![image](https://github.com/mastodon/mastodon/assets/205521/4fb46d1b-733d-435f-9398-b38efe9e8860)\r\n- v4.2.0-beta3 - https://netsphere.one/@Karin_Official@duk.space/111012571171699796\r\n![image](https://github.com/mastodon/mastodon/assets/205521/f1931975-ce06-4551-8748-7b521a128c34)\r\n- v4.2.0-beta3 - https://muri.network/@Karin_Official@duk.space/111012571141664014\r\n![image](https://github.com/mastodon/mastodon/assets/205521/bd6b97ef-e94f-4949-8dbe-55f05c07f58e)\r\n\r\n\r\n\r\n### Expected behaviour\r\n\r\nhashtag exposed.\r\n\r\n### Actual behaviour\r\n\r\nhashtag not exposed.\r\n\r\n### Detailed description\r\n\r\n  The hashtag is used at the very bottom of the original post and is delivered correctly to other servers. It is delivered to the subscriber's home timeline.\r\n  However, when users on other servers view the post, the hashtag is not exposed.\r\n\r\n\r\n\r\n### Mastodon instance\r\n\r\nmastodon.social\r\nnetsphere.one\r\nmuri.network\r\n\r\n### Mastodon version\r\n\r\nv4.2.0-nightly.2023-09-04\r\nv4.2.0-beta3\r\n\r\n### Browser name and version\r\n\r\nGoogle Chrome 116.0.5845.141 & Microsoft Edge 116.0.1938.69\r\n\r\n### Operating system\r\n\r\nMicrosoft Windows 22H2 22621.2215\r\n\r\n### Technical details\r\n\r\n_No response_",
+          "labels": [
+            "bug",
+            "status/confirmed",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "0f3f9b611f509fc5405bb1bcbeb71dfcdff7095b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0f3f9b611f509fc5405bb1bcbeb71dfcdff7095b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0f3f9b611f509fc5405bb1bcbeb71dfcdff7095b",
+          "author_login": "Gargron",
+          "commit_author_date": "2023-09-19T10:25:58Z",
+          "commit_title": "Change video bitrate to always fit within size limit (#26970)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26970,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26970",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26970",
+          "state": "closed",
+          "merged_at": "2023-09-19T10:25:58Z",
+          "pr_title": "Change video bitrate to always fit within size limit",
+          "pr_body": "We calculate the \"perfect\" bitrate, but also the bitrate that would result in reaching exactly the size limit, and take the lowest one. Shorter videos can therefore maintain a higher quality, while longer ones degrade in quality, but in either case we don't inflate the bitrate above the source material.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a83615edc9fc1ce3363ddcf1fc676806421a5f65",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a83615edc9fc1ce3363ddcf1fc676806421a5f65",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a83615edc9fc1ce3363ddcf1fc676806421a5f65",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-19T10:51:13Z",
+          "commit_title": "Update eslint (non-major) (#26954)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26954,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26954",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26954",
+          "state": "closed",
+          "merged_at": "2023-09-19T10:51:14Z",
+          "pr_title": "Update eslint (non-major)",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [@typescript-eslint/eslint-plugin](https://togithub.com/typescript-eslint/typescript-eslint) | [`6.6.0` -> `6.7.2`](https://renovatebot.com/diffs/npm/@typescript-eslint%2feslint-plugin/6.6.0/6.7.2) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@typescript-eslint%2feslint-plugin/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@typescript-eslint%2feslint-plugin/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@typescript-eslint%2feslint-plugin/6.6.0/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@typescript-eslint%2feslint-plugin/6.6.0/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [@typescript-eslint/parser](https://togithub.com/typescript-eslint/typescript-eslint) | [`6.6.0` -> `6.7.2`](https://renovatebot.com/diffs/npm/@typescript-eslint%2fparser/6.6.0/6.7.2) | [![age](https://developer.mend.io/api/mc/badges/age/npm/@typescript-eslint%2fparser/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/@typescript-eslint%2fparser/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/@typescript-eslint%2fparser/6.6.0/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/@typescript-eslint%2fparser/6.6.0/6.7.2?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n| [eslint-plugin-jsdoc](https://togithub.com/gajus/eslint-plugin-jsdoc) | [`46.6.0` -> `46.8.1`](https://renovatebot.com/diffs/npm/eslint-plugin-jsdoc/46.6.0/46.8.1) | [![age](https://developer.mend.io/api/mc/badges/age/npm/eslint-plugin-jsdoc/46.8.1?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/eslint-plugin-jsdoc/46.8.1?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/eslint-plugin-jsdoc/46.6.0/46.8.1?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/eslint-plugin-jsdoc/46.6.0/46.8.1?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>typescript-eslint/typescript-eslint (@&#8203;typescript-eslint/eslint-plugin)</summary>\n\n### [`v6.7.2`](https://togithub.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/CHANGELOG.md#672-2023-09-18)\n\n[Compare Source](https://togithub.com/typescript-eslint/typescript-eslint/compare/v6.7.0...v6.7.2)\n\n**Note:** Version bump only for package [@&#8203;typescript-eslint/eslint-plugin](https://togithub.com/typescript-eslint/eslint-plugin)\n\nYou can read about our [versioning strategy](https://main--typescript-eslint.netlify.app/users/versioning) and [releases](https://main--typescript-eslint.netlify.app/users/releases) on our website.\n\n### [`v6.7.0`](https://togithub.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/CHANGELOG.md#670-2023-09-11)\n\n[Compare Source](https://togithub.com/typescript-eslint/typescript-eslint/compare/v6.6.0...v6.7.0)\n\n##### Bug Fixes\n\n-   **eslint-plugin:** \\[no-restricted-imports] disallow side effect imports when allowTypeImports is enabled ([#&#8203;7560](https://togithub.com/typescript-eslint/typescript-eslint/issues/7560)) ([4908905](https://togithub.com/typescript-eslint/typescript-eslint/commit/4908905e4ee2b533504fcba0c671aa869668df25))\n\n##### Features\n\n-   **eslint-plugin:** \\[await-thenable] added suggestion fixer ([#&#8203;7437](https://togithub.com/typescript-eslint/typescript-eslint/issues/7437)) ([b284370](https://togithub.com/typescript-eslint/typescript-eslint/commit/b284370e1e95493764d2806cd45975201e02f374))\n\nYou can read about our [versioning strategy](https://main--typescript-eslint.netlify.app/users/versioning) and [releases](https://main--typescript-eslint.netlify.app/users/releases) on our website.\n\n</details>\n\n<details>\n<summary>typescript-eslint/typescript-eslint (@&#8203;typescript-eslint/parser)</summary>\n\n### [`v6.7.2`](https://togithub.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/parser/CHANGELOG.md#672-2023-09-18)\n\n[Compare Source](https://togithub.com/typescript-eslint/typescript-eslint/compare/v6.7.0...v6.7.2)\n\n**Note:** Version bump only for package [@&#8203;typescript-eslint/parser](https://togithub.com/typescript-eslint/parser)\n\nYou can read about our [versioning strategy](https://main--typescript-eslint.netlify.app/users/versioning) and [releases](https://main--typescript-eslint.netlify.app/users/releases) on our website.\n\n### [`v6.7.0`](https://togithub.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/parser/CHANGELOG.md#670-2023-09-11)\n\n[Compare Source](https://togithub.com/typescript-eslint/typescript-eslint/compare/v6.6.0...v6.7.0)\n\n**Note:** Version bump only for package [@&#8203;typescript-eslint/parser](https://togithub.com/typescript-eslint/parser)\n\nYou can read about our [versioning strategy](https://main--typescript-eslint.netlify.app/users/versioning) and [releases](https://main--typescript-eslint.netlify.app/users/releases) on our website.\n\n</details>\n\n<details>\n<summary>gajus/eslint-plugin-jsdoc (eslint-plugin-jsdoc)</summary>\n\n### [`v46.8.1`](https://togithub.com/gajus/eslint-plugin-jsdoc/releases/tag/v46.8.1)\n\n[Compare Source](https://togithub.com/gajus/eslint-plugin-jsdoc/compare/v46.8.0...v46.8.1)\n\n##### Bug Fixes\n\n-   **`require-description-complete-sentence`:** allow all inline tags at beginning of sentence; fixes [#&#8203;1150](https://togithub.com/gajus/eslint-plugin-jsdoc/issues/1150) ([e8b1475](https://togithub.com/gajus/eslint-plugin-jsdoc/commit/e8b14756c573bc7f6eb824f2e87b67bbd6a50fab))\n\n### [`v46.8.0`](https://togithub.com/gajus/eslint-plugin-jsdoc/releases/tag/v46.8.0)\n\n[Compare Source](https://togithub.com/gajus/eslint-plugin-jsdoc/compare/v46.7.0...v46.8.0)\n\n##### Features\n\n-   **`require-returns`:** add `publicOnly` option; fixes [#&#8203;1137](https://togithub.com/gajus/eslint-plugin-jsdoc/issues/1137) ([8dbcb6f](https://togithub.com/gajus/eslint-plugin-jsdoc/commit/8dbcb6f31d8e75b6a12dc0cfa19ace736ed0e9c6))\n\n### [`v46.7.0`](https://togithub.com/gajus/eslint-plugin-jsdoc/releases/tag/v46.7.0)\n\n[Compare Source](https://togithub.com/gajus/eslint-plugin-jsdoc/compare/v46.6.0...v46.7.0)\n\n##### Features\n\n-   **`require-returns`:** add optional fixer ([dfd2a8a](https://togithub.com/gajus/eslint-plugin-jsdoc/commit/dfd2a8a0b5fbff4e5840c8d65b82c61ab54d7f87))\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - \"before 4am on Monday\" (UTC), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n👻 **Immortal**: This PR will be recreated if closed unmerged. Get [config help](https://togithub.com/renovatebot/renovate/discussions) if that's undesired.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi44My4wIiwidXBkYXRlZEluVmVyIjoiMzYuODMuMCIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 672,
+              "html_url": "https://github.com/eslint-plugin/changelog.md/issues/672",
+              "relationship": "references"
+            },
+            {
+              "number": 670,
+              "html_url": "https://github.com/eslint-plugin/changelog.md/issues/670",
+              "relationship": "references"
+            },
+            {
+              "number": 672,
+              "html_url": "https://github.com/parser/changelog.md/issues/672",
+              "relationship": "references"
+            },
+            {
+              "number": 670,
+              "html_url": "https://github.com/parser/changelog.md/issues/670",
+              "relationship": "references"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 670,
+          "html_url": "https://github.com/mastodon/mastodon/pull/670",
+          "state": "closed",
+          "issue_title": "Promote Apps",
+          "issue_body": "The /about page when you are not logged in now has a link to the list of apps. The phrase \"various apps are available\" is now a hyperlink to the list of apps. I would like a more prominent way to promote their existence to a user who has logged in for the first time but I'm not sure how yet so this will do for now.",
+          "labels": []
+        },
+        {
+          "number": 672,
+          "html_url": "https://github.com/mastodon/mastodon/issues/672",
+          "state": "closed",
+          "issue_title": "Mastodon Resource Usage",
+          "issue_body": "I'm planning to deploy an instance Mastodon on a small server of my own, but I've heard mixed things about the resources required for Mastodon. \r\n\r\nFor a 10-20 user instance, what are the expected/recommended resource allocations? I'm trying to get away with running it on a cheap VPS of some kind, so, around 512MB memory for the entire box. ",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "73ecc4de6e63301f30092feaf26d0878520ccc09",
+          "html_url": "https://github.com/mastodon/mastodon/commit/73ecc4de6e63301f30092feaf26d0878520ccc09",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/73ecc4de6e63301f30092feaf26d0878520ccc09",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2023-09-19T14:26:51Z",
+          "commit_title": "New Crowdin Translations (automated) (#26978)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26978,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26978",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26978",
+          "state": "closed",
+          "merged_at": "2023-09-19T14:26:51Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with Github Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in Github Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "94893cf24fc95b32cc7a756262acbe008c20a9d2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/94893cf24fc95b32cc7a756262acbe008c20a9d2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/94893cf24fc95b32cc7a756262acbe008c20a9d2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T14:52:52Z",
+          "commit_title": "Merge pull request from GHSA-hcqf-fw2r-52g4"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26285,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26285",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26285",
+          "state": "closed",
+          "merged_at": "2023-08-02T17:32:29Z",
+          "pr_title": "Fix request URL normalisation for bare domain and 8-bit characters",
+          "pr_body": "As mentioned in https://github.com/mastodon/mastodon/pull/26219#issuecomment-1660761265 we need to normalise an empty path to `/`.\r\n\r\nI realised that `expect(a_request(:get, 'http://...')).to have_been_made` is not a reliable way to check exactly what was sent over the wire. The URLs are both normalised before being compared, and that defeats the purpose for this test. So I have added tests for `response.request.headline` (.e.g `GET / HTTP/1.1`) instead.\r\n\r\nThis change to the tests revealed that the new normaliser does not encode 8-bit characters. 8-bit characters are not permitted in URLs according to RFC 3986, but they sometimes occur in user input. They are not permitted raw in the HTTP request line either, so they _must_ be dealt with.\r\n\r\n\\*sigh* I hope this issue will be fixed in http.rb or Addressable, so we don't have to reinvent this wheel.",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 26219,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26219",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26219",
+          "state": "closed",
+          "merged_at": "2023-07-31T21:17:38Z",
+          "pr_title": "Do not normalize URL before fetching it",
+          "pr_body": "`Request#perform` invokes `Addressable::URI#normalize` on the requested URL, so the HTTP client may end up requesting a slightly different than requested.\r\n\r\nThis is usually harmless, but it sometimes causes trouble in practice. As mentioned in #14983, link previews for articles on [The Guardian](https://www.theguardian.com) have no image. The `og:image` tag on article pages refers to URLs on https://i.guim.co.uk/img/... and includes a query string argument `overlay-align=bottom%2Cleft`. `#normalize` changes this to `overlay-align=bottom,left`, but this breaks the URL.\r\n\r\nThe behaviour of i.guim.co.uk is unusual, but AFAICT The Guardian does not violate the HTTP 1.1 spec. [RFC 26216 section 3.2.3](https://datatracker.ietf.org/doc/html/rfc2616#section-3.2.3) mentions that characters outside the _reserved_ and _unsafe_ may be optionally percent-encoded. `,` is in the _reserved_ set, so I assume it cannot just be percent-encoded/decoded.\r\n\r\nIn any case, I don't see why a HTTP client should change the URL it is asked to fetch. If we want to fix up e.g. user-provided URLs typed into statuses, I think we should do it elsewhere.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ff32475f5f4a84ebf9619e7eef5bf8b4c075d0e2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ff32475f5f4a84ebf9619e7eef5bf8b4c075d0e2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ff32475f5f4a84ebf9619e7eef5bf8b4c075d0e2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T14:53:21Z",
+          "commit_title": "Merge pull request from GHSA-2693-xr3m-jhqr"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "eeab3560fc0516070b3fb97e089b15ecab1938c8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/eeab3560fc0516070b3fb97e089b15ecab1938c8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/eeab3560fc0516070b3fb97e089b15ecab1938c8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T14:53:58Z",
+          "commit_title": "Merge pull request from GHSA-v3xf-c9qf-j667"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f4b780ba22d0256770766185cee5f8fcc5585c95",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f4b780ba22d0256770766185cee5f8fcc5585c95",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f4b780ba22d0256770766185cee5f8fcc5585c95",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T15:04:23Z",
+          "commit_title": "Bump version to v4.2.0-rc2 (#26974)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26974,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26974",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26974",
+          "state": "closed",
+          "merged_at": "2023-09-19T15:04:24Z",
+          "pr_title": "Bump version to v4.2.0-rc2",
+          "pr_body": "Changes compared to v4.2.0-rc1:\r\n\r\n### Added\r\n\r\n- Add additional metrics for streaming ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/26945))\r\n\r\n### Changed\r\n\r\n- Change video bitrate to always fit within size limit ([Gargron](https://github.com/mastodon/mastodon/pull/26970))\r\n\r\n### Fixed\r\n\r\n- Fix hashtag bar being sometimes incorrectly hidden ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26960))\r\n- Fix crash when viewing a moderation appeal and the moderator account has been deleted ([xrobau](https://github.com/mastodon/mastodon/pull/25900))\r\n- Fix Web UI making duplicate search queries when scrolling ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26959))\r\n- Fix error in Web UI when server rules cannot be fetched ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26957))\r\n- Fix `Setting.authorized_fetch` not being properly taken into consideration ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26958))\r\n- Fix post edits not being forwarded as expected ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26936))\r\n- Fix dismiss button overlapping with text in dismissable banners ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26935))\r\n- Fix obsolete cache key in status cache invalidation logic ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26934))\r\n- Fix processing of `min_id` and `max_id` parameters in `/api/v2/search` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26927))\r\n\r\n### Security\r\n\r\n- Fix incorrect URL normalization (CVE-2023-42450)\r\n- Fix missing HTML sanitization in translation API (CVE-2023-42452)\r\n- Fix incorrect domain name normalization (CVE-2023-42451)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

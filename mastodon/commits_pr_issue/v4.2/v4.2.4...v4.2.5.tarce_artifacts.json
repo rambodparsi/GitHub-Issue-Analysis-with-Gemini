@@ -1,0 +1,34 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.4",
+  "compare": "v4.2.5",
+  "counts": {
+    "commits": 1,
+    "prs": 0,
+    "issues": 0,
+    "commit_pr": 0,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.4...v4.2.5.compare.json",
+    "commits": "commits/v4.2/v4.2.4...v4.2.5.commits.json",
+    "pulls": "pulls/v4.2/v4.2.4...v4.2.5.pulls.json",
+    "issues": "issues/v4.2/v4.2.4...v4.2.5.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "a6641f828b9e6f5806be01754318279c2532ae82",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a6641f828b9e6f5806be01754318279c2532ae82",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a6641f828b9e6f5806be01754318279c2532ae82",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-01T14:56:46Z",
+          "commit_title": "Merge pull request from GHSA-3fjr-858r-92rw"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    }
+  ]
+}

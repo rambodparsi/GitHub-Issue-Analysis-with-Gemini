@@ -1,0 +1,354 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.13",
+  "compare": "v4.2.14",
+  "counts": {
+    "commits": 14,
+    "prs": 11,
+    "issues": 0,
+    "commit_pr": 11,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.13...v4.2.14.compare.json",
+    "commits": "commits/v4.2/v4.2.13...v4.2.14.commits.json",
+    "pulls": "pulls/v4.2/v4.2.13...v4.2.14.pulls.json",
+    "issues": "issues/v4.2/v4.2.13...v4.2.14.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "c0daeb8dbe3220179baf07ac96cbe3477ee23e29",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c0daeb8dbe3220179baf07ac96cbe3477ee23e29",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c0daeb8dbe3220179baf07ac96cbe3477ee23e29",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-10-08T12:25:03Z",
+          "commit_title": "Update security policy for 4.2 branch (#32301)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32301,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32301",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32301",
+          "state": "closed",
+          "merged_at": "2024-10-08T12:25:03Z",
+          "pr_title": "Update security policy for 4.2 branch",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "02e7fbb566499516cd815cadb2e7e6c8cb4105ec",
+          "html_url": "https://github.com/mastodon/mastodon/commit/02e7fbb566499516cd815cadb2e7e6c8cb4105ec",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/02e7fbb566499516cd815cadb2e7e6c8cb4105ec",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-10-09T12:13:24Z",
+          "commit_title": "Remove `latest` tag on 4.2 docker image builds (#32351)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32351,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32351",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32351",
+          "state": "closed",
+          "merged_at": "2024-10-09T12:13:24Z",
+          "pr_title": "Remove `latest` tag on 4.2 docker image builds",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "02addb3b9641f4590c9d549352a79df89dc77f94",
+          "html_url": "https://github.com/mastodon/mastodon/commit/02addb3b9641f4590c9d549352a79df89dc77f94",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/02addb3b9641f4590c9d549352a79df89dc77f94",
+          "author_login": "seav",
+          "commit_author_date": "2024-10-22T08:41:40Z",
+          "commit_title": "Fix tl language native name (#32606)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32606,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32606",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32606",
+          "state": "closed",
+          "merged_at": "2024-10-22T08:50:59Z",
+          "pr_title": "Fix tl language native name",
+          "pr_body": "The most common name of the tl language is just \"Tagalog\" instead of \"Wikang Tagalog\", which literally means \"Tagalog Language\". Unlike \"Bahasa Indonesia\", you can refer to the language as just \"Tagalog\" in English or in Tagalog.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a9477a992d8b7988e3e49e90eaaaa3331b723ce0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a9477a992d8b7988e3e49e90eaaaa3331b723ce0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a9477a992d8b7988e3e49e90eaaaa3331b723ce0",
+          "author_login": "hugogameiro",
+          "commit_author_date": "2024-10-28T13:32:56Z",
+          "commit_title": "Fix and improve batch attachment deletion handling when using OpenStack Swift (#32637)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32637,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32637",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32637",
+          "state": "closed",
+          "merged_at": "2024-10-28T13:49:35Z",
+          "pr_title": "Fix and improve batch attachment deletion handling when using OpenStack Swift",
+          "pr_body": "Since v4.3.0 `rescue Fog::Storage::OpenStack::NotFound` in batch attachment for OpenStack Swift has caused the batch deletion to never finish in the case of attempting to delete a file that is missing.\r\n\r\nIn debug mode it logs \"uninitialized constant Fog::Storage::OpenStack (NameError)\".\r\n\r\nChanging the class from `Fog::Storage::OpenStack::NotFound` to the new `Fog::OpenStack::Storage::NotFound` fixes it.\r\n\r\nAlso, in this PR I suggest introducing some improvements to how attachment batch deletion is handle for OpenStack Swift:\r\n- retry 3 times (5 second interval) for temporary object storage failures\r\n- error logging\r\n- raise in case of failure after retries",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ef1db289cfe47b2c95a1f27aef51beee296fe3bc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ef1db289cfe47b2c95a1f27aef51beee296fe3bc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ef1db289cfe47b2c95a1f27aef51beee296fe3bc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-19T15:01:06Z",
+          "commit_title": "Update dependency rexml"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "95690a10e4381850ff148c8eeb8131279945793b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/95690a10e4381850ff148c8eeb8131279945793b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/95690a10e4381850ff148c8eeb8131279945793b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-19T15:01:52Z",
+          "commit_title": "Update dependency rails"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1ffb8ef747ab955d73b3128cfc4ca289ecb54219",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1ffb8ef747ab955d73b3128cfc4ca289ecb54219",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1ffb8ef747ab955d73b3128cfc4ca289ecb54219",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-04-08T13:53:49Z",
+          "commit_title": "Use composable query in `User.active` scope (#29775)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29775,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29775",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29775",
+          "state": "closed",
+          "merged_at": "2024-04-08T13:59:09Z",
+          "pr_title": "Use composable query in `User.active` scope",
+          "pr_body": "Collection of related changes:\r\n\r\n- Consolidate the repeated queries around users signed in recently to a `signed_in_recently` scope\r\n- Rename `inactive` to `not_signed_in_recently` to more narrowly reflect what it does (because there's also an `active` and they are not opposites)\r\n- Compose the `User.active` scope from smaller well-named scopes for readability at a glance to see what concepts \"active\" is made of\r\n- Spec coverage for the added scopes, and update the renamed",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e26bb6f827bf99e2d18127ee01e648e9f41abd8f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e26bb6f827bf99e2d18127ee01e648e9f41abd8f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e26bb6f827bf99e2d18127ee01e648e9f41abd8f",
+          "author_login": "Gargron",
+          "commit_author_date": "2024-11-22T08:30:57Z",
+          "commit_title": "Fix pushing hashtag-followed posts to feeds of inactive users (#33018)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33018,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33018",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33018",
+          "state": "closed",
+          "merged_at": "2024-11-22T08:39:31Z",
+          "pr_title": "Fix pushing hashtag-followed posts to feeds of inactive users",
+          "pr_body": "Fixes MAS-335",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "fd431c0afb7e7efd5cdc1a841be8b34b46a756fb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fd431c0afb7e7efd5cdc1a841be8b34b46a756fb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fd431c0afb7e7efd5cdc1a841be8b34b46a756fb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-28T14:32:27Z",
+          "commit_title": "Fix `TagFollow` records not being correctly handled in account operations (#33063)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33063,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33063",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33063",
+          "state": "closed",
+          "merged_at": "2024-11-25T10:38:25Z",
+          "pr_title": "Fix `TagFollow` records not being correctly handled in account operations",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "00f790f0e29902dd308c64605790c66657841cd9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/00f790f0e29902dd308c64605790c66657841cd9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/00f790f0e29902dd308c64605790c66657841cd9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-25T15:54:18Z",
+          "commit_title": "Fix direct inbox delivery pushing posts into inactive followers' timelines (#33067)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33067,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33067",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33067",
+          "state": "closed",
+          "merged_at": "2024-11-25T16:04:17Z",
+          "pr_title": "Fix direct inbox delivery pushing posts into inactive followers' timelines",
+          "pr_body": "The code path at `ActivityPub::Activity::Create#postprocess_audience_and_deliver`, triggered on user-inbox delivery, enqueues `FeedInsertWorker` after checking for a follow relationship, but not whether the recipient is considered active.\r\n\r\nI thought about adding that check here (and maybe it would still be a good idea to do so), but I figured having the check in the timeline insert code could make sense as well, since this is the most relevant code path, and we already query the recipient's `user` record there.",
+          "labels": [
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d57cdf440468fb831c93531ede2ad8225f6118bd",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d57cdf440468fb831c93531ede2ad8225f6118bd",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d57cdf440468fb831c93531ede2ad8225f6118bd",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-28T17:40:53Z",
+          "commit_title": "Fix inactive users' timelines being backfilled on follow and unsuspend (#33094)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33094,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33094",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33094",
+          "state": "closed",
+          "merged_at": "2024-11-28T17:49:08Z",
+          "pr_title": "Fix inactive users' timelines being backfilled on follow and unsuspend",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b96bb33037efe466c2f92358328f9ddbaace9b3f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b96bb33037efe466c2f92358328f9ddbaace9b3f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b96bb33037efe466c2f92358328f9ddbaace9b3f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-29T14:08:57Z",
+          "commit_title": "Add `tootctl feeds vacuum` (#33065)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33065,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33065",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33065",
+          "state": "closed",
+          "merged_at": "2024-11-29T14:18:40Z",
+          "pr_title": "Add `tootctl feeds vacuum`",
+          "pr_body": "Background: we have been investigating high Redis memory usage on mastodon.social, and most of it is due to feeds storage.\r\n\r\nOne thing we have noticed is that some feeds that should have been removed hadn't been. One reason for this has been fixed in #33018, but this does not retroactively clean up feeds from deleted accounts, hence this task.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0d6ce61b4f4bc7b67d1903b0ac116f015be6d49c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0d6ce61b4f4bc7b67d1903b0ac116f015be6d49c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0d6ce61b4f4bc7b67d1903b0ac116f015be6d49c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-02T10:14:38Z",
+          "commit_title": "Prepare changelog"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d94c7346b49409a420c2bcc0d1f0b0f819cac627",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d94c7346b49409a420c2bcc0d1f0b0f819cac627",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d94c7346b49409a420c2bcc0d1f0b0f819cac627",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-03T14:16:31Z",
+          "commit_title": "Bump version to v4.2.14 (#33137)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33137,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33137",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33137",
+          "state": "closed",
+          "merged_at": "2024-12-03T14:16:31Z",
+          "pr_title": "Bump version to v4.2.14",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

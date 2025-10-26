@@ -1,0 +1,536 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.9",
+  "compare": "v4.2.10",
+  "counts": {
+    "commits": 17,
+    "prs": 12,
+    "issues": 5,
+    "commit_pr": 10,
+    "commit_pr_issue": 5
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.9...v4.2.10.compare.json",
+    "commits": "commits/v4.2/v4.2.9...v4.2.10.commits.json",
+    "pulls": "pulls/v4.2/v4.2.9...v4.2.10.pulls.json",
+    "issues": "issues/v4.2/v4.2.9...v4.2.10.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "520b2086af066d6434a6f2652870a6bb620f4e23",
+          "html_url": "https://github.com/mastodon/mastodon/commit/520b2086af066d6434a6f2652870a6bb620f4e23",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/520b2086af066d6434a6f2652870a6bb620f4e23",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-10-12T14:47:18Z",
+          "commit_title": "Change PWA start URL from `/home` to `/` (#27377)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30739,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30739",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30739",
+          "state": "closed",
+          "merged_at": "2024-06-18T13:37:41Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backport:\r\n- https://github.com/mastodon/mastodon/pull/27377\r\n- https://github.com/mastodon/mastodon/pull/30653",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 27377,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27377",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27377",
+          "state": "closed",
+          "merged_at": "2023-10-12T14:47:18Z",
+          "pr_title": "Change PWA start URL from `/home` to `/`",
+          "pr_body": "See https://github.com/mastodon/mastodon/issues/27314#issuecomment-1753242257\r\n\r\nThis lets the web UI redirect to the appropriate path when the advanced interface is enabled.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "19ed22dc582e9fd922b221034953c428dd0de856",
+          "html_url": "https://github.com/mastodon/mastodon/commit/19ed22dc582e9fd922b221034953c428dd0de856",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/19ed22dc582e9fd922b221034953c428dd0de856",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-12T07:28:28Z",
+          "commit_title": "Fix duplicate `@context` attribute in user export (#30653)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30739,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30739",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30739",
+          "state": "closed",
+          "merged_at": "2024-06-18T13:37:41Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backport:\r\n- https://github.com/mastodon/mastodon/pull/27377\r\n- https://github.com/mastodon/mastodon/pull/30653",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30653,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30653",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30653",
+          "state": "closed",
+          "merged_at": "2024-06-12T07:33:45Z",
+          "pr_title": "Fix duplicate `@context` attribute in user export",
+          "pr_body": "Fixes #30587",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 30587,
+              "html_url": "https://github.com/mastodon/mastodon/issues/30587",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 30587,
+          "html_url": "https://github.com/mastodon/mastodon/issues/30587",
+          "state": "closed",
+          "issue_title": "Extra '@context' in 'outbox.jon' when archive export is generated, fails validation",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Request data archive\r\n2. Download archive\r\n3. Extract archive, open 'outbox.json'\r\n4. Validate JSON, which fails\r\n\r\n\r\n### Expected behaviour\r\n\r\nA single `@context` key\r\n\r\n### Actual behaviour\r\n\r\nA second `@context` key is present\r\n\r\n### Detailed description\r\n\r\nAs far as I have been able to determine, this was introduced between December 31st and February 14th, which are the dates of the two exports we can test against; the former opens and validates just fine, while the latter throws an error. If the second `@context`, which as far as I can tell contains no actual data, is removed, the file validates.\r\n\r\nThis happens both in larger exports, with over 17.000 items, as well as a small one, with just 111 'orderedItems', exported right before creating this ticket. See attached screenshot from the VDT Labs JSON Editor.\r\n\r\nComparing the dates with available releases, this may have been introduced in 4.2.4, 4.2.5, or 4.2.6?\r\n\r\n![Screenshot 2024-06-07 at 08 17 15-optimised](https://github.com/mastodon/mastodon/assets/91268/65d42d5e-dfc3-4c90-b088-8500f82c4e30)\r\n\r\n\r\n### Mastodon instance\r\n\r\nngmx.com\r\n\r\n### Mastodon version\r\n\r\nv4.2.9\r\n\r\n### Technical details\r\n\r\n```\r\n$ ruby --version\r\nruby 3.0.4p208 (2022-04-12 revision 3fa771dded) [x86_64-linux]\r\n\r\n$ node --version\r\nv16.20.2\r\n```",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "bfc287fd6b83d9b32d0d7c34ed5d61f63c5bae35",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bfc287fd6b83d9b32d0d7c34ed5d61f63c5bae35",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bfc287fd6b83d9b32d0d7c34ed5d61f63c5bae35",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-20T06:56:12Z",
+          "commit_title": "Remove dependency on posix-spawn (#18559)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 18559,
+          "html_url": "https://github.com/mastodon/mastodon/pull/18559",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/18559",
+          "state": "closed",
+          "merged_at": "2024-04-02T14:07:18Z",
+          "pr_title": "Remove dependency on posix-spawn",
+          "pr_body": "Made this PR a draft because I do not think there is any rush to get rid of `posix-spawn` and I have observed it brings a (marginal) performance benefit, but opening a PR nonetheless to keep track of my investigations.\r\n\r\n`posix-spawn` seems unmaintained, and according to https://github.com/rtomayko/posix-spawn/issues/90#issuecomment-1122815520 there should be no reason to use it anymore, someone even states that it is slower than Ruby's `Process.spawn`: https://github.com/rtomayko/posix-spawn/issues/90#issuecomment-1140315750\r\n\r\n## Benchmarks\r\n\r\nHowever, my findings are different, at least in the context it is used within Mastodon, as I find `posix-spawn`'s implementation to be marginally faster.\r\n\r\nGrowing the parent's memory use before fork seem to have no bearing to those performances, which is consistent with Ruby having switched to `vfork` for `Process#spawn` since Ruby 2.2, thus addressing the main reason for `posix-spawn` to exist.\r\n\r\n### Powerful amd64 machine\r\n\r\nRunning the following in a Rails console displays better performances using `posix-spawn` (powerful amd64 machine, Ruby 3.0.3p157):\r\n```ruby\r\nputs Benchmark.measure { 100000.times { line = Terrapin::CommandLine.new('/usr/bin/true'); line.run } }\r\n```\r\n\r\nThis yields the following when using `posix-spawn` 0.3.15:\r\n`  6.083073   6.323450  28.110833 ( 25.366304)`\r\n\r\nAnd the following without:\r\n`  8.098447   5.089173  29.062399 ( 26.534835)`\r\n\r\n### Slower arm64 machine\r\n\r\nOn a slower arm64 machine with a different version of Ruby (3.0.4p208), the difference is similar.\r\n\r\nWith `posix-spawn` 0.3.15:\r\n` 61.136000  34.660000  95.796000 (206.971681)`\r\n\r\nWithout `posix-spawn`:\r\n` 82.876000  35.380000 118.260000 (229.970904)`",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "3f75c6f048c75e5edd5749c0dfe4df1b935d0d3a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3f75c6f048c75e5edd5749c0dfe4df1b935d0d3a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3f75c6f048c75e5edd5749c0dfe4df1b935d0d3a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-20T06:59:41Z",
+          "commit_title": "Update dependency rails"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "55408f80853b69fb08d3ae8f9a7daeab78b21a54",
+          "html_url": "https://github.com/mastodon/mastodon/commit/55408f80853b69fb08d3ae8f9a7daeab78b21a54",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/55408f80853b69fb08d3ae8f9a7daeab78b21a54",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-20T07:00:08Z",
+          "commit_title": "Update dependency cbor"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "fcae9435ec6cb22e536c7b4eef351ce0b402e3ef",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fcae9435ec6cb22e536c7b4eef351ce0b402e3ef",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fcae9435ec6cb22e536c7b4eef351ce0b402e3ef",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-24T13:11:10Z",
+          "commit_title": "Fix `/admin/accounts/:account_id/statuses/:id` for edited posts with media attachments (#30819)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30819,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30819",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30819",
+          "state": "closed",
+          "merged_at": "2024-06-24T13:16:42Z",
+          "pr_title": "Fix `/admin/accounts/:account_id/statuses/:id` for edited posts with media attachments",
+          "pr_body": "This needs to be backported to 4.2 as well.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5fd7cd79e0734d0f8d7d1250d4c1629def1a1b48",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5fd7cd79e0734d0f8d7d1250d4c1629def1a1b48",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5fd7cd79e0734d0f8d7d1250d4c1629def1a1b48",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-24T13:49:39Z",
+          "commit_title": "Specify yarn version to avoid confusion with main which uses Yarn 4"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1e87634a43b19953f3e2956003d176967f2e7a8d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1e87634a43b19953f3e2956003d176967f2e7a8d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1e87634a43b19953f3e2956003d176967f2e7a8d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-06-28T21:23:19Z",
+          "commit_title": "Update dependency charlock_holmes"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "17f69c0002e68851293b158e1e7cda685fdfb2dc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/17f69c0002e68851293b158e1e7cda685fdfb2dc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/17f69c0002e68851293b158e1e7cda685fdfb2dc",
+          "author_login": "timothyjrogers",
+          "commit_author_date": "2024-06-24T14:41:04Z",
+          "commit_title": "Added check for STATSD_ADDR setting to emit a warning and proceed rather than crashing if the address is unreachable (#30691)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30691,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30691",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30691",
+          "state": "closed",
+          "merged_at": "2024-06-24T14:46:20Z",
+          "pr_title": "Added check for STATSD_ADDR setting to emit a warning and proceed rather than crashing if the address is unreachable",
+          "pr_body": "Fixes #30622\r\n\r\nThe code that initializes `statsd` fatally crashes if the value of `STATSD_ADDR` is not a resolvable name/address. This change rescues that exception and instead emits it as a warning, since `statsd` is an optional configuration.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 30622,
+              "html_url": "https://github.com/mastodon/mastodon/issues/30622",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 30622,
+          "html_url": "https://github.com/mastodon/mastodon/issues/30622",
+          "state": "closed",
+          "issue_title": "Enabling STATSD_ADDR env var when statsd isn't available often crashes sidekiq/web containers",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Define the STATSD_ADDR Env Var\r\n2. Attempt to start Sidekiq docker container\n\n### Expected behaviour\n\nSidekiq should ignore the failed connection to statsd\n\n### Actual behaviour\n\nSidekiq container crashes with Name or service not known\n\n### Detailed description\n\n[_mastodon-sidekiq-1_logs.txt](https://github.com/user-attachments/files/15750359/_mastodon-sidekiq-1_logs.txt)\r\n\n\n### Mastodon instance\n\ndftba.club\n\n### Mastodon version\n\nv4.3.0-alpha.4+glitch.dftba\n\n### Technical details\n\n![image](https://github.com/mastodon/mastodon/assets/5652065/3800fede-b051-47ca-97bb-dcb6c402a518)\r\n",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "846f59c6e95ae0f6ccd5714bd1a57c8dd0fed017",
+          "html_url": "https://github.com/mastodon/mastodon/commit/846f59c6e95ae0f6ccd5714bd1a57c8dd0fed017",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/846f59c6e95ae0f6ccd5714bd1a57c8dd0fed017",
+          "author_login": "oneiros",
+          "commit_author_date": "2024-06-27T14:40:19Z",
+          "commit_title": "Add size limit for link preview URLs (#30854)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30904,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30904",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30904",
+          "state": "closed",
+          "merged_at": "2024-07-03T08:57:47Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backported PRs:\r\n- https://github.com/mastodon/mastodon/pull/30854\r\n- https://github.com/mastodon/mastodon/pull/30865\r\n- https://github.com/mastodon/mastodon/pull/30780\r\n- https://github.com/mastodon/mastodon/pull/30584",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30854,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30854",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30854",
+          "state": "closed",
+          "merged_at": "2024-06-27T14:50:24Z",
+          "pr_title": "Add size limit for link preview URLs",
+          "pr_body": "This is the first PR to mitigate the issue reported in #18965.\r\n\r\nThis PR prevents link previews for URLs that possibly exceed the size limit for unique indexes from being created in the first place.\r\n\r\nURLs of this size should be quite rare. The only real-world example I could observe was a link to an online game. I am pretty sure, the link included the full game state.\r\n\r\nAs we previously discussed that link previews are not essential and we may skip generating them in extreme cases, @renchap proposed we do so here.\r\n\r\nThis will not solve the issue for existing installations but at least prevent future cases from occuring.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "88b2d6eca57e4f8d90062d9eb9d511213bb00a1c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/88b2d6eca57e4f8d90062d9eb9d511213bb00a1c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/88b2d6eca57e4f8d90062d9eb9d511213bb00a1c",
+          "author_login": "Gargron",
+          "commit_author_date": "2024-06-27T21:34:34Z",
+          "commit_title": "Change search modifiers to be case-insensitive (#30865)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30904,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30904",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30904",
+          "state": "closed",
+          "merged_at": "2024-07-03T08:57:47Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backported PRs:\r\n- https://github.com/mastodon/mastodon/pull/30854\r\n- https://github.com/mastodon/mastodon/pull/30865\r\n- https://github.com/mastodon/mastodon/pull/30780\r\n- https://github.com/mastodon/mastodon/pull/30584",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30865,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30865",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30865",
+          "state": "closed",
+          "merged_at": "2024-06-27T21:44:06Z",
+          "pr_title": "Change search modifiers to be case-insensitive",
+          "pr_body": "Fix #30855",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 30855,
+              "html_url": "https://github.com/mastodon/mastodon/issues/30855",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 30855,
+          "html_url": "https://github.com/mastodon/mastodon/issues/30855",
+          "state": "closed",
+          "issue_title": "Make search modifiers like from: case insensitive ",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Search for \"From:username\"\r\n\r\n\r\n### Expected behaviour\r\n\r\nOnly posts from username are listed\r\n\r\n### Actual behaviour\r\n\r\nPosts mentioning username are listed\r\n\r\n### Detailed description\r\n\r\nMost phones will automatically capitalize the first word of a sentence that you type.\r\n\r\nBecause Mastodon doesn't recognize \"From:\", but only \"from:\", it gives the impression that Mastodon doesn't support the ability to search for posts from a username.\r\n\r\nThis should be the case for all search modifiers. \r\n\r\n### Mastodon instance\r\n\r\nInfosec.exchange\r\n\r\n### Mastodon version\r\n\r\nv4.3.0-alpha.4+glitch\r\n\r\n### Technical details\r\n\r\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: (from `ruby --version`, eg. v3.1.2)\r\n- Node.js version: (from `node --version`, eg. v18.16.0)\r\n",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/search"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "9b6219c48f4fafacc1f31c0f8d89f98948a46aa9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9b6219c48f4fafacc1f31c0f8d89f98948a46aa9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9b6219c48f4fafacc1f31c0f8d89f98948a46aa9",
+          "author_login": "oneiros",
+          "commit_author_date": "2024-06-21T12:51:10Z",
+          "commit_title": "Improve encoding detection for link cards (#30780)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30904,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30904",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30904",
+          "state": "closed",
+          "merged_at": "2024-07-03T08:57:47Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backported PRs:\r\n- https://github.com/mastodon/mastodon/pull/30854\r\n- https://github.com/mastodon/mastodon/pull/30865\r\n- https://github.com/mastodon/mastodon/pull/30780\r\n- https://github.com/mastodon/mastodon/pull/30584",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30780,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30780",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30780",
+          "state": "closed",
+          "merged_at": "2024-06-21T13:05:00Z",
+          "pr_title": "Improve encoding detection for link cards",
+          "pr_body": "Fixes #27230 \r\n\r\nThis was a nasty case, as encoding issues tend to be. Servers may use different vehicles to communicate the encoding of a HTML document. The `Content-Type` header may include an encoding of which the webserver thinks should be correct. Authors of HTML pages may include a `<meta>` tag to communicate what they think their encoding is. Of course, both may contradict each other and both can be totally wrong.\r\n\r\nIn the case of the issue, the HTTP header gives the correct encoding (`iso-8859-1`) while the HTML document itself announces itself incorrectly as `utf-8`.\r\n\r\nWe currently use the `charlock_holmes` gem to try to detect the encoding. It reports a confidence together with the result and we only accept results with a high enough confidence. In this case, `charlock_holmes` _does_ detect the correct encoding, but gives a very low confidence, so we ignore it. (This was to fix another encoding bug and is thus sensible.)\r\n\r\nNext, the HTML gets parsed by `nokogiri`. `nokogiri` tries to get the encoding from meta tags and thus will report a wrong one here, leading to an exception later on.\r\n\r\nIn this PR I propose another, layered strategy:\r\n\r\n1. First, we try the established way, using `charlock_holmes`. If we get a high confidence result, we can happily ignore all other, possibly erroneous, information.\r\n2. Next, we let nokogiri parse the document and test if the encoding it detects is actually valid.\r\n3. Next, we see if we have an encoding from the HTTP header and if yes, try if this is valid for the document we have.\r\n4. If all other three steps fail, we just default to `utf-8`.\r\n\r\nThis fixes the case reported in the issue. It also works for all the existing test cases.\r\n\r\nAdditionally, I made sure that it does not raise any exceptions for ~30k URLs from actual statuses on my server.\r\n\r\nThis might still fail in some very weird cases, but I failed to construct such a case :frowning_face:, so I was not able to figure out how to better handle this.\r\n\r\nIn any case this should improve things imo.\r\n\r\nPlease also note that I restructured the code here a little bit to avoid having to parse the document twice in case that nokogiri sets a working encoding. I suspect that the parsing can be quite expensive.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 27230,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27230",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27230,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27230",
+          "state": "closed",
+          "issue_title": "LinkCrawlWorker does not handle non-UTF8 charsets",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Post or receive a status with https://www.worldconcerthall.com/en/schedule/herrmann_korngold_with_lamsma_wagner_and_kodaly_from_rotterdam/77834/ in it\r\n\n\n### Expected behaviour\n\nThe `LinkCrawlWorker` will fetch the URL properly\n\n### Actual behaviour\n\nThe `LinkCrawlWorker` crashes with \"ArgumentError: invalid byte sequence in UTF-8\"\n\n### Detailed description\n\nWhen looking at the above URL, the headers indicate `content-type: text/html; charset=ISO-8859-1`, a non-UTF8 charset.\r\n\r\nWe have around hundreds of these dead workers littering the dead worker queue, and nearly every one of them failed in this similar fashion. I think it's a fixable problem, so i'm reporting it here.\n\n### Mastodon instance\n\ntech.lgbt\n\n### Mastodon version\n\nv4.2.0-rc2+glitch\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux-gnu]\r\n- Node.js version: v18.12.1\r\n",
+          "labels": [
+            "bug",
+            "status/confirmed"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "6cd9bd6ae154eee02c42121ffaae280de907edbb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6cd9bd6ae154eee02c42121ffaae280de907edbb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6cd9bd6ae154eee02c42121ffaae280de907edbb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-07-03T07:15:47Z",
+          "commit_title": "fix: Return HTTP 422 when scheduled status time is less than 5 minutes (#30584)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30904,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30904",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30904",
+          "state": "closed",
+          "merged_at": "2024-07-03T08:57:47Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": "Backported PRs:\r\n- https://github.com/mastodon/mastodon/pull/30854\r\n- https://github.com/mastodon/mastodon/pull/30865\r\n- https://github.com/mastodon/mastodon/pull/30780\r\n- https://github.com/mastodon/mastodon/pull/30584",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30584,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30584",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30584",
+          "state": "closed",
+          "merged_at": "2024-06-10T13:38:48Z",
+          "pr_title": "fix: Return HTTP 422 when scheduled status time is less than 5 minutes",
+          "pr_body": "Fixes #9884.\r\n\r\nThe `ScheduledStatus` model validations were being ignored because the `scheduled_in_the_past?` method in `PostStatusService` considered statuses with a `scheduled_at` time less than the minimum offset to be in the past. To fix the issue, I removed the minimum offset check from `PostStatusService#scheduled_in_the_past?`.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 9884,
+              "html_url": "https://github.com/mastodon/mastodon/issues/9884",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 9884,
+          "html_url": "https://github.com/mastodon/mastodon/issues/9884",
+          "state": "closed",
+          "issue_title": "Posting scheduled status API should returns error if scheduled_at is smaller the 5 minutes future.",
+          "issue_body": "Currently the posting scheduled status API post status immediately instead of returns error if scheduled_at is smaller than 5 minutes future.\r\nThis behavior surprises the users.\r\n\r\nThe server should return an error in this case.\r\n\r\nChecking on the client side is inappropriate for several reasons.\r\n- The clocks of the server and client are not exactly synchronized.\r\n- Since there is a time lag of request transmission, it is more certain to check on the server side.\r\n- The client can not know the server's magic number. In a customized instance it may not be 5 minutes.\r\n",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "df974a912b59e276ad7bfa413e2b628633a776d4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/df974a912b59e276ad7bfa413e2b628633a776d4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/df974a912b59e276ad7bfa413e2b628633a776d4",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-07-04T14:11:28Z",
+          "commit_title": "Merge pull request from GHSA-vp5r-5pgw-jwqx"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4fb4721072e552dc2fa7541f7bdeb1737a6c113e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4fb4721072e552dc2fa7541f7bdeb1737a6c113e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4fb4721072e552dc2fa7541f7bdeb1737a6c113e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-07-04T14:26:49Z",
+          "commit_title": "Merge pull request from GHSA-58x8-3qxw-6hm7"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d4bf22b632ea8b1174375c4966a6768ab66393b6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d4bf22b632ea8b1174375c4966a6768ab66393b6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d4bf22b632ea8b1174375c4966a6768ab66393b6",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-07-04T14:45:52Z",
+          "commit_title": "Merge pull request from GHSA-xjvf-fm67-4qc3"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a5b4a2b7e71aedd2f04bc7a90f79dfe234fa7f89",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a5b4a2b7e71aedd2f04bc7a90f79dfe234fa7f89",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a5b4a2b7e71aedd2f04bc7a90f79dfe234fa7f89",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-07-04T14:46:35Z",
+          "commit_title": "Bump version to v4.2.10 (#30910)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30910,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30910",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30910",
+          "state": "closed",
+          "merged_at": "2024-07-04T14:46:35Z",
+          "pr_title": "Bump version to v4.2.10",
+          "pr_body": "### Security\r\n\r\n- TODO\r\n- Update dependencies\r\n\r\n### Added\r\n\r\n- Add yarn version specification to avoid confusion with Yarn 3 and Yarn 4\r\n\r\n### Changed\r\n\r\n- Change preview cards generation to skip unusually long URLs ([oneiros](https://github.com/mastodon/mastodon/pull/30854))\r\n- Change search modifiers to be case-insensitive ([Gargron](https://github.com/mastodon/mastodon/pull/30865))\r\n- Change `STATSD_ADDR` handling to emit a warning rather than crashing if the address is unreachable ([timothyjrogers](https://github.com/mastodon/mastodon/pull/30691))\r\n- Change PWA start URL from `/home` to `/` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27377))\r\n\r\n### Removed\r\n\r\n- Removed dependency on `posix-spawn` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/18559))\r\n\r\n### Fixed\r\n\r\n- Fix scheduled statuses scheduled in less than 5 minutes being immediately published ([danielmbrasil](https://github.com/mastodon/mastodon/pull/30584))\r\n- Fix encoding detection for link cards ([oneiros](https://github.com/mastodon/mastodon/pull/30780))\r\n- Fix `/admin/accounts/:account_id/statuses/:id` for edited posts with media attachments ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30819))\r\n- Fix duplicate `@context` attribute in user archive export ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30653))",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

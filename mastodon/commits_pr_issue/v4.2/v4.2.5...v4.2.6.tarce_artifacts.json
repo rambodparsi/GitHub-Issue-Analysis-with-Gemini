@@ -1,0 +1,142 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.5",
+  "compare": "v4.2.6",
+  "counts": {
+    "commits": 7,
+    "prs": 2,
+    "issues": 0,
+    "commit_pr": 2,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.5...v4.2.6.compare.json",
+    "commits": "commits/v4.2/v4.2.5...v4.2.6.commits.json",
+    "pulls": "pulls/v4.2/v4.2.5...v4.2.6.pulls.json",
+    "issues": "issues/v4.2/v4.2.5...v4.2.6.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "b7230cd759719c3cdb83d7d013ccdc897720f186",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b7230cd759719c3cdb83d7d013ccdc897720f186",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b7230cd759719c3cdb83d7d013ccdc897720f186",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T10:02:11Z",
+          "commit_title": "Update dependency nokogiri to 1.16.2"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ae2dce813a9fa40ff1c568e8fd7d6f8f71207e3d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ae2dce813a9fa40ff1c568e8fd7d6f8f71207e3d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ae2dce813a9fa40ff1c568e8fd7d6f8f71207e3d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T10:02:55Z",
+          "commit_title": "Update dependency sidekiq-unique-jobs to 7.1.33"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6d43b63275017738218e1e98744168d260180d78",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6d43b63275017738218e1e98744168d260180d78",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6d43b63275017738218e1e98744168d260180d78",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-02-13T18:11:47Z",
+          "commit_title": "Disable administrative doorkeeper routes (#29187)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29187,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29187",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29187",
+          "state": "closed",
+          "merged_at": "2024-02-13T18:17:10Z",
+          "pr_title": "Disable administrative doorkeeper routes",
+          "pr_body": "These routes allow for the administration of OAuth 2.0 applications on the instance, however, they are not currently integrated into Mastodon, nor protected via the new user roles functionality, but instead by legacy admin flags.\r\n\r\nI'll be the first to admit that the request specs added are not idiomatic necessarily, but they should be only temporary until we have a chance to properly integrate these routes into Mastodon. See https://github.com/mastodon/mastodon/issues/27478\r\n\r\n@ClearlyClaire as requested.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1a33d348d093bd3d9ae099553f4c5a28e3dd8e29",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1a33d348d093bd3d9ae099553f4c5a28e3dd8e29",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1a33d348d093bd3d9ae099553f4c5a28e3dd8e29",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T12:12:13Z",
+          "commit_title": "Add `sidekiq_unique_jobs:delete_all_locks` task and disable `sidekiq-unique-jobs` UI by default (#29199)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29199,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29199",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29199",
+          "state": "closed",
+          "merged_at": "2024-02-14T12:17:23Z",
+          "pr_title": "Add `sidekiq_unique_jobs:delete_all_locks` task and disable `sidekiq-unique-jobs` UI by default",
+          "pr_body": "It can be re-enabled using the `ENABLE_SIDEKIQ_UNIQUE_JOBS_UI` env variable.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0b0c7af2c112606c441b6b4083e6638b14b9263c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0b0c7af2c112606c441b6b4083e6638b14b9263c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0b0c7af2c112606c441b6b4083e6638b14b9263c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T14:15:34Z",
+          "commit_title": "Merge pull request from GHSA-7w3c-p9j8-mq3x"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f1700523f15cd714fbb05b4f277a6feb40ab8e4b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f1700523f15cd714fbb05b4f277a6feb40ab8e4b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f1700523f15cd714fbb05b4f277a6feb40ab8e4b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T14:16:07Z",
+          "commit_title": "Merge pull request from GHSA-vm39-j3vx-pch3"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7c8ca0c6d612329523fc4e468e82fc3e51634c1c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7c8ca0c6d612329523fc4e468e82fc3e51634c1c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7c8ca0c6d612329523fc4e468e82fc3e51634c1c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T12:29:38Z",
+          "commit_title": "Bump version to v4.2.6"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    }
+  ]
+}

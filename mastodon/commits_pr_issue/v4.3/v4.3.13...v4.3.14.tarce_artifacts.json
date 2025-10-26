@@ -1,0 +1,320 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.13",
+  "compare": "v4.3.14",
+  "counts": {
+    "commits": 12,
+    "prs": 7,
+    "issues": 0,
+    "commit_pr": 9,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.13...v4.3.14.compare.json",
+    "commits": "commits/v4.3/v4.3.13...v4.3.14.commits.json",
+    "pulls": "pulls/v4.3/v4.3.13...v4.3.14.pulls.json",
+    "issues": "issues/v4.3/v4.3.13...v4.3.14.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "414f8ff60db3e51d639523dd0882ef7fdff500f7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/414f8ff60db3e51d639523dd0882ef7fdff500f7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/414f8ff60db3e51d639523dd0882ef7fdff500f7",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-03T17:30:23Z",
+          "commit_title": "Fix redirect to external object when URL is missing or malformed (#36347)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36396,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36396",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36396",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:45:47Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36347,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36347",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36347",
+          "state": "closed",
+          "merged_at": "2025-10-03T17:42:56Z",
+          "pr_title": "Fix redirect to external object when URL is missing or malformed",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "82edd1bcf59c52da34f93593af0822ed6eed7acd",
+          "html_url": "https://github.com/mastodon/mastodon/commit/82edd1bcf59c52da34f93593af0822ed6eed7acd",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/82edd1bcf59c52da34f93593af0822ed6eed7acd",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T13:03:05Z",
+          "commit_title": "Add integration tests for mastodon-streaming (#36025)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36396,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36396",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36396",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:45:47Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36025,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36025",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36025",
+          "state": "closed",
+          "merged_at": "2025-09-30T07:41:08Z",
+          "pr_title": "Add integration tests for mastodon-streaming",
+          "pr_body": "This adds ruby-based integration tests to the streaming server component, where we use a ruby websocket client to connect to the streaming server and then assert properties of the connection during specs.\r\n\r\nThe code is a little gnarly due to how [websocket-driver](https://github.com/faye/websocket-driver-ruby/tree/main) APIs are designed, but it does work fairly reliably from what I can tell.\r\n\r\nReason for another suite type is because these tests are likely a lot more brittle than our other tests. They're not quite \"system\" tests, but something beyond that.\r\n\r\nThe goal here isn't to write unit tests for the streaming server, which we do need to do, but rather to check that the streaming server does the right thing when we expect it to do something from ruby land (for instance, revoking an access token should terminate the streaming server connections that are using that access token)\r\n\r\nWe may want some basic tests for eventsource connections too, but I'm happy to leave that to another day, since the code paths should be mostly the same.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f88b139a706bc0a8ef255d0a0166c9831091b32b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f88b139a706bc0a8ef255d0a0166c9831091b32b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f88b139a706bc0a8ef255d0a0166c9831091b32b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T13:04:04Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36396,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36396",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36396",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:45:47Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "22c9f190e8f7b79ac6b66343680ed58d8ae65cc5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/22c9f190e8f7b79ac6b66343680ed58d8ae65cc5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/22c9f190e8f7b79ac6b66343680ed58d8ae65cc5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T13:04:50Z",
+          "commit_title": "Update dependency `urì`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36396,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36396",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36396",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:45:47Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5983f8292b0e61f3878718a81ae708bf99462892",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5983f8292b0e61f3878718a81ae708bf99462892",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5983f8292b0e61f3878718a81ae708bf99462892",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-10-10T16:17:25Z",
+          "commit_title": "New Crowdin Translations for stable-4.3 (automated) (#36432)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36432,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36432",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36432",
+          "state": "closed",
+          "merged_at": "2025-10-10T16:17:25Z",
+          "pr_title": "New Crowdin Translations for stable-4.3 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "51b1a49834f1de155bef146b1fbac5afd9ee4412",
+          "html_url": "https://github.com/mastodon/mastodon/commit/51b1a49834f1de155bef146b1fbac5afd9ee4412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/51b1a49834f1de155bef146b1fbac5afd9ee4412",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:46:56Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36441,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36441",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36441",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:03:46Z",
+          "pr_title": "Update stable-4.3 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "233f7570b34c169b9af6d018eceed45ccb552ebe",
+          "html_url": "https://github.com/mastodon/mastodon/commit/233f7570b34c169b9af6d018eceed45ccb552ebe",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/233f7570b34c169b9af6d018eceed45ccb552ebe",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:50:04Z",
+          "commit_title": "Update dependency `openssl`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36441,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36441",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36441",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:03:46Z",
+          "pr_title": "Update stable-4.3 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "50b586ef024d7046937ae62b6c8c0211dbda6f49",
+          "html_url": "https://github.com/mastodon/mastodon/commit/50b586ef024d7046937ae62b6c8c0211dbda6f49",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/50b586ef024d7046937ae62b6c8c0211dbda6f49",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:19:14Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "032aa9eb6830543f596869d3dc1651f14d6d10f7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/032aa9eb6830543f596869d3dc1651f14d6d10f7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/032aa9eb6830543f596869d3dc1651f14d6d10f7",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:20:23Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "aa1d3825cd1b9e8a9c0400f3f68fc2b60ed11c40",
+          "html_url": "https://github.com/mastodon/mastodon/commit/aa1d3825cd1b9e8a9c0400f3f68fc2b60ed11c40",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/aa1d3825cd1b9e8a9c0400f3f68fc2b60ed11c40",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-10-13T12:20:57Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "81ed241061fd7b0158edd98b095df84559b65120",
+          "html_url": "https://github.com/mastodon/mastodon/commit/81ed241061fd7b0158edd98b095df84559b65120",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/81ed241061fd7b0158edd98b095df84559b65120",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T13:49:30Z",
+          "commit_title": "Fix streaming still being authorized for suspended accounts (#36450)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36450,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36450",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36450",
+          "state": "closed",
+          "merged_at": "2025-10-13T13:49:31Z",
+          "pr_title": "Fix streaming still being authorized for suspended accounts",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6dee9a12d2c2c3671ad9f4bc035f050a7c9549c5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6dee9a12d2c2c3671ad9f4bc035f050a7c9549c5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6dee9a12d2c2c3671ad9f4bc035f050a7c9549c5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T13:49:51Z",
+          "commit_title": "Bump version to v4.3.14 (#36445)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36445,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36445",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36445",
+          "state": "closed",
+          "merged_at": "2025-10-13T13:49:52Z",
+          "pr_title": "Bump version to v4.3.14",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

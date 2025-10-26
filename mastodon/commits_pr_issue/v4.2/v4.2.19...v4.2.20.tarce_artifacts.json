@@ -1,0 +1,308 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.19",
+  "compare": "v4.2.20",
+  "counts": {
+    "commits": 10,
+    "prs": 10,
+    "issues": 1,
+    "commit_pr": 10,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.19...v4.2.20.compare.json",
+    "commits": "commits/v4.2/v4.2.19...v4.2.20.commits.json",
+    "pulls": "pulls/v4.2/v4.2.19...v4.2.20.pulls.json",
+    "issues": "issues/v4.2/v4.2.19...v4.2.20.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "ed54baa6a29f2882a28ba54b732c788ec5d80ef1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ed54baa6a29f2882a28ba54b732c788ec5d80ef1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ed54baa6a29f2882a28ba54b732c788ec5d80ef1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T10:06:53Z",
+          "commit_title": "Fix incorrect URL being used when cache busting (#34189)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34189,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34189",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34189",
+          "state": "closed",
+          "merged_at": "2025-03-17T16:49:58Z",
+          "pr_title": "Fix incorrect URL being used when cache busting",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ec2b17860b1e2fb2d35b358e1c01e0bafda78b59",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ec2b17860b1e2fb2d35b358e1c01e0bafda78b59",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ec2b17860b1e2fb2d35b358e1c01e0bafda78b59",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-24T09:59:05Z",
+          "commit_title": "Change user archive signed URL TTL from 10 seconds to 1 hour (#34254)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34254,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34254",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34254",
+          "state": "closed",
+          "merged_at": "2025-03-24T10:08:20Z",
+          "pr_title": "Change user archive signed URL TTL from 10 seconds to 1 hour",
+          "pr_body": "Fixes #34235",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34235,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34235",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34235,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34235",
+          "state": "closed",
+          "issue_title": "User export link timeout too short",
+          "issue_body": "### Steps to reproduce the problem\n\n1. download archive from `/settings/export`\n2. the archive fails to download\n\n\n### Expected behaviour\n\nthe archive should download\n\n### Actual behaviour\n\nit didn't\n\n### Detailed description\n\ni notice that in https://github.com/mastodon/mastodon/blob/1960aac90b16fce1ec620ac990aa931efcf04700/app/controllers/backups_controller.rb#L15 the timeout is `10`, given that nothing indicates else, i believe that this is seconds, which is super short, and gives no chances for retrying a download\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\n_No response_\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: (from `ruby --version`, eg. v3.4.1)\n- Node.js version: (from `node --version`, eg. v20.18.0)\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "39ba777fb9154a5f1beece6ff9540daca90a4700",
+          "html_url": "https://github.com/mastodon/mastodon/commit/39ba777fb9154a5f1beece6ff9540daca90a4700",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/39ba777fb9154a5f1beece6ff9540daca90a4700",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T10:35:33Z",
+          "commit_title": "Fix follower synchronization mechanism erroneously removing followers from multi-page collections (#34272)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34272,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34272",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34272",
+          "state": "closed",
+          "merged_at": "2025-03-25T16:00:08Z",
+          "pr_title": "Fix follower synchronization mechanism erroneously removing followers from multi-page collections",
+          "pr_body": "Mastodon implements [FEP-8fcf: Followers collection synchronization across servers](https://codeberg.org/fediverse/fep/src/branch/main/fep/8fcf/fep-8fcf.md), but requires every identifier to be in a single page.\r\n\r\nThe reasons for only supporting one page are:\r\n- Mastodon must hold all the identifiers in memory anyway\r\n- this puts a bound on the number of network requests required\r\n- this is easier to implement and less error-prone\r\n\r\nHowever, when such a partial collection is split in multiple pages, Mastodon currently ignores everything past the first page, effectively incorrectly removing every follower represented by other pages.\r\n\r\nThis PR fixes that by aborting if there are multiple pages involved.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "435389d896d64e09419353b57830b94e0c8a7b0a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/435389d896d64e09419353b57830b94e0c8a7b0a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/435389d896d64e09419353b57830b94e0c8a7b0a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T10:36:22Z",
+          "commit_title": "Add support for paginating partial collections in `SynchronizeFollowersService` (#34277)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34277,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34277",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34277",
+          "state": "closed",
+          "merged_at": "2025-03-26T11:45:56Z",
+          "pr_title": "Add support for paginating partial collections in `SynchronizeFollowersService`",
+          "pr_body": "Follow-up to #34272, actually implementing going through multiple pages.\r\n\r\nIt treats accepted pending follow requests immediately in each page (as this is safe to do), but only removes followers if it managed to go through all pages (as detecting missing followers requires knowing the whole collection).\r\n\r\nAborts if the collection has more than 10 pages.\r\n\r\nThis PR also addresses a N+1 when resolving local accounts.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a2ae0668012473b15011118c6144f9b72d9c07ff",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a2ae0668012473b15011118c6144f9b72d9c07ff",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a2ae0668012473b15011118c6144f9b72d9c07ff",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-11-12T08:38:08Z",
+          "commit_title": "Define constants for sampling sizes in `AccountReachFinder` (#32805)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32805,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32805",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32805",
+          "state": "closed",
+          "merged_at": "2024-11-12T08:54:23Z",
+          "pr_title": "Define constants for sampling sizes in `AccountReachFinder`",
+          "pr_body": null,
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "47a5320e74b8264e61e0afc57d9a111b1b254bde",
+          "html_url": "https://github.com/mastodon/mastodon/commit/47a5320e74b8264e61e0afc57d9a111b1b254bde",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/47a5320e74b8264e61e0afc57d9a111b1b254bde",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-27T13:41:13Z",
+          "commit_title": "Change `AccountReachFinder` to consider statuses based on suspension date (#34291)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34291,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34291",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34291",
+          "state": "closed",
+          "merged_at": "2025-03-27T13:50:59Z",
+          "pr_title": "Change `AccountReachFinder` to consider statuses based on suspension date",
+          "pr_body": "When suspending or unsuspending an account, an `Update` is currently sent to:\r\n- anyone who is following the account\r\n- anyone who has reported the account\r\n- anyone who was recently messaged by the account\r\n\r\nHowever, “recently” in the last step means “2 days ago”, creating a discrepancy between suspension and unsuspension.\r\n\r\nThis PR treats suspended users as “2 days before the suspension” to reach the same audience.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cd2265767e6a840fcf06d7bc74dcb7e11f6cfe08",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cd2265767e6a840fcf06d7bc74dcb7e11f6cfe08",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cd2265767e6a840fcf06d7bc74dcb7e11f6cfe08",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-10-15T13:18:57Z",
+          "commit_title": "Reduce factories (36 > 12) in `AccountReachFinder` spec (#32482)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32482,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32482",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32482",
+          "state": "closed",
+          "merged_at": "2024-10-15T13:27:03Z",
+          "pr_title": "Reduce factories (36 > 12) in `AccountReachFinder` spec",
+          "pr_body": null,
+          "labels": [
+            "testing",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "483b4600b550ad5474decc99faaebb4d85b0c5ba",
+          "html_url": "https://github.com/mastodon/mastodon/commit/483b4600b550ad5474decc99faaebb4d85b0c5ba",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/483b4600b550ad5474decc99faaebb4d85b0c5ba",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T09:20:32Z",
+          "commit_title": "Change account suspensions to be federated to recently-followed accounts as well (#34294)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34294,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34294",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34294",
+          "state": "closed",
+          "merged_at": "2025-03-28T09:32:35Z",
+          "pr_title": "Change account suspensions to be federated to recently-followed accounts as well",
+          "pr_body": "Currently, Mastodon sends suspension notice to servers which have followed it, reported it, or were recently mentioned.\r\n\r\nThis adds recently-followed and recently-requested accounts to the mix, to address the issue of follow bots.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "91ef24d0e3d6415e6aa91b3ee6066cf56b4703e1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/91ef24d0e3d6415e6aa91b3ee6066cf56b4703e1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/91ef24d0e3d6415e6aa91b3ee6066cf56b4703e1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T16:12:32Z",
+          "commit_title": "Add delay to profile updates to debounce them (#34137)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34137,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34137",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34137",
+          "state": "closed",
+          "merged_at": "2025-03-11T16:27:34Z",
+          "pr_title": "Add delay to profile updates to debounce them",
+          "pr_body": "Useful when e.g. updating both avatars and header, as those are separate operations.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6feb39c46dd6aa251a4a546b7551bd830f3a1a7b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6feb39c46dd6aa251a4a546b7551bd830f3a1a7b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6feb39c46dd6aa251a4a546b7551bd830f3a1a7b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-04-02T07:14:25Z",
+          "commit_title": "Bump version to v4.2.20 (#34329)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34329,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34329",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34329",
+          "state": "closed",
+          "merged_at": "2025-04-02T07:14:25Z",
+          "pr_title": "Bump version to v4.2.20",
+          "pr_body": "### Add\r\n\r\n- Add delay to profile updates to debounce them (#34137 by `@ClearlyClaire`)\r\n- Add support for paginating partial collections in `SynchronizeFollowersService` (#34272 and #34277 by `@ClearlyClaire`)\r\n\r\n### Changed\r\n\r\n- Change account suspensions to be federated to recently-followed accounts as well (#34294 by `@ClearlyClaire`)\r\n- Change `AccountReachFinder` to consider statuses based on suspension date (#32805 and #34291 by `@ClearlyClaire` and `@mjankowski`)\r\n- Change user archive signed URL TTL from 10 seconds to 1 hour (#34254 by `@ClearlyClaire`)\r\n\r\n### Fixed\r\n\r\n- Fix incorrect URL being used when cache busting (#34189 by `@ClearlyClaire`)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

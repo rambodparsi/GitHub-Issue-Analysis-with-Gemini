@@ -1,0 +1,285 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.7",
+  "compare": "v4.3.8",
+  "counts": {
+    "commits": 11,
+    "prs": 7,
+    "issues": 0,
+    "commit_pr": 9,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.7...v4.3.8.compare.json",
+    "commits": "commits/v4.3/v4.3.7...v4.3.8.commits.json",
+    "pulls": "pulls/v4.3/v4.3.7...v4.3.8.pulls.json",
+    "issues": "issues/v4.3/v4.3.7...v4.3.8.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "72b1af137e993db3f9d2833b631be2525c041199",
+          "html_url": "https://github.com/mastodon/mastodon/commit/72b1af137e993db3f9d2833b631be2525c041199",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/72b1af137e993db3f9d2833b631be2525c041199",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-17T09:12:59Z",
+          "commit_title": "Change activity distribution error handling to skip retrying for deleted accounts (#33617)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33617,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33617",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33617",
+          "state": "closed",
+          "merged_at": "2025-01-17T09:23:23Z",
+          "pr_title": "Change activity distribution error handling to skip retrying for deleted accounts",
+          "pr_body": "See https://github.com/mastodon/mastodon/issues/33290#issuecomment-2595154685\r\n\r\nBasically, Mastodon sends account deletion notices to all known servers so any record can be swiftly deleted across the network.\r\n\r\nIt is expected that remote servers which cannot verify the signature will either:\r\n- skip processing the message because they do not know of the deleted account\r\n- try to refresh the account and end up on a 410, promptly deleting the account\r\n\r\nHowever, those behaviors, while sensible, implemented by and encouraged by Mastodon for several years, are not specified by ActivityPub.\r\n\r\nWhen an ActivityPub delivery fails because of a signature verification failure, the most likely reason is that the recipient does not know the sender's key (either because it has changed, or because the sender is not known at all). In both cases, the recipient will be unable to fetch an updated key, as the sending server will return a 410, and retrying delivery in this scenario does not make sense.\r\n\r\nHowever, signature verification could also fail because of an implementation bug (although that would affect pretty much all other activities as well) or significant clock skew. We unfortunately don't have a way to differentiate between these cases.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "698e4fdef2ec37db229c668ca85f9ecfcabc9abe",
+          "html_url": "https://github.com/mastodon/mastodon/commit/698e4fdef2ec37db229c668ca85f9ecfcabc9abe",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/698e4fdef2ec37db229c668ca85f9ecfcabc9abe",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-04-25T09:00:54Z",
+          "commit_title": "Fix sign-up e-mail confirmation page reloading on error or redirect (#34548)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34548,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34548",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34548",
+          "state": "closed",
+          "merged_at": "2025-04-25T09:12:47Z",
+          "pr_title": "Fix sign-up e-mail confirmation page reloading on error or redirect",
+          "pr_body": "On error or redirect (such as is currently the case with `LIMITED_FEDERATION_MODE=true`), the sign-up screen would erroneously try to proceed to `/start`.\r\n\r\nThis PR changes it to have stricter verification of the API result, and also requests `application/json` explicitly.\r\n\r\nThe issue of API endpoints redirecting to HTML pages in `LIMITED_FEDERATION_MODE=true` should be addressed in a separate PR.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a9f8b1ad965151601dc3d27701368f132caab8f8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a9f8b1ad965151601dc3d27701368f132caab8f8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a9f8b1ad965151601dc3d27701368f132caab8f8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-05T13:11:26Z",
+          "commit_title": "Fix incorrect redirect in response to unauthenticated API requests in limited federation mode (#34549)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34549,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34549",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34549",
+          "state": "closed",
+          "merged_at": "2025-04-25T11:34:50Z",
+          "pr_title": "Fix incorrect redirect in response to unauthenticated API requests in limited federation mode",
+          "pr_body": "Fixes MAS-385",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "86a8aa5e5c0fd718f83a8f820354315d0983b61e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/86a8aa5e5c0fd718f83a8f820354315d0983b61e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/86a8aa5e5c0fd718f83a8f820354315d0983b61e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-05T13:12:07Z",
+          "commit_title": "Add built-in context for interaction policies (#34574)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34574,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34574",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34574",
+          "state": "closed",
+          "merged_at": "2025-04-29T09:00:43Z",
+          "pr_title": "Add built-in context for interaction policies",
+          "pr_body": "We do not use these attributes in outgoing messages yet, but we need to know about them when compacting JSON-LD to our contexts.\r\n\r\nThis is in essence a bugfix for #34479, and will need to be backported to stable branches to keep forwarding LD-Signed activities making use of these attributes.",
+          "labels": [
+            "bug",
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e6a6c26c36c6ccc9892104dedb034f3c4d16f46b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e6a6c26c36c6ccc9892104dedb034f3c4d16f46b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e6a6c26c36c6ccc9892104dedb034f3c4d16f46b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-05T13:13:08Z",
+          "commit_title": "Remove double-query for signed query strings (#34610)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34610,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34610",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34610",
+          "state": "closed",
+          "merged_at": "2025-05-05T12:43:24Z",
+          "pr_title": "Remove double-query for signed query strings",
+          "pr_body": "#31994 was supposed to try the “correct” (still draft) signature first, then try the bogus one. However, it tried the “correct” one twice, providing no value.\r\n\r\nSince this change has been live for several months (it's been backported to 4.1 and up on September 2024), it's probably fine to remove that behavior instead of simply fixing it.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ec2023233d3e7cae1aba5aa1bdce0e6d72437101",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ec2023233d3e7cae1aba5aa1bdce0e6d72437101",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ec2023233d3e7cae1aba5aa1bdce0e6d72437101",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-05T13:01:16Z",
+          "commit_title": "Add warning for REDIS_NAMESPACE deprecation at startup (#34581)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34581,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34581",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34581",
+          "state": "closed",
+          "merged_at": "2025-05-05T13:10:52Z",
+          "pr_title": "Add warning for REDIS_NAMESPACE deprecation at startup",
+          "pr_body": "Will need to be backported, and will need to be updated to `abort` when actually dropping support for `REDIS_NAMESPACE` before 4.4.0 release.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6d46225718f54d4d6f88190e92ace8da3ebc67f3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6d46225718f54d4d6f88190e92ace8da3ebc67f3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6d46225718f54d4d6f88190e92ace8da3ebc67f3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-06T13:02:13Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e14bf631b5063ce144b179d0189dffa76a30800f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e14bf631b5063ce144b179d0189dffa76a30800f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e14bf631b5063ce144b179d0189dffa76a30800f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-06T06:26:43Z",
+          "commit_title": "Update dependency nokogiri"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34616,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34616",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34616",
+          "state": "closed",
+          "merged_at": "2025-05-06T13:04:34Z",
+          "pr_title": "Bump version to v4.3.8",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5ef82d793749463bfc8e2c0abec4c9c7cd0f3259",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5ef82d793749463bfc8e2c0abec4c9c7cd0f3259",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5ef82d793749463bfc8e2c0abec4c9c7cd0f3259",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-06T06:27:36Z",
+          "commit_title": "Update dependency net-imap"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34616,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34616",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34616",
+          "state": "closed",
+          "merged_at": "2025-05-06T13:04:34Z",
+          "pr_title": "Bump version to v4.3.8",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "30e25ff7fc7fc286ee71e9df43c6cc9cbe3e3f2c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/30e25ff7fc7fc286ee71e9df43c6cc9cbe3e3f2c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/30e25ff7fc7fc286ee71e9df43c6cc9cbe3e3f2c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-06T06:39:08Z",
+          "commit_title": "Bump version to v4.3.8"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34616,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34616",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34616",
+          "state": "closed",
+          "merged_at": "2025-05-06T13:04:34Z",
+          "pr_title": "Bump version to v4.3.8",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e6591bf322c7e47a8420a588d52a44a585c10b54",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e6591bf322c7e47a8420a588d52a44a585c10b54",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e6591bf322c7e47a8420a588d52a44a585c10b54",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-06T13:08:57Z",
+          "commit_title": "Fix code style issue"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    }
+  ]
+}

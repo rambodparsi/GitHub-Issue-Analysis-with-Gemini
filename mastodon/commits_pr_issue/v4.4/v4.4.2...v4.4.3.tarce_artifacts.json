@@ -1,0 +1,440 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.2",
+  "compare": "v4.4.3",
+  "counts": {
+    "commits": 13,
+    "prs": 12,
+    "issues": 3,
+    "commit_pr": 12,
+    "commit_pr_issue": 3
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.2...v4.4.3.compare.json",
+    "commits": "commits/v4.4/v4.4.2...v4.4.3.commits.json",
+    "pulls": "pulls/v4.4/v4.4.2...v4.4.3.pulls.json",
+    "issues": "issues/v4.4/v4.4.2...v4.4.3.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "6ff4e839375e7f96f700f274942a725e0cda2d83",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6ff4e839375e7f96f700f274942a725e0cda2d83",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6ff4e839375e7f96f700f274942a725e0cda2d83",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-25T16:50:38Z",
+          "commit_title": "Change quote verification to not bypass authorization flow for mentions (#35528)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35528,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35528",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35528",
+          "state": "closed",
+          "merged_at": "2025-07-31T07:52:40Z",
+          "pr_title": "Change quote verification to not bypass authorization flow for mentions",
+          "pr_body": "See https://codeberg.org/fediverse/fep/pulls/660",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "542935188972a64498b07ccfaf4938962fa1ef25",
+          "html_url": "https://github.com/mastodon/mastodon/commit/542935188972a64498b07ccfaf4938962fa1ef25",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/542935188972a64498b07ccfaf4938962fa1ef25",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-23T23:09:24Z",
+          "commit_title": "Fix “Expand this post” link including user `@undefined` (#35478)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35478,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35478",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35478",
+          "state": "closed",
+          "merged_at": "2025-07-23T23:20:57Z",
+          "pr_title": "Fix “Expand this post” link including user `@undefined`",
+          "pr_body": "Fixes #35462",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35462,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35462",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35462,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35462",
+          "state": "closed",
+          "issue_title": "Expand this post links are broken",
+          "issue_body": "### Steps to reproduce the problem\n\nClick on a photo in the Gallery: https://chaos.social/@karotte/media\n\nThe link for \"expand this post\" contains undefined rather than the username: \n\n<img width=\"1277\" height=\"504\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/b09e061b-e91d-43fd-be4b-1e1a77968fa3\" />\n\nClicking on the link loads the correct post, but the URL in the address bar is incorrect. Opening the link in a new tab doesn't work since the username is undefined.\n\n### Expected behaviour\n\n\"Expand this post\" link should contain username\n\n### Actual behaviour\n\n\"Expand this post\" link contains undefined where the username should be\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nchaos.social\n\n### Mastodon version\n\nv4.4.1\n\n### Browser name and version\n\nFirefox 139.0.1\n\n### Operating system\n\nArch Linux\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "8242f06eca271c0a9da2eca9bf32fb17d734676b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8242f06eca271c0a9da2eca9bf32fb17d734676b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8242f06eca271c0a9da2eca9bf32fb17d734676b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-24T15:45:12Z",
+          "commit_title": "Add restrictions on which quote posts can trend (#35507)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35507,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35507",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35507",
+          "state": "closed",
+          "merged_at": "2025-07-24T15:57:02Z",
+          "pr_title": "Add restrictions on which quote posts can trend",
+          "pr_body": "This changes the trending behavior to only allow quote posts to trend if:\r\n- the quoted post is resolvable and accepted\r\n- the quoted post has opted into trending\r\n- the quoted post is not sensitive content\r\n\r\nThis is similar to the original rules for trending posts, although:\r\n- it allows the quoted post to be a reply (the rationale is that many quoted posts will be, and the quote post will provide context)\r\n- it allows the quoted post to have an invalid language (the rationale for that is that the quoted post still has language restrictions and could be quoting from another language, providing a translation or sufficient context)\r\n- it allows the quoted post to itself quote anything (this is partly for technical reasons, partly because those nested quotes are not directly displayed, and thus akin to a mention or a link)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "08b2f255fcb8b401ed1d9555f76916087891d09b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/08b2f255fcb8b401ed1d9555f76916087891d09b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/08b2f255fcb8b401ed1d9555f76916087891d09b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-30T14:39:30Z",
+          "commit_title": "Fix synchronous recursive fetching of deeply-nested quoted posts (#35600)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35600,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35600",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35600",
+          "state": "closed",
+          "merged_at": "2025-07-30T14:54:12Z",
+          "pr_title": "Fix synchronous recursive fetching of deeply-nested quoted posts",
+          "pr_body": "Fixes #35572\r\n\r\nLike other resources, quote posts can be recursively fetched, and the depth is limited through the `request_id` mechanism.\r\n\r\nHowever, unlike other resources, they are fetched synchronously, which is required for a good user experience, but drastically changes the nature of the recursion, and the global asynchronous recursion limit we use is far too high for synchronous recursion.\r\n\r\nThis commit introduces a synchronous recursion depth limit to only fetch a maximum of 2 nested quotes synchronously, leaving the rest to later jobs.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35572,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35572",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35572,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35572",
+          "state": "closed",
+          "issue_title": "Fetching deeply-nested quote posts crashes with `SystemStackError`",
+          "issue_body": "### Steps to reproduce the problem\n\nPrimary Issue: Paperclip Image Processing Loop\n```\nlib/paperclip/vips_lazy_thumbnail.rb:100:in 'Paperclip::LazyThumbnail#transformed_image'\nlib/paperclip/vips_lazy_thumbnail.rb:68:in 'Paperclip::LazyThumbnail#make'\napp/models/concerns/remotable.rb:27:in 'MediaAttachment#remotable_attachment'\n```\n\nSecondary Issue: ActivityPub Quote Processing Loop\n```\napp/lib/activitypub/activity/create.rb:209:in 'ActivityPub::Activity::Create#attach_quote'\napp/services/activitypub/verify_quote_service.rb:12:in 'ActivityPub::VerifyQuoteService#call'\napp/services/activitypub/fetch_remote_status_service.rb:55:in 'ActivityPub::FetchRemoteStatusService#call'\napp/lib/activitypub/activity/create.rb:25:in 'ActivityPub::Activity::Create#create_status'\n```\n\nCrash: Last line in log\n```\nINFO -- : Command :: ffmpeg -nostdin -ss '0' -i '/tmp/58feccb35433f95717b3489986244cc920250727-7-h6ck47.mp4' -loglevel 'fatal' -vf 'scale='\\''min(640\\, iw):min(640\\, ih)'\\'':force_original_aspect_ratio=decrease' -f 'image2' -vframes '1' -y '/tmp/58feccb35433f95717b3489986244cc920250727-7-h6ck4720250727-7-52n6sj.png'\n```\n\n### Expected behaviour\n\nFail or Process\n\n### Actual behaviour\n\nRecursion loop\n\n### Detailed description\n\nThe following error caused a loop on Sidekiq:\n```\nWARN: SystemStackError: stack level too deep\nWARN: lib/paperclip/vips_lazy_thumbnail.rb:100:in 'Paperclip::LazyThumbnail#transformed_image'\nlib/paperclip/vips_lazy_thumbnail.rb:68:in 'Paperclip::LazyThumbnail#make'\nlib/paperclip/attachment_extensions.rb:21:in 'block in Paperclip::AttachmentExtensions#post_process_style'\nlib/paperclip/attachment_extensions.rb:20:in 'Array#each'\nlib/paperclip/attachment_extensions.rb:20:in 'Enumerable#inject'\nlib/paperclip/attachment_extensions.rb:20:in 'Paperclip::AttachmentExtensions#post_process_style'\napp/models/concerns/remotable.rb:27:in 'Kernel#public_send'\napp/models/concerns/remotable.rb:27:in 'block (2 levels) in MediaAttachment#remotable_attachment'\napp/lib/request.rb:122:in 'Request#perform'\napp/models/concerns/remotable.rb:24:in 'block in MediaAttachment#remotable_attachment'\napp/lib/activitypub/activity/create.rb:304:in 'block in ActivityPub::Activity::Create#process_attachments'\napp/lib/activitypub/activity/create.rb:285:in 'Array#each'\napp/lib/activitypub/activity/create.rb:285:in 'ActivityPub::Activity::Create#process_attachments'\napp/lib/activitypub/activity/create.rb:93:in 'ActivityPub::Activity::Create#process_status_params'\napp/lib/activitypub/activity/create.rb:51:in 'ActivityPub::Activity::Create#process_status'\napp/lib/activitypub/activity/create.rb:25:in 'block in ActivityPub::Activity::Create#create_status'\napp/models/concerns/lockable.rb:12:in 'block (2 levels) in Lockable#with_redis_lock'\napp/models/concerns/lockable.rb:10:in 'block in Lockable#with_redis_lock'\n```\nAfter that, I see the following lines repeating many, many times:\n```\napp/lib/redis_connection.rb:10:in 'RedisConnection.with'\napp/models/concerns/redisable.rb:9:in 'Redisable#with_redis'\napp/models/concerns/lockable.rb:9:in 'Lockable#with_redis_lock'\napp/lib/activitypub/activity/create.rb:19:in 'ActivityPub::Activity::Create#create_status'\napp/lib/activitypub/activity/create.rb:11:in 'ActivityPub::Activity::Create#perform'\napp/services/activitypub/fetch_remote_status_service.rb:55:in 'ActivityPub::FetchRemoteStatusService#call'\napp/services/activitypub/verify_quote_service.rb:75:in 'ActivityPub::VerifyQuoteService#fetch_quoted_post_if_needed!'\napp/services/activitypub/verify_quote_service.rb:12:in 'ActivityPub::VerifyQuoteService#call'\napp/lib/activitypub/activity/create.rb:209:in 'ActivityPub::Activity::Create#attach_quote'\napp/lib/activitypub/activity/create.rb:61:in 'block in ActivityPub::Activity::Create#process_status'\napp/lib/activitypub/activity/create.rb:56:in 'ActivityPub::Activity::Create#process_status'\napp/lib/activitypub/activity/create.rb:25:in 'block in ActivityPub::Activity::Create#create_status'\napp/models/concerns/lockable.rb:12:in 'block (2 levels) in Lockable#with_redis_lock'\napp/models/concerns/lockable.rb:10:in 'block in Lockable#with_redis_lock'\n```\nUntil it ends all processing after:\n```\napp/lib/activitypub/activity/announce.rb:8:in 'ActivityPub::Activity::Announce#perform'\napp/services/activitypub/process_collection_service.rb:69:in 'ActivityPub::ProcessCollectionService#process_item'\napp/services/activitypub/process_collection_service.rb:60:in 'block in ActivityPub::ProcessCollectionService#process_items'\napp/services/activitypub/process_collection_service.rb:60:in 'Array#reverse_each'\napp/services/activitypub/process_collection_service.rb:60:in 'Enumerator#each'\napp/services/activitypub/process_collection_service.rb:60:in 'Enumerable#filter_map'\napp/services/activitypub/process_collection_service.rb:60:in 'ActivityPub::ProcessCollectionService#process_items'\napp/services/activitypub/process_collection_service.rb:39:in 'ActivityPub::ProcessCollectionService#call'\napp/workers/activitypub/processing_worker.rb:16:in 'ActivityPub::ProcessingWorker#perform'\nlib/mastodon/sidekiq_middleware.rb:8:in 'block in Mastodon::SidekiqMiddleware#call'\nlib/mastodon/sidekiq_middleware.rb:73:in 'Mastodon::SidekiqMiddleware#setup_query_log_tags'\nlib/mastodon/sidekiq_middleware.rb:7:in 'Mastodon::SidekiqMiddleware#call'\n2025-07-27T07:45:22.705Z pid=7 tid=2gzdmv class=ActivityPub::ProcessingWorker jid=adb2a983f93f96ff84bb7023 INFO: start\n2025-07-27T07:45:22.928Z pid=7 tid=2gzx9b class=LinkCrawlWorker jid=1a737b3dce815b54ecec3c6f INFO: start\n...\n2025-07-27T07:45:23.188Z pid=7 tid=2gzdmv class=ActivityPub::ProcessingWorker jid=adb2a983f93f96ff84bb7023 elapsed=0.483 INFO: done\n...\nI, [2025-07-27T07:45:23.414090 #7]  INFO -- : [paperclip] Trying to link /tmp/c76621e9870a0303da80223ab0f5a83220250727-7-g7heym.getB to /tmp/88f52d3b5a7debc0081549063a6a936b20250727-7-d12qh4.mp4\nI, [2025-07-27T07:45:23.414371 #7]  INFO -- : Command :: file -b --mime '/tmp/88f52d3b5a7debc0081549063a6a936b20250727-7-d12qh4.mp4'\n2025-07-27T07:45:23.481Z pid=7 tid=2h3v6f class=ActivityPub::ProcessingWorker jid=8f8afe6cd962623f89889283 INFO: start\nI, [2025-07-27T07:45:23.510573 #7]  INFO -- : Command :: ffmpeg -nostdin -i '/tmp/c76621e9870a0303da80223ab0f5a83220250727-7-g7heym.getB' -loglevel 'fatal' -map_metadata '-1' -movflags 'faststart' -c:v 'copy' -c:a 'copy' -y '/tmp/c76621e9870a0303da80223ab0f5a83220250727-7-g7heym20250727-7-wams65.mp4'\nI, [2025-07-27T07:45:23.539914 #7]  INFO -- : [paperclip] Trying to link /tmp/c76621e9870a0303da80223ab0f5a83220250727-7-g7heym20250727-7-wams65.mp4 to /tmp/58feccb35433f95717b3489986244cc920250727-7-h6ck47.mp4\n2025-07-27T07:45:23.546Z pid=7 tid=2h3v6f class=ActivityPub::ProcessingWorker jid=8f8afe6cd962623f89889283 elapsed=0.065 INFO: done\nI, [2025-07-27T07:45:23.558106 #7]  INFO -- : Command :: ffmpeg -nostdin -ss '0' -i '/tmp/58feccb35433f95717b3489986244cc920250727-7-h6ck47.mp4' -loglevel 'fatal' -vf 'scale='\\''min(640\\, iw):min(640\\, ih)'\\'':force_original_aspect_ratio=decrease' -f 'image2' -vframes '1' -y '/tmp/58feccb35433f95717b3489986244cc920250727-7-h6ck4720250727-7-52n6sj.png'\n```\n\nI believe the `Paperclip::LazyThumbnail` error is related to VIPS and likely the source of Sidekiq getting stuck randomly, starting with version 4.3.0 and VIPS. I have noticed this in more than one instance.\n\nNot sure if the fact that those instances use OpenStack Swift for object storage is related, but it's not a problem for all instances using OpenStack Swift, or at least it has only impacted a small number of those.\n\n### Mastodon instance\n\nMultiple\n\n### Mastodon version\n\nv4.4.2\n\n### Technical details\n\n- VIPS enabled\n- OpenStack Swift Object Storage",
+          "labels": [
+            "area/media processing"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "4ae47f4263ca6837176285403aaf281ab399a0de",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4ae47f4263ca6837176285403aaf281ab399a0de",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4ae47f4263ca6837176285403aaf281ab399a0de",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-30T14:07:01Z",
+          "commit_title": "Change `StatusReachFinder` to consider quotes as well as reblogs (#35601)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35601,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35601",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35601",
+          "state": "closed",
+          "merged_at": "2025-07-30T14:18:33Z",
+          "pr_title": "Change `StatusReachFinder` to consider quotes as well as reblogs",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "208cb8276ae618aa36aec5fad0dc31341402c133",
+          "html_url": "https://github.com/mastodon/mastodon/commit/208cb8276ae618aa36aec5fad0dc31341402c133",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/208cb8276ae618aa36aec5fad0dc31341402c133",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-30T16:28:26Z",
+          "commit_title": "Fix friends-of-friends recommendations suggesting already-requested accounts (#35604)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35604,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35604",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35604",
+          "state": "closed",
+          "merged_at": "2025-07-30T16:49:39Z",
+          "pr_title": "Fix friends-of-friends recommendations suggesting already-requested accounts",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cabb33bc494d6a5f0e4d8537ed6b1b5257d3e107",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cabb33bc494d6a5f0e4d8537ed6b1b5257d3e107",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cabb33bc494d6a5f0e4d8537ed6b1b5257d3e107",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-04T07:49:12Z",
+          "commit_title": "Fix WebUI crashing for accounts with `null` URL (#35651)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35678,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35678",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35678",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:16Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 35651,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35651",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35651",
+          "state": "closed",
+          "merged_at": "2025-08-04T08:02:04Z",
+          "pr_title": "Fix WebUI crashing for accounts with `null` URL",
+          "pr_body": "Fixes #35635\r\n\r\nIn 79931bf3ae4, we at the same time added JS code that relied on `url` never to be `null`, and introduced a new way for `url` to be `null`. This PR changes it to consider the `url` field in the API response to be potentially `null`, according to the specifications, and also provides a server-side fallback in line with what we used to have before 79931bf3ae4 so that other clients are less likely to run into the same issue.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35635,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35635",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35635,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35635",
+          "state": "closed",
+          "issue_title": "Browser stays blank after login; Console error: \"Uncaught TypeError: can't access property \"startsWith\", n.url is null\"",
+          "issue_body": "### Steps to reproduce the problem\n\n- Login to affected account.\n\n\n\n### Expected behaviour\n\nRedirect to %domain%/deck/getting-started\n\n### Actual behaviour\n\nURL in url-bar stayed at %domain% and the browser window went (dark mode) black/grey.\n\n### Detailed description\n\nObserved after upgrade to 4.4.2 not sure whether this was an issue before.\n\nError found in Browser Console:\n\n```\nUncaught TypeError: can't access property \"startsWith\", n.url is null\n    wI account.ts:150\n    bI accounts.ts:23\n    OI accounts.ts:37\n    OI accounts.ts:36\n    CI accounts.ts:59\n    Immutable 4\n    Redux 2\n    QM sounds.ts:83\n    HM errors.ts:53\n    WM loading_bar.ts:84\n    Redux 2\n    ck store.js:25\n    om Redux\n    <anonymous> mastodon.jsx:27\nuseSelectableClick-C-trR-q9.js:40:7809\n    wI account.ts:150\n    bI accounts.ts:23\n    OI accounts.ts:37\n    forEach self-hosted:157\n    OI accounts.ts:36\n    CI accounts.ts:59\n    default Immutable\n    forEach self-hosted:157\n    Immutable 3\n    Redux 2\n    QM sounds.ts:83\n    HM errors.ts:53\n    WM loading_bar.ts:84\n    Redux 2\n    ck store.js:25\n    om Redux\n    <anonym> mastodon.jsx:27\n```\n\nLooking into the database I found that the url column in the accounts table of the affected account was null.\n\nSetting it to %domain%/%accountname% (e.g., https://example.com/foobar) resolved the issue.\n\n### Mastodon instance\n\nhttps://xtux.org/\n\n### Mastodon version\n\nv4.4.2\n\n### Browser name and version\n\nLibrewolf 141.0-1 and Version 138.0.7204.157 (Offizieller Build) snap (64-Bit)\n\n### Operating system\n\nUbuntu 22.04.5 LTS\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "7d3cc51148553deefecf10f965348864a8399701",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7d3cc51148553deefecf10f965348864a8399701",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7d3cc51148553deefecf10f965348864a8399701",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-04T14:34:05Z",
+          "commit_title": "Avoid nested transactions when fetching quote posts (#35657)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35678,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35678",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35678",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:16Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 35657,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35657",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35657",
+          "state": "closed",
+          "merged_at": "2025-08-04T14:46:21Z",
+          "pr_title": "Avoid nested transactions when fetching quote posts",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "83dc7dc16eaced1085a6ce906f6a66c626bf6e10",
+          "html_url": "https://github.com/mastodon/mastodon/commit/83dc7dc16eaced1085a6ce906f6a66c626bf6e10",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/83dc7dc16eaced1085a6ce906f6a66c626bf6e10",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-04T14:15:02Z",
+          "commit_title": "Disable ActiveRecord query cache in `Create` critical path (#35662)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35678,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35678",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35678",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:16Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 35662,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35662",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35662",
+          "state": "closed",
+          "merged_at": "2025-08-04T14:26:58Z",
+          "pr_title": "Disable ActiveRecord query cache in `Create` critical path",
+          "pr_body": "Call sites regularly check for the status existing before going into `Create`. When that happens, the critical section is useless as ActiveRecord will fail to find the status, because of the cached negative result.\r\n\r\nI believe this will fix the occasional `Validation failed: Uri has already been taken` issues we've been seeing.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b15861528c257a7932cabfc3fb77aa7b124080b9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b15861528c257a7932cabfc3fb77aa7b124080b9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b15861528c257a7932cabfc3fb77aa7b124080b9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T09:07:10Z",
+          "commit_title": "Update dependency ruby-saml to v1.18.1"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35678,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35678",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35678",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:16Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e330447b0e27b542b4bf4a6b2cee1e0c603a2e7a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e330447b0e27b542b4bf4a6b2cee1e0c603a2e7a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e330447b0e27b542b4bf4a6b2cee1e0c603a2e7a",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-08-05T12:02:35Z",
+          "commit_title": "New Crowdin Translations for stable-4.4 (automated) (#35681)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35681,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35681",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35681",
+          "state": "closed",
+          "merged_at": "2025-08-05T12:02:35Z",
+          "pr_title": "New Crowdin Translations for stable-4.4 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e2592419d93fb41be03c2f3ff6a122fecb0e0952",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e2592419d93fb41be03c2f3ff6a122fecb0e0952",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e2592419d93fb41be03c2f3ff6a122fecb0e0952",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T12:53:04Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5478ef9b32be0c7ac8f86330760485a7531d218a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5478ef9b32be0c7ac8f86330760485a7531d218a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5478ef9b32be0c7ac8f86330760485a7531d218a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T13:20:40Z",
+          "commit_title": "Bump version to v4.4.3 (#35686)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35686,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35686",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35686",
+          "state": "closed",
+          "merged_at": "2025-08-05T13:20:40Z",
+          "pr_title": "Bump version to v4.4.3",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

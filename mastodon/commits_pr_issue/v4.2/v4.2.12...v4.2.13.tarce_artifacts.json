@@ -1,0 +1,270 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.12",
+  "compare": "v4.2.13",
+  "counts": {
+    "commits": 12,
+    "prs": 5,
+    "issues": 1,
+    "commit_pr": 5,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.12...v4.2.13.compare.json",
+    "commits": "commits/v4.2/v4.2.12...v4.2.13.commits.json",
+    "pulls": "pulls/v4.2/v4.2.12...v4.2.13.pulls.json",
+    "issues": "issues/v4.2/v4.2.12...v4.2.13.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "0e8f23ebeeb4cea2d11a92d737adca337645144a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0e8f23ebeeb4cea2d11a92d737adca337645144a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0e8f23ebeeb4cea2d11a92d737adca337645144a",
+          "author_login": "oneiros",
+          "commit_author_date": "2024-09-30T10:25:54Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "df36f12d46baf50a69d79cbdc7e612ad816cd281",
+          "html_url": "https://github.com/mastodon/mastodon/commit/df36f12d46baf50a69d79cbdc7e612ad816cd281",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/df36f12d46baf50a69d79cbdc7e612ad816cd281",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-23T15:05:43Z",
+          "commit_title": "Update dependency ruby-saml"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2abaa9b68af77e1f7d77c2f4ace54789b3f47f27",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2abaa9b68af77e1f7d77c2f4ace54789b3f47f27",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2abaa9b68af77e1f7d77c2f4ace54789b3f47f27",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-23T15:06:08Z",
+          "commit_title": "Update dependency omniauth-saml"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d096965eec092ab934f6f6b003ab682d5f005ef0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d096965eec092ab934f6f6b003ab682d5f005ef0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d096965eec092ab934f6f6b003ab682d5f005ef0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-23T15:07:27Z",
+          "commit_title": "Update dependency puma"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "378af3a0a08abc15d759d71c05523c39e8bbdc5f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/378af3a0a08abc15d759d71c05523c39e8bbdc5f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/378af3a0a08abc15d759d71c05523c39e8bbdc5f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-23T15:08:19Z",
+          "commit_title": "Update dependency fugit"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "9bfbba3224030095a21c48b9270775748ab6c39a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9bfbba3224030095a21c48b9270775748ab6c39a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9bfbba3224030095a21c48b9270775748ab6c39a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-20T14:58:06Z",
+          "commit_title": "Fix issue when encountering reblog of deleted post in feed rebuild (#32001)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32001,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32001",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32001",
+          "state": "closed",
+          "merged_at": "2024-09-20T15:08:41Z",
+          "pr_title": "Fix issue when encountering reblog of deleted post in feed rebuild",
+          "pr_body": "Fixes #31987",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 31987,
+              "html_url": "https://github.com/mastodon/mastodon/issues/31987",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 31987,
+          "html_url": "https://github.com/mastodon/mastodon/issues/31987",
+          "state": "closed",
+          "issue_title": "sidekiq: FeedInsertWorker: undefined method `account_id' for nil:NilClass",
+          "issue_body": "### Steps to reproduce the problem\n\n1. use the instance normally.\r\n\r\n\n\n### Expected behaviour\n\nhome feed is not empty\n\n### Actual behaviour\n\nhome feed is empty and there are many failed sidekiq jobs\n\n### Detailed description\n\n1. My home feed is suddenly empty, and `RAILS_ENV=production ./bin/tootctl feeds build` does not solve it.\r\n2. the log of sidekiq seems to say it could not insert into feed.\n\n### Mastodon instance\n\njing.lgbt\n\n### Mastodon version\n\nv4.2.12\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux]\r\n- Node.js version: v20.17.0\r\n\r\njournald:\r\n```\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: 2024-09-19T16:38:48.333Z pid=1042215 tid=ilnj class=FeedInsertWorker jid=537fcecfb09c55be7366b105 INFO: start\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: 2024-09-19T16:38:48.344Z pid=1042215 tid=ilnj class=FeedInsertWorker jid=537fcecfb09c55be7366b105 elapsed=0.012 INFO: fail\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: 2024-09-19T16:38:48.344Z pid=1042215 tid=ilnj WARN: {\"context\":\"Job raised exception\",\"job\":{\"retry\":true,\"queue\":\"default\",\"class\":\"FeedInsertWorker\",\"args\":[113159302227197083,111832116425341006,\"home\",{\"update\":null}],\"jid\":\"537fcecfb09c55be7366b105\",\"created_at\":1726673923.177217,\"enqueued_at\":1726763928.3325593,\"error_message\":\"undefined method `account_id' for nil:NilClass\",\"error_class\":\"NoMethodError\",\"failed_at\":1726673923.183306,\"retry_count\":13,\"retried_at\":1726735322.2056925}}\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: 2024-09-19T16:38:48.344Z pid=1042215 tid=ilnj WARN: NoMethodError: undefined method `account_id' for nil:NilClass\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: 2024-09-19T16:38:48.344Z pid=1042215 tid=ilnj WARN: /home/mastodon/live/app/lib/feed_manager.rb:561:in `block in build_crutches'\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: /home/mastodon/live/app/lib/feed_manager.rb:556:in `each'\r\nSep 20 01:38:48 mastodon1 bundle[1042215]: /home/mastodon/live/app/lib/feed_manager.rb:556:in `flat_map'\r\n```",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "e66aaee1a4b47e458a2df23f65620b9b2bbc6eed",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e66aaee1a4b47e458a2df23f65620b9b2bbc6eed",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e66aaee1a4b47e458a2df23f65620b9b2bbc6eed",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-12T12:58:12Z",
+          "commit_title": "Fix security context sometimes not being added in LD-Signed activities (#31871)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 31871,
+          "html_url": "https://github.com/mastodon/mastodon/pull/31871",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/31871",
+          "state": "closed",
+          "merged_at": "2024-09-12T13:08:31Z",
+          "pr_title": "Fix security context sometimes not being added in LD-Signed activities",
+          "pr_body": "Contexts included in activities are so far decided at serialization-time, but Linked-Data signature occurs after serialization time.\r\n\r\nIn some cases, signed activities were missing the `https://w3id.org/security/v1` context.\r\n\r\nThis PR makes it so that the signing code always adds that context to signed activities.\r\n\r\nPR marked as draft because I have yet to add tests.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "20f06798a0d33895f391b322670abaaf4bb68a73",
+          "html_url": "https://github.com/mastodon/mastodon/commit/20f06798a0d33895f391b322670abaaf4bb68a73",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/20f06798a0d33895f391b322670abaaf4bb68a73",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-20T10:10:09Z",
+          "commit_title": "Change Mastodon to issue correctly-signed queries by default (#31994)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 31994,
+          "html_url": "https://github.com/mastodon/mastodon/pull/31994",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/31994",
+          "state": "closed",
+          "merged_at": "2024-09-20T10:20:24Z",
+          "pr_title": "Change Mastodon to issue correctly-signed queries by default",
+          "pr_body": "Mastodon had a quirk in HTTP signing and verification and had incorrect behavior when querystrings were involved.\r\n\r\nSupport for correctly-signed requests was added in v4.1.11 and v4.2.10, which were released a little over 6 months ago.\r\n\r\nI think the next step in phasing out the incorrect signatures is, as in this PR, changing the default behavior to use the correct signatures, and having the incorrect signatures as a fallback.\r\n\r\nAn ulterior step would be to completely disable incorrect signatures, but this would have important compatibility implications, so I'd defer that to a later release.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "346c37df80cfd13add09d86dc36be85decd096d8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/346c37df80cfd13add09d86dc36be85decd096d8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/346c37df80cfd13add09d86dc36be85decd096d8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-23T15:36:15Z",
+          "commit_title": "Fix replies collection being cached improperly"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d2842db18dc617673289f1d153899acfd20065bc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d2842db18dc617673289f1d153899acfd20065bc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d2842db18dc617673289f1d153899acfd20065bc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-27T12:31:00Z",
+          "commit_title": "Ignore CVE-2024-8796, which does not impact us"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "245a74f9cae1b693c42b62795497ce89ecce9fb1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/245a74f9cae1b693c42b62795497ce89ecce9fb1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/245a74f9cae1b693c42b62795497ce89ecce9fb1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-26T19:27:57Z",
+          "commit_title": "Add “A Mastodon update is available.” message on admin dashboard for non-bugfix updates (#32106)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32106,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32106",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32106",
+          "state": "closed",
+          "merged_at": "2024-09-26T19:39:30Z",
+          "pr_title": "Add “A Mastodon update is available.” message on admin dashboard for non-bugfix updates",
+          "pr_body": "We may possibly want to backport this.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7e47439787f8afe5930c9d7ddafc3c94e605d091",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7e47439787f8afe5930c9d7ddafc3c94e605d091",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7e47439787f8afe5930c9d7ddafc3c94e605d091",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-09-27T12:36:08Z",
+          "commit_title": "Bump version to 4.2.13"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32041,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32041",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32041",
+          "state": "closed",
+          "merged_at": "2024-09-30T11:28:03Z",
+          "pr_title": "Bump version to v4.2.13",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

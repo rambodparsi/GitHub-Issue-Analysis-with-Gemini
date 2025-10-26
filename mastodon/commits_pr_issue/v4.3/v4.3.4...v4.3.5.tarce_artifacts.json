@@ -1,0 +1,271 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.4",
+  "compare": "v4.3.5",
+  "counts": {
+    "commits": 8,
+    "prs": 8,
+    "issues": 2,
+    "commit_pr": 8,
+    "commit_pr_issue": 2
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.4...v4.3.5.compare.json",
+    "commits": "commits/v4.3/v4.3.4...v4.3.5.commits.json",
+    "pulls": "pulls/v4.3/v4.3.4...v4.3.5.pulls.json",
+    "issues": "issues/v4.3/v4.3.4...v4.3.5.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "bcfd6ab3e44697f4df5fbdf8566a7c66fe00a353",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bcfd6ab3e44697f4df5fbdf8566a7c66fe00a353",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bcfd6ab3e44697f4df5fbdf8566a7c66fe00a353",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-02-28T10:17:18Z",
+          "commit_title": "Add Ruby 3.4 to Mastodon 4.3 test matrix (#34028)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34028,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34028",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34028",
+          "state": "closed",
+          "merged_at": "2025-02-28T10:17:18Z",
+          "pr_title": "Add Ruby 3.4 to Mastodon 4.3 test matrix",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b73e968641f08ec88d6cfecb50ed318a76fc1f0c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b73e968641f08ec88d6cfecb50ed318a76fc1f0c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b73e968641f08ec88d6cfecb50ed318a76fc1f0c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-25T09:18:06Z",
+          "commit_title": "Fix username and display name being hidden on narrow screens in moderation interface (#33064)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33064,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33064",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33064",
+          "state": "closed",
+          "merged_at": "2024-11-25T09:29:46Z",
+          "pr_title": "Fix username and display name being hidden on narrow screens in moderation interface",
+          "pr_body": "This screen could use a redesign, but in the meantime, fix moderation on mobile being near impossible following #29316\r\n\r\n## Before\r\n\r\n![image](https://github.com/user-attachments/assets/1e7522ff-ec38-47be-a350-bd51330af004)\r\n\r\n## After\r\n\r\n![image](https://github.com/user-attachments/assets/d0b9978b-bef1-47d4-9a48-c83e7081ce23)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1ed1cdba1bbd1b059e434640768c3bbb6d2608ea",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1ed1cdba1bbd1b059e434640768c3bbb6d2608ea",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1ed1cdba1bbd1b059e434640768c3bbb6d2608ea",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-05T08:43:31Z",
+          "commit_title": "Fix preview cards under Content Warnings not being shown in detailed statuses (#34068)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34068,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34068",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34068",
+          "state": "closed",
+          "merged_at": "2025-03-05T08:53:30Z",
+          "pr_title": "Fix preview cards under Content Warnings not being shown in detailed statuses",
+          "pr_body": "Follow-up to #33827",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7e20ee76957aabffe2a33e9fd5a25f60bb988a1f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7e20ee76957aabffe2a33e9fd5a25f60bb988a1f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7e20ee76957aabffe2a33e9fd5a25f60bb988a1f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-02-21T07:48:31Z",
+          "commit_title": "Fix streaming server not filtering unknown-language posts from public timelines (#33774)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33774,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33774",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33774",
+          "state": "closed",
+          "merged_at": "2025-02-21T07:56:39Z",
+          "pr_title": "Fix streaming server not filtering unknown-language posts from public timelines",
+          "pr_body": "Fixes #33742\r\n\r\nI am not 100% sure whether we want the streaming server to adopt the REST API behavior (this PR), or the REST API behavior to change to adopt the streaming server's behavior, but I have a preference for the former, hence the PR.",
+          "labels": [
+            "javascript",
+            "streaming"
+          ],
+          "issue_refs": [
+            {
+              "number": 33742,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33742",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33742,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33742",
+          "state": "closed",
+          "issue_title": "Streaming API and REST API language filtering is inconsistent",
+          "issue_body": "### Steps to reproduce the problem\n\n1. select chosen languages in `/settings/preferences/other`\n2. open the public timeline\n3. observe new posts appearing\n4. refresh page\n\n### Expected behaviour\n\nrefreshing the page should result in the same posts\n\n### Actual behaviour\n\nstreaming gets more posts than REST API\n\n### Detailed description\n\nAt first glance, this seems to be due to the language filtering logic being different in the streaming server (`streamFrom` function) and the Ruby server (`PublicFeed#language_scope`):\n- the streaming code treats posts with an unknown language as acceptable (`payload.language !== null `)\n- when language filtering is enabled, the Ruby code does not return posts with `language: nil`\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.3.0\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "4228ca614cf74fe81612e3ae9b225439fb1d34d4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4228ca614cf74fe81612e3ae9b225439fb1d34d4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4228ca614cf74fe81612e3ae9b225439fb1d34d4",
+          "author_login": "renchap",
+          "commit_author_date": "2025-03-06T10:44:27Z",
+          "commit_title": "Fix processing errors for some HEIF images from iOS 18 (#34086)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34086,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34086",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34086",
+          "state": "closed",
+          "merged_at": "2025-03-06T10:52:45Z",
+          "pr_title": "Fix processing errors for some HEIF images from iOS 18",
+          "pr_body": "Old versions of `libheif` have a bug with those images (related to HDR metadata). The easiest solution for us is to use `libheif` from Debian backports, which is a recent version (1.19, vs 1.15 in mainline).\r\n\r\nThe issue should happen wether `imagemagick` or `vips` is used, as this is a bug in the underlying library.\r\n\r\nSee https://github.com/libvips/libvips/issues/4169\r\n\r\nFixes #31570",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 31570,
+              "html_url": "https://github.com/mastodon/mastodon/issues/31570",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 31570,
+          "html_url": "https://github.com/mastodon/mastodon/issues/31570",
+          "state": "closed",
+          "issue_title": "errors uploading iPhone HEIC images",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Attempt to upload an HEIC photo taken on an iPhone\r\n2. See \"500 Error processing thumbnail for uploaded media\" in the web UI\r\n\r\n### Expected behaviour\r\n\r\nThe image should upload and post\r\n\r\n### Actual behaviour\r\n\r\nThe image fails to upload\r\n\r\n### Detailed description\r\n\r\nI initially thought this might be from using libvips but upon further testing, it occurs whether or not I have `MASTODON_USE_LIBVIPS=true` in .env.production, so it seems to be something else.\r\n\r\nI have attached two sample images that reproduce the issue (as a zip; GitHub doesn't support HEIF): [HEIF-images.zip](https://github.com/user-attachments/files/16734152/HEIF-images.zip)\r\n\r\nI also see this in my /var/log/syslog when the issue occurs\r\n\r\n```\r\n2024-08-23T12:32:35.879625-07:00 koi bundle[47993]: E, [2024-08-23T12:32:35.878990 #47993] ERROR -- : [2295fbc3-5619-4ccf-a574-e19fc5116ece] Paperclip::Error: Error while optimizing 799cd6bfc52d5baa8ba87191e42bdc0820240823-47993-10b16y: /tmp/799cd6bfc52d5baa8ba87191e42bdc0820240823-47993-10b16y.heif: bad seek to 3413051\r\n2024-08-23T12:32:35.880347-07:00 koi bundle[47993]: heif: Invalid input: Unspecified: Metadata not correctly assigned to image (2.0)\r\n```\r\n\r\n### Mastodon instance\r\n\r\npuddle.town\r\n\r\n### Mastodon version\r\n\r\nv4.3.0-beta.1\r\n\r\n### Technical details\r\n\r\n```\r\n$ ruby --version\r\nruby 3.3.4 (2024-07-09 revision be1089c8ec) [x86_64-linux]\r\n```\r\n\r\n```\r\n$ node --version\r\nv20.17.0\r\n```\r\n\r\n```\r\n$ cat /etc/lsb-release \r\nDISTRIB_ID=Ubuntu\r\nDISTRIB_RELEASE=24.04\r\nDISTRIB_CODENAME=noble\r\nDISTRIB_DESCRIPTION=\"Ubuntu 24.04 LTS\"\r\n```\r\n\r\n```\r\n$ vips -v             \r\nvips-8.15.1\r\n```\r\n\r\n```\r\n$ vips --vips-config\r\nenable debug: false\r\nenable deprecated: true\r\nenable modules: true\r\nenable cplusplus: true\r\nenable RAD load/save: true\r\nenable Analyze7 load/save: true\r\nenable PPM load/save: true\r\nenable GIF load: true\r\nuse fftw for FFTs: true\r\nSIMD support with highway: true\r\naccelerate loops with ORC: false\r\nICC profile support with lcms: true\r\nzlib: true\r\ntext rendering with pangocairo: true\r\nfont file support with fontconfig: true\r\nEXIF metadata support with libexif: true\r\nJPEG load/save with libjpeg: true\r\nJXL load/save with libjxl: true (dynamic module: true)\r\nJPEG2000 load/save with OpenJPEG: true\r\nPNG load/save with libspng: true\r\nPNG load/save with libpng: false\r\nselected quantisation package: imagequant\r\nTIFF load/save with libtiff: true\r\nimage pyramid save with libarchive: true\r\nHEIC/AVIF load/save with libheif: true (dynamic module: true)\r\nWebP load/save with libwebp: true\r\nPDF load with PDFium: false\r\nPDF load with poppler-glib: true (dynamic module: true)\r\nSVG load with librsvg: true\r\nEXR load with OpenEXR: true\r\nOpenSlide load: true (dynamic module: true)\r\nMatlab load with libmatio: true\r\nNIfTI load/save with niftiio: false\r\nFITS load/save with cfitsio: true\r\nGIF save with cgif: true\r\nselected Magick package: MagickCore (dynamic module: true)\r\nMagick API version: magick6\r\nMagick load: true\r\nMagick save: true\r\n```",
+          "labels": [
+            "status/identified",
+            "area/media processing"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "62f019252a4bfc7b09432e85e536c5f4dfcf369e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/62f019252a4bfc7b09432e85e536c5f4dfcf369e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/62f019252a4bfc7b09432e85e536c5f4dfcf369e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-06T10:00:33Z",
+          "commit_title": "Change hashtag suggestion to prefer personal history capitalization (#34070)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34070,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34070",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34070",
+          "state": "closed",
+          "merged_at": "2025-03-06T10:10:06Z",
+          "pr_title": "Change hashtag suggestion to prefer personal history capitalization",
+          "pr_body": "Currently, personal hashtag use history is used to complete search suggestions, but for suggestions that are part of the server response (which should be most of them), the capitalization used by the server is used instead (e.g. if the user has already used `#ClimateCrisis` in the past, types `#Clim` in the Web UI and the server returns a suggestion for `#climatecrisis`, the UI will present `#climatecrisis` as a suggestion).\r\n\r\nThis PR changes it so that the capitalization of hashtag suggestions is changed to use the one from the local history, unless that one is lowercase-only (e.g. if the client had previously used `#ClimateCrisis` and the server is suggesting `#climatecrisis`, the UI will suggest `#ClimateCrisis`; if the user had previously typed `#climatecrisis` and the server is suggesting `#ClimateCrisis`, the UI will suggest `#ClimateCrisis` as well).",
+          "labels": [
+            "area/web interface"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0c2fa2aab426f481f4c871e0eec695c3ed1f9fbb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0c2fa2aab426f481f4c871e0eec695c3ed1f9fbb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0c2fa2aab426f481f4c871e0eec695c3ed1f9fbb",
+          "author_login": "NoelDeMartin",
+          "commit_author_date": "2025-01-07T15:40:24Z",
+          "commit_title": "Comment sidekiq build in docker compose (#33483)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33483,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33483",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33483",
+          "state": "closed",
+          "merged_at": "2025-01-07T15:51:49Z",
+          "pr_title": "Comment sidekiq build in docker compose",
+          "pr_body": "This should probably be commented by default, like the `build` for other containers.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a8613b7cda61e46209cace4379a9dea81f45529e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a8613b7cda61e46209cace4379a9dea81f45529e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a8613b7cda61e46209cace4379a9dea81f45529e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-07T09:14:31Z",
+          "commit_title": "Bump version to v4.3.5"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34102,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34102",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34102",
+          "state": "closed",
+          "merged_at": "2025-03-10T09:14:18Z",
+          "pr_title": "Bump version to v4.3.5",
+          "pr_body": "### Changed\r\n\r\n- Change hashtag suggestion to prefer personal history capitalization (#34070 by `@ClearlyClaire`)\r\n\r\n### Fixed\r\n\r\n- Fix processing errors for some HEIF images from iOS 18 (#34086 by `@renchap`)\r\n- Fix streaming server not filtering unknown-language posts from public timelines (#33774 by `@ClearlyClaire`)\r\n- Fix preview cards under Content Warnings not being shown in detailed statuses (#34068 by `@ClearlyClaire`)\r\n- Fix username and display name being hidden on narrow screens in moderation interface (#33064 by `@ClearlyClaire`)\r\n",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

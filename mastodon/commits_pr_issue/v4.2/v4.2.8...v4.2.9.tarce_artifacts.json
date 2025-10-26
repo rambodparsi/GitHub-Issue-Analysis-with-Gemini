@@ -1,0 +1,800 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.8",
+  "compare": "v4.2.9",
+  "counts": {
+    "commits": 27,
+    "prs": 21,
+    "issues": 6,
+    "commit_pr": 19,
+    "commit_pr_issue": 6
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.8...v4.2.9.compare.json",
+    "commits": "commits/v4.2/v4.2.8...v4.2.9.commits.json",
+    "pulls": "pulls/v4.2/v4.2.8...v4.2.9.pulls.json",
+    "issues": "issues/v4.2/v4.2.8...v4.2.9.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "ed8e4bab4c8232533bd40d36c2ea5524e078f0af",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ed8e4bab4c8232533bd40d36c2ea5524e078f0af",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ed8e4bab4c8232533bd40d36c2ea5524e078f0af",
+          "author_login": "mjankowski",
+          "commit_author_date": "2023-12-14T14:02:33Z",
+          "commit_title": "Fix reference to non-existent var in CLI maintenance command (#28363)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28363,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28363",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28363",
+          "state": "closed",
+          "merged_at": "2023-12-14T14:05:11Z",
+          "pr_title": "Fix reference to non-existent var in CLI maintenance command",
+          "pr_body": "Extracted from https://github.com/mastodon/mastodon/pull/28326",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6536d96d1b211cb4b462010474cb63b241de9998",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6536d96d1b211cb4b462010474cb63b241de9998",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6536d96d1b211cb4b462010474cb63b241de9998",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-01-04T14:14:46Z",
+          "commit_title": "Add fallback redirection when getting a webfinger query `WEB_DOMAIN@WEB_DOMAIN` (#28592)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28592,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28592",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28592",
+          "state": "closed",
+          "merged_at": "2024-01-04T14:17:54Z",
+          "pr_title": "Add fallback redirection when getting a webfinger query `WEB_DOMAIN@WEB_DOMAIN`",
+          "pr_body": "Follow-up to #23600",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f784213c6405cbca2f3ff70479aff2e263b28730",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f784213c6405cbca2f3ff70479aff2e263b28730",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f784213c6405cbca2f3ff70479aff2e263b28730",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-02-06T12:38:14Z",
+          "commit_title": "Return domain block digests from admin domain blocks API (#29092)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29092,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29092",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29092",
+          "state": "closed",
+          "merged_at": "2024-02-06T12:43:31Z",
+          "pr_title": "Return domain block digests from admin domain blocks API",
+          "pr_body": "Whilst developing IFTAS FediCheck, we noticed that the public API for domain blocks `/api/v1/domain_blocks` returns the `digest` property, but the admin API `/api/v1/admin/domain_blocks` did not, which meant we couldn't rely on the domain digest and had to instead match on the domain itself.\r\n\r\nThis adds the digest to the admin domain block serializer, hence adding to the admin domain blocks API",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7af69f5cf575b1124a78c0c8e5b24ebce8060621",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7af69f5cf575b1124a78c0c8e5b24ebce8060621",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7af69f5cf575b1124a78c0c8e5b24ebce8060621",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-23T19:04:57Z",
+          "commit_title": "Fix admin account created by `mastodon:setup` not being auto-approved (#29379)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29379,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29379",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29379",
+          "state": "closed",
+          "merged_at": "2024-02-23T19:10:29Z",
+          "pr_title": "Fix admin account created by `mastodon:setup` not being auto-approved",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ab3f9852f23a2180ae77b3a0963fe61e97ab129f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ab3f9852f23a2180ae77b3a0963fe61e97ab129f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ab3f9852f23a2180ae77b3a0963fe61e97ab129f",
+          "author_login": "tribela",
+          "commit_author_date": "2024-03-11T09:28:08Z",
+          "commit_title": "Normalize idna domain before account unblock domain (#29530)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29530,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29530",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29530",
+          "state": "closed",
+          "merged_at": "2024-03-11T09:33:31Z",
+          "pr_title": "Normalize idna domain before account unblock domain",
+          "pr_body": "Domain name should be normalized before find AccountDomainBlock to unblock to.\r\n\r\nAdditionally, If unblock domain from user profile's additional menu, It sends a domain which is not normalized. (Unlike on /domain_blocks page)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0143c9d3e1d7ae11b14aff5a0326885cbbd3ed19",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0143c9d3e1d7ae11b14aff5a0326885cbbd3ed19",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0143c9d3e1d7ae11b14aff5a0326885cbbd3ed19",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-03-22T15:08:27Z",
+          "commit_title": "Fix results/query in `api/v1/featured_tags/suggestions` (#29597)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29597,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29597",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29597",
+          "state": "closed",
+          "merged_at": "2024-03-22T15:13:53Z",
+          "pr_title": "Fix results/query in `api/v1/featured_tags/suggestions`",
+          "pr_body": "The bug fix here is pulled from https://github.com/mastodon/mastodon/pull/28815 which found it as a side effect, but did not fully flesh out a spec to show the issue. Changes here:\r\n\r\n- Remove the tag from the featured tag fabricator - this class sets this internally from the name of the tag\r\n- Remove extraneous/unused account_id in params in the request spec\r\n- Connect the account and user in request spec\r\n- Add assertions about which tag is found in the results (the recently used but not featured one), verify this fails\r\n- Update controller query to match tag ids with tag ids. The previous query was something like \"where tag id is not in featured tags\", but this was comparing against the `id` of the featuredtag records, not the tag_id connected to them.\r\n\r\nWill rebase that other one after this, as I think this (and the other usage) would still read better as scopes.",
+          "labels": [
+            "bug",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "86807e4799d21863084d52d4070f3da7c120e260",
+          "html_url": "https://github.com/mastodon/mastodon/commit/86807e4799d21863084d52d4070f3da7c120e260",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/86807e4799d21863084d52d4070f3da7c120e260",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-04-05T07:48:45Z",
+          "commit_title": "Improve email address validation (#29838)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29838,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29838",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29838",
+          "state": "closed",
+          "merged_at": "2024-04-05T07:53:26Z",
+          "pr_title": "Improve email address validation",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c3be5a3d2eff947a04a32d78726ff511d7dec98f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c3be5a3d2eff947a04a32d78726ff511d7dec98f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c3be5a3d2eff947a04a32d78726ff511d7dec98f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-04-08T13:46:13Z",
+          "commit_title": "Remove caching in `cache_collection` (#29862)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29862,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29862",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29862",
+          "state": "closed",
+          "merged_at": "2024-04-08T13:50:15Z",
+          "pr_title": "Remove caching in `cache_collection`",
+          "pr_body": "`cache_collection` is used in conjunction with the `Cacheable` concern to store in Redis a representation of `Status` (the only model using `Cacheable`) together with a number of preloaded associations.\r\n\r\nHowever, it is unclear that this is actually beneficial, as:\r\n- in most if not all cases, the `Status` records are already loaded\r\n- a bunch of relationships are systematically re-loaded from database (`Status#reload_stale_associations!`) anyway\r\n\r\nI have decided to keep the `cache_collection` name for now to make it easier to backport, should we want to do that. Renaming can be done in another PR.",
+          "labels": [
+            "performance",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e69780ec59bbd04a649abc67cc41a824a635fc7b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e69780ec59bbd04a649abc67cc41a824a635fc7b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e69780ec59bbd04a649abc67cc41a824a635fc7b",
+          "author_login": "timothyjrogers",
+          "commit_author_date": "2024-04-22T09:00:24Z",
+          "commit_title": "Fixed crash when supplying FFMPEG_BINARY environment variable (#30022)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30022,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30022",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30022",
+          "state": "closed",
+          "merged_at": "2024-04-22T09:05:33Z",
+          "pr_title": "Fixed crash when supplying FFMPEG_BINARY environment variable",
+          "pr_body": "Fixes #28375\r\n\r\nThe code that picks up `FFMPEG_BINARY` as an environment variable in `config/initializers/ffmpeg.rb` currently assigns it to an object that doesn't exist anywhere in the code base. This change updates that assignment to use the `config.x` custom config object used for other custom config options, as well as adding a check for the new environment variable `FFPROBE_BINARY`. The new variable is because one of the the three locations Mastodon uses `ffmpeg` actually uses the `ffprobe` utility and these have separate binary files.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 28375,
+              "html_url": "https://github.com/mastodon/mastodon/issues/28375",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 28375,
+          "html_url": "https://github.com/mastodon/mastodon/issues/28375",
+          "state": "closed",
+          "issue_title": "Crash when setting `FFMPEG_BINARY` to override ffmpeg binary path",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Set FFMPEG_BINARY=/opt/mastodon/.local/bin/ffmpeg in .env.production\r\n2. Restart mastodon-web.service\r\n\r\n\n\n### Expected behaviour\n\nMastodon using custom FFMPEG binary\n\n### Actual behaviour\n\nmastodon-web service crashing\n\n### Detailed description\n\nAfter restarting mastodon-web it crashes with this error:\r\n\r\n```shell\r\nbundle[4015134]: /opt/mastodon/live/config/initializers/ffmpeg.rb:4:in `<main>': uninitialized constant FFMPEG (NameError)\r\nbundle[4015134]:   FFMPEG.ffmpeg_binary = ENV['FFMPEG_BINARY']\r\nbundle[4015134]:   ^^^^^^\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:667:in `load'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:667:in `block in load_config_initializer'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/notifications.rb:208:in `instrument'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:666:in `load_config_initializer'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:620:in `block (2 levels) in <class:Engine>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:619:in `each'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/engine.rb:619:in `block in <class:Engine>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:32:in `instance_exec'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:32:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:61:in `block in run_initializers'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:228:in `block in tsort_each'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:431:in `each_strongly_connected_component_from'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:421:in `block in each_strongly_connected_component_from'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:50:in `each'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:50:in `tsort_each_child'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:415:in `call'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:415:in `each_strongly_connected_component_from'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:349:in `block in each_strongly_connected_component'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:347:in `each'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:347:in `call'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:347:in `each_strongly_connected_component'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:226:in `tsort_each'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/tsort.rb:205:in `tsort_each'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/initializable.rb:60:in `run_initializers'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/railties-7.0.8/lib/rails/application.rb:372:in `initialize!'\r\nbundle[4015134]:         from /opt/mastodon/live/config/environment.rb:7:in `<top (required)>'\r\nbundle[4015134]:         from <internal:/opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'\r\nbundle[4015134]:         from <internal:/opt/mastodon/.rbenv/versions/3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'\r\nbundle[4015134]:         from config.ru:5:in `block in <main>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/rack-2.2.8/lib/rack/builder.rb:116:in `eval'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/rack-2.2.8/lib/rack/builder.rb:116:in `new_from_string'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/rack-2.2.8/lib/rack/builder.rb:105:in `load_file'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/rack-2.2.8/lib/rack/builder.rb:66:in `parse_file'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/configuration.rb:366:in `load_rackup'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/configuration.rb:288:in `app'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/runner.rb:158:in `load_and_bind'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/cluster.rb:359:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/launcher.rb:194:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/lib/puma/cli.rb:75:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/puma-6.3.1/bin/puma:10:in `<top (required)>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/bin/puma:25:in `load'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/bin/puma:25:in `<top (required)>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli/exec.rb:58:in `load'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli/exec.rb:58:in `kernel_load'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli/exec.rb:23:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli.rb:492:in `exec'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli.rb:34:in `dispatch'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/cli.rb:28:in `start'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/exe/bundle:45:in `block in <top (required)>'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'\r\nbundle[4015134]:         from /opt/mastodon/live/vendor/bundle/ruby/3.2.0/gems/bundler-2.4.13/exe/bundle:33:in `<top (required)>'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/bin/bundle:25:in `load'\r\nbundle[4015134]:         from /opt/mastodon/.rbenv/versions/3.2.2/bin/bundle:25:in `<main>'\r\n```\n\n### Mastodon instance\n\nlocal test instance\n\n### Mastodon version\n\nv4.2.3\n\n### Browser name and version\n\nAny Browser\n\n### Operating system\n\nAny OS\n\n### Technical details\n\nIt seems this was introduced with the refactor to fix #16136",
+          "labels": [
+            "bug",
+            "status/confirmed",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "51ef619140fc87c23352aced941e313e8aa1c699",
+          "html_url": "https://github.com/mastodon/mastodon/commit/51ef619140fc87c23352aced941e313e8aa1c699",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/51ef619140fc87c23352aced941e313e8aa1c699",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-04-26T13:19:02Z",
+          "commit_title": "Fix Idempotency-Key ignored when scheduling a post (#30084)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30084,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30084",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30084",
+          "state": "closed",
+          "merged_at": "2024-04-26T13:24:19Z",
+          "pr_title": "Fix Idempotency-Key ignored when scheduling a post",
+          "pr_body": "Fixes #30039\r\n\r\nThe issue is that the scheduled posting code mutated the options hash, including the idempotency key that is used to store the ID of the post.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 30039,
+              "html_url": "https://github.com/mastodon/mastodon/issues/30039",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 30039,
+          "html_url": "https://github.com/mastodon/mastodon/issues/30039",
+          "state": "closed",
+          "issue_title": "Idempotency-Key ignored when scheduling a post",
+          "issue_body": "### Steps to reproduce the problem\n\nMake multiple requests to schedule a post to `POST /api/v1/statuses`, e.g. with this body\r\n\r\n`{\"status\":\"Test\",\"spoiler_text\":\"\",\"visibility\":\"private\",\"sensitive\":false,\"media_ids\":[],\"media_attributes\":[],\"scheduled_at\":\"2024-04-24T14:59:42.868Z\",\"language\":\"en\"}`\r\n\r\nand with the same `Idempotency-Key` header.\r\n\r\n\r\n\n\n### Expected behaviour\n\nThere is one scheduled status created because the Idempotency-Key was the same.\n\n### Actual behaviour\n\nMultiple scheduled statuses were created\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\n4.3.0-nightly.2024-04-18\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "56b7d1a7b6c3beaacbcea21a849894d0a575cb13",
+          "html_url": "https://github.com/mastodon/mastodon/commit/56b7d1a7b6c3beaacbcea21a849894d0a575cb13",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/56b7d1a7b6c3beaacbcea21a849894d0a575cb13",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-02T20:56:21Z",
+          "commit_title": "Fix not being able to block a subdomain of an already-blocked domain through the API (#30119)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30119,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30119",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30119",
+          "state": "closed",
+          "merged_at": "2024-05-02T21:01:53Z",
+          "pr_title": "Fix not being able to block a subdomain of an already-blocked domain through the API",
+          "pr_body": "Fixes #29127\r\n\r\nThe previous implementation was [deliberately kept simple](https://github.com/mastodon/mastodon/pull/18247#pullrequestreview-987904290) but this outright prevented to create domain blocks for subdomains of already-blocked domains.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 29127,
+              "html_url": "https://github.com/mastodon/mastodon/issues/29127",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 29127,
+          "html_url": "https://github.com/mastodon/mastodon/issues/29127",
+          "state": "closed",
+          "issue_title": "Possible to create domain blocks when a stricter limit already exists in Admin UI",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Go to `/admin/instances?limited=1` to manage federation\r\n2. Add a domain block for `example` (noop/none severity)\r\n3. Using the API try to create a domain block for `test.example` observe that an error is returned\r\n4. Go back to the admin UI and create a domain block for `test.example` observe that no error is returned and the block is successfully created.\r\n\n\n### Expected behaviour\n\nBoth methods for creating domain blocks should have same behaviour\n\n### Actual behaviour\n\nThe API failed whilst the Admin UI succeeded\n\n### Detailed description\n\nThis bug affects IFTAS FediCheck, where we weren't observing the same logic as `DomainBlock.rule_for` when attempting to create a domain block, which meant an existing block of `example` would fail the block creation of `test.example` leaving us out of sync with the Mastodon server (we also weren't handling the error response from the API correctly.\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\nmain\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: v 3.2.3\r\n- Node.js version: v20.11.0\r\n",
+          "labels": [
+            "bug",
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "67b2e62331f8459a3daa8ab06c8d18af4738e526",
+          "html_url": "https://github.com/mastodon/mastodon/commit/67b2e62331f8459a3daa8ab06c8d18af4738e526",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/67b2e62331f8459a3daa8ab06c8d18af4738e526",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-04-30T08:48:02Z",
+          "commit_title": "Fix missing destory audit logs for Domain Allows (#30125)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30125,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30125",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30125",
+          "state": "closed",
+          "merged_at": "2024-04-30T08:53:12Z",
+          "pr_title": "Fix missing destroy audit logs for Domain Allows",
+          "pr_body": "Extracted from https://github.com/mastodon/mastodon/pull/27386",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8cf78825a23184333a4d9ac775e81add5bd5f0da",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8cf78825a23184333a4d9ac775e81add5bd5f0da",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8cf78825a23184333a4d9ac775e81add5bd5f0da",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-15T13:11:13Z",
+          "commit_title": "Fix off-by-one in `tootctl media` commands (#30306)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30306,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30306",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30306",
+          "state": "closed",
+          "merged_at": "2024-05-15T13:16:46Z",
+          "pr_title": "Fix off-by-one in `tootctl media` commands",
+          "pr_body": "Fixes #30281\r\n\r\nFile paths for attachments are of the form `:model_name/:attribute_name/:id_pt1/:id_pt2/…/:style/:filename` (e.g. `site_uploads/files/000/000/002/original/4919ef8c0b4e8d59.png`) and the `path_segments[2..-2]` returned `[':id_pt1', ':id_pt2', …, ':style']`, incorrectly including `:style`.\r\n\r\nThis did not get noticed up until now because `:style` was never a numeric, so calling `#to_i` always silently stripped it. However, icon styles are numeric, and thus were incorrectly added to the reconstructed identifier.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 30281,
+              "html_url": "https://github.com/mastodon/mastodon/issues/30281",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 30281,
+          "html_url": "https://github.com/mastodon/mastodon/issues/30281",
+          "state": "closed",
+          "issue_title": "Favicon is considered orphaned media",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Upload a favicon in **Branding** settings\r\n2. Run `tootctl media remove-orphans`\r\n3. Favicon `.png` is now gone, but `.ico` remains.\r\n...\r\n\n\n### Expected behaviour\n\nFavicon not to be considered orphaned media\n\n### Actual behaviour\n\nFavicon is considered orphaned media and deleted\n\n### Detailed description\n\nAfter #30040, admins can now upload favicons to their instances. But the `tootctl media remove-orphans` command considers them as orphaned media, so the `.png` files are deleted. The `.ico` version is preserved, but the favicon used by browsers is the `.png` one, so they fail to show a favicon at all. Akkoma instances also fails to present the favicon.\r\n\r\n```\r\nI, [2024-05-13T10:04:45.895906 #421984]  INFO -- : [dotenv] Loaded .env.production\r\n(...)\r\nFound and removed orphan: site_uploads/files/000/000/019/16/724461bd9f815f15.png                                 \r\nFound and removed orphan: site_uploads/files/000/000/019/32/724461bd9f815f15.png                                 \r\nFound and removed orphan: site_uploads/files/000/000/019/48/724461bd9f815f15.png\r\n(...)\r\n```\n\n### Mastodon instance\n\nbolha.one\n\n### Mastodon version\n\nv4.3.0-alpha.3-1959365\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\r\n- Ruby version: `3.3.1 (2024-04-23 revision c56cd86388)`\r\n- Node.js version: `v20.13.0`",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "8c72e80019ea01d50bd0a868441083688028615b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8c72e80019ea01d50bd0a868441083688028615b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8c72e80019ea01d50bd0a868441083688028615b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-10T13:59:50Z",
+          "commit_title": "Update dependency rack-cors to 2.0.2"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2865bfadafc1f4472e9012ff4f03329b5b19d321",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2865bfadafc1f4472e9012ff4f03329b5b19d321",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2865bfadafc1f4472e9012ff4f03329b5b19d321",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-10T14:01:07Z",
+          "commit_title": "Update dependency json-jwt to 1.15.3.1"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "997b021b69e4f8fe8750e27c28bc3ffd5fe6cee8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/997b021b69e4f8fe8750e27c28bc3ffd5fe6cee8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/997b021b69e4f8fe8750e27c28bc3ffd5fe6cee8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-10T14:03:48Z",
+          "commit_title": "Update dependency rotp to 6.3.0"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6fc07ff31f60a3c90c593c4c19ef9513f82a0124",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6fc07ff31f60a3c90c593c4c19ef9513f82a0124",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6fc07ff31f60a3c90c593c4c19ef9513f82a0124",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-10T14:04:19Z",
+          "commit_title": "Update dependency fastimage to 2.3.1"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a8dd32102fd5827c7a93df9ef6c2db21da43dde5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a8dd32102fd5827c7a93df9ef6c2db21da43dde5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a8dd32102fd5827c7a93df9ef6c2db21da43dde5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-16T08:11:21Z",
+          "commit_title": "Update dependency nokogiri to 1.16.5"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "16213a678d391c18f283676648bbe235da3f6835",
+          "html_url": "https://github.com/mastodon/mastodon/commit/16213a678d391c18f283676648bbe235da3f6835",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/16213a678d391c18f283676648bbe235da3f6835",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-29T09:09:54Z",
+          "commit_title": "Update dependency rexml to 3.2.8"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30467,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30467",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30467",
+          "state": "closed",
+          "merged_at": "2024-05-29T13:31:26Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b8edc95e8ad4ac07db311bc931cb09348b44820a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b8edc95e8ad4ac07db311bc931cb09348b44820a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b8edc95e8ad4ac07db311bc931cb09348b44820a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-29T08:15:06Z",
+          "commit_title": "Fix leaking Elasticsearch connections in Sidekiq processes (#30450)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30467,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30467",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30467",
+          "state": "closed",
+          "merged_at": "2024-05-29T13:31:26Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30450,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30450",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30450",
+          "state": "closed",
+          "merged_at": "2024-05-29T08:20:38Z",
+          "pr_title": "Fix leaking Elasticsearch connections in Sidekiq processes",
+          "pr_body": "Fixes #18063\r\n\r\nThis is an alternative to #27138\r\n\r\nMy understanding of the issue is that whenever a Sidekiq job fails, its thread is killed and replaced with a new one, which may eventually lead to a new Elasticsearch connection, while the old one will only be closed when the garbage collector decides to claim the connection object.\r\n\r\nTo address this, this PR adds some cleanup code in the Sidekiq error handler.\r\n\r\nSince neither `chewy`, nor `elasticsearch-transport` or even `faraday` seem to provide a clean and reliable way to close the connections, this cleanup method breaks several layers of abstraction to call `HTTPClient#reset_all` on the underlying connections.",
+          "labels": [
+            "area/search"
+          ],
+          "issue_refs": [
+            {
+              "number": 18063,
+              "html_url": "https://github.com/mastodon/mastodon/issues/18063",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 18063,
+          "html_url": "https://github.com/mastodon/mastodon/issues/18063",
+          "state": "closed",
+          "issue_title": "Mastodon sidekiq crash with Too many open files",
+          "issue_body": "### Steps to reproduce the problem\n\nAfter upgrade Mastodon to v3.5.0, I found the sidekiq process of my instance crashes after running for a while (about 2-5 days).\r\n\r\nOther instances that full-text search  is enabled have encountered similar problems, eg. m.cmx.im.\r\n\r\n------------------------------------------\r\n\r\nAfter running for a while, the sidekiq process with pull queue disappear from Sidekiq admin panel.\r\n\r\n![image](https://user-images.githubusercontent.com/22741471/164582399-96f3d668-b1a8-4093-9003-8d5aa1de3d70.png)\r\n\r\nUse systemd to view  the mastodon sidekiq service, the service still live but with many ``Too many open files`` errors.\r\n\r\n```\r\n# systemctl status mastodon-sidekiq.service\r\n● mastodon-sidekiq.service - mastodon-sidekiq\r\n     Loaded: loaded (/etc/systemd/system/mastodon-sidekiq.service; enabled; vendor preset: enabled)\r\n     Active: active (running) since Wed 2022-04-20 05:15:05 UTC; 1 day 20h ago\r\n   Main PID: 811 (bundle)\r\n      Tasks: 38 (limit: 18711)\r\n     Memory: 600.6M\r\n        CPU: 21h 34min 46.325s\r\n     CGroup: /system.slice/mastodon-sidekiq.service\r\n             └─811 sidekiq 6.4.1 live [11 of 25 busy]\r\n\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.921Z pid=811 tid=qnm3r class=Chewy::Strategy::Sidekiq::Worker jid=1072140b4852c65ac64c1065 elapsed=6.207 INFO: fail\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.921Z pid=811 tid=qnm3r WARN: {\"context\":\"Job raised exception\",\"job\":{\"retry\":true,\"queue\":\"pull\",\"class\":\"Chewy::Strategy::Sidekiq::Worker\",\"args\":[\"StatusesIndex\",[1081731541370841>\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.924Z pid=811 tid=qnm3r WARN: Errno::EMFILE: Too many open files - Too many open files - socket(2) for \"127.0.0.1\" port 9200 (127.0.0.1:9200)\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.927Z pid=811 tid=qnm3r WARN: /home/mastodon/live/vendor/bundle/ruby/3.0.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:623:in `rescue in create_socket'\r\nApr 22 02:11:32 git bundle[811]: /home/mastodon/live/vendor/bundle/ruby/3.0.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:607:in `create_socket'\r\nApr 22 02:11:32 git bundle[811]: /home/mastodon/live/vendor/bundle/ruby/3.0.0/gems/httplog-1.5.0/lib/httplog/adapters/httpclient.rb:60:in `create_socket'\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.931Z pid=811 tid=qnnaj class=PushUpdateWorker jid=5d12068aebf0111db48ab948 elapsed=14.192 INFO: done\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:31.228Z pid=811 tid=qnns3 class=LinkCrawlWorker jid=b684c8e64b16542830be3b49 elapsed=4.515 INFO: done\r\nApr 22 02:11:32 git bundle[811]: 2022-04-22T02:11:32.933Z pid=811 tid=qnnaj class=Chewy::Strategy::Sidekiq::Worker jid=6b241c8393b9ee981213e343 INFO: start\r\nApr 22 02:11:33 git bundle[811]: 2022-04-22T02:11:18.715Z pid=811 tid=qnk43 class=Chewy::Strategy::Sidekiq::Worker jid=85f1500992bfb59fa57ffe10 INFO: start\r\n```\n\n### Expected behaviour\n\nMastodon sikekiq process work well.\n\n### Actual behaviour\n\nMastodon sikekiq process crashes after running for a while.\n\n### Specifications\n\nSoftware|Version\r\n-- | --\r\nMastodon | 3.5.1~bgme\r\nRuby | 3.0.3p157\r\nPostgreSQL | 13.5\r\nRedis | 6.0.16\r\n\r\n```\r\n$ uname -a\r\nLinux 5.10.0-13-amd64 #1 SMP Debian 5.10.106-1 (2022-03-17) x86_64 GNU/Linux\r\n```\r\n\r\n",
+          "labels": [
+            "bug"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f9c41ae43b24b3561f122dcb1e07d4cbd25b1806",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f9c41ae43b24b3561f122dcb1e07d4cbd25b1806",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f9c41ae43b24b3561f122dcb1e07d4cbd25b1806",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-23T17:28:18Z",
+          "commit_title": "Normalize language code of incoming posts (#30403)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30467,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30467",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30467",
+          "state": "closed",
+          "merged_at": "2024-05-29T13:31:26Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 30403,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30403",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30403",
+          "state": "closed",
+          "merged_at": "2024-05-23T17:33:48Z",
+          "pr_title": "Normalize language code of incoming posts",
+          "pr_body": "When posting a local status, only explicitly-supported language codes are allowed, but when ingesting remote posts, the remote language code is used verbatim.\r\n\r\nIn some cases, remote implementations use different casing than we do, while all our uses of language codes are case-sensitive, causing language codes with different casing to be misrecognized.\r\n\r\nThis PR attempts to change that by normalizing known language codes at ingestion time. Note that this doesn't fix casing for already-ingested posts nor for language codes that are unknown at time of ingestion.\r\n\r\nFixes #28947",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 28947,
+              "html_url": "https://github.com/mastodon/mastodon/issues/28947",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 28947,
+          "html_url": "https://github.com/mastodon/mastodon/issues/28947",
+          "state": "closed",
+          "issue_title": "New compose interface chokes on uppercase language codes",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\nI am using mastodon.social with the new (beta?) compose UI. Now below the status I am typing there is a box with a little 文A icon and the word \"English\", indicating my post language. (There are several things I don't like about the new compose UI, but I do like this one change because it makes it harder to post with the wrong language metadata set.)\r\n\r\nBut! Consider this one post (or in general, any post by the user @suricrasia@lethargic.talkative.fish), which breaks the \"English\" box:\r\n\r\nhttps://lethargic.talkative.fish/@suricrasia/statuses/01HN1NGM7F2N63PJYE5W2YTPY9\r\n\r\nTo reproduce, bring up this post (for example by entering it into the Mastodon search box) and hit reply.\r\n\r\n### Expected behaviour\r\n\r\nWhen replying to a post, Mastodon's current behavior is to copy the original poster's language field into your own. Suricrasia is speaking English. Therefore, I assume replying to Suricrasia, my language will be set to English. For example:\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/277318/da37504a-c835-4761-8cff-29ede6fa7608) \r\n![image](https://github.com/mastodon/mastodon/assets/277318/17a5f64c-fa16-4ba1-b3fb-28f001bcd406)\r\n\r\n### Actual behaviour\r\n\r\nThe language is set to the letters \"EN\".\r\n\r\n![image](https://github.com/mastodon/mastodon/assets/277318/04ebee4d-5716-41e4-bccb-a3eceff358f4)\r\n\r\nI don't actually know what happens to my status language code if I send this reply.\r\n\r\n### Detailed description\r\n\r\nI suspect this may be a variant of issue #19302, that mastodon.social in general chokes on language codes with dialects such as en-US (I think in the past I remember noticing this same user posting with en-US language). ~~If my guess is correct, this means #19302 has got worse because rather than \"en-US\" being relayed verbatim, which may be confusing to some users, it has been changed to \"EN\" which both will confuse some users and also is (if my guess is right) incorrect.~~ EDIT: Not quite\r\n\r\n### Mastodon instance\r\n\r\nmastodon.social\r\n\r\n### Mastodon version\r\n\r\nv4.3.0-alpha.0+pr-28119-b84fe92\r\n\r\nlethargic.talkative.fish, the source of the problematic status, says it is running GoToSocial v0.12.0 git-5fd2e42\r\n\r\n### Browser name and version\r\n\r\nChrome 120.0.6099.227 (Official Build) (64-bit) \r\nI am running with uBlock. I usually run with Stylus but for these tests/screenshots I have disabled it and reloaded the page.\r\n\r\n### Operating system\r\n\r\nWindows 10\r\n\r\n### Technical details\r\n\r\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "186f9161923f05cbc1999167caa9a2cf168749e9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/186f9161923f05cbc1999167caa9a2cf168749e9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/186f9161923f05cbc1999167caa9a2cf168749e9",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-05-29T14:00:05Z",
+          "commit_title": "Fix: remove broken OAuth Application vacuuming & throttle OAuth Application registrations (#30316)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30471,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30471",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30471",
+          "state": "closed",
+          "merged_at": "2024-05-29T14:39:26Z",
+          "pr_title": "Fix: remove broken OAuth Application vacuuming & throttle OAuth Application registrations (4.2 backport)",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 30316,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30316",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30316",
+          "state": "closed",
+          "merged_at": "2024-05-29T14:05:33Z",
+          "pr_title": "Fix: remove broken OAuth Application vacuuming & throttle OAuth Application registrations",
+          "pr_body": "In #24871, we introduced a mitigation for a potential database denial of service attack through registration of excessive volumes of OAuth Applications by vacuuming any Application that did not meet the following criteria:\r\n* any users signed up with the application\r\n* any valid access tokens or access grants\r\n* were not created from the “Development” tab \r\n\r\nHowever, doing this fundamentally broke OAuth application registration for many developers, resulting in users have broken experiences due to the Application not knowing it had been deleted from the server with which it was registered.\r\n\r\nThis could happen if a user uses your application, then revokes access before another user starts using the same application. On the Application's side, you have a OAuth login request for their server, so you register an application for their server, and store the `client_id`, `client_secret` and server URL / domain, then the user revokes access to their account for your application (from their Mastodon server), then at some point in the future, a new user tries to perform an OAuth authorization with the same server, you knowing you've already registered an application with that server redirect them to the OAuth flow, however, the user is greeted with an error because your application has been silently deleted by the Mastodon server.\r\n\r\nAdditionally the vacuum process for Applications added a false sense of safety, since all you needed to do to prevent the vacuum from happening was to request `client_credentials` for your application, creating an access token that could never be deleted. A Security Vulnerability (GHSA-q7vj-88hq-gjmr) was filed for this issue about this 5 months ago, however no resolution was found, I'm disclosing that \"vulnerability\" here now, since it has now become fairly common knowledge amongst more experienced OAuth application developers.\r\n\r\nFor now, I've added a rate limit to the `POST /api/v1/apps` endpoint to try to curb any abuse, however I'm not sure if I have the configuration values right; we may need to adjust up or down.\r\n\r\nRelated issue: https://github.com/mastodon/mastodon/issues/27740\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "943792c187392dc0a0f0b4e34dae5ddbc5c169b3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/943792c187392dc0a0f0b4e34dae5ddbc5c169b3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/943792c187392dc0a0f0b4e34dae5ddbc5c169b3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-30T12:03:13Z",
+          "commit_title": "Merge pull request from GHSA-5fq7-3p3j-9vrf"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7920aa59e85bf21a4f6e2e9d485cd82dac89554c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7920aa59e85bf21a4f6e2e9d485cd82dac89554c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7920aa59e85bf21a4f6e2e9d485cd82dac89554c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-30T12:14:04Z",
+          "commit_title": "Merge pull request from GHSA-q3rg-xx5v-4mxh"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8ab0ca7d64b9f7ec9d658d9a90eae1120ccef117",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8ab0ca7d64b9f7ec9d658d9a90eae1120ccef117",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8ab0ca7d64b9f7ec9d658d9a90eae1120ccef117",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-30T12:24:29Z",
+          "commit_title": "Merge pull request from GHSA-c2r5-cfqr-c553"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "9740c7eaea07629a4d6154a3ed26995110737a0c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9740c7eaea07629a4d6154a3ed26995110737a0c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9740c7eaea07629a4d6154a3ed26995110737a0c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-30T12:56:18Z",
+          "commit_title": "Fix rate-limiting incorrectly triggering a session cookie on most endpoints (#30483)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30485,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30485",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30485",
+          "state": "closed",
+          "merged_at": "2024-05-30T13:14:03Z",
+          "pr_title": "[Backport] Fix rate-limiting incorrectly triggering a session cookie on most endpoints (#30483)",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 30483,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30483",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30483",
+          "state": "closed",
+          "merged_at": "2024-05-30T13:01:49Z",
+          "pr_title": "Fix rate-limiting incorrectly triggering a session cookie on most endpoints",
+          "pr_body": null,
+          "labels": [
+            "bug",
+            "performance"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c93aacafdea188cac791b62a32e3117a7dc3e9cc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c93aacafdea188cac791b62a32e3117a7dc3e9cc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c93aacafdea188cac791b62a32e3117a7dc3e9cc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-05-30T13:34:50Z",
+          "commit_title": "Bump version to v4.2.9 (#30470)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30470,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30470",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30470",
+          "state": "closed",
+          "merged_at": "2024-05-30T13:34:50Z",
+          "pr_title": "Bump version to v4.2.9",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n- Fix private mention filtering ([GHSA-5fq7-3p3j-9vrf](https://github.com/mastodon/mastodon/security/advisories/GHSA-5fq7-3p3j-9vrf))\r\n- Fix password change endpoint not being rate-limited ([GHSA-q3rg-xx5v-4mxh](https://github.com/mastodon/mastodon/security/advisories/GHSA-q3rg-xx5v-4mxh))\r\n- Add hardening around rate-limit bypass ([GHSA-c2r5-cfqr-c553](https://github.com/mastodon/mastodon/security/advisories/GHSA-c2r5-cfqr-c553))\r\n\r\n### Added\r\n\r\n- Add rate-limit on OAuth application registration ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/30316))\r\n- Add fallback redirection when getting a webfinger query `WEB_DOMAIN@WEB_DOMAIN` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/28592))\r\n- Add `digest` attribute to `Admin::DomainBlock` entity in REST API ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/29092))\r\n\r\n### Removed\r\n\r\n- Remove superfluous application-level caching in some controllers ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29862))\r\n- Remove aggressive OAuth application vacuuming ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/30316))\r\n\r\n### Fixed\r\n\r\n- Fix leaking Elasticsearch connections in Sidekiq processes ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30450))\r\n- Fix language of remote posts not being recognized when using unusual casing ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30403))\r\n- Fix off-by-one in `tootctl media` commands ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30306))\r\n- Fix removal of allowed domains (in `LIMITED_FEDERATION_MODE`) not being recorded in the audit log ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/30125))\r\n- Fix not being able to block a subdomain of an already-blocked domain through the API ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30119))\r\n- Fix `Idempotency-Key` being ignored when scheduling a post ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/30084))\r\n- Fix crash when supplying the `FFMPEG_BINARY` environment variable ([timothyjrogers](https://github.com/mastodon/mastodon/pull/30022))\r\n- Fix improper email address validation ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29838))\r\n- Fix results/query in `api/v1/featured_tags/suggestions` ([mjankowski](https://github.com/mastodon/mastodon/pull/29597))\r\n- Fix unblocking internationalized domain names under certain conditions ([tribela](https://github.com/mastodon/mastodon/pull/29530))\r\n- Fix admin account created by `mastodon:setup` not being auto-approved ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29379))\r\n- Fix reference to non-existent var in CLI maintenance command ([mjankowski](https://github.com/mastodon/mastodon/pull/28363))",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

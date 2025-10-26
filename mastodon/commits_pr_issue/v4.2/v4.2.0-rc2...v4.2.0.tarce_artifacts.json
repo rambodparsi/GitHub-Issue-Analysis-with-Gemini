@@ -1,0 +1,421 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.0-rc2",
+  "compare": "v4.2.0",
+  "counts": {
+    "commits": 13,
+    "prs": 13,
+    "issues": 3,
+    "commit_pr": 13,
+    "commit_pr_issue": 3
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.0-rc2...v4.2.0.compare.json",
+    "commits": "commits/v4.2/v4.2.0-rc2...v4.2.0.commits.json",
+    "pulls": "pulls/v4.2/v4.2.0-rc2...v4.2.0.pulls.json",
+    "issues": "issues/v4.2/v4.2.0-rc2...v4.2.0.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "abcc0b38fab3c3e5987943741588aa64054fdc22",
+          "html_url": "https://github.com/mastodon/mastodon/commit/abcc0b38fab3c3e5987943741588aa64054fdc22",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/abcc0b38fab3c3e5987943741588aa64054fdc22",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-19T15:31:58Z",
+          "commit_title": "Fix incorrect PostgreSQL version check (#26979)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26979,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26979",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26979",
+          "state": "closed",
+          "merged_at": "2023-09-19T15:31:58Z",
+          "pr_title": "Fix incorrect PostgreSQL version check",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "889c4d4bbbd7735efd9e7fa747651bf024809316",
+          "html_url": "https://github.com/mastodon/mastodon/commit/889c4d4bbbd7735efd9e7fa747651bf024809316",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/889c4d4bbbd7735efd9e7fa747651bf024809316",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-20T10:12:19Z",
+          "commit_title": "Update changelog (#26992)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26992,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26992",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26992",
+          "state": "closed",
+          "merged_at": "2023-09-20T10:12:20Z",
+          "pr_title": "Update changelog",
+          "pr_body": "Credit an additional contributor and link to Github Security Advisories\r\n\r\nFixes #26989",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 26989,
+              "html_url": "https://github.com/mastodon/mastodon/issues/26989",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 26989,
+          "html_url": "https://github.com/mastodon/mastodon/issues/26989",
+          "state": "closed",
+          "issue_title": "Add Lina to credit for exclusive lists in release notes",
+          "issue_body": "### Pitch\n\nI see @necropolina with a [lot of commits](https://github.com/mastodon/mastodon/pull/22048/commits), [handling change requests](https://github.com/dariusk/mastodon/pull/7) and [patches](https://github.com/mastodon/mastodon/pull/22048#issuecomment-1425215489), and doing a lot to [push the exclusive lists feature forward](https://github.com/mastodon/mastodon/pull/22048#issuecomment-1420303419), but I don't see them in the release notes! https://github.com/mastodon/mastodon/releases/tag/v4.2.0-rc2\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n### Motivation\n\nLove the feature, and ofc others contributed too! I assume it's just an oversight bc this is a big release but would love to see everyone get credit for contributing :). thanks for all y'alls work on upcoming 4.2 and all the rest!",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "61fe25fe74cef7b53b6fe1bb56567bce4f483876",
+          "html_url": "https://github.com/mastodon/mastodon/commit/61fe25fe74cef7b53b6fe1bb56567bce4f483876",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/61fe25fe74cef7b53b6fe1bb56567bce4f483876",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2023-09-20T11:05:56Z",
+          "commit_title": "New Crowdin Translations (automated) (#26988)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26988,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26988",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26988",
+          "state": "closed",
+          "merged_at": "2023-09-20T11:05:57Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with Github Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in Github Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "828eebad4844c14b3ae7bf3d7ec3d46b79bae11b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/828eebad4844c14b3ae7bf3d7ec3d46b79bae11b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/828eebad4844c14b3ae7bf3d7ec3d46b79bae11b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-20T16:25:16Z",
+          "commit_title": "Add `hide_collections`, `discoverable` and `indexable` attributes to credentials API (#26998)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 26998,
+          "html_url": "https://github.com/mastodon/mastodon/pull/26998",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/26998",
+          "state": "closed",
+          "merged_at": "2023-09-20T16:25:17Z",
+          "pr_title": "Add `hide_collections`, `discoverable` and `indexable` attributes to credentials API",
+          "pr_body": "Add `hide_collections`, `discoverable` and `indexable` attributes to the object returned by:\r\n- `GET /api/v1/accounts/verify_credentials`\r\n- `PATCH /api/v1/accounts/update_credentials`",
+          "labels": [
+            "api"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4ed9d9ca6f1b6d1f928dd75ac9e8484064c42213",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4ed9d9ca6f1b6d1f928dd75ac9e8484064c42213",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4ed9d9ca6f1b6d1f928dd75ac9e8484064c42213",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-21T09:00:15Z",
+          "commit_title": "Update dependency autoprefixer to v10.4.16 (#27000)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27000,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27000",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27000",
+          "state": "closed",
+          "merged_at": "2023-09-21T09:00:15Z",
+          "pr_title": "Update dependency autoprefixer to v10.4.16",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [autoprefixer](https://togithub.com/postcss/autoprefixer) | [`10.4.15` -> `10.4.16`](https://renovatebot.com/diffs/npm/autoprefixer/10.4.15/10.4.16) | [![age](https://developer.mend.io/api/mc/badges/age/npm/autoprefixer/10.4.16?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/autoprefixer/10.4.16?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/autoprefixer/10.4.15/10.4.16?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/autoprefixer/10.4.15/10.4.16?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>postcss/autoprefixer (autoprefixer)</summary>\n\n### [`v10.4.16`](https://togithub.com/postcss/autoprefixer/blob/HEAD/CHANGELOG.md#10416)\n\n[Compare Source](https://togithub.com/postcss/autoprefixer/compare/10.4.15...10.4.16)\n\n-   Improved performance (by Romain Menke).\n-   Fixed docs (by Christian Oliff).\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi45Ny4xIiwidXBkYXRlZEluVmVyIjoiMzYuOTcuMSIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 10416,
+              "html_url": "https://github.com/head/changelog.md/issues/10416",
+              "relationship": "references"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 10416,
+          "html_url": "https://github.com/mastodon/mastodon/pull/10416",
+          "state": "closed",
+          "issue_title": "Add missing Korean translations",
+          "issue_body": "",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "effe4728cf7adbefd9becf927cf4a34e3b337eb2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/effe4728cf7adbefd9becf927cf4a34e3b337eb2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/effe4728cf7adbefd9becf927cf4a34e3b337eb2",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2023-09-21T09:06:04Z",
+          "commit_title": "New Crowdin Translations (automated) (#27005)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27005,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27005",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27005",
+          "state": "closed",
+          "merged_at": "2023-09-21T09:06:04Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with Github Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in Github Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c74670b4d3ccada4cded511bbd21d6cd067adea5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c74670b4d3ccada4cded511bbd21d6cd067adea5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c74670b4d3ccada4cded511bbd21d6cd067adea5",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2023-09-21T09:06:16Z",
+          "commit_title": "Update dependency glob to v10.3.5 (#27002)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27002,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27002",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27002",
+          "state": "closed",
+          "merged_at": "2023-09-21T09:06:17Z",
+          "pr_title": "Update dependency glob to v10.3.5",
+          "pr_body": "[![Mend Renovate](https://app.renovatebot.com/images/banner.svg)](https://renovatebot.com)\n\nThis PR contains the following updates:\n\n| Package | Change | Age | Adoption | Passing | Confidence |\n|---|---|---|---|---|---|\n| [glob](https://togithub.com/isaacs/node-glob) | [`10.3.4` -> `10.3.5`](https://renovatebot.com/diffs/npm/glob/10.3.4/10.3.5) | [![age](https://developer.mend.io/api/mc/badges/age/npm/glob/10.3.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![adoption](https://developer.mend.io/api/mc/badges/adoption/npm/glob/10.3.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![passing](https://developer.mend.io/api/mc/badges/compatibility/npm/glob/10.3.4/10.3.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/npm/glob/10.3.4/10.3.5?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Release Notes\n\n<details>\n<summary>isaacs/node-glob (glob)</summary>\n\n### [`v10.3.5`](https://togithub.com/isaacs/node-glob/compare/v10.3.4...v10.3.5)\n\n[Compare Source](https://togithub.com/isaacs/node-glob/compare/v10.3.4...v10.3.5)\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR has been generated by [Mend Renovate](https://www.mend.io/free-developer-tools/renovate/). View repository job log [here](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiIzNi45Ny4xIiwidXBkYXRlZEluVmVyIjoiMzYuOTcuMSIsInRhcmdldEJyYW5jaCI6Im1haW4ifQ==-->\n",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "890e3347034db20410f8b11a7bf2518cfdf527b9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/890e3347034db20410f8b11a7bf2518cfdf527b9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/890e3347034db20410f8b11a7bf2518cfdf527b9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-21T10:33:30Z",
+          "commit_title": "Add migration tests for negative settings (#27012)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27012,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27012",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27012",
+          "state": "closed",
+          "merged_at": "2023-09-21T10:33:31Z",
+          "pr_title": "Fix migration of disabled old-style settings",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5356ddbcca77de1c5c0b3cf257d228ee39917e21",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5356ddbcca77de1c5c0b3cf257d228ee39917e21",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5356ddbcca77de1c5c0b3cf257d228ee39917e21",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-21T11:51:21Z",
+          "commit_title": "Fix search results temporarily disappearing while scrolling and loading more results (#27014)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27014,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27014",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27014",
+          "state": "closed",
+          "merged_at": "2023-09-21T11:51:22Z",
+          "pr_title": "Fix search results temporarily disappearing while scrolling and loading more results",
+          "pr_body": "Fixes #27011",
+          "labels": [
+            "build-image"
+          ],
+          "issue_refs": [
+            {
+              "number": 27011,
+              "html_url": "https://github.com/mastodon/mastodon/issues/27011",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 27011,
+          "html_url": "https://github.com/mastodon/mastodon/issues/27011",
+          "state": "closed",
+          "issue_title": "WebUI reloading page if you scroll to the bottom of search results",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Go to: https://mastodon.social/search\r\n2. Enter Search Term e.g. \"Petition\"\r\n3. Search for Posts\r\n4. scroll down the results\r\n5. At some point the UI will just reload and push you back to the top of the results\r\n...\r\n\r\n\r\n### Expected behaviour\r\n\r\nMore results should be shown without any reloading and scrolling \r\n\r\n### Actual behaviour\r\n\r\nUI reloads \r\n\r\n### Detailed description\r\n\r\nCould be related to #26959\r\nIt seems that fetching more posts causes the UI to rerender the entire search results page.\r\n\r\n### Mastodon instance\r\n\r\nmastodon.social\r\n\r\n### Mastodon version\r\n\r\nv4.2.0-nightly.2023-09-21\r\n\r\n### Browser name and version\r\n\r\nSafari@16.6\r\n\r\n### Operating system\r\n\r\nmacOS@13.5.2\r\n\r\n### Technical details\r\n\r\n_No response_",
+          "labels": [
+            "bug",
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "bb6c59a399f224c6f6faa54cc7b6054a03c4c9d0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bb6c59a399f224c6f6faa54cc7b6054a03c4c9d0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bb6c59a399f224c6f6faa54cc7b6054a03c4c9d0",
+          "author_login": "aaaaalbert",
+          "commit_author_date": "2023-09-21T11:57:24Z",
+          "commit_title": "Fix #27010: update the copyright year in README (#27016)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27016,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27016",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27016",
+          "state": "closed",
+          "merged_at": "2023-09-21T11:57:24Z",
+          "pr_title": "Fix #27010: update the copyright year in README",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8acc75435b4dcf959b6d5bb15c429abeef098437",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8acc75435b4dcf959b6d5bb15c429abeef098437",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8acc75435b4dcf959b6d5bb15c429abeef098437",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-21T12:00:51Z",
+          "commit_title": "Change S3 checksum mode to be disabled by default (#27007)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27007,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27007",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27007",
+          "state": "closed",
+          "merged_at": "2023-09-21T12:00:51Z",
+          "pr_title": "Change S3 checksum mode to be disabled by default",
+          "pr_body": "This removes the `S3_DISABLE_CHECKSUM_MODE` env variable and introduces the `S3_ENABLE_CHECKSUM_MODE` env variable instead.\r\n\r\nThe reason is that it seems that more people use S3-compatible providers which do not implement this feature (and thus error out if enabled) than S3-compatible providers which do implement it (which might be AWS S3 only).",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0fbefb6f67c8a4176afc731b798460933522cd78",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0fbefb6f67c8a4176afc731b798460933522cd78",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0fbefb6f67c8a4176afc731b798460933522cd78",
+          "author_login": "Gargron",
+          "commit_author_date": "2023-09-21T12:42:15Z",
+          "commit_title": "Update AUTHORS.md (#27018)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27018,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27018",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27018",
+          "state": "closed",
+          "merged_at": "2023-09-21T12:42:15Z",
+          "pr_title": "Update AUTHORS.md",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4fcc026f0f1b12a9de21a3af33375a9c8867dd55",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4fcc026f0f1b12a9de21a3af33375a9c8867dd55",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4fcc026f0f1b12a9de21a3af33375a9c8867dd55",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2023-09-21T14:51:32Z",
+          "commit_title": "Bump version to v4.2.0 (#27017)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 27017,
+          "html_url": "https://github.com/mastodon/mastodon/pull/27017",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/27017",
+          "state": "closed",
+          "merged_at": "2023-09-21T14:51:32Z",
+          "pr_title": "Bump version to v4.2.0",
+          "pr_body": "Changes from v4.2.0-rc2:\r\n\r\n### Added\r\n\r\n- Add `hide_collections`, `discoverable` and `indexable` attributes to credentials API ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26998))\r\n\r\n### Changed\r\n\r\n- Change S3 checksum mode to be disabled by default ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27007))\r\n\r\n### Fixed\r\n\r\n- Fix search results temporarily disappearing while scrolling and loading more results ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27014))\r\n- Fix migration of disabled old-style settings ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/27012))\r\n- Fix incorrect PostgreSQL version check ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26979))",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

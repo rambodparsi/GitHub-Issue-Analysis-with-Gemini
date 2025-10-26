@@ -1,0 +1,645 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.0-rc.1",
+  "compare": "v4.4.0",
+  "counts": {
+    "commits": 22,
+    "prs": 22,
+    "issues": 2,
+    "commit_pr": 22,
+    "commit_pr_issue": 2
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.0-rc.1...v4.4.0.compare.json",
+    "commits": "commits/v4.4/v4.4.0-rc.1...v4.4.0.commits.json",
+    "pulls": "pulls/v4.4/v4.4.0-rc.1...v4.4.0.pulls.json",
+    "issues": "issues/v4.4/v4.4.0-rc.1...v4.4.0.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "d7a08d81b6e2744ec5676950addcc54fe03333b1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d7a08d81b6e2744ec5676950addcc54fe03333b1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d7a08d81b6e2744ec5676950addcc54fe03333b1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-01T17:43:59Z",
+          "commit_title": "Fix error on log-in from old users requiring ToS interstitial when said ToS has been removed (#35233)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35233,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35233",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35233",
+          "state": "closed",
+          "merged_at": "2025-07-01T17:56:32Z",
+          "pr_title": "Fix error on log-in from old users requiring ToS interstitial when said ToS has been removed",
+          "pr_body": "Fixes #35232",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35232,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35232",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35232,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35232",
+          "state": "closed",
+          "issue_title": "Error page on logging in to https://mastodon.social",
+          "issue_body": "### Steps to reproduce the problem\n\nRunning Firefox 139 on Ubuntu, trying to login today on mastodon.social. Landing on an error page, as follows\n\nhttps://github.com/user-attachments/assets/bc61f9b2-7385-48d2-95ef-88efa2440203\n\nIf I use a wrong password, I am allowed to try again. Otherwise, the website sends me to the same error page.\n\n### Expected behaviour\n\nShould have arrived on my homepage\n\n### Actual behaviour\n\n501 error\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\n4.4.0-nightly.2025-07-01\n\n### Browser name and version\n\nFirefox 139\n\n### Operating system\n\nUbuntu 24.04\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "041bce9ed64d5c2a4b0f6453b196daceaed09e40",
+          "html_url": "https://github.com/mastodon/mastodon/commit/041bce9ed64d5c2a4b0f6453b196daceaed09e40",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/041bce9ed64d5c2a4b0f6453b196daceaed09e40",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-02T07:34:42Z",
+          "commit_title": "Add coverage for `valid_locale_or_nil` languages helper method (#34866)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34866,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34866",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34866",
+          "state": "closed",
+          "merged_at": "2025-07-02T07:45:52Z",
+          "pr_title": "Add coverage for `valid_locale_or_nil` languages helper method",
+          "pr_body": "Prior to this change, the full suite only exercises the first two guard clauses here, but not the actual region/locale resolution portion. Added coverage to hit full method.",
+          "labels": [
+            "testing",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "07b4fa55c8e2b3f1c12da94e03d52c0ddecde4d8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/07b4fa55c8e2b3f1c12da94e03d52c0ddecde4d8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/07b4fa55c8e2b3f1c12da94e03d52c0ddecde4d8",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-02T09:17:03Z",
+          "commit_title": "New Crowdin Translations (automated) (#35238)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35238,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35238",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35238",
+          "state": "closed",
+          "merged_at": "2025-07-02T09:29:20Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "961c22a6fd277d91dafc4e6a7f34e96d1d676607",
+          "html_url": "https://github.com/mastodon/mastodon/commit/961c22a6fd277d91dafc4e6a7f34e96d1d676607",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/961c22a6fd277d91dafc4e6a7f34e96d1d676607",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-02T09:21:32Z",
+          "commit_title": "Add coverage for TOS interstitial interruption flow of web app controller concern (#35235)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35235,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35235",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35235",
+          "state": "closed",
+          "merged_at": "2025-07-02T09:34:36Z",
+          "pr_title": "Add coverage for TOS interstitial interruption flow of web app controller concern",
+          "pr_body": "Looks like this was missed in review of https://github.com/mastodon/mastodon/pull/34527 and https://github.com/mastodon/mastodon/pull/35233 - tacking on now.\r\n\r\nConfirmed that the final case (signed in, requires interstitial, no TOS) does fail w/ template error if the code added in that latter PR is removed.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "06f5f270cc45a37512709e18d24d81b58c06ea58",
+          "html_url": "https://github.com/mastodon/mastodon/commit/06f5f270cc45a37512709e18d24d81b58c06ea58",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/06f5f270cc45a37512709e18d24d81b58c06ea58",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-03T07:28:03Z",
+          "commit_title": "Use `Account#targeted_reports` association where needed (#35249)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35249,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35249",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35249",
+          "state": "closed",
+          "merged_at": "2025-07-03T07:41:25Z",
+          "pr_title": "Use `Account#targeted_reports` association where needed",
+          "pr_body": "Follow-up on https://github.com/mastodon/mastodon/pull/32840/files#diff-8d0aaf2e59029dbcfc25eeb53c4937bce3ee60402798b1ba47d6ecee6255a012R46 which added this association but did not update to use it in these spots.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "878e1e65eb26d7e490de2e211de3a76518153b33",
+          "html_url": "https://github.com/mastodon/mastodon/commit/878e1e65eb26d7e490de2e211de3a76518153b33",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/878e1e65eb26d7e490de2e211de3a76518153b33",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-03T07:28:07Z",
+          "commit_title": "Use `ActiveModel::Attributes` for admin/account_action boolean values (#35247)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35247,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35247",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35247",
+          "state": "closed",
+          "merged_at": "2025-07-03T07:44:50Z",
+          "pr_title": "Use `ActiveModel::Attributes` for admin/account_action boolean values",
+          "pr_body": "Background: idea during review of https://github.com/mastodon/mastodon/pull/35246#issuecomment-3028441812\r\n\r\nI think this preserves exactly previous behavior (the internal implementation uses the same exact `cast` method), quick console session shows similar behavior, true/false classes, etc. I suspect there are more of these in other classes, but wanted to start with just one example.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "921af5d27d23c2515081bea3ea7e2eb3a78284c0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/921af5d27d23c2515081bea3ea7e2eb3a78284c0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/921af5d27d23c2515081bea3ea7e2eb3a78284c0",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-03T07:51:12Z",
+          "commit_title": "fix: Remove focus highlight when status is clicked in light mode (#35251)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35251,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35251",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35251",
+          "state": "closed",
+          "merged_at": "2025-07-03T08:03:12Z",
+          "pr_title": "fix: Remove focus highlight when status is clicked in light mode",
+          "pr_body": "### Changes proposed in this PR:\r\n- Fixes an oversight from PR #35150 which didn't handle light mode, causing detailed statuses to show their focus shading when clicking or selecting their content\r\n\r\n### Screencaps\r\n\r\n**Before**\r\n\r\nhttps://github.com/user-attachments/assets/a63a1461-3302-48b2-a577-3651ac1f6dd9\r\n\r\n**After**\r\n\r\nhttps://github.com/user-attachments/assets/8b70b3d0-8b76-4aa4-adea-5247d28c307b\r\n\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "000ff9c05f7ab1a609883104ca2055e6a10ebec0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/000ff9c05f7ab1a609883104ca2055e6a10ebec0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/000ff9c05f7ab1a609883104ca2055e6a10ebec0",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-03T09:47:57Z",
+          "commit_title": "New Crowdin Translations (automated) (#35250)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35250,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35250",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35250",
+          "state": "closed",
+          "merged_at": "2025-07-03T10:01:37Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "42884d872731f7ad1224d1713e156591560ffd9e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/42884d872731f7ad1224d1713e156591560ffd9e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/42884d872731f7ad1224d1713e156591560ffd9e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-03T14:42:48Z",
+          "commit_title": "Fix error handling for blank actions in account moderation action form (#35246)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35246,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35246",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35246",
+          "state": "closed",
+          "merged_at": "2025-07-03T14:54:16Z",
+          "pr_title": "Fix error handling for blank actions in account moderation action form",
+          "pr_body": "Fixes #35241",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35241,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35241",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35241,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35241",
+          "state": "closed",
+          "issue_title": "Mod Bug: Submitting moderation action without action results in error 422",
+          "issue_body": "### Steps to reproduce the problem\n\nNotice no action is selected by default.\n![Image](https://github.com/user-attachments/assets/d58583b0-0738-40b8-b07a-c6c4d6fac968)\n\nresults in \n\n![Image](https://github.com/user-attachments/assets/aac26c83-ad1f-452d-a206-303d8ec100ae)\n\n### Expected behaviour\n\nPrompt to select an action\n\n### Actual behaviour\n\nError.\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\naus.social\n\n### Mastodon version\n\nv4.4.0-rc1\n\n### Browser name and version\n\nfirefox\n\n### Operating system\n\nwindows 11\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "28373a9c88a0e507ac5a52f2645505b51ef60538",
+          "html_url": "https://github.com/mastodon/mastodon/commit/28373a9c88a0e507ac5a52f2645505b51ef60538",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/28373a9c88a0e507ac5a52f2645505b51ef60538",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-03T14:43:36Z",
+          "commit_title": "Use `ActiveModel::Attributes` in admin/status_batch_action (#35255)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35255,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35255",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35255",
+          "state": "closed",
+          "merged_at": "2025-07-03T14:54:16Z",
+          "pr_title": "Use `ActiveModel::Attributes` in admin/status_batch_action",
+          "pr_body": "Should have included in https://github.com/mastodon/mastodon/pull/35247 - basically same thing, on \"batch\" version of model.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "025abf73257b601e305394a6498eaf1b129646bf",
+          "html_url": "https://github.com/mastodon/mastodon/commit/025abf73257b601e305394a6498eaf1b129646bf",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/025abf73257b601e305394a6498eaf1b129646bf",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-03T16:28:47Z",
+          "commit_title": "Fix intermittent failure of TOS model spec from effective date collision (#35244)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35244,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35244",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35244",
+          "state": "closed",
+          "merged_at": "2025-07-03T16:41:04Z",
+          "pr_title": "Fix intermittent failure of TOS model spec from effective date collision",
+          "pr_body": "Example failure: https://github.com/mastodon/mastodon/actions/runs/16025255321/job/45211610476?pr=35129\r\n\r\nThe fabricator here uses `Faker::Date.unique.forward` to apply an `effective_date` value. When the value it happens to choose for the `not_effective` record here (which first must be set, but is then unset in a `before`) is 3 days from now, it collides with the `effective_future` record being created, and that one can't be saved. I was able to replicate locally both with the random value, and by changing the fabricator to purposefully collide.\r\n\r\nI don't like the loss of explicitness here, but I guess this would fail and be discovered if the fabricator changed. Open to other ideas. (remove defaults? remove faker and use sequences? link published/effective more closely?)\r\n\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7051458467a1c2435b92e945e7c5369e48a73e11",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7051458467a1c2435b92e945e7c5369e48a73e11",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7051458467a1c2435b92e945e7c5369e48a73e11",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-04T07:25:42Z",
+          "commit_title": "Raise better exception on FASP error responses (#35262)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35262,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35262",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35262",
+          "state": "closed",
+          "merged_at": "2025-07-04T07:50:36Z",
+          "pr_title": "Raise better exception on FASP error responses",
+          "pr_body": "Would otherwise raise a signature verification error which is not wrong, but utterly unhelpful when trying to get to the bottom of the reason for the failure.\r\n\r\nMarked this as `to backport` so we can include it in 4.4. Without I fear we would run the risk of getting some very unspecific bug reports.",
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cb937a920e074fc220c01c8db014e75138073a25",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cb937a920e074fc220c01c8db014e75138073a25",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cb937a920e074fc220c01c8db014e75138073a25",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-04T07:34:54Z",
+          "commit_title": "New Crowdin Translations (automated) (#35261)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35261,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35261",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35261",
+          "state": "closed",
+          "merged_at": "2025-07-04T07:51:51Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0c5ce23ae496af26b96aaab742800af93f552f44",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0c5ce23ae496af26b96aaab742800af93f552f44",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0c5ce23ae496af26b96aaab742800af93f552f44",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-04T07:51:01Z",
+          "commit_title": "Fix incorrect name in scheduler configuration (#35263)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35263,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35263",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35263",
+          "state": "closed",
+          "merged_at": "2025-07-04T08:07:15Z",
+          "pr_title": "Fix incorrect name in scheduler configuration",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "194645aadae9788f1f9ff48e61bce842746f9f6a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/194645aadae9788f1f9ff48e61bce842746f9f6a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/194645aadae9788f1f9ff48e61bce842746f9f6a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-07T09:22:22Z",
+          "commit_title": "Add ability to manually trigger i18n uploads (#35279)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35279,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35279",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35279",
+          "state": "closed",
+          "merged_at": "2025-07-07T09:34:24Z",
+          "pr_title": "Add ability to manually trigger i18n uploads",
+          "pr_body": "Currently, the job is only called when source string changes are pushed to a stable branch, which typically did not occur for 4.4 yet and may not occur anytime soon, preventing us from using the stable branch setup we have with Crowdin.\r\n\r\nThis PR allows us to manually trigger i18n uploads in such situations.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b4a950c2fc9b07da627d90d4136ca6e7ce32b5ce",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b4a950c2fc9b07da627d90d4136ca6e7ce32b5ce",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b4a950c2fc9b07da627d90d4136ca6e7ce32b5ce",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-07T08:07:01Z",
+          "commit_title": "Remove unused scopes in `Account` model (#35276)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35276,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35276",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35276",
+          "state": "closed",
+          "merged_at": "2025-07-07T08:17:41Z",
+          "pr_title": "Remove unused scopes in `Account` model",
+          "pr_body": "The bots/groups were added but I suspect never used. The ordering one was used in admin/accounts when first added, but has since been replaced by a filter class which uses other order scopes.\r\n\r\nWas reviewing https://github.com/mastodon/mastodon/pull/35272 and thought we must have a scope to do that ordering, and stumbled across these.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2db8a328cda3dfff5a8d0186c1da90e681f493a6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2db8a328cda3dfff5a8d0186c1da90e681f493a6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2db8a328cda3dfff5a8d0186c1da90e681f493a6",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-07T08:21:51Z",
+          "commit_title": "New Crowdin Translations (automated) (#35269)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35269,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35269",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35269",
+          "state": "closed",
+          "merged_at": "2025-07-07T08:34:01Z",
+          "pr_title": "New Crowdin Translations (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2dcededcf00feb2ee29a33be637d62ef333abff5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2dcededcf00feb2ee29a33be637d62ef333abff5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2dcededcf00feb2ee29a33be637d62ef333abff5",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-07T15:10:51Z",
+          "commit_title": "fix: Fix can't skip search field by tabbing (#35281)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35281,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35281",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35281",
+          "state": "closed",
+          "merged_at": "2025-07-07T15:23:37Z",
+          "pr_title": "fix: Fix can't skip search field by tabbing",
+          "pr_body": "### Changes proposed in this PR:\r\n- Fixes search field being unskippable via tab due to the popover being tied to the search's focus state. Now it's possible to click and tab into the popover without closing it, which allows tabbing out of the menu, and easily clearing all saved searches. (Related: #33497, CC @ThisIsMissEm  )\r\n\r\n> [!NOTE]\r\n> There are still multiple accessibility issues in the search popover such as the \"Remove saved search\" crosses being buttons inside of `role=\"button\"` and not having accessible names. These will be fixed separately\r\n\r\n### Screencap\r\n\r\nhttps://github.com/user-attachments/assets/904ca6cf-5884-4bf9-8cfa-1545b06900b1\r\n\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "388e09e1a3be88c1535908952b978c8cb2d767fb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/388e09e1a3be88c1535908952b978c8cb2d767fb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/388e09e1a3be88c1535908952b978c8cb2d767fb",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-08T09:22:46Z",
+          "commit_title": "New Crowdin Translations for stable-4.4 (automated) (#35288)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35288,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35288",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35288",
+          "state": "closed",
+          "merged_at": "2025-07-08T09:22:46Z",
+          "pr_title": "New Crowdin Translations for stable-4.4 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "333a17a478f0ddcee4115a50f01077cb1dc5c22e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/333a17a478f0ddcee4115a50f01077cb1dc5c22e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/333a17a478f0ddcee4115a50f01077cb1dc5c22e",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-08T09:31:04Z",
+          "commit_title": "Better error response to malformed headers (#35278)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35278,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35278",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35278",
+          "state": "closed",
+          "merged_at": "2025-07-08T09:44:35Z",
+          "pr_title": "Better error response to malformed headers",
+          "pr_body": "`starry` is used by both linzer internally and our code to parse RFC8941 conformant headers.\r\n\r\nWhen a parse error occurs this means that those headers were not well-formed/standards compliant or were otherwise incorrect. This should always result in an HTTP `400` (Bad Request) response.",
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c1794fb948dfb13865214bce8a90e88da44d4ff6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c1794fb948dfb13865214bce8a90e88da44d4ff6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c1794fb948dfb13865214bce8a90e88da44d4ff6",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-08T13:25:26Z",
+          "commit_title": "Bump version to v4.4.0 (#35268)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35268,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35268",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35268",
+          "state": "closed",
+          "merged_at": "2025-07-08T13:25:27Z",
+          "pr_title": "Bump version to v4.4.0",
+          "pr_body": "- Fix incorrect name in scheduler configuration (#35263 by `@ClearlyClaire`)\r\n- Fix misleading exceptions being returned on FASP error responses (#35262 by `@oneiros`)\r\n- Fix error handling for blank actions in account moderation action form (#35246 by `@ClearlyClaire`)\r\n- Fix focus style in light theme (#35251 by `@diondiondion`)\r\n- Fix error on log-in from old users requiring ToS interstitial when said ToS has been removed (#35233 by `@ClearlyClaire`)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "69e14246b838443985a541e97327494b8d2fdffb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/69e14246b838443985a541e97327494b8d2fdffb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/69e14246b838443985a541e97327494b8d2fdffb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-08T14:07:41Z",
+          "commit_title": "Fix 4.4 container images not being marked as latest (#35294)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35294,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35294",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35294",
+          "state": "closed",
+          "merged_at": "2025-07-08T14:07:41Z",
+          "pr_title": "Fix 4.4 container images not being marked as latest",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

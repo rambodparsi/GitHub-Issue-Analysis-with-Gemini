@@ -1,0 +1,98 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.16",
+  "compare": "v4.2.17",
+  "counts": {
+    "commits": 3,
+    "prs": 1,
+    "issues": 0,
+    "commit_pr": 3,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.16...v4.2.17.compare.json",
+    "commits": "commits/v4.2/v4.2.16...v4.2.17.commits.json",
+    "pulls": "pulls/v4.2/v4.2.16...v4.2.17.pulls.json",
+    "issues": "issues/v4.2/v4.2.16...v4.2.17.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "1f9feb7c4cf57760023af9a48c109498fd591e5f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1f9feb7c4cf57760023af9a48c109498fd591e5f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1f9feb7c4cf57760023af9a48c109498fd591e5f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-02-27T15:13:03Z",
+          "commit_title": "Drop compatibility with Ruby 3.0"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34023,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34023",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34023",
+          "state": "closed",
+          "merged_at": "2025-02-27T15:48:11Z",
+          "pr_title": "Bump version to v4.2.17",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "15d76984623756648b67ed64c8943269b72c3991",
+          "html_url": "https://github.com/mastodon/mastodon/commit/15d76984623756648b67ed64c8943269b72c3991",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/15d76984623756648b67ed64c8943269b72c3991",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-02-27T15:13:17Z",
+          "commit_title": "Update dependency `nokogiri`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34023,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34023",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34023",
+          "state": "closed",
+          "merged_at": "2025-02-27T15:48:11Z",
+          "pr_title": "Bump version to v4.2.17",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5d8c09194b38e4f237a668a095716906e7d2ad92",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5d8c09194b38e4f237a668a095716906e7d2ad92",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5d8c09194b38e4f237a668a095716906e7d2ad92",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-02-27T15:13:52Z",
+          "commit_title": "Bump version to v4.2.17"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34023,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34023",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34023",
+          "state": "closed",
+          "merged_at": "2025-02-27T15:48:11Z",
+          "pr_title": "Bump version to v4.2.17",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

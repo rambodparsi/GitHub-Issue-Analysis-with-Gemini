@@ -1,0 +1,146 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.25",
+  "compare": "v4.2.26",
+  "counts": {
+    "commits": 4,
+    "prs": 3,
+    "issues": 0,
+    "commit_pr": 4,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.25...v4.2.26.compare.json",
+    "commits": "commits/v4.2/v4.2.25...v4.2.26.commits.json",
+    "pulls": "pulls/v4.2/v4.2.25...v4.2.26.pulls.json",
+    "issues": "issues/v4.2/v4.2.25...v4.2.26.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "444cf4cc405ed81567c38822e04cd2d8da2c9bd3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/444cf4cc405ed81567c38822e04cd2d8da2c9bd3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/444cf4cc405ed81567c38822e04cd2d8da2c9bd3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-19T08:45:13Z",
+          "commit_title": "Fix getting `Create` and `Update` out of order (#36176)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36236,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36236",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36236",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:41Z",
+          "pr_title": "Bump version to v4.2.26",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36176,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36176",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36176",
+          "state": "closed",
+          "merged_at": "2025-09-19T08:59:36Z",
+          "pr_title": "Fix getting `Create` and `Update` out of order",
+          "pr_body": "This might be the cause of some quote posts not displaying as approved.\r\n\r\nThe idea is as follows:\r\n- if the post is not found, the post may or may not be of interest to us\r\n- if it is of no interest to us, the `Create` handler will discard it\r\n- if it is of interest to us, we either missed the `Create` or are likely to get it, so process the more-up-to-date version of the post immediately\r\n\r\nThis may cover the case when a post is `Create`d then `Update`d to add a `quoteApproval` and thus are received out-of-order.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5d947704d9ee04f32a3f159164e151bc8f82dc6a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5d947704d9ee04f32a3f159164e151bc8f82dc6a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5d947704d9ee04f32a3f159164e151bc8f82dc6a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-19T09:52:17Z",
+          "commit_title": "Fix processing of out-of-order `Update` as implicit updates (#36190)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36236,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36236",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36236",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:41Z",
+          "pr_title": "Bump version to v4.2.26",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36190,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36190",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36190",
+          "state": "closed",
+          "merged_at": "2025-09-19T10:05:16Z",
+          "pr_title": "Fix processing of out-of-order `Update` as implicit updates",
+          "pr_body": "We handle “implicit” (able to update some metadata) and “explicit” (able to change the contents of the post) updates to statuses.\r\n\r\nWe consider an `Update` to be explicit if it has an `updated` attribute and this field is more recent than the last recorded one.\r\n\r\nEverything else was considered an implicit update, but that included updates with an earlier `updated` attribute. This PR rejects such updates to avoid reverting metadata to an earlier state if activities are received out-of-order.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5fd95f6ef26abcbbca26aa6af04bf1b5ca553742",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5fd95f6ef26abcbbca26aa6af04bf1b5ca553742",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5fd95f6ef26abcbbca26aa6af04bf1b5ca553742",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-23T09:38:21Z",
+          "commit_title": "Update dependency `rexml`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36236,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36236",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36236",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:41Z",
+          "pr_title": "Bump version to v4.2.26",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "fbd2214e746832b0df3d17c34d4c1a3a583c555b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fbd2214e746832b0df3d17c34d4c1a3a583c555b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fbd2214e746832b0df3d17c34d4c1a3a583c555b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-23T09:39:35Z",
+          "commit_title": "Bump version to v4.2.26"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36236,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36236",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36236",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:41Z",
+          "pr_title": "Bump version to v4.2.26",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

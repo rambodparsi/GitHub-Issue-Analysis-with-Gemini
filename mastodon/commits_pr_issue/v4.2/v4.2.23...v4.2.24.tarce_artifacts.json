@@ -1,0 +1,183 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.23",
+  "compare": "v4.2.24",
+  "counts": {
+    "commits": 5,
+    "prs": 4,
+    "issues": 1,
+    "commit_pr": 4,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.23...v4.2.24.compare.json",
+    "commits": "commits/v4.2/v4.2.23...v4.2.24.commits.json",
+    "pulls": "pulls/v4.2/v4.2.23...v4.2.24.pulls.json",
+    "issues": "issues/v4.2/v4.2.23...v4.2.24.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "5ee9aa8d56b1c5ee2e06950ac3faf05f01da6d03",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5ee9aa8d56b1c5ee2e06950ac3faf05f01da6d03",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5ee9aa8d56b1c5ee2e06950ac3faf05f01da6d03",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T09:11:59Z",
+          "commit_title": "Fix WebUI crashing for accounts with `null` URL (#35651)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35680,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35680",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35680",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:32Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 35651,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35651",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35651",
+          "state": "closed",
+          "merged_at": "2025-08-04T08:02:04Z",
+          "pr_title": "Fix WebUI crashing for accounts with `null` URL",
+          "pr_body": "Fixes #35635\r\n\r\nIn 79931bf3ae4, we at the same time added JS code that relied on `url` never to be `null`, and introduced a new way for `url` to be `null`. This PR changes it to consider the `url` field in the API response to be potentially `null`, according to the specifications, and also provides a server-side fallback in line with what we used to have before 79931bf3ae4 so that other clients are less likely to run into the same issue.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35635,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35635",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35635,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35635",
+          "state": "closed",
+          "issue_title": "Browser stays blank after login; Console error: \"Uncaught TypeError: can't access property \"startsWith\", n.url is null\"",
+          "issue_body": "### Steps to reproduce the problem\n\n- Login to affected account.\n\n\n\n### Expected behaviour\n\nRedirect to %domain%/deck/getting-started\n\n### Actual behaviour\n\nURL in url-bar stayed at %domain% and the browser window went (dark mode) black/grey.\n\n### Detailed description\n\nObserved after upgrade to 4.4.2 not sure whether this was an issue before.\n\nError found in Browser Console:\n\n```\nUncaught TypeError: can't access property \"startsWith\", n.url is null\n    wI account.ts:150\n    bI accounts.ts:23\n    OI accounts.ts:37\n    OI accounts.ts:36\n    CI accounts.ts:59\n    Immutable 4\n    Redux 2\n    QM sounds.ts:83\n    HM errors.ts:53\n    WM loading_bar.ts:84\n    Redux 2\n    ck store.js:25\n    om Redux\n    <anonymous> mastodon.jsx:27\nuseSelectableClick-C-trR-q9.js:40:7809\n    wI account.ts:150\n    bI accounts.ts:23\n    OI accounts.ts:37\n    forEach self-hosted:157\n    OI accounts.ts:36\n    CI accounts.ts:59\n    default Immutable\n    forEach self-hosted:157\n    Immutable 3\n    Redux 2\n    QM sounds.ts:83\n    HM errors.ts:53\n    WM loading_bar.ts:84\n    Redux 2\n    ck store.js:25\n    om Redux\n    <anonym> mastodon.jsx:27\n```\n\nLooking into the database I found that the url column in the accounts table of the affected account was null.\n\nSetting it to %domain%/%accountname% (e.g., https://example.com/foobar) resolved the issue.\n\n### Mastodon instance\n\nhttps://xtux.org/\n\n### Mastodon version\n\nv4.4.2\n\n### Browser name and version\n\nLibrewolf 141.0-1 and Version 138.0.7204.157 (Offizieller Build) snap (64-Bit)\n\n### Operating system\n\nUbuntu 22.04.5 LTS\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "61794fd123763ecbb7d00853b14beadf60c4901f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/61794fd123763ecbb7d00853b14beadf60c4901f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/61794fd123763ecbb7d00853b14beadf60c4901f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-04T14:15:02Z",
+          "commit_title": "Disable ActiveRecord query cache in `Create` critical path (#35662)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35680,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35680",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35680",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:32Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 35662,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35662",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35662",
+          "state": "closed",
+          "merged_at": "2025-08-04T14:26:58Z",
+          "pr_title": "Disable ActiveRecord query cache in `Create` critical path",
+          "pr_body": "Call sites regularly check for the status existing before going into `Create`. When that happens, the critical section is useless as ActiveRecord will fail to find the status, because of the cached negative result.\r\n\r\nI believe this will fix the occasional `Validation failed: Uri has already been taken` issues we've been seeing.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a42c9c028567078930f5398855a41976ee51d9e5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a42c9c028567078930f5398855a41976ee51d9e5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a42c9c028567078930f5398855a41976ee51d9e5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T09:09:57Z",
+          "commit_title": "Update dependency ruby-saml to v1.18.1"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35680,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35680",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35680",
+          "state": "closed",
+          "merged_at": "2025-08-05T09:43:32Z",
+          "pr_title": "Backport changes to 4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "352308a8dfadc7c850538ed95128a8cefc588870",
+          "html_url": "https://github.com/mastodon/mastodon/commit/352308a8dfadc7c850538ed95128a8cefc588870",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/352308a8dfadc7c850538ed95128a8cefc588870",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T12:53:04Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ca1c58d5f69aae80fe22ac8ae982ae4ba2bf4165",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ca1c58d5f69aae80fe22ac8ae982ae4ba2bf4165",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ca1c58d5f69aae80fe22ac8ae982ae4ba2bf4165",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-05T13:17:04Z",
+          "commit_title": "Bump version to v4.2.24 (#35684)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35684,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35684",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35684",
+          "state": "closed",
+          "merged_at": "2025-08-05T13:17:04Z",
+          "pr_title": "Bump version to v4.2.24",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.0",
+  "compare": "v4.4.1",
+  "counts": {
+    "commits": 6,
+    "prs": 6,
+    "issues": 6,
+    "commit_pr": 6,
+    "commit_pr_issue": 5
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.0...v4.4.1.compare.json",
+    "commits": "commits/v4.4/v4.4.0...v4.4.1.commits.json",
+    "pulls": "pulls/v4.4/v4.4.0...v4.4.1.pulls.json",
+    "issues": "issues/v4.4/v4.4.0...v4.4.1.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "f96743fcfba02b6ada899cf83a74ddc51de9189e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f96743fcfba02b6ada899cf83a74ddc51de9189e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f96743fcfba02b6ada899cf83a74ddc51de9189e",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-07-09T08:45:29Z",
+          "commit_title": "Use `if_exists: true` when removing duplicate indexes (#35309)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35309,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35309",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35309",
+          "state": "closed",
+          "merged_at": "2025-07-09T08:56:02Z",
+          "pr_title": "Use `if_exists: true` when removing duplicate indexes",
+          "pr_body": "Resolves https://github.com/mastodon/mastodon/issues/35304\r\n\r\nI'd generally avoid changing previous migrations but I can't think of how else to make this less bad for anyone getting hung up on this one (as in linked issue). I'm not sure how you get into this state (maybe manually remove things? I think pghero has been warning about them), but this is probably safe to reduce those issues.\r\n\r\nI was able to verify this locally by modifying some old migrations to NOT have created the indexes in the first place, and confirm that it errors out as in linked issue in that case, and that this change fixes that.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35304,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35304",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35304,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35304",
+          "state": "closed",
+          "issue_title": "Database migrations shouldn't completely fail if a drop is attempted but the object doesn't exist",
+          "issue_body": "### Pitch\n\nDuring the 4.4.0 database migration, one of the indexes didn't exist, so the complete migration failed. This of course bricked the update. The workaround was to temporarily create the missing index, so that the migration script could drop it and not fail the entire migration. I tried to think of the ramifications of a failed index drop because it doesn't exist, but I couldn't come up with any. The Masto-SMEs might have some very good reasons.  \n\n### Motivation\n\nTo prevent needless failed Mastodon updates that involve database migrations.",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "1151b05c2df79a48dbef93a0e30b80bc93a7d203",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1151b05c2df79a48dbef93a0e30b80bc93a7d203",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1151b05c2df79a48dbef93a0e30b80bc93a7d203",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-09T08:58:41Z",
+          "commit_title": "Fix support for special characters in various environment variables (#35314)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35314,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35314",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35314",
+          "state": "closed",
+          "merged_at": "2025-07-09T09:10:01Z",
+          "pr_title": "Fix support for special characters in various environment variables",
+          "pr_body": "Fixes #35305, #35312\r\n\r\nCloses #35307",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35305,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35305",
+              "relationship": "closes"
+            },
+            {
+              "number": 35312,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35312",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35305,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35305",
+          "state": "closed",
+          "issue_title": "SMTP_PASSWORD value containing brackets in .env.production causes compile to fail",
+          "issue_body": "### Steps to reproduce the problem\n\n1. in .env.production, set `SMTP_PASSWORD` to have a password with brackets in it, ie `SMTP_PASSWORD=]]123456789[[`\n2. Attempt an asset compile\n3. While compiling, `home/mastodon/live/config/email.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): did not find expected node content while parsing a block node at line 12 column 15` error received.\n\n\n...\n\n\n### Expected behaviour\n\nCompile with email password with bracket characters should've worked.\n\n### Actual behaviour\n\nCompile Failed\n\n### Detailed description\n\nSMTP Password had brackets in it.  Once brackets were removed, compile went as expected.  Previous versions of Mastodon seem to have escaped password characters like brackets, but this is now broken.  4.3.x had no issues with a password with brackets.\n\n### Mastodon instance\n\ntiggi.es\n\n### Mastodon version\n\nv.4.4.0\n\n### Environment\n\nPlease at least include those informations:\n- Operating system: Debian 11 LXC\n- Ruby version: v3.4.4\n- Node.js version: 20.18.0\n\n\n### Technical details\n\nYAML syntax error occurred while parsing /home/mastodon/live/config/email.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): did not find expected node content while parsing a block node at line 12 column 15\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:38:in `rescue in parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:21:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:18:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/application.rb:293:in `config_for'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/railtie.rb:226:in `public_send'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/railtie.rb:226:in `method_missing'\n/home/mastodon/live/config/application.rb:108:in `<class:Application>'\n/home/mastodon/live/config/application.rb:59:in `<module:Mastodon>'\n/home/mastodon/live/config/application.rb:58:in `<main>'\n/home/mastodon/live/Rakefile:6:in `require_relative'\n/home/mastodon/live/Rakefile:6:in `<main>'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:43:in `block in with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in `with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in `perform'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:150:in `invoke_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:67:in `block in invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:143:in `with_argv'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:63:in `invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in `<main>'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'\nbin/rails:4:in `<main>'\n\nCaused by:\nPsych::SyntaxError: (<unknown>): did not find expected node content while parsing a block node at line 12 column 15 (Psych::SyntaxError)\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/psych-5.2.6/lib/psych/parser.rb:62:in `_native_parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/psych-5.2.6/lib/psych/parser.rb:62:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/psych-5.2.6/lib/psych.rb:456:in `parse_stream'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/psych-5.2.6/lib/psych.rb:400:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/psych-5.2.6/lib/psych.rb:273:in `unsafe_load'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:32:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:18:in `parse'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/application.rb:293:in `config_for'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/railtie.rb:226:in `public_send'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/railtie.rb:226:in `method_missing'\n/home/mastodon/live/config/application.rb:108:in `<class:Application>'\n/home/mastodon/live/config/application.rb:59:in `<module:Mastodon>'\n/home/mastodon/live/config/application.rb:58:in `<main>'\n/home/mastodon/live/Rakefile:6:in `require_relative'\n/home/mastodon/live/Rakefile:6:in `<main>'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:43:in `block in with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in `with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in `perform'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:150:in `invoke_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:67:in `block in invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:143:in `with_argv'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/command.rb:63:in `invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in `<main>'\n/home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'\nbin/rails:4:in `<main>'\n(See full trace by running task with --trace)",
+          "labels": [
+            "status/to triage"
+          ]
+        },
+        {
+          "number": 35312,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35312",
+          "state": "closed",
+          "issue_title": "4.4.0 Introduces breaking change in how Vapid configuration are handled",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Deployment via docker\n2. Deploy mastodon v4.3.9 with env variables `VAPID_PRIVATE_KEY` and `VAPID_PUBLIC_KEY` -> works fine\n3. Change version to v4.4.0 and run for example migrations -> breaks (expects /opt/mastodon/config/vapid.yml file, which does not exist)\n\n### Expected behaviour\n\nThe configuration should be able to use the env variables\n\n### Actual behaviour\n\nExpects for /opt/mastodon/config/vapid.yml file which does not exist\n\n### Detailed description\n\nThis occurred after running migrations with changing docker image of version from `v4.3.9` to `v4.4.0`\n\nHere are the error logs of the following command: `RAILS_ENV=production bundle exec rails db:migrate`\n\n```sh\nbin/rails aborted!\nYAML syntax error occurred while parsing /opt/mastodon/config/vapid.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): could not find expected ':' while scanning a simple key at line 17 column 1\n/usr/local/bundle/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:38:in 'ActiveSupport::ConfigurationFile#parse'\n/usr/local/bundle/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:18:in 'ActiveSupport::ConfigurationFile.parse'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/application.rb:293:in 'Rails::Application#config_for'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/railtie.rb:226:in 'Kernel#public_send'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/railtie.rb:226:in 'Rails::Railtie.method_missing'\n/opt/mastodon/config/application.rb:112:in '<class:Application>'\n/opt/mastodon/config/application.rb:59:in '<module:Mastodon>'\n/opt/mastodon/config/application.rb:58:in '<main>'\n/opt/mastodon/Rakefile:6:in 'Kernel#require_relative'\n/opt/mastodon/Rakefile:6:in '<main>'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:43:in 'block in Rails::Command::RakeCommand.with_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in 'Rails::Command::RakeCommand.with_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in 'Rails::Command::RakeCommand.perform'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:150:in 'Rails::Command.invoke_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:67:in 'block in Rails::Command.invoke'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:143:in 'Rails::Command.with_argv'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:63:in 'Rails::Command.invoke'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands.rb:18:in '<main>'\n/usr/local/bundle/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in 'Kernel#require'\nbin/rails:4:in '<main>'\n\nCaused by:\nPsych::SyntaxError: (<unknown>): could not find expected ':' while scanning a simple key at line 17 column 1 (Psych::SyntaxError)\n/usr/local/bundle/gems/psych-5.2.6/lib/psych/parser.rb:62:in 'Psych::Parser#_native_parse'\n/usr/local/bundle/gems/psych-5.2.6/lib/psych/parser.rb:62:in 'Psych::Parser#parse'\n/usr/local/bundle/gems/psych-5.2.6/lib/psych.rb:456:in 'Psych.parse_stream'\n/usr/local/bundle/gems/psych-5.2.6/lib/psych.rb:400:in 'Psych.parse'\n/usr/local/bundle/gems/psych-5.2.6/lib/psych.rb:273:in 'Psych.unsafe_load'\n/usr/local/bundle/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:32:in 'ActiveSupport::ConfigurationFile#parse'\n/usr/local/bundle/gems/activesupport-8.0.2/lib/active_support/configuration_file.rb:18:in 'ActiveSupport::ConfigurationFile.parse'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/application.rb:293:in 'Rails::Application#config_for'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/railtie.rb:226:in 'Kernel#public_send'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/railtie.rb:226:in 'Rails::Railtie.method_missing'\n/opt/mastodon/config/application.rb:112:in '<class:Application>'\n/opt/mastodon/config/application.rb:59:in '<module:Mastodon>'\n/opt/mastodon/config/application.rb:58:in '<main>'\n/opt/mastodon/Rakefile:6:in 'Kernel#require_relative'\n/opt/mastodon/Rakefile:6:in '<main>'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:43:in 'block in Rails::Command::RakeCommand.with_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in 'Rails::Command::RakeCommand.with_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in 'Rails::Command::RakeCommand.perform'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:150:in 'Rails::Command.invoke_rake'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:67:in 'block in Rails::Command.invoke'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:143:in 'Rails::Command.with_argv'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/command.rb:63:in 'Rails::Command.invoke'\n/usr/local/bundle/gems/railties-8.0.2/lib/rails/commands.rb:18:in '<main>'\n/usr/local/bundle/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in 'Kernel#require'\nbin/rails:4:in '<main>'\n(See full trace by running task with --trace)\n```\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\nv4.4.0",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "81b363b338527b610c19e002b47288b16c13298c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/81b363b338527b610c19e002b47288b16c13298c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/81b363b338527b610c19e002b47288b16c13298c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-09T12:13:51Z",
+          "commit_title": "Fix replying from media modal or pop-in-player tagging user `@undefined` (#35317)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35317,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35317",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35317",
+          "state": "closed",
+          "merged_at": "2025-07-09T12:26:18Z",
+          "pr_title": "Fix replying from media modal or pop-in-player tagging user `@undefined`",
+          "pr_body": "Fixes #35308",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35308,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35308",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35308,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35308",
+          "state": "closed",
+          "issue_title": "Replying to any post in the Media tab results in incorrectly tagging a user named \"@undefined\"",
+          "issue_body": "### Steps to reproduce the problem\n\nGo to a user's media tab, for example https://mastodon.social/@mcc/media .\n\nClick a post to lightbox it. For example there's one visible right now at that link saying \"Frequently searched: Laptops\".\n\nClick the \"reply\" button in the bottom-left:\n\n<img width=\"318\" height=\"201\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/87e8c513-b4fd-41d8-b106-1946c90fc188\" />\n\n### Expected behaviour\n\nThe compose box is activated, set up to reply to the selected post, with the \"@\" of the poster prefilled in the box (or nothing, if the poster is yourself).\n\n### Actual behaviour\n\nThe compose box is activated, set up to reply to the selected post, but the handle of a user named \"@undefined\" is (even when replying to oneself) prefilled in the box. If a user is @-tagged in the post text, their @ will be prefilled, but the @ of the person you are replying to will not be prefilled.\n\n### Detailed description\n\nProblem expresses in both Advanced and regular modes.\n\n<img width=\"483\" height=\"777\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/78a374fd-a4c0-439f-8827-a44a67734cc0\" />\n\nI smell JavaScript.\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.5.0-nightly.2025-07-08\n\n### Browser name and version\n\nFirefox 128.11.0esr\n\n### Operating system\n\nDebian Trixie\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "fb3ff194b54dce7e140e81de802e98965bad6012",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fb3ff194b54dce7e140e81de802e98965bad6012",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fb3ff194b54dce7e140e81de802e98965bad6012",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-09T14:22:47Z",
+          "commit_title": "Relax error restriction in initializer (#35321)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35321,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35321",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35321",
+          "state": "closed",
+          "merged_at": "2025-07-09T14:36:51Z",
+          "pr_title": "Relax error restriction in initializer",
+          "pr_body": "Fixes #35303\r\n\r\nIn the above issue it was noted that you can no longer run `RAILS_ENV=production bin/rails assets:precompile` without access to redis.\r\n\r\nThe code already accounted for the fact, that the database might not be available, but it did not recognize that the same might be true for the cache backend.\r\n\r\nI had initially hoped I could just add a redis error to the list, and indeed the `redis` gem has its own error type for connection errors. But we use the \"hiredis\" driver which is a C extension that in some instances just raises `RuntimeError`.\r\n\r\nI could have added `Redis::CannotConnectError`, `Redis::ConnectionError` (what is the difference, I wonder?) and `RuntimeError`. But I figured that a) once you include `RuntimeError` you are already casting a very wide net and b) there might be other errors (from AR, redis or even other places) that could be applicable here. So I decided to use the catch-all and rescue from all kinds of `StandardError`.\r\n\r\nOn the one hand, this is considered bad practice because it can mask all kinds of errors one would rather catch as early as possible. On the other hand, this is \"only\" an initializer and the method in question is also excersized elsewhere, including in tests.",
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": [
+            {
+              "number": 35303,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35303",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35303,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35303",
+          "state": "closed",
+          "issue_title": "4.4.0 assets:precompile fails trying to.. talk to redis?",
+          "issue_body": "### Steps to reproduce the problem\n\nRunning my usual mastodon build in Docker:\n\n```\ngit clone https://github.com/rbenv/ruby-build.git \"$(rbenv root)\"/plugins/ruby-build\n\nRUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install\n\n# Mastodon build dependencies\nbundle config deployment 'true'\nbundle config without 'development test'\nbundle install -j $(getconf _NPROCESSORS_ONLN)\nyarn install\n\nRAILS_ENV=production bundle exec rails assets:precompile\n```\n\nMy server runs in kubernetes and so its redis server URL is a kubernetes DNS entry that does not resolve outside the cluster:\n```\nREDIS_HOST=cache.mastodon.svc.cluster.local\nREDIS_PORT=6379\n```\n\n### Expected behaviour\n\nThe assets should have precompiled\n\n### Actual behaviour\n\nIt crashes with the big error specified\n\n### Detailed description\n\nWith 4.4.0 this now fails when trying to run assets:precompile because something is trying to talk to redis?!\n\n```\n187.0 Name or service not known                                                                                                                                                                                                                                                                                             \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/connection/hiredis.rb:21:in 'Hiredis::Ext::Connection#connect'                                                                                                                                                                                          \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/connection/hiredis.rb:21:in 'Redis::Connection::Hiredis.connect'                                                                                                                                                                                        \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:385:in 'Redis::Client#establish_connection'                                                                                                                                                                                                   \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:115:in 'block in Redis::Client#connect'                                                                                                                                                                                                       \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:344:in 'Redis::Client#with_reconnect'                                                                                                                                                                                                         \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:114:in 'Redis::Client#connect'                                                                                                                                                                                                                \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:409:in 'Redis::Client#ensure_connected'                                                                                                                                                                                                       \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:269:in 'block in Redis::Client#process'                                                                                                                                                                                                       \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:356:in 'Redis::Client#logging'                                                                                                                                                                                                                \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:268:in 'Redis::Client#process'                                                                                                                                                                                                                \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/client.rb:161:in 'Redis::Client#call'                                                                                                                                                                                                                   \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis.rb:270:in 'block in Redis#send_command'                                                                                                                                                                                                                 \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis.rb:269:in 'Monitor#synchronize'                                                                                                                                                                                                                         \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis.rb:269:in 'Redis#send_command'                                                                                                                                                                                                                          \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/redis-4.8.1/lib/redis/commands/strings.rb:191:in 'Redis::Commands::Strings#get'                                                                                                                                                                                               \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/redis_cache_store.rb:326:in 'block (2 levels) in ActiveSupport::Cache::RedisCacheStore#read_serialized_entry'                                                                                                                    \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/connection_pool-2.5.3/lib/connection_pool.rb:110:in 'block (2 levels) in ConnectionPool#with'                                                                                                                                                                                 \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/connection_pool-2.5.3/lib/connection_pool.rb:109:in 'Thread.handle_interrupt'                                                                                                                                                                                                 \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/connection_pool-2.5.3/lib/connection_pool.rb:109:in 'block in ConnectionPool#with'                                                                                                                                                                                            \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/connection_pool-2.5.3/lib/connection_pool.rb:106:in 'Thread.handle_interrupt'                                                                                                                                                                                                 \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/connection_pool-2.5.3/lib/connection_pool.rb:106:in 'ConnectionPool#with'                                                                                                                                                                                                     \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/redis_cache_store.rb:326:in 'block in ActiveSupport::Cache::RedisCacheStore#read_serialized_entry'                                                                                                                               \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/redis_cache_store.rb:485:in 'ActiveSupport::Cache::RedisCacheStore#failsafe'                                                                                                                                                     \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/redis_cache_store.rb:325:in 'ActiveSupport::Cache::RedisCacheStore#read_serialized_entry'                                                                                                                                        \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/strategy/local_cache.rb:156:in 'ActiveSupport::Cache::Strategy::LocalCache#read_serialized_entry'                                                                                                                                \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache/redis_cache_store.rb:321:in 'ActiveSupport::Cache::RedisCacheStore#read_entry'                                                                                                                                                   \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache.rb:452:in 'block in ActiveSupport::Cache::Store#fetch'                                                                                                                                                                           \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache.rb:1027:in 'block in ActiveSupport::Cache::Store#_instrument'                                                                                                                                                                    \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/notifications.rb:212:in 'ActiveSupport::Notifications.instrument'                                                                                                                                                                      \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache.rb:1026:in 'ActiveSupport::Cache::Store#_instrument'                                                                                                                                                                             \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache.rb:1003:in 'ActiveSupport::Cache::Store#instrument'                                                                                                                                                                              \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/cache.rb:451:in 'ActiveSupport::Cache::Store#fetch'                                                                                                                                                                                    \n187.0 /app/live/app/models/setting.rb:77:in 'Setting.[]'                                                                                                                                                                                                                                                                    \n187.0 /app/live/app/models/setting.rb:63:in 'Setting.method_missing'                                                                                                                                                                                                                                                        \n187.0 /app/live/config/initializers/settings_digests.rb:5:in 'block in <main>'                                                                                                                                                                                                                                              \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:406:in 'BasicObject#instance_exec'                                                                                                                                                                                        \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:406:in 'block in ActiveSupport::Callbacks::CallTemplate::InstanceExec0#make_lambda'                                                                                                                                       \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:178:in 'block in ActiveSupport::Callbacks::Filters::Before#call'                                                                                                                                                          \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:668:in 'block (2 levels) in ActiveSupport::Callbacks::CallbackChain#default_terminator'                                                                                                                                   \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:667:in 'Kernel#catch'                                                                                                                                                                                                     \n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:667:in 'block in ActiveSupport::Callbacks::CallbackChain#default_terminator'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:179:in 'ActiveSupport::Callbacks::Filters::Before#call'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:559:in 'block in ActiveSupport::Callbacks::CallbackSequence#invoke_before'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:559:in 'Array#each'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:559:in 'ActiveSupport::Callbacks::CallbackSequence#invoke_before'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/callbacks.rb:108:in 'ActiveSupport::Callbacks#run_callbacks'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/activesupport-8.0.2/lib/active_support/reloader.rb:96:in 'ActiveSupport::Reloader.prepare!'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/application/finisher.rb:73:in 'block in <module:Finisher>'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/initializable.rb:32:in 'BasicObject#instance_exec'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/initializable.rb:32:in 'Rails::Initializable::Initializer#run'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/initializable.rb:61:in 'block in Rails::Initializable#run_initializers'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/initializable.rb:60:in 'Rails::Initializable#run_initializers'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/application.rb:440:in 'Rails::Application#initialize!'\n187.0 /app/live/config/environment.rb:7:in '<main>'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in 'Kernel#require'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/zeitwerk-2.7.3/lib/zeitwerk/core_ext/kernel.rb:34:in 'Kernel#require'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/application.rb:416:in 'Rails::Application#require_environment!'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/application.rb:567:in 'block in Rails::Application#run_tasks_blocks'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'block in Rake::Task#execute'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Array#each'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Rake::Task#execute'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:219:in 'block in Rake::Task#invoke_with_call_chain'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Monitor#synchronize'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Rake::Task#invoke_with_call_chain'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:243:in 'block in Rake::Task#invoke_prerequisites'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:241:in 'Array#each'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:241:in 'Rake::Task#invoke_prerequisites'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:218:in 'block in Rake::Task#invoke_with_call_chain'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Monitor#synchronize'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Rake::Task#invoke_with_call_chain'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:188:in 'Rake::Task#invoke'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:188:in 'Rake::Application#invoke_task'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'block (2 levels) in Rake::Application#top_level'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'Array#each'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'block in Rake::Application#top_level'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:147:in 'Rake::Application#run_with_threads'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:132:in 'Rake::Application#top_level'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:27:in 'block (2 levels) in Rails::Command::RakeCommand.perform'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:214:in 'Rake::Application#standard_exception_handling'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:27:in 'block in Rails::Command::RakeCommand.perform'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:44:in 'block in Rails::Command::RakeCommand.with_rake'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/rake_module.rb:59:in 'Rake.with_application'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in 'Rails::Command::RakeCommand.with_rake'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in 'Rails::Command::RakeCommand.perform'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:150:in 'Rails::Command.invoke_rake'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:67:in 'block in Rails::Command.invoke'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:143:in 'Rails::Command.with_argv'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:63:in 'Rails::Command.invoke'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in '<main>'\n187.0 /app/live/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in 'Kernel#require'\n187.0 Tasks: TOP => assets:precompile => environment\n187.0 (See full trace by running task with --trace)\n```\n\nHave I missed something obvious? :)\n\n\n### Mastodon instance\n\nn/a local build\n\n### Mastodon version\n\nv4.4.0\n\n### Environment\n\nDocker container, base image debian:12\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "93ce44d21d15fa6631b55a53e0919c0b98c07fee",
+          "html_url": "https://github.com/mastodon/mastodon/commit/93ce44d21d15fa6631b55a53e0919c0b98c07fee",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/93ce44d21d15fa6631b55a53e0919c0b98c07fee",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-09T14:34:16Z",
+          "commit_title": "Fix nearly every sub-directory being crawled as part of Vite build (#35323)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35323,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35323",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35323",
+          "state": "closed",
+          "merged_at": "2025-07-09T14:50:26Z",
+          "pr_title": "Fix nearly every sub-directory being crawled as part of Vite build",
+          "pr_body": "Fixes #35299",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35299,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35299",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35299,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35299",
+          "state": "closed",
+          "issue_title": "Update 4.4.0 stuck on precompile",
+          "issue_body": "### Steps to reproduce the problem\n\n1. If you are using rbenv, [update the list of available versions](https://github.com/rbenv/ruby-build/wiki#updating-ruby-build) and install the proper Ruby version by doing RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install in the Mastodon install directory (e.g. /home/mastodon/live)\n2. Install dependencies with bundle install and yarn install --immutable\n3. Precompile the assets: RAILS_ENV=production bundle exec rails assets:precompile\n\n...\n\n\n\n### Expected behaviour\n\nprecompile assets\n\n### Actual behaviour\n\nstuck on \"Building with Vite ⚡️\"\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nrollenspiel.social\n\n### Mastodon version\n\nv4.4.0\n\n### Environment\n\nPlease at least include those informations:\n- Operating system: Debian 12\n- Ruby version: ruby 3.4.4 (2025-05-14 revision a38531fd3f) +PRISM [x86_64-linux]\n- Node.js version: v20.19.3\n\n\n### Technical details\n\n```\nRAILS_ENV=production bundle exec rails assets:precompile\nBuilding with Vite ⚡️\n^C#<Thread:0x00007fb1cff637d0 /home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:16 run> terminated with exception (report_on_exception is true):\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:25:in 'IO#gets': stream closed in another thread (IOError)\n\tfrom /home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:25:in 'ViteRuby::IO.read_lines'\n\tfrom /home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:16:in 'block (2 levels) in ViteRuby::IO.capture'\n#<Thread:0x00007fb1cff62358 /home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:17 run> terminated with exception (report_on_exception is true):\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:17:in 'IO#read': stream closed in another thread (IOError)\n\tfrom /home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:17:in 'block (2 levels) in ViteRuby::IO.capture'\nbin/rails aborted!\nInterrupt: Interrupt\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:18:in 'Thread#value'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:18:in 'block in ViteRuby::IO.capture'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/io.rb:13:in 'ViteRuby::IO.capture'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/runner.rb:16:in 'block in ViteRuby::Runner#run'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/config.rb:85:in 'Dir.chdir'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/config.rb:85:in 'ViteRuby::Config#within_root'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/runner.rb:11:in 'ViteRuby::Runner#run'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby.rb:118:in 'ViteRuby#run'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/forwardable-1.3.3/lib/forwardable.rb:240:in 'ViteRuby::Builder#run'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/builder.rb:69:in 'ViteRuby::Builder#build_with_vite'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/builder.rb:17:in 'ViteRuby::Builder#build'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:21:in 'ViteRuby::Commands#build'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:14:in 'block (2 levels) in ViteRuby::Commands#build_from_task'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:114:in 'ViteRuby::Commands#ensure_log_goes_to_stdout'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:13:in 'block in ViteRuby::Commands#build_from_task'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:104:in 'ViteRuby::Commands#with_node_env'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/vite_ruby/commands.rb:12:in 'ViteRuby::Commands#build_from_task'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/tasks/vite.rake:24:in 'block (2 levels) in <main>'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'block in Rake::Task#execute'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Array#each'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Rake::Task#execute'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:219:in 'block in Rake::Task#invoke_with_call_chain'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Monitor#synchronize'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Rake::Task#invoke_with_call_chain'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:188:in 'Rake::Task#invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/vite_ruby-3.9.2/lib/tasks/vite.rake:63:in 'block in <main>'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'block in Rake::Task#execute'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Array#each'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:281:in 'Rake::Task#execute'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:219:in 'block in Rake::Task#invoke_with_call_chain'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Monitor#synchronize'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:199:in 'Rake::Task#invoke_with_call_chain'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/task.rb:188:in 'Rake::Task#invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:188:in 'Rake::Application#invoke_task'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'block (2 levels) in Rake::Application#top_level'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'Array#each'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:138:in 'block in Rake::Application#top_level'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:147:in 'Rake::Application#run_with_threads'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:132:in 'Rake::Application#top_level'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:27:in 'block (2 levels) in Rails::Command::RakeCommand.perform'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/application.rb:214:in 'Rake::Application#standard_exception_handling'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:27:in 'block in Rails::Command::RakeCommand.perform'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:44:in 'block in Rails::Command::RakeCommand.with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/rake-13.3.0/lib/rake/rake_module.rb:59:in 'Rake.with_application'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:41:in 'Rails::Command::RakeCommand.with_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands/rake/rake_command.rb:20:in 'Rails::Command::RakeCommand.perform'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:150:in 'Rails::Command.invoke_rake'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:67:in 'block in Rails::Command.invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:143:in 'Rails::Command.with_argv'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/command.rb:63:in 'Rails::Command.invoke'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/railties-8.0.2/lib/rails/commands.rb:18:in '<main>'\n/home/mastodon/live/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in 'Kernel#require'\nTasks: TOP => vite:build_all\n(See full trace by running task with --trace)\n```\n",
+          "labels": [
+            "status/confirmed"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "609a40181e0f3f505707d196985dfb78ab3b3f88",
+          "html_url": "https://github.com/mastodon/mastodon/commit/609a40181e0f3f505707d196985dfb78ab3b3f88",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/609a40181e0f3f505707d196985dfb78ab3b3f88",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-09T15:02:30Z",
+          "commit_title": "Bump version to v4.4.1"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35326,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35326",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35326",
+          "state": "closed",
+          "merged_at": "2025-07-09T15:16:57Z",
+          "pr_title": "Bump version to v4.4.1",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.6",
+  "compare": "v4.2.7",
+  "counts": {
+    "commits": 6,
+    "prs": 4,
+    "issues": 1,
+    "commit_pr": 3,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.6...v4.2.7.compare.json",
+    "commits": "commits/v4.2/v4.2.6...v4.2.7.commits.json",
+    "pulls": "pulls/v4.2/v4.2.6...v4.2.7.pulls.json",
+    "issues": "issues/v4.2/v4.2.6...v4.2.7.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "76a37bd040861549757714d2c1df733feec2f3bc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/76a37bd040861549757714d2c1df733feec2f3bc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/76a37bd040861549757714d2c1df733feec2f3bc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T14:57:49Z",
+          "commit_title": "Fix OmniAuth tests (#29201)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29201,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29201",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29201",
+          "state": "closed",
+          "merged_at": "2024-02-14T15:03:09Z",
+          "pr_title": "Fix OmniAuth tests",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "870ee80fd366c54ee2a7fc1508d7588d3fdeb878",
+          "html_url": "https://github.com/mastodon/mastodon/commit/870ee80fd366c54ee2a7fc1508d7588d3fdeb878",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/870ee80fd366c54ee2a7fc1508d7588d3fdeb878",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T21:49:45Z",
+          "commit_title": "Fix user creation failure handling in OAuth paths (#29207)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29207,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29207",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29207",
+          "state": "closed",
+          "merged_at": "2024-02-14T21:54:59Z",
+          "pr_title": "Fix user creation failure handling in OmniAuth paths",
+          "pr_body": "Redirect to log-in with a flash message instead of returning a generic error",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e4ec4ce217e4f1c10cbae5df75a8c22d813b9ba5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e4ec4ce217e4f1c10cbae5df75a8c22d813b9ba5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e4ec4ce217e4f1c10cbae5df75a8c22d813b9ba5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-14T22:27:02Z",
+          "commit_title": "Update `nsa` gem to version 0.3.0 (#29065) (#29206)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29206,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29206",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29206",
+          "state": "closed",
+          "merged_at": "2024-02-14T22:27:02Z",
+          "pr_title": "Update `nsa` gem to version 0.3.0 (#29065)",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": [
+            {
+              "number": 29203,
+              "html_url": "https://github.com/mastodon/mastodon/issues/29203",
+              "relationship": "closes"
+            }
+          ]
+        },
+        {
+          "number": 29065,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29065",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29065",
+          "state": "closed",
+          "merged_at": "2024-02-06T09:33:58Z",
+          "pr_title": "Update `nsa` gem to version 0.3.0",
+          "pr_body": "Moves us off a PR branch and onto released gem version (with Rails 7 support).",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": [
+        {
+          "number": 29203,
+          "html_url": "https://github.com/mastodon/mastodon/issues/29203",
+          "state": "closed",
+          "issue_title": "Upgrade to v4.2.6 fails: nsa commit not found",
+          "issue_body": "### Steps to reproduce the problem\n\n```sh\r\ngit fetch && git checkout v4.2.6\r\nbundle install\r\n```\n\n### Expected behaviour\n\nSuccessfully fetch & install dependencies\n\n### Actual behaviour\n\nnsa gem fails to install\n\n### Detailed description\n\n```\r\nBundler 2.3.26 is running, but your lockfile was generated with 2.4.13. Installing Bundler 2.4.13 and restarting using that version.\r\nFetching gem metadata from https://rubygems.org/.\r\nFetching bundler 2.4.13\r\nInstalling bundler 2.4.13\r\nFetching gem metadata from https://rubygems.org/.........\r\nFetching https://github.com/stanhu/omniauth-cas.git\r\nFetching https://github.com/jhawthorn/nsa.git\r\nfatal: Could not parse object 'e020fcc3a54d993ab45b7194d89ab720296c111b'.\r\nGit error: command `git reset --hard e020fcc3a54d993ab45b7194d89ab720296c111b` in directory /home/rubbish/mastodon/.local-stuff/bundle/ruby/3.1.0/bundler/gems/nsa-e020fcc3a54d has\r\nfailed.\r\nRevision e020fcc3a54d993ab45b7194d89ab720296c111b does not exist in the repository https://github.com/jhawthorn/nsa.git. Maybe you misspelled it?\r\nIf this error persists you could try removing the cache directory '/home/rubbish/mastodon/.local-stuff/bundle/ruby/3.1.0/bundler/gems/nsa-e020fcc3a54d'\r\n```\r\n\r\nClearing all the caches does not solve the problem.\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\nv4.2.6\n\n### Technical details\n\n- Ruby version: ruby 3.1.4p223 (2023-03-30 revision 957bb7cb81) [x86_64-linux]\r\n- Node.js version: v20.11.0\r\n",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "684f99908f8beab6c002aac5871f5165c583a5ac",
+          "html_url": "https://github.com/mastodon/mastodon/commit/684f99908f8beab6c002aac5871f5165c583a5ac",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/684f99908f8beab6c002aac5871f5165c583a5ac",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-16T08:19:35Z",
+          "commit_title": "Update dependency pg to 1.5.5"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "15de5202012a2f9c4417724987e54bc885051c0d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/15de5202012a2f9c4417724987e54bc885051c0d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/15de5202012a2f9c4417724987e54bc885051c0d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-16T10:56:12Z",
+          "commit_title": "Merge pull request from GHSA-jhrq-qvrm-qr36"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0e4e98fad1e21e4f356b3a71eef3fca79890105c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0e4e98fad1e21e4f356b3a71eef3fca79890105c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0e4e98fad1e21e4f356b3a71eef3fca79890105c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-15T10:56:35Z",
+          "commit_title": "Bump version to v4.2.7"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    }
+  ]
+}

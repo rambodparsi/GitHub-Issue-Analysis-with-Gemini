@@ -1,0 +1,1149 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.1",
+  "compare": "v4.3.2",
+  "counts": {
+    "commits": 35,
+    "prs": 33,
+    "issues": 12,
+    "commit_pr": 33,
+    "commit_pr_issue": 12
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.1...v4.3.2.compare.json",
+    "commits": "commits/v4.3/v4.3.1...v4.3.2.commits.json",
+    "pulls": "pulls/v4.3/v4.3.1...v4.3.2.pulls.json",
+    "issues": "issues/v4.3/v4.3.1...v4.3.2.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "dbedd021f583e71e776e9bc00b1cffd9f18fa158",
+          "html_url": "https://github.com/mastodon/mastodon/commit/dbedd021f583e71e776e9bc00b1cffd9f18fa158",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/dbedd021f583e71e776e9bc00b1cffd9f18fa158",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-10-07T12:02:04Z",
+          "commit_title": "Move account suspension-related methods to concern (#28351)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 28351,
+          "html_url": "https://github.com/mastodon/mastodon/pull/28351",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/28351",
+          "state": "closed",
+          "merged_at": "2024-10-07T12:12:12Z",
+          "pr_title": "Move account suspension-related methods to concern",
+          "pr_body": "I've been looking for areas to reduce LOC and/or class size in the \"god classes\" in the app -- User, Status, Account, MediaAttachment, etc -- and though of this as one possibility.\r\n\r\nWe could potentially do similar for sensitize/silencing in this class, but I wanted to start with just one idea, will add others if we like this.",
+          "labels": [
+            "refactoring",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ea1b598246cb6935ca806309b9e814cbfd94a0fa",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ea1b598246cb6935ca806309b9e814cbfd94a0fa",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ea1b598246cb6935ca806309b9e814cbfd94a0fa",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-11-12T22:06:13Z",
+          "commit_title": "Add client_secret_expires_at to OAuth Applications (#30317)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 30317,
+          "html_url": "https://github.com/mastodon/mastodon/pull/30317",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/30317",
+          "state": "closed",
+          "merged_at": "2024-11-12T22:14:48Z",
+          "pr_title": "Add client_secret_expires_at to OAuth Applications",
+          "pr_body": "This allows us to support future `client_secret` expiry, whilst also advertising that clients do not currently expire automatically. This is inspired by [Auth0's Open Dynamic Client Registration](https://auth0.com/docs/get-started/applications/dynamic-client-registration) documentation.\r\n\r\n> Time at which the client_secret will expire or 0 if it will not expire.  The time is represented as the number of seconds from 1970-01-01T00:00:00Z as measured in UTC until the date/time of expiration.\r\n\r\n— OAuth 2.0 Dynamic Registration, [RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591), Section 3.2.1\r\n\r\nThis PR requires #30316 to be merged, since the OAuth Application vacuuming currently does not have any predictable expiration properties. So if we leave OAuth Application vacuuming in as currently existing, the value of `0` would not be correct, since the client could be vacuumed at any point in time after 1 day.\r\n\r\nThis allows Application developers to prepare and be adaptive to when we may introduce client_secret expiry in the future, such that they can know when their application would expire. (Supporting this would require a database migration to add a column to the oauth_applications table for expiry).",
+          "labels": [
+            "api"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "74f9f7c6001704468e474be6f968c9f871a12a37",
+          "html_url": "https://github.com/mastodon/mastodon/commit/74f9f7c6001704468e474be6f968c9f871a12a37",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/74f9f7c6001704468e474be6f968c9f871a12a37",
+          "author_login": "lenikadali",
+          "commit_author_date": "2024-10-07T12:05:46Z",
+          "commit_title": "Add error message when user tries to follow their own account (#31910)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 31910,
+          "html_url": "https://github.com/mastodon/mastodon/pull/31910",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/31910",
+          "state": "closed",
+          "merged_at": "2024-10-07T12:15:32Z",
+          "pr_title": "Add error message when user tries to follow their own account",
+          "pr_body": "Fixes #22690\r\n\r\nBased on [this PR](https://github.com/mastodon/mastodon/pull/23373), we are adding a meaningful error message when a user tries to follow their own account.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 22690,
+              "html_url": "https://github.com/mastodon/mastodon/issues/22690",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 22690,
+          "html_url": "https://github.com/mastodon/mastodon/issues/22690",
+          "state": "closed",
+          "issue_title": "Inaccurate error message when attempting to follow your own account via the API",
+          "issue_body": "### Steps to reproduce the problem\n\nAttempt to follow your own account via the API\n\n### Expected behaviour\n\nAn error should be returned like \"Cannot follow your own account\"\n\n### Actual behaviour\n\n404: Record not found\n\n### Detailed description\n\nI encountered this error while using a script to bulk import following accounts from an account that happened to follow me.\n\n### Specifications\n\n4.0.2",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "a089109b7791310a8b658abcff5d9f6a93590e41",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a089109b7791310a8b658abcff5d9f6a93590e41",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a089109b7791310a8b658abcff5d9f6a93590e41",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-10-04T12:29:43Z",
+          "commit_title": "Use `async_count` in more view locations (#32086)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32086,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32086",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32086",
+          "state": "closed",
+          "merged_at": "2024-10-04T12:41:35Z",
+          "pr_title": "Use `async_count` in more view locations",
+          "pr_body": "More of the same approach as https://github.com/mastodon/mastodon/pull/30606\r\n\r\nSame caveat as there - I haven't benchmarked this, but it should be at worst the same performance, and likely some small improvement since the count can be async gathered while other execution happens.\r\n\r\nNice side effect of here of getting some direct constant references out of views as well.",
+          "labels": [
+            "performance",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b06161dba387813df9ea87e80a88ca8b250997c6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b06161dba387813df9ea87e80a88ca8b250997c6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b06161dba387813df9ea87e80a88ca8b250997c6",
+          "author_login": "seav",
+          "commit_author_date": "2024-10-22T08:41:40Z",
+          "commit_title": "Fix tl language native name (#32606)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32606,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32606",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32606",
+          "state": "closed",
+          "merged_at": "2024-10-22T08:50:59Z",
+          "pr_title": "Fix tl language native name",
+          "pr_body": "The most common name of the tl language is just \"Tagalog\" instead of \"Wikang Tagalog\", which literally means \"Tagalog Language\". Unlike \"Bahasa Indonesia\", you can refer to the language as just \"Tagalog\" in English or in Tagalog.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bf1375ae379944e4dcecba2033f4546e5d995bfb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bf1375ae379944e4dcecba2033f4546e5d995bfb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bf1375ae379944e4dcecba2033f4546e5d995bfb",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2024-10-22T08:31:53Z",
+          "commit_title": "Fix 'unknown' media attachment type rendering (#32613)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32613,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32613",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32613",
+          "state": "closed",
+          "merged_at": "2024-10-22T08:42:31Z",
+          "pr_title": "Fix 'unknown' media attachment type rendering",
+          "pr_body": "Fixes #32595. Essentially this code was reworked at some point and the previous else branch that caught the 'unknown' media type was removed.\r\n\r\n@renchap @ClearlyClaire this is an active regression between v4.3.0-beta.2 and v4.3.0 / v4.3.1, where media from server's marked as \"reject_media\" wouldn't be displayed at all in any way.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 32595,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32595",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32595,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32595",
+          "state": "closed",
+          "issue_title": "Media from a server limited with \"reject media files\" no longer shows as \"Preview not available\"",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Limit a server with \"reject media files\"\n2. Follow someone from that server, User A\n3. User A posts with a single image and it shows up on your followed timeline\n\n### Expected behaviour\n\nThe media is not downloaded, but it shows that there's media on the post, a \"Preview not available\" and a link to the original media\n\n### Actual behaviour\n\nThe post shows as if there was no media attached\n\n### Detailed description\n\nI noticed recently that new posts from users of a server with rejected media does not show as \"preview not available\" anymore. There's no indication that the post had media in the first place and the only way to find out is if you go to the original post.\n\n### Mastodon instance\n\nmasto.donte.com.br\n\n### Mastodon version\n\nv4.3.0+donte\n\n### Browser name and version\n\nChromium Version 129.0.6668.58 (Official Build, ungoogled-chromium) Arch Linux (64-bit)\n\n### Operating system\n\nLinux\n\n### Technical details\n\nThere's no errors on the rails logs or on the console logs.",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "c13b8026f05daebf9d794d986936687cae025654",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c13b8026f05daebf9d794d986936687cae025654",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c13b8026f05daebf9d794d986936687cae025654",
+          "author_login": "oneiros",
+          "commit_author_date": "2024-10-22T12:49:10Z",
+          "commit_title": "Do not change follow counters when already following (#32622)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32622,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32622",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32622",
+          "state": "closed",
+          "merged_at": "2024-10-22T12:58:27Z",
+          "pr_title": "Do not change follow counters when already following",
+          "pr_body": "The action already contained the information, so I just added a check for it.\r\n\r\nFixes #32607",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 32607,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32607",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32607,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32607",
+          "state": "closed",
+          "issue_title": "The number of followers in the account timeline is increased strangely",
+          "issue_body": "### Steps to reproduce the problem\n\nHit the bell, then the number of followers is increased...\n\nhttps://github.com/user-attachments/assets/2e07ec44-998d-468f-9e26-3b5f1e9b77be\n\n\n### Expected behaviour\n\ndon't increase the display of number of followers\n\n### Actual behaviour\n\nthe display of number of followers is increased strangely\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nforesdon.jp and RAILS_ENV=development main\n\n### Mastodon version\n\nv4.3.1 and also main branch\n\n### Browser name and version\n\nany (Firefox 131.0.2 / Chromium 129.0.6668.100 / safari 17.6...)\n\n### Operating system\n\nany (macOS, Linux, Windows)\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/confirmed",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "9b677f099e473059b15b69f6d42ab94af5f3a224",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9b677f099e473059b15b69f6d42ab94af5f3a224",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9b677f099e473059b15b69f6d42ab94af5f3a224",
+          "author_login": "tribela",
+          "commit_author_date": "2024-10-22T12:46:32Z",
+          "commit_title": "Fix that blocking was not working on link timeline (#32625)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32625,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32625",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32625",
+          "state": "closed",
+          "merged_at": "2024-10-22T12:56:59Z",
+          "pr_title": "Fix that blocking was not working on link timeline",
+          "pr_body": "Related: #32624 \r\n\r\nThis PR also applies language filter, But IDK language filter is intended to not working on link timeline",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "dd0992b25d053df0beeec839fb47382dcda76ebe",
+          "html_url": "https://github.com/mastodon/mastodon/commit/dd0992b25d053df0beeec839fb47382dcda76ebe",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/dd0992b25d053df0beeec839fb47382dcda76ebe",
+          "author_login": "hugogameiro",
+          "commit_author_date": "2024-10-28T13:32:56Z",
+          "commit_title": "Fix and improve batch attachment deletion handling when using OpenStack Swift (#32637)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32637,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32637",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32637",
+          "state": "closed",
+          "merged_at": "2024-10-28T13:49:35Z",
+          "pr_title": "Fix and improve batch attachment deletion handling when using OpenStack Swift",
+          "pr_body": "Since v4.3.0 `rescue Fog::Storage::OpenStack::NotFound` in batch attachment for OpenStack Swift has caused the batch deletion to never finish in the case of attempting to delete a file that is missing.\r\n\r\nIn debug mode it logs \"uninitialized constant Fog::Storage::OpenStack (NameError)\".\r\n\r\nChanging the class from `Fog::Storage::OpenStack::NotFound` to the new `Fog::OpenStack::Storage::NotFound` fixes it.\r\n\r\nAlso, in this PR I suggest introducing some improvements to how attachment batch deletion is handle for OpenStack Swift:\r\n- retry 3 times (5 second interval) for temporary object storage failures\r\n- error logging\r\n- raise in case of failure after retries",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7f9b0f36baf21c6ff4507b2d150e120b2c319df3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7f9b0f36baf21c6ff4507b2d150e120b2c319df3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7f9b0f36baf21c6ff4507b2d150e120b2c319df3",
+          "author_login": null,
+          "commit_author_date": "2024-10-29T15:12:35Z",
+          "commit_title": "Embed modal mobile fix (#32641)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32641,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32641",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32641",
+          "state": "closed",
+          "merged_at": "2024-10-29T15:24:46Z",
+          "pr_title": "Embed modal mobile fix",
+          "pr_body": "Fix an issue with embed modal overflow causing overlay outside mobile screens.\r\n\r\nHowever, I'm not sure the value for max-height and max-width is correct, if the rules are being used or overridden elsewhere.\r\n\r\nBefore:\r\n\r\n![Image](https://github.com/user-attachments/assets/4d87a058-25a0-442d-b415-7f36b273fc44)\r\n\r\nAfter:\r\n\r\n![Image](https://github.com/user-attachments/assets/9c1667be-f2a5-4864-8482-01c4c2c61c98)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "931870ca34b4df3878c61c9f5e03bf590a33441d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/931870ca34b4df3878c61c9f5e03bf590a33441d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/931870ca34b4df3878c61c9f5e03bf590a33441d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-10-30T08:34:56Z",
+          "commit_title": "Fix preview cards with long titles erroneously causing layout changes (#32678)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32678,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32678",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32678",
+          "state": "closed",
+          "merged_at": "2024-10-30T09:10:53Z",
+          "pr_title": "Fix preview cards with long titles erroneously causing layout changes",
+          "pr_body": "Fixes #32652\r\n\r\nFor some reason, the overflowing (but hidden) text in preview cards push the container's size and prevent the flex shrinking for occurring.\r\n\r\nI have found no way to handle that except for `contain: inline-size`, which should be safe because both containers are expected to take the available horizontal space with no regards to their contents.",
+          "labels": [
+            "bug",
+            "area/web interface"
+          ],
+          "issue_refs": [
+            {
+              "number": 32652,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32652",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32652,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32652",
+          "state": "closed",
+          "issue_title": "Scrolling induces layout shift",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Open the standard web interface in a 1200px wide window\n2. Scroll the feed\n\n\n### Expected behaviour\n\nLayout should remain static\n\n### Actual behaviour\n\nLayout shifts \n\n### Detailed description\n\nThe width of the main column shifts on scroll\n\n### Mastodon instance\n\ntoot.wales, mastodon.social\n\n### Mastodon version\n\nv4.3.1\n\n### Browser name and version\n\nFirefox 131.0.3, Chrome 130.0.6723.59\n\n### Operating system\n\nWindows 10 22H2\n\n### Technical details\n\ndiv.columns-area__panels__main alternates between 581px and 600px wide",
+          "labels": [
+            "status/confirmed",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "1ddf1aedf1d171ae4165ee135d4fab1d60c974a9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1ddf1aedf1d171ae4165ee135d4fab1d60c974a9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1ddf1aedf1d171ae4165ee135d4fab1d60c974a9",
+          "author_login": "renatolond",
+          "commit_author_date": "2024-10-31T09:37:31Z",
+          "commit_title": "Fix 'unknown' media attachment rendering in detailed view (#32713)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32713,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32713",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32713",
+          "state": "closed",
+          "merged_at": "2024-10-31T09:47:26Z",
+          "pr_title": "Fix 'unknown' media attachment rendering in detailed view",
+          "pr_body": "I followed the fix by @ThisIsMissEm in #32613, this relates to #32595 and fixes the same issue in the detailed view.\r\n\r\nI noticed that if I displayed a toot I would still not see the media, this fixes it.\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2d8ce9e19afd8039e5fdd3ea0789c9776d75a12b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2d8ce9e19afd8039e5fdd3ea0789c9776d75a12b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2d8ce9e19afd8039e5fdd3ea0789c9776d75a12b",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-04T11:08:19Z",
+          "commit_title": "Fix alt-text pop-in not using the translated description (#32766)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32766,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32766",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32766",
+          "state": "closed",
+          "merged_at": "2024-11-04T11:18:33Z",
+          "pr_title": "Fix alt-text pop-in not using the translated description",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c634da32cf480acdcb8d08ecaa6c6320b7b7eca0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c634da32cf480acdcb8d08ecaa6c6320b7b7eca0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c634da32cf480acdcb8d08ecaa6c6320b7b7eca0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-10-23T09:47:23Z",
+          "commit_title": "Redesign Content Warning and filters (#32543)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32543,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32543",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32543",
+          "state": "closed",
+          "merged_at": "2024-10-23T09:57:06Z",
+          "pr_title": "Redesign Content Warning and filters",
+          "pr_body": "This removes the stripes, adjust the borders accordingly, widen the click area and slightly rework the styling and wording\r\n\r\n## Before\r\n\r\n![image](https://github.com/user-attachments/assets/afd90663-a867-41f1-b017-a3bf326fb181)\r\n![image](https://github.com/user-attachments/assets/161c9363-5602-4092-8465-47c497c969f2)\r\n\r\n## After\r\n\r\n![image](https://github.com/user-attachments/assets/3d801d55-a102-4a35-8f3c-4e9a1c9263cc)\r\n![image](https://github.com/user-attachments/assets/7a428980-fd24-4656-b528-795120ed9779)\r\n",
+          "labels": [
+            "ui",
+            "area/web interface"
+          ],
+          "issue_refs": [
+            {
+              "number": 32352,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32352",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32352,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32352",
+          "state": "closed",
+          "issue_title": "Revert: #31365",
+          "issue_body": "### Pitch\n\nRevert the styling introduced by #31365. Alternatively, remove the chevron bars in the compose, timeline, and post views.\n\n### Motivation\n\nThe content warning styling introduced in #31365 / v4.3.0 is off putting and anxiety inducing. Content warnings are used in a myriad of ways, not just as warnings but also as wrappers/email headlines/you name it. The visually blaring warning style that was added doesn’t fit these other purposes.",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "dc9a106d4c78a654914f7c168701ed34ec48a2d4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/dc9a106d4c78a654914f7c168701ed34ec48a2d4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/dc9a106d4c78a654914f7c168701ed34ec48a2d4",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-06T10:51:54Z",
+          "commit_title": "Avoid latest featured tag use on post removal unless necessary (#32787)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32787,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32787",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32787",
+          "state": "closed",
+          "merged_at": "2024-11-06T11:00:38Z",
+          "pr_title": "Avoid latest featured tag use on post removal unless necessary",
+          "pr_body": "Fetching tagged posts for an account can be really slow, so avoid doing it if we can.\r\n\r\nCurrently, the most recent use of a featured tag is fetched on each post deletion featuring that tag.\r\n\r\nThis PR avoids it so it is only performed when the deletion is the latest known use of the featured tag. It also rewrites the remaining case in a way that should be a little more efficient.",
+          "labels": [
+            "performance"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0720ef5f6204a6ce5bcc1dce256fa9711ed63679",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0720ef5f6204a6ce5bcc1dce256fa9711ed63679",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0720ef5f6204a6ce5bcc1dce256fa9711ed63679",
+          "author_login": "Gargron",
+          "commit_author_date": "2024-11-18T09:37:01Z",
+          "commit_title": "Fix `min_id` and `max_id` causing error in search API (#32857)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32857,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32857",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32857",
+          "state": "closed",
+          "merged_at": "2024-11-18T09:49:15Z",
+          "pr_title": "Fix `min_id` and `max_id` causing error in search API",
+          "pr_body": "Fix #32731",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 32731,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32731",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32731,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32731",
+          "state": "closed",
+          "issue_title": "Search with `max_id` or `min_id` always fails with `422 Invalid date`",
+          "issue_body": "### Steps to reproduce the problem\n\n1. make API call to search for statuses with a max_id, e.g. `https://mastodon.online/api/v2/search?q=search&type=statuses&max_id=113404702919566475`\n\nAlternatively, using Ivory:\n1. Perform any search (e.g. for the word “search”)\n2. Scroll down far enough that it tries to load the next page of results, or refresh so it tries to load newer results\n\n### Expected behaviour\n\nReturns statuses with IDs below given max_id or above min_id\n\n### Actual behaviour\n\n422 Invalid date, with a date that was not in the request (example above returns `{\"error\":\"Invalid date 2024-10-31T23:47:20Z”}`)\n\n### Detailed description\n\nThis affects all searches in Ivory (probably other clients as well) which appears to use the min_id and/or max_id parameters for pagination\n\n### Mastodon instance\n\nmastodon.online, mastodon.gamedev.place\n\n### Mastodon version\n\nv4.3.1\n\n### Technical details\n\nThe full error log entry from Ivory (with request and response headers) looks like:\n```\nGET 'https://mastodon.online/api/v2/search'\n\tQuery Arguments:\n\t\t'min_id' = '113404702919566475'\n\t\t'q' = 'search'\n\t\t'type' = 'statuses'\n\t\t'limit' = '40'\n\tRequest Headers:\n\t\t'Authorization' = '<REDACTED>'\n\tResponse Headers:\n\t\t'x-runtime' = '0.019145'\n\t\t'content-security-policy' = 'default-src 'none'; frame-ancestors 'none'; form-action 'none''\n\t\t'Cache-Control' = 'private, no-store'\n\t\t'Strict-Transport-Security' = 'max-age=31557600'\n\t\t'x-ratelimit-reset' = '2024-11-01T00:00:00.638148Z'\n\t\t'Accept-Ranges' = 'bytes'\n\t\t'x-timer' = 'S1730419104.538322,VS0,VE169'\n\t\t'referrer-policy' = 'same-origin'\n\t\t'x-served-by' = 'cache-hel1410020-HEL, cache-iah1720101-IAH'\n\t\t'Alt-Svc' = 'h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400'\n\t\t'Content-Length' = '45'\n\t\t'Via' = '1.1 varnish, 1.1 varnish'\n\t\t'x-xss-protection' = '0'\n\t\t'Date' = 'Thu, 31 Oct 2024 23:58:23 GMT'\n\t\t'Vary' = 'Authorization, Origin'\n\t\t'x-cache-hits' = '0, 0'\n\t\t'x-ratelimit-limit' = '300'\n\t\t'x-request-id' = 'a0f61c8fd500a9ced9b872e837631ade'\n\t\t'x-frame-options' = 'DENY'\n\t\t'x-cache' = 'MISS, MISS'\n\t\t'Content-Type' = 'application/json; charset=utf-8'\n\t\t'x-ratelimit-remaining' = '267'\n\t\t'x-content-type-options' = 'nosniff'\n\tError: PTHHTTPErrorDomain:422 'client error'\n\tResponse:\n\t\t'error' = 'Invalid date 2024-10-31T23:47:20Z’\n```",
+          "labels": [
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f0d734cc6ecd8b4c077e1cc1ffdf809089f6614a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f0d734cc6ecd8b4c077e1cc1ffdf809089f6614a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f0d734cc6ecd8b4c077e1cc1ffdf809089f6614a",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-10-29T15:35:25Z",
+          "commit_title": "Add `DomainHelpers` spec support module for DNS/MX stub (#32690)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32690,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32690",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32690",
+          "state": "closed",
+          "merged_at": "2024-10-29T15:46:13Z",
+          "pr_title": "Add `DomainHelpers` spec support module for DNS/MX stub",
+          "pr_body": "These two examples have the same (pretty verbose!) stub setup process, with the exception of the domain/exchange they are working with. Extract that to shared helper.\r\n\r\nUsefully - neither of them assert anything on the double, they just need the DNS responses stubbed.\r\n\r\nFuture work here -- the email mx validator spec has a similar-but-not-exact sort of thing going on. Could probably fold that one in here as well, but I wanted to start with two which were exactly the same. I also think some of the validator specs (including that one) should be updated to stop stubbing the SUT (ie, assert on errors/object/results directly, not that `add` was called, etc) - and maybe do that in advance of any other changes there.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "90f2c7a1e9cc5bd15c446cd57712c675485b6494",
+          "html_url": "https://github.com/mastodon/mastodon/commit/90f2c7a1e9cc5bd15c446cd57712c675485b6494",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/90f2c7a1e9cc5bd15c446cd57712c675485b6494",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-11-13T08:39:58Z",
+          "commit_title": "Fix error in CLI EmailDomainBlocks when supplying `--with-dns-records` (#32863)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32863,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32863",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32863",
+          "state": "closed",
+          "merged_at": "2024-11-13T08:48:23Z",
+          "pr_title": "Fix error in CLI EmailDomainBlocks when supplying `--with-dns-records`",
+          "pr_body": "The CLI line changed was added in https://github.com/mastodon/mastodon/pull/17842/files#diff-3fcd83db8f04ad94ce30166173fd117ffa4e480b9f9f2c8792ec234694a62ec2R60 ... I'm assuming that was a copy/paste from elsewhere, or accidental conversion of local->instance when moved from above in that PR.\r\n\r\nRelated - the `other_domains` logic in this CLI class and in the controller where processed are pretty similar ... could pull those into model and/or otherwise de-dupe.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0cbf03efa7bc5b8d7269f1ec52dc15100fef8193",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0cbf03efa7bc5b8d7269f1ec52dc15100fef8193",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0cbf03efa7bc5b8d7269f1ec52dc15100fef8193",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-13T10:22:11Z",
+          "commit_title": "Fix list creation limit check (#32869)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32869,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32869",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32869",
+          "state": "closed",
+          "merged_at": "2024-11-13T10:31:52Z",
+          "pr_title": "Fix list creation limit check",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5b6b23eeef1d56d2a6efc66c68b2e55846558505",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5b6b23eeef1d56d2a6efc66c68b2e55846558505",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5b6b23eeef1d56d2a6efc66c68b2e55846558505",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-14T13:28:00Z",
+          "commit_title": "Fix titles being escaped twice (#32889)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32889,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32889",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32889",
+          "state": "closed",
+          "merged_at": "2024-11-14T13:37:10Z",
+          "pr_title": "Fix titles being escaped twice",
+          "pr_body": "Fixes #32877\r\n\r\nNote that this causes the titles to include a newline",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 32877,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32877",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32877,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32877",
+          "state": "closed",
+          "issue_title": "<title> on toots is double quoted",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Go to https://mastodon.social/@ircv3/113476882448853258\n\n### Expected behaviour\n\nThe HTML should contain `<title>IRCv3: &quot;We missed doing one of these last year, but here&#39;…&quot; - Mastodon</title>`\n\n### Actual behaviour\n\nThe HTML contains `<title>IRCv3: &amp;quot;We missed doing one of these last year, but here&amp;#39;…&amp;quot; - Mastodon</title>`\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.4.0-nightly.2024-11-13\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f65523c5b65c47f08c2aa28355d80b4c785e45b8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f65523c5b65c47f08c2aa28355d80b4c785e45b8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f65523c5b65c47f08c2aa28355d80b4c785e45b8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-15T13:37:45Z",
+          "commit_title": "Fix domain attribution field having autocorrect and autocapitalize enabled (#32903)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32903,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32903",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32903",
+          "state": "closed",
+          "merged_at": "2024-11-15T13:47:22Z",
+          "pr_title": "Fix domain attribution field having autocorrect and autocapitalize enabled",
+          "pr_body": "Fixes #32896",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 32896,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32896",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32896,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32896",
+          "state": "closed",
+          "issue_title": "“Websites allowed to credit you” field has autocorrect enabled",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Navigate to Settings > Public Profile > Verification\n2. Try to type one or more website addresses into the “Websites allowed to credit you” field\n\n\n### Expected behaviour\n\nit accepts that you’ve typed a website address\n\n### Actual behaviour\n\nautocorrect changes what you’ve typed to English words, inserts spaces between “words”, and spellcheck gives you a red underline if you type a domain that isn’t an English word (or whatever the browser language is set to)\n\n### Detailed description\n\nWebsite addresses don’t tend to be spelled correctly or grammatically correct in whatever language someone is browsing in, so autocorrect/autocomplete and spell check are not appropriate here.\n\nI shouldn’t have to carefully decline all of my autocorrect suggestions to avoid having the website address be misspelled.\n\n### Mastodon instance\n\nmastodon.online, mastodon.gamedev.place\n\n### Mastodon version\n\nv4.3.1\n\n### Browser name and version\n\nSafari\n\n### Operating system\n\niPadOS 18.2b3\n\n### Technical details\n\nThis field should probably have `autocorrect=“off”`, `autocomplete=“off”`, `autocapitalize=“none”`, and `spellcheck=“false”`.\n\nOr better yet, instead of one textarea for entering multiple URLs, use multiple `<input type=“url”>` elements so the browser can do the correct thing on its own and also show a more appropriate keyboard.",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "cc5c125cc723e6aa74112f7bac782ba85475f4ce",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cc5c125cc723e6aa74112f7bac782ba85475f4ce",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cc5c125cc723e6aa74112f7bac782ba85475f4ce",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-15T15:35:30Z",
+          "commit_title": "Fix uploading higher-than-wide GIF profile picture with libvips enabled (#32911)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32911,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32911",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32911",
+          "state": "closed",
+          "merged_at": "2024-11-15T15:44:10Z",
+          "pr_title": "Fix uploading higher-than-wide GIF profile picture with libvips enabled",
+          "pr_body": "Fixes #32865",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 32865,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32865",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32865,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32865",
+          "state": "closed",
+          "issue_title": "ffmpeg crashes when higher-than-wide GIF is uploaded as pfp",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Run mastodon in docker/k8s\n2. try and upload this (attached) file as a pfp\n\n![Image](https://github.com/user-attachments/assets/87e83c0c-8b84-45a4-bfab-75bf53b6637a)\n\n\n3. 500 error, with ffmpeg on the backend crashing\n\nAlso, side note: if I run this gif through a png converter it uploads just fine\n\n### Expected behaviour\n\nthe gif can be uploaded\n\n### Actual behaviour\n\nuser sees a 500\n\n### Detailed description\n\nlogs:\n\n```\n[2024-11-12T14:37:27.314178 #19] ERROR -- : [22f707d3-a75a-4b92-86ba-b34dc8fe1c34]   \n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] Paperclip::Error (Error while optimizing 92a1c954cb258bcbc1b126bf10cf9be820241112-19-xectsq: Command 'ffmpeg -nostdin -i '/tmp/92a1c954cb258bcbc1b126bf10cf9be820241112-19-xectsq.gif' -map_metadata -1 -fpsmax '60' -frames:v '3000' -filter_complex 'scale=iw:ih:force_original_aspect_ratio=increase,crop=ih:ih,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=bayer' -y '/tmp/b4a2fb7a116512b3a1a479cc46cacd1820241112-19-y9clmr.gif'' returned 234. Expected 0\nHere is the command output: STDOUT:\n\n\nSTDERR:\n\nffmpeg version 7.0.2 Copyright (c) 2000-2024 the FFmpeg developers\n  built with gcc 12 (Debian 12.2.0-14)\n  configuration: --prefix=/usr/local/ffmpeg --toolchain=hardened --disable-debug --disable-devices --disable-doc --disable-ffplay --disable-network --disable-static --enable-ffmpeg --enable-ffprobe --enable-gpl --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-libsnappy --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-shared --enable-version3\n  libavutil      59.  8.100 / 59.  8.100\n  libavcodec     61.  3.100 / 61.  3.100\n  libavformat    61.  1.100 / 61.  1.100\n  libavdevice    61.  1.100 / 61.  1.100\n  libavfilter    10.  1.100 / 10.  1.100\n  libswscale      8.  1.100 /  8.  1.100\n  libswresample   5.  1.100 /  5.  1.100\n  libpostproc    58.  1.100 / 58.  1.100\nInput #0, gif, from '/tmp/92a1c954cb258bcbc1b126bf10cf9be820241112-19-xectsq.gif':\n  Duration: 00:00:00.10, start: 0.000000, bitrate: 2002 kb/s\n  Stream #0:0: Video: gif, bgra, 228x286, 10 fps, 100 tbr, 100 tbn\nStream mapping:\n  Stream #0:0 (gif) -> scale:default\n  paletteuse:default -> Stream #0:0 (gif)\n[Parsed_crop_1 @ 0x564aa6618100] Invalid too big or non positive size for width '286' or height '286'\n[Parsed_crop_1 @ 0x564aa6618100] Failed to configure input pad on Parsed_crop_1\n[fc#0 @ 0x564aa6618240] Error reinitializing filters!\n[fc#0 @ 0x564aa6618240] Task finished with error code: -22 (Invalid argument)\n[vost#0:0/gif @ 0x564aa661ce40] Could not open encoder before EOF\n[vost#0:0/gif @ 0x564aa661ce40] Task finished with error code: -22 (Invalid argument)\n[vost#0:0/gif @ 0x564aa661ce40] Terminating thread with return code -22 (Invalid argument)\n[fc#0 @ 0x564aa6618240] Terminating thread with return code -22 (Invalid argument)\n[out#0/gif @ 0x564aa661c380] Nothing was written into output file, because at least one of its streams received no packets.\nframe=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A    \nConversion failed!\n):\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34]   \n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/vips_lazy_thumbnail.rb:72:in `rescue in make'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/vips_lazy_thumbnail.rb:35:in `make'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/attachment_extensions.rb:21:in `block in post_process_style'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/attachment_extensions.rb:20:in `each'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/attachment_extensions.rb:20:in `inject'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/paperclip/attachment_extensions.rb:20:in `post_process_style'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] app/services/update_account_service.rb:8:in `call'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] app/controllers/settings/profiles_controller.rb:11:in `update'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] app/controllers/concerns/localized.rb:11:in `set_locale'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/mastodon/rack_middleware.rb:9:in `call'\n[22f707d3-a75a-4b92-86ba-b34dc8fe1c34] lib/public_file_server_middleware.rb:18:in `call'\n```\n\n### Mastodon instance\n\nmasto.nyc\n\n### Mastodon version\n\nv4.3.1\n\n### Technical details\n\nInfra: \nhttps://github.com/Five-Borough-Fedi-Project/masto.nyc-docean/tree/main",
+          "labels": [
+            "status/to triage",
+            "area/media processing"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "3752db3c9a9e18dabc4c6eca79198acf6e96645e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3752db3c9a9e18dabc4c6eca79198acf6e96645e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3752db3c9a9e18dabc4c6eca79198acf6e96645e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-19T13:46:29Z",
+          "commit_title": "Update dependency rexml"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e06448e652cdba998252f93768be56cda59da5f0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e06448e652cdba998252f93768be56cda59da5f0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e06448e652cdba998252f93768be56cda59da5f0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-20T12:41:22Z",
+          "commit_title": "Fix posts made in the future being allowed to trend (#32996)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32996,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32996",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32996",
+          "state": "closed",
+          "merged_at": "2024-11-20T12:49:53Z",
+          "pr_title": "Fix posts made in the future being allowed to trend",
+          "pr_body": "Fixes #32815\r\n\r\nAlternative to #32818",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 32815,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32815",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32815,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32815",
+          "state": "closed",
+          "issue_title": "Posts with a future date can trend",
+          "issue_body": "### Steps to reproduce the problem\n\nFor example https://social.besties.house/@h/113449358538636686 has been trending on mastodon.social\n\n### Expected behaviour\n\nThose posts are either dropped, or at least can not trend\n\n### Actual behaviour\n\nThey can appear in trends\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.4.0\n\n### Browser name and version\n\n-\n\n### Operating system\n\n-\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/confirmed"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "90c7c1bf7de3e4e4136a53dde83cb418534213dc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/90c7c1bf7de3e4e4136a53dde83cb418534213dc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/90c7c1bf7de3e4e4136a53dde83cb418534213dc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-21T16:10:07Z",
+          "commit_title": "Fix duplicate notifications in notification groups when using slow mode (#33014)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33014,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33014",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33014",
+          "state": "closed",
+          "merged_at": "2024-11-21T16:20:40Z",
+          "pr_title": "Fix duplicate notifications in notification groups when using slow mode",
+          "pr_body": "Fixes #32993\r\n\r\nThis adds a `partial` boolean to notification groups to indicate whether they contain only new notifications (`partial: true`, coming from the streaming server) or they contain (a summary of) all notifications for the group (`partial: false`, comes from the REST API).\r\n\r\nThis new flag is used to conditionally replace (if `partial: false`) or extend (if `partial: true`) existing groups in slow mode.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 32993,
+              "html_url": "https://github.com/mastodon/mastodon/issues/32993",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 32993,
+          "html_url": "https://github.com/mastodon/mastodon/issues/32993",
+          "state": "closed",
+          "issue_title": "Duplicate notifications in notification groups in slow mode",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Enable slow mode\n2. Get some notifications in a group that is already displayed\n3. Load the pending notifications\n\n### Expected behaviour\n\nOlder notifications are not re-added to the group\n\n### Actual behaviour\n\nLoading pending notifications causes already-loaded notifications to be duplicated\n\n### Detailed description\n\nThis is because the logic in the following code does not distinguish between old and new notifications:\nhttps://github.com/mastodon/mastodon/blob/174c687ca0234285fac87d47196bbf0b1b606c33/app/javascript/mastodon/reducers/notification_groups.ts#L534-L543\n\n### Mastodon instance\n\nany\n\n### Mastodon version\n\nv4.3.1\n\n### Browser name and version\n\nany\n\n### Operating system\n\nany\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/identified",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "6cbd21705546efaf06cb40ebe35dc3b69bf5c3bf",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6cbd21705546efaf06cb40ebe35dc3b69bf5c3bf",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6cbd21705546efaf06cb40ebe35dc3b69bf5c3bf",
+          "author_login": "Gargron",
+          "commit_author_date": "2024-11-22T08:30:57Z",
+          "commit_title": "Fix pushing hashtag-followed posts to feeds of inactive users (#33018)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33018,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33018",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33018",
+          "state": "closed",
+          "merged_at": "2024-11-22T08:39:31Z",
+          "pr_title": "Fix pushing hashtag-followed posts to feeds of inactive users",
+          "pr_body": "Fixes MAS-335",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6b8ff1cf6e9b98af3ad4ab9a229425b634283525",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6b8ff1cf6e9b98af3ad4ab9a229425b634283525",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6b8ff1cf6e9b98af3ad4ab9a229425b634283525",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-25T10:27:58Z",
+          "commit_title": "Fix `TagFollow` records not being correctly handled in account operations (#33063)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33063,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33063",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33063",
+          "state": "closed",
+          "merged_at": "2024-11-25T10:38:25Z",
+          "pr_title": "Fix `TagFollow` records not being correctly handled in account operations",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "15e1a63e4ac20ce636f8de2695b5187495651a5f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/15e1a63e4ac20ce636f8de2695b5187495651a5f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/15e1a63e4ac20ce636f8de2695b5187495651a5f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-25T15:54:18Z",
+          "commit_title": "Fix direct inbox delivery pushing posts into inactive followers' timelines (#33067)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33067,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33067",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33067",
+          "state": "closed",
+          "merged_at": "2024-11-25T16:04:17Z",
+          "pr_title": "Fix direct inbox delivery pushing posts into inactive followers' timelines",
+          "pr_body": "The code path at `ActivityPub::Activity::Create#postprocess_audience_and_deliver`, triggered on user-inbox delivery, enqueues `FeedInsertWorker` after checking for a follow relationship, but not whether the recipient is considered active.\r\n\r\nI thought about adding that check here (and maybe it would still be a good idea to do so), but I figured having the check in the timeline insert code could make sense as well, since this is the most relevant code path, and we already query the recipient's `user` record there.",
+          "labels": [
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "3f0d90f0198f58d3d25b1ab6fee232f3a37927d3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3f0d90f0198f58d3d25b1ab6fee232f3a37927d3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3f0d90f0198f58d3d25b1ab6fee232f3a37927d3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-28T17:40:53Z",
+          "commit_title": "Fix inactive users' timelines being backfilled on follow and unsuspend (#33094)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33094,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33094",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33094",
+          "state": "closed",
+          "merged_at": "2024-11-28T17:49:08Z",
+          "pr_title": "Fix inactive users' timelines being backfilled on follow and unsuspend",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5532d1c2cb07b749081b3be69bf48d1f2d6439ea",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5532d1c2cb07b749081b3be69bf48d1f2d6439ea",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5532d1c2cb07b749081b3be69bf48d1f2d6439ea",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-29T14:08:57Z",
+          "commit_title": "Add `tootctl feeds vacuum` (#33065)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33065,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33065",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33065",
+          "state": "closed",
+          "merged_at": "2024-11-29T14:18:40Z",
+          "pr_title": "Add `tootctl feeds vacuum`",
+          "pr_body": "Background: we have been investigating high Redis memory usage on mastodon.social, and most of it is due to feeds storage.\r\n\r\nOne thing we have noticed is that some feeds that should have been removed hadn't been. One reason for this has been fixed in #33018, but this does not retroactively clean up feeds from deleted accounts, hence this task.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4239baa1f47c38e086689b5c2c6b136d8af4ff5e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4239baa1f47c38e086689b5c2c6b136d8af4ff5e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4239baa1f47c38e086689b5c2c6b136d8af4ff5e",
+          "author_login": "YKWeyer",
+          "commit_author_date": "2024-11-29T15:33:25Z",
+          "commit_title": "Remove constant definition from global scope in embed.js (#33107)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33107,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33107",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33107",
+          "state": "closed",
+          "merged_at": "2024-11-29T15:41:45Z",
+          "pr_title": "Remove constant definition from global scope in embed.js",
+          "pr_body": ":information_source: **Disclaimer**: I am **not** a front-end developer, there might be cleaner/nicer/better ways to fix the issue. Also, some of the words or concepts used in my PR might not be proper JS terminology, but I hope it is still understandable :wink: \r\n\r\n# Issue\r\n\r\nThe `embed.js` script defines a constant in the global scope. When two Toots from different instances are embedded on the same page, the second script loaded triggers an error because it tries to redefine the constant.\r\n\r\n```\r\nUncaught SyntaxError: Identifier 'allowedPrefixes' has already been declared (at embed.js:1:1)\r\n```\r\n\r\nCodepen: https://codepen.io/yannweyer-tu/pen/qEWEpyr\r\n\r\nSee https://github.com/mastodon/mastodon/issues/33049#issuecomment-2507552757 for more context and discussion.\r\n\r\n# Suggested fix\r\n\r\nInstead of declaring the constant, the value is transmitted as a parameter of the anonymous function when it is invoked.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "eb997c9f0eee85810ff122d377677a3f19731faa",
+          "html_url": "https://github.com/mastodon/mastodon/commit/eb997c9f0eee85810ff122d377677a3f19731faa",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/eb997c9f0eee85810ff122d377677a3f19731faa",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-02T09:24:34Z",
+          "commit_title": "Fix processing incoming post edits with mentions to unresolvable accounts (#33129)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33129,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33129",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33129",
+          "state": "closed",
+          "merged_at": "2024-12-02T09:33:13Z",
+          "pr_title": "Fix processing incoming post edits with mentions to unresolvable accounts",
+          "pr_body": "Fixes #33109",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 33109,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33109",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33109,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33109",
+          "state": "closed",
+          "issue_title": "Edits appear to fail to process with unresolvable mentions",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Receive an `Update` with an unresolvable mention (ie domain is gone)\n2. Job fails to process, so `Update` is never applied\n3. See failed job in sidekick morgue\n\nNeeds a fix akin to #29215\n\n\n### Expected behaviour\n\nJob will process successfully \n\n### Actual behaviour\n\nJob will fail to process\n\n### Detailed description\n\nBacktrace:\n```\napp/lib/request.rb:110:in `rescue in perform': failed to connect: No address for beta.mstdn.cf on https://beta.mstdn.cf/users/mariaressa (HTTP::ConnectionError)\n        from app/lib/request.rb:107:in `perform'\n        from app/helpers/jsonld_helper.rb:174:in `fetch_resource_without_id_validation'\n        from app/helpers/jsonld_helper.rb:167:in `fetch_resource'\n        from app/services/activitypub/fetch_remote_actor_service.rb:18:in `call'\n        from app/services/activitypub/fetch_remote_account_service.rb:6:in `call'\n        from app/services/activitypub/process_status_update_service.rb:198:in `block in update_mentions!'\n        from app/services/activitypub/process_status_update_service.rb:194:in `each'\n        from app/services/activitypub/process_status_update_service.rb:194:in `update_mentions!'\n        from app/services/activitypub/process_status_update_service.rb:182:in `update_metadata!'\n        from app/services/activitypub/process_status_update_service.rb:45:in `block (2 levels) in handle_explicit_update!'\n        from app/services/activitypub/process_status_update_service.rb:40:in `block in handle_explicit_update!'\n        from app/models/concerns/lockable.rb:12:in `block (2 levels) in with_redis_lock'\n        from app/models/concerns/lockable.rb:10:in `block in with_redis_lock'\n        from app/lib/redis_connection.rb:10:in `with'\n        from app/models/concerns/redisable.rb:9:in `with_redis'\n        from app/models/concerns/lockable.rb:9:in `with_redis_lock'\n        ... 13 levels...\n/home/mastodon/live/app/lib/request.rb:328:in `open': failed to connect: No address for beta.mstdn.cf (HTTP::ConnectionError)\n        from /home/mastodon/live/app/lib/request.rb:24:in `connect'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/connection.rb:42:in `initialize'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:49:in `initialize'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:70:in `new'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:70:in `perform'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:12:in `block (2 levels) in <class:Client>'\n        from /home/mastodon/.rbenv/versions/3.3.5/lib/ruby/3.3.0/benchmark.rb:313:in `realtime'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:11:in `block in <class:Client>'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:31:in `request'\n        from /home/mastodon/live/app/lib/request.rb:108:in `perform'\n        from /home/mastodon/live/app/helpers/jsonld_helper.rb:174:in `fetch_resource_without_id_validation'\n        from /home/mastodon/live/app/helpers/jsonld_helper.rb:167:in `fetch_resource'\n        from /home/mastodon/live/app/services/activitypub/fetch_remote_actor_service.rb:18:in `call'\n        from /home/mastodon/live/app/services/activitypub/fetch_remote_account_service.rb:6:in `call'\n        from /home/mastodon/live/app/services/activitypub/process_status_update_service.rb:198:in `block in update_mentions!'\n        from /home/mastodon/live/app/services/activitypub/process_status_update_service.rb:194:in `each'\n        ... 64 levels...\n/home/mastodon/live/app/lib/request.rb:328:in `open': No address for beta.mstdn.cf (SocketError)\n        from /home/mastodon/live/app/lib/request.rb:24:in `connect'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/connection.rb:42:in `initialize'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:49:in `initialize'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:70:in `new'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:70:in `perform'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:12:in `block (2 levels) in <class:Client>'\n        from /home/mastodon/.rbenv/versions/3.3.5/lib/ruby/3.3.0/benchmark.rb:313:in `realtime'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/httplog-1.7.0/lib/httplog/adapters/http.rb:11:in `block in <class:Client>'\n        from /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/http-5.2.0/lib/http/client.rb:31:in `request'\n        from /home/mastodon/live/app/lib/request.rb:108:in `perform'\n        from /home/mastodon/live/app/helpers/jsonld_helper.rb:174:in `fetch_resource_without_id_validation'\n        from /home/mastodon/live/app/helpers/jsonld_helper.rb:167:in `fetch_resource'\n        from /home/mastodon/live/app/services/activitypub/fetch_remote_actor_service.rb:18:in `call'\n        from /home/mastodon/live/app/services/activitypub/fetch_remote_account_service.rb:6:in `call'\n        from /home/mastodon/live/app/services/activitypub/process_status_update_service.rb:198:in `block in update_mentions!'\n        from /home/mastodon/live/app/services/activitypub/process_status_update_service.rb:194:in `each'\n        ... 64 levels...\n```\n\n### Mastodon instance\n\nraphus.social\n\n### Mastodon version\n\nv4.3.1\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: ruby 3.3.5 (2024-09-03 revision ef084cc8f4) [x86_64-linux]\n- Node.js version: v20.5.1\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "3b4070cfccdf44671dce06aa1a8a8a402c900be4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3b4070cfccdf44671dce06aa1a8a8a402c900be4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3b4070cfccdf44671dce06aa1a8a8a402c900be4",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-02T09:52:35Z",
+          "commit_title": "Prepare changelog"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "26f25ef4bafd5ad84d03d8cb7ad0d868360175e5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/26f25ef4bafd5ad84d03d8cb7ad0d868360175e5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/26f25ef4bafd5ad84d03d8cb7ad0d868360175e5",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2024-12-02T15:53:28Z",
+          "commit_title": "New Crowdin Translations for stable-4.3 (automated) (#33135)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33135,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33135",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33135",
+          "state": "closed",
+          "merged_at": "2024-12-02T15:53:29Z",
+          "pr_title": "New Crowdin Translations for stable-4.3 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "13ab4b54e2b9cb9ddfcbe9dd3d820a7ba9164412",
+          "html_url": "https://github.com/mastodon/mastodon/commit/13ab4b54e2b9cb9ddfcbe9dd3d820a7ba9164412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/13ab4b54e2b9cb9ddfcbe9dd3d820a7ba9164412",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-03T14:16:28Z",
+          "commit_title": "Bump version to v4.3.2 (#33136)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33136,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33136",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33136",
+          "state": "closed",
+          "merged_at": "2024-12-03T14:16:28Z",
+          "pr_title": "Bump version to v4.3.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

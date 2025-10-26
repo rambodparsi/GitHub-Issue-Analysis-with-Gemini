@@ -1,0 +1,158 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.18",
+  "compare": "v4.2.19",
+  "counts": {
+    "commits": 4,
+    "prs": 3,
+    "issues": 1,
+    "commit_pr": 4,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.18...v4.2.19.compare.json",
+    "commits": "commits/v4.2/v4.2.18...v4.2.19.commits.json",
+    "pulls": "pulls/v4.2/v4.2.18...v4.2.19.pulls.json",
+    "issues": "issues/v4.2/v4.2.18...v4.2.19.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "eeca06f14e6f6fff421275888504ca7bd3b808cb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/eeca06f14e6f6fff421275888504ca7bd3b808cb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/eeca06f14e6f6fff421275888504ca7bd3b808cb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-10T14:27:43Z",
+          "commit_title": "Fix Stoplight errors when using `REDIS_NAMESPACE` (#34126)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34159,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34159",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34159",
+          "state": "closed",
+          "merged_at": "2025-03-13T09:20:53Z",
+          "pr_title": "Backport changes to v4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 34126,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34126",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34126",
+          "state": "closed",
+          "merged_at": "2025-03-10T14:36:03Z",
+          "pr_title": "Fix Stoplight errors when using `REDIS_NAMESPACE`",
+          "pr_body": "Fixes #34082\r\n\r\nThis basically does not impact Mastodon `main`, but it does not hurt to redefine `Redis::Namespace#with` since it is used by `RedLock` with assumptions that don't quite match the implementation provided by ActiveSupport.\r\n\r\nThis needs to be backported to 4.3, 4.2 and 4.1.\r\n\r\nIndeed, `RedLock` 1.3.2, which we depend on indirectly through the `stoplight` gem, calls `.with` on the passed redis connection object, or redefines it if `.with` is not defined. The expectation is that `@redis.with` yields a Redis connection, possibly out of a connection pool.\r\n\r\nNo version of `redis-namespace` explicitly defines `Redis::Namespace#with`. The versions we use in Mastodon v4.1 and v4.2 instead forward it to the underlying Redis connection object, “escaping” the namespace.\r\n\r\nThe version we use in Mastodon v4.3 does not define `Redis::Namespace#with` at all, but it gets added by ActiveSupport's core extensions.\r\n\r\nThe version of ActiveSupport we use in `main` defines `with` to yield itself, but the version we use in v4.3 does not pass an argument to `yield`.\r\n\r\nThis means the impact of this bug is:\r\n- `main`: none\r\n- `4.3`: `NoMethodError` on trying to call methods on `nil` when using `REDIS_NAMESPACE` (#34082)\r\n- earlier than `4.3`: stoplight controls are, at least in part, “escaping” the set `REDIS_NAMESPACE`, which means they could be littering the namespace of other applications, or other Mastodon instances depending on configuration: the impact is likely low, but would be stoplight competing for locks or counting failures multiple times across instances running with the same Redis instance",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34082,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34082",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34082,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34082",
+          "state": "closed",
+          "issue_title": "NoMethodError: undefined method `evalsha' for nil",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Inspect logs or sidekiq retry/dead queues\n\n\n\n### Expected behaviour\n\nNo warnings about NoMethodError\n\n### Actual behaviour\n\nWarnings about NoMethodError\n\n### Detailed description\n\nSince v4.3 I've seen a noticeable number of sidekiq jobs failing with the warning: \n```\nNoMethodError: undefined method `evalsha' for nil\n```\n\nIt's unclear to me whether this is a bug, a deployment issue on my server, or the expected behaviour of some failure case.\n\n### Mastodon instance\n\nsunny.garden\n\n### Mastodon version\n\nv4.3.4\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: ruby 3.3.5 (2024-09-03 revision ef084cc8f4) [x86_64-linux]\n- Node.js version: v20.17.0\n\nIn the majority of cases, the remote server is running Akkoma or Pleroma, however it also results from Mastodon servers less frequently as well.\n\n```\nMar 05 05:53:36 radish-1 bundle[1908833]: 2025-03-05T05:53:36.195Z pid=1908833 tid=5zbdd WARN: {\"context\":\"Job raised exception\",\"job\":{\"retry\":16,\"queue\":\"push\",\"dead\":false,\"class\":\"ActivityPub::DeliveryWorker\",\"args\":[\"{\\\"@context\\\":[\\\"https://www.w3.org/ns/activitystreams\\\",\\\"https://w3id.org/security/v1\\\",{\\\"manuallyApprovesFollowers\\\":\\\"as:manuallyApprovesFollowers\\\",\\\"sensitive\\\":\\\"as:sensitive\\\",\\\"Hashtag\\\":\\\"as:Hashtag\\\",\\\"movedTo\\\":{\\\"@id\\\":\\\"as:movedTo\\\",\\\"@type\\\":\\\"@id\\\"},\\\"alsoKnownAs\\\":{\\\"@id\\\":\\\"as:alsoKnownAs\\\",\\\"@type\\\":\\\"@id\\\"},\\\"toot\\\":\\\"http://joinmastodon.org/ns#\\\",\\\"Emoji\\\":\\\"toot:Emoji\\\",\\\"featured\\\":{\\\"@id\\\":\\\"toot:featured\\\",\\\"@type\\\":\\\"@id\\\"},\\\"featuredTags\\\":{\\\"@id\\\":\\\"toot:featuredTags\\\",\\\"@type\\\":\\\"@id\\\"},\\\"schema\\\":\\\"http://schema.org#\\\",\\\"PropertyValue\\\":\\\"schema:PropertyValue\\\",\\\"value\\\":\\\"schema:value\\\",\\\"ostatus\\\":\\\"http://ostatus.org#\\\",\\\"atomUri\\\":\\\"ostatus:atomUri\\\",\\\"inReplyToAtomUri\\\":\\\"ostatus:inReplyToAtomUri\\\",\\\"conversation\\\":\\\"ostatus:conversation\\\",\\\"focalPoint\\\":{\\\"@container\\\":\\\"@list\\\",\\\"@id\\\":\\\"toot:focalPoint\\\"},\\\"blurhash\\\":\\\"toot:blurhash\\\",\\\"discoverable\\\":\\\"toot:discoverable\\\",\\\"indexable\\\":\\\"toot:indexable\\\",\\\"memorial\\\":\\\"toot:memorial\\\",\\\"votersCount\\\":\\\"toot:votersCount\\\",\\\"suspended\\\":\\\"toot:suspended\\\",\\\"attributionDomains\\\":{\\\"@id\\\":\\\"toot:attributionDomains\\\",\\\"@type\\\":\\\"@id\\\"}}],\\\"id\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/activity\\\",\\\"type\\\":\\\"Create\\\",\\\"actor\\\":\\\"https://pie.gd/users/faerye\\\",\\\"published\\\":\\\"2025-03-05T05:49:18Z\\\",\\\"to\\\":[\\\"https://www.w3.org/ns/activitystreams#Public\\\"],\\\"cc\\\":[\\\"https://pie.gd/users/faerye/followers\\\",\\\"https://sunny.garden/users/handmade_ghost\\\"],\\\"object\\\":{\\\"id\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063\\\",\\\"type\\\":\\\"Note\\\",\\\"inReplyTo\\\":\\\"https://sunny.garden/users/handmade_ghost/statuses/114107038088241764\\\",\\\"published\\\":\\\"2025-03-05T05:49:18Z\\\",\\\"url\\\":\\\"https://pie.gd/@faerye/114108252734374063\\\",\\\"attributedTo\\\":\\\"https://pie.gd/users/faerye\\\",\\\"to\\\":[\\\"https://www.w3.org/ns/activitystreams#Public\\\"],\\\"cc\\\":[\\\"https://pie.gd/users/faerye/followers\\\",\\\"https://sunny.garden/users/handmade_ghost\\\"],\\\"sensitive\\\":false,\\\"atomUri\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063\\\",\\\"inReplyToAtomUri\\\":\\\"https://sunny.garden/users/handmade_ghost/statuses/114107038088241764\\\",\\\"conversation\\\":\\\"tag:pie.gd,2025-02-28:objectId=1386706:objectType=Conversation\\\",\\\"content\\\":\\\"<p><span class=\\\\\\\"h-card\\\\\\\" translate=\\\\\\\"no\\\\\\\"><a href=\\\\\\\"https://sunny.garden/@handmade_ghost\\\\\\\" class=\\\\\\\"u-url mention\\\\\\\">@<span>handmade_ghost</span></a></span> Yesssss! I most often hear creepers in a mature second growth conifer forest I go to, but never see ‘em.  Basically every decent or good photo I have is from deciduous wooded parkland (a sort of botanical garden in this case!) Not just the bark match factor: they were far lower! I’ll see what I can do about getting their advice creeper-peeping its way south :)</p>\\\",\\\"contentMap\\\":{\\\"en\\\":\\\"<p><span class=\\\\\\\"h-card\\\\\\\" translate=\\\\\\\"no\\\\\\\"><a href=\\\\\\\"https://sunny.garden/@handmade_ghost\\\\\\\" class=\\\\\\\"u-url mention\\\\\\\">@<span>handmade_ghost</span></a></span> Yesssss! I most often hear creepers in a mature second growth conifer forest I go to, but never see ‘em.  Basically every decent or good photo I have is from deciduous wooded parkland (a sort of botanical garden in this case!) Not just the bark match factor: they were far lower! I’ll see what I can do about getting their advice creeper-peeping its way south :)</p>\\\"},\\\"attachment\\\":[],\\\"tag\\\":[{\\\"type\\\":\\\"Mention\\\",\\\"href\\\":\\\"https://sunny.garden/users/handmade_ghost\\\",\\\"name\\\":\\\"@handmade_ghost@sunny.garden\\\"}],\\\"replies\\\":{\\\"id\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/replies\\\",\\\"type\\\":\\\"Collection\\\",\\\"first\\\":{\\\"type\\\":\\\"CollectionPage\\\",\\\"next\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/replies?only_other_accounts=true&page=true\\\",\\\"partOf\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/replies\\\",\\\"items\\\":[]}},\\\"likes\\\":{\\\"id\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/likes\\\",\\\"type\\\":\\\"Collection\\\",\\\"totalItems\\\":0},\\\"shares\\\":{\\\"id\\\":\\\"https://pie.gd/users/faerye/statuses/114108252734374063/shares\\\",\\\"type\\\":\\\"Collection\\\",\\\"totalItems\\\":0}},\\\"signature\\\":{\\\"type\\\":\\\"RsaSignature2017\\\",\\\"creator\\\":\\\"https://pie.gd/users/faerye#main-key\\\",\\\"created\\\":\\\"2025-03-05T05:49:18Z\\\",\\\"signatureValue\\\":\\\"YlN++XTAnBRn8ediYHUDeZOFznlI0kHg5CR5sz9WQlB5XgMj9FXMoRNmVciOglT0tRENebRCXSHDtaruYNSHyaGOgoXDkvQs67upp/1CbSXVtGRRxZ3RtVxVNROI3rKqMwUY3X7Iak5AJg6aXdcxJh65imCXINHXY1g+1f8vcyZsEH8u4zAeEV/eq9Im5znoShozaLLiChkDog+WZgkQZYGjLPYffze5AqNlrx/vO07j9Jv50/m8SvK/Ttc3WLNvTnO+2+wiezOjDWwRYMvVqOj0SLHjaxIpYGccH5u1e49Rs6HK7BvMdu26v/ipDE95zEs8Ei1QkRT+jmfVKgh7uQ==\\\"}}\",112151750992567142,\"https://outerheaven.club/inbox\",{}],\"jid\":\"96048db846354f6fac304e82\",\"created_at\":1741153759.255959,\"enqueued_at\":1741154015.807546,\"error_message\":\"https://outerheaven.club/inbox returned code 401\",\"error_class\":\"Mastodon::UnexpectedResponseError\",\"failed_at\":1741153765.253845,\"retry_count\":3,\"retried_at\":1741153876.4350216}}\nMar 05 05:53:36 radish-1 bundle[1908833]: 2025-03-05T05:53:36.196Z pid=1908833 tid=5zbdd WARN: NoMethodError: undefined method `evalsha' for nil\nMar 05 05:53:36 radish-1 bundle[1908833]: 2025-03-05T05:53:36.196Z pid=1908833 tid=5zbdd WARN: /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/redlock-1.3.2/lib/redlock/client.rb:171:in `block (2 levels) in lock'\nMar 05 05:53:36 radish-1 bundle[1908833]: /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/activesupport-7.1.5.1/lib/active_support/core_ext/object/with.rb:31:in `with'\nMar 05 05:53:36 radish-1 bundle[1908833]: /home/mastodon/live/vendor/bundle/ruby/3.3.0/gems/redlock-1.3.2/lib/redlock/client.rb:171:in `block in lock'\n```",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "2126298cb1773a5c9a3caba7158fc9fb5e0425fa",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2126298cb1773a5c9a3caba7158fc9fb5e0425fa",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2126298cb1773a5c9a3caba7158fc9fb5e0425fa",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-13T08:27:21Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34159,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34159",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34159",
+          "state": "closed",
+          "merged_at": "2025-03-13T09:20:53Z",
+          "pr_title": "Backport changes to v4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "25c77617922827da8d30d18361975e6f9ef55c31",
+          "html_url": "https://github.com/mastodon/mastodon/commit/25c77617922827da8d30d18361975e6f9ef55c31",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/25c77617922827da8d30d18361975e6f9ef55c31",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-13T08:36:47Z",
+          "commit_title": "Update dependency `omniauth-saml`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34159,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34159",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34159",
+          "state": "closed",
+          "merged_at": "2025-03-13T09:20:53Z",
+          "pr_title": "Backport changes to v4.2",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a58a2b5fafb33e6ced71884419f0da5f1b398ae7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a58a2b5fafb33e6ced71884419f0da5f1b398ae7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a58a2b5fafb33e6ced71884419f0da5f1b398ae7",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-03-13T12:32:44Z",
+          "commit_title": "Bump version to v4.2.19"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34164,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34164",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34164",
+          "state": "closed",
+          "merged_at": "2025-03-13T12:32:44Z",
+          "pr_title": "Bump version to v4.2.19",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

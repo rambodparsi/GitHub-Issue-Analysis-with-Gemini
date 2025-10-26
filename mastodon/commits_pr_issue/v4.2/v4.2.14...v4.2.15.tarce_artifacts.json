@@ -1,0 +1,176 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.14",
+  "compare": "v4.2.15",
+  "counts": {
+    "commits": 5,
+    "prs": 3,
+    "issues": 0,
+    "commit_pr": 4,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.14...v4.2.15.compare.json",
+    "commits": "commits/v4.2/v4.2.14...v4.2.15.commits.json",
+    "pulls": "pulls/v4.2/v4.2.14...v4.2.15.pulls.json",
+    "issues": "issues/v4.2/v4.2.14...v4.2.15.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "4a9abd93ab7e75752a704305333fb33f678df3ce",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4a9abd93ab7e75752a704305333fb33f678df3ce",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4a9abd93ab7e75752a704305333fb33f678df3ce",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-16T10:10:08Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e6b97fc9404e293778f78fdba552109d246ef2cf",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e6b97fc9404e293778f78fdba552109d246ef2cf",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e6b97fc9404e293778f78fdba552109d246ef2cf",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T11:50:50Z",
+          "commit_title": "Fix deletion of unconfirmed users with Webauthn set (#33186)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33599,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33599",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33599",
+          "state": "closed",
+          "merged_at": "2025-01-16T10:40:08Z",
+          "pr_title": "Backport recent fixes to v4.2",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n\r\n### Fixed\r\n\r\n- Fix `libyaml` missing from `Dockerfile` build stage (#33591 by `@vmstan`)\r\n- Fix deletion of unconfirmed users with Webauthn set (#33186 by `@ClearlyClaire`)",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 33186,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33186",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33186",
+          "state": "closed",
+          "merged_at": "2024-12-05T09:46:44Z",
+          "pr_title": "Fix deletion of unconfirmed users with Webauthn set",
+          "pr_body": "This foreign key could use a `on_delete: :cascade`, but this fix doesn't rely on this, to avoid complicating backports with database migrations.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e86430a45bd4eee2b88f268c23da63337747bb81",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e86430a45bd4eee2b88f268c23da63337747bb81",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e86430a45bd4eee2b88f268c23da63337747bb81",
+          "author_login": "vmstan",
+          "commit_author_date": "2025-01-14T16:35:58Z",
+          "commit_title": "Fix libyaml missing from Dockerfile build stage (#33591)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33599,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33599",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33599",
+          "state": "closed",
+          "merged_at": "2025-01-16T10:40:08Z",
+          "pr_title": "Backport recent fixes to v4.2",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n\r\n### Fixed\r\n\r\n- Fix `libyaml` missing from `Dockerfile` build stage (#33591 by `@vmstan`)\r\n- Fix deletion of unconfirmed users with Webauthn set (#33186 by `@ClearlyClaire`)",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 33591,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33591",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33591",
+          "state": "closed",
+          "merged_at": "2025-01-14T16:51:49Z",
+          "pr_title": "Fix libyaml missing from Dockerfile build stage",
+          "pr_body": "Fixes missing dependency of libyaml during Dockerfile build stage. This package was previously installed on the Ruby base image or by another Debian package (still sorting out) but now needs to be called for install otherwise `bundler` fails.\r\n\r\n```\r\n40.16 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.\r\n40.16\r\n40.16     current directory: /usr/local/bundle/gems/psych-5.2.2/ext/psych\r\n40.16 /usr/local/bin/ruby extconf.rb\r\n40.16 checking for pkg-config for yaml-0.1... not found\r\n40.16 checking for yaml.h... no\r\n40.16 yaml.h not found\r\n40.16 *** extconf.rb failed ***\r\n```\r\n\r\nWill need to back port to 4.3 branch as well, otherwise it will fail to build.",
+          "labels": [
+            "docker"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c953fe9754eb60ccbb5de2aec9c7459bb2d634d5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c953fe9754eb60ccbb5de2aec9c7459bb2d634d5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c953fe9754eb60ccbb5de2aec9c7459bb2d634d5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T12:11:10Z",
+          "commit_title": "Update dependencies rails and rails-html-sanitizer"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33599,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33599",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33599",
+          "state": "closed",
+          "merged_at": "2025-01-16T10:40:08Z",
+          "pr_title": "Backport recent fixes to v4.2",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n\r\n### Fixed\r\n\r\n- Fix `libyaml` missing from `Dockerfile` build stage (#33591 by `@vmstan`)\r\n- Fix deletion of unconfirmed users with Webauthn set (#33186 by `@ClearlyClaire`)",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bf4d0f0dcad88d63fc747520a5a1f47255130bf8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bf4d0f0dcad88d63fc747520a5a1f47255130bf8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bf4d0f0dcad88d63fc747520a5a1f47255130bf8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T12:28:27Z",
+          "commit_title": "Bump version to v4.2.15"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33599,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33599",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33599",
+          "state": "closed",
+          "merged_at": "2025-01-16T10:40:08Z",
+          "pr_title": "Backport recent fixes to v4.2",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n\r\n### Fixed\r\n\r\n- Fix `libyaml` missing from `Dockerfile` build stage (#33591 by `@vmstan`)\r\n- Fix deletion of unconfirmed users with Webauthn set (#33186 by `@ClearlyClaire`)",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

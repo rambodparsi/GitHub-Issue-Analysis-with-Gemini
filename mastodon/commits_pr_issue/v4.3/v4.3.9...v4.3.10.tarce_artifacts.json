@@ -1,0 +1,98 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.9",
+  "compare": "v4.3.10",
+  "counts": {
+    "commits": 3,
+    "prs": 2,
+    "issues": 0,
+    "commit_pr": 3,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.9...v4.3.10.compare.json",
+    "commits": "commits/v4.3/v4.3.9...v4.3.10.commits.json",
+    "pulls": "pulls/v4.3/v4.3.9...v4.3.10.pulls.json",
+    "issues": "issues/v4.3/v4.3.9...v4.3.10.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "11ec1a8d7bbe148c2cc5a57ce4ac837ac5940683",
+          "html_url": "https://github.com/mastodon/mastodon/commit/11ec1a8d7bbe148c2cc5a57ce4ac837ac5940683",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/11ec1a8d7bbe148c2cc5a57ce4ac837ac5940683",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-08T15:32:27Z",
+          "commit_title": "Update security policy (#35292)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35292,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35292",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35292",
+          "state": "closed",
+          "merged_at": "2025-07-08T15:32:27Z",
+          "pr_title": "Update security policy",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "37b642d59cfbe1a8d4317c8867b1bddfd2b18d40",
+          "html_url": "https://github.com/mastodon/mastodon/commit/37b642d59cfbe1a8d4317c8867b1bddfd2b18d40",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/37b642d59cfbe1a8d4317c8867b1bddfd2b18d40",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-21T14:41:37Z",
+          "commit_title": "Bump version to v4.3.10"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35442,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35442",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35442",
+          "state": "closed",
+          "merged_at": "2025-07-23T14:07:56Z",
+          "pr_title": "Bump version to v4.3.10",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "2232de0bfa6ce1854cd4cb4f7080a181be0b5a35",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2232de0bfa6ce1854cd4cb4f7080a181be0b5a35",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2232de0bfa6ce1854cd4cb4f7080a181be0b5a35",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T10:00:04Z",
+          "commit_title": "Update dependency thor"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35442,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35442",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35442",
+          "state": "closed",
+          "merged_at": "2025-07-23T14:07:56Z",
+          "pr_title": "Bump version to v4.3.10",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.8",
+  "compare": "v4.3.9",
+  "counts": {
+    "commits": 20,
+    "prs": 20,
+    "issues": 7,
+    "commit_pr": 20,
+    "commit_pr_issue": 7
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.8...v4.3.9.compare.json",
+    "commits": "commits/v4.3/v4.3.8...v4.3.9.commits.json",
+    "pulls": "pulls/v4.3/v4.3.8...v4.3.9.pulls.json",
+    "issues": "issues/v4.3/v4.3.8...v4.3.9.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "91b3859b7bfc5b59fff2591ed38e3a9bd0de4784",
+          "html_url": "https://github.com/mastodon/mastodon/commit/91b3859b7bfc5b59fff2591ed38e3a9bd0de4784",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/91b3859b7bfc5b59fff2591ed38e3a9bd0de4784",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-06-03T13:04:23Z",
+          "commit_title": "Add tests for featured tag removal (#34888)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34888,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34888",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34888",
+          "state": "closed",
+          "merged_at": "2025-06-03T13:04:23Z",
+          "pr_title": "Add tests for featured tag removal",
+          "pr_body": "Backport the test part of #34887 to stable-4.3",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "787702c26bbfba6eec363ac40baf80fce8532240",
+          "html_url": "https://github.com/mastodon/mastodon/commit/787702c26bbfba6eec363ac40baf80fce8532240",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/787702c26bbfba6eec363ac40baf80fce8532240",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-02T10:26:05Z",
+          "commit_title": "New Crowdin Translations for stable-4.3 (automated) (#35243)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35243,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35243",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35243",
+          "state": "closed",
+          "merged_at": "2025-07-02T10:26:05Z",
+          "pr_title": "New Crowdin Translations for stable-4.3 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e517c2a1bf7f086586a44ead7a29f5bf52ae9e2b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e517c2a1bf7f086586a44ead7a29f5bf52ae9e2b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e517c2a1bf7f086586a44ead7a29f5bf52ae9e2b",
+          "author_login": "tribela",
+          "commit_author_date": "2024-11-18T08:48:27Z",
+          "commit_title": "Add missing autofocus on boost modal (#32953)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32953,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32953",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32953",
+          "state": "closed",
+          "merged_at": "2024-11-18T08:58:21Z",
+          "pr_title": "Add missing autofocus on boost modal",
+          "pr_body": "Add `autoFocus` attribute on boost modal. It was missed on #31883 \r\n\r\nRelated: #31880",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "11a466ab532deac70cf6e9e021f040a7fd662b63",
+          "html_url": "https://github.com/mastodon/mastodon/commit/11a466ab532deac70cf6e9e021f040a7fd662b63",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/11a466ab532deac70cf6e9e021f040a7fd662b63",
+          "author_login": "Gargron",
+          "commit_author_date": "2024-11-21T10:58:04Z",
+          "commit_title": "Fix wrong video dimensions for some rotated videos (#33008)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33008,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33008",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33008",
+          "state": "closed",
+          "merged_at": "2024-11-21T11:07:48Z",
+          "pr_title": "Fix wrong video dimensions for some rotated videos",
+          "pr_body": "Fix #33006",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 33006,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33006",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33006,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33006",
+          "state": "closed",
+          "issue_title": "1080x1920 video displayed as 1920x1080 on Mastodon Web",
+          "issue_body": "### Steps to reproduce the problem\n\nLast night I made this post:\n\nhttps://mastodon.social/@mcc/113514552341290968\n\nIt features a video made in portrait mode with my phone. The video is \"1080p sideways\", 1080x1920.\n\n### Actual behaviour\n\nmastodon.social is displaying the video with a 1080p aspect ratio, in other words, 1920x1080. To do this, it crops the video down vertically, so that only a slice at the bottom of the video can be seen.\n\n### Expected behaviour\n\nBecause I am allowed to post 1080x1920 *images* without issue and they appear at their full height, I expect it would appear at its full height in the Mastodon feed. If for some policy reason it must be cropped, I expect I should be allowed to place a \"focus point\" (it seems you can't do this with videos).\n\n### Detailed description\n\n* The problem occurs in both Advanced and \"regular\" mode. \n* The problem here is the CSS and not the-video-as-stored-on-mastodon's-server. I know this for four reasons: Because [url=https://mastodon.social/@leona/113514663103374885]leon looked at the inspector[/url] and found a \"aspect-ratio: 1920 / 1080\" in the css; because if you click fullscreen, it appears correctly; because in the \"edit\"/add alt text pane it appears more or less correctly (oversized and with a aspect ratio something like 3:4, but I am able to scroll it); and because the video appears correctly in Tusky.\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.4.0-nightly.2024-11-19\n\n### Browser name and version\n\nFirefox 130.0.1\n\n### Operating system\n\nUbuntu 24.04.1 LTS\n\n### Technical details\n\nThe video was taken on a Sony XPeria 5 III running Android 13, and not processed.\n\nIf I download the image locally and feed it into ffmpeg -i, I find something interesting for the video track:\n\n```\nInput #0, mov,mp4,m4a,3gp,3g2,mj2, from '522354ab61852ad8.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:00:15.92, start: 0.000000, bitrate: 17660 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 17497 kb/s, 29.96 fps, 29.97 tbr, 90k tbn (default)\n    Metadata:\n      handler_name    : VideoHandler\n      vendor_id       : [0][0][0][0]\n    Side data:\n      displaymatrix: rotation of -90.00 degrees\n```\n\nNotice that the video internally advertises a size of 1920x1080, with a \"rotation of -90 degrees\". I understand this to be a common approach for videos and images taken with cell phones. It looks to me as if the \"bug\" is that although Mastodon's video converter understands the \"1080p plus -90 rotation\", and the browser understands it as well, whatever is storing the metadata that eventually leads to the CSS aspect-ratio is extracting only the \"base\" resolution and not the appropriate transformation which would have changed it from 1920x1080 to 1080x1920.",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "45fa4d99b3eac7f9936e8dd8e3ad7c910c9547cf",
+          "html_url": "https://github.com/mastodon/mastodon/commit/45fa4d99b3eac7f9936e8dd8e3ad7c910c9547cf",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/45fa4d99b3eac7f9936e8dd8e3ad7c910c9547cf",
+          "author_login": "tribela",
+          "commit_author_date": "2024-12-11T04:47:42Z",
+          "commit_title": "Handle rotation is not present in the video metadata (#33261)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33261,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33261",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33261",
+          "state": "closed",
+          "merged_at": "2024-12-11T04:55:54Z",
+          "pr_title": "Handle rotation is not present in the video metadata",
+          "pr_body": "This pr fixes this error:\r\n```\r\nundefined method `abs' for nil (NoMethodError) @width, @height = @height, @width if video_stream[:side_data_list]&.any? { |x| x[:rotation].abs == 90 }\r\n```",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "44a88ad4d5d075a78832557ffaafb70c01ad25f7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/44a88ad4d5d075a78832557ffaafb70c01ad25f7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/44a88ad4d5d075a78832557ffaafb70c01ad25f7",
+          "author_login": "kescherCode",
+          "commit_author_date": "2025-01-06T08:14:11Z",
+          "commit_title": "Fix `/share` not using server-set characters limit (#33459)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33459,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33459",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33459",
+          "state": "closed",
+          "merged_at": "2025-01-06T08:24:12Z",
+          "pr_title": "Fix `/share` not using server-set characters limit",
+          "pr_body": "See also:\r\n\r\nIssue (also affects vanilla Mastodon, actually): https://github.com/glitch-soc/mastodon/issues/2687",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8c25742d4c7228c3cef9fb0c58a11ef6843e36be",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8c25742d4c7228c3cef9fb0c58a11ef6843e36be",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8c25742d4c7228c3cef9fb0c58a11ef6843e36be",
+          "author_login": "defnull",
+          "commit_author_date": "2025-05-12T15:51:53Z",
+          "commit_title": "fix: OIDC account creation fails for long display names (#34639)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34639,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34639",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34639",
+          "state": "closed",
+          "merged_at": "2025-05-12T16:01:42Z",
+          "pr_title": "fix: OIDC account creation fails for long display names",
+          "pr_body": "Truncate display name for new accounts created during OIDC login. \r\n\r\nfix: #34638",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34638,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34638",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34638,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34638",
+          "state": "closed",
+          "issue_title": "OIDC: Long display name prevents account creation",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Have a very long display name that exceeds  `DISPLAY_NAME_LENGTH_LIMIT = 30`.\n2. Try to log into a Mastodon instance via OIDC/SSO for the first time.\n3. Get a generic error message instead of a shiny new mastodon account.\n\n\n\n### Expected behaviour\n\nThe display name derived from OIDC claims should be truncated to the maximum allowed length automatically, but still accepted. Users can fix their display name themselves later.\n\n### Actual behaviour\n\nAccount creation fails and the user cannot log in.\n\n### Detailed description\n\nWhen an OIDC user logs in for the first time, an account is created automatically. The display name passed to `User.new` via `account_attributes.display_name` is derived from OIDC claims (either `full_name`, `name` or `first_name + ' ' + last_name`). If this display name is longer than `DISPLAY_NAME_LENGTH_LIMIT` (30 characters) then the associated `Account` instance cannot be saved and fails validation. The `ActiveRecord::RecordInvalid` exception is handled by returning a generic `devise.failure.omniauth_user_creation_failure` error message to the user. The actual root cause is not logged and it took me a while to find out what went wrong.\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\nv4.3.8\n\n### Technical details\n\n- Ruby version: official docker images\n- Node.js version: official docker images\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f1cfde41524838197828001208b1f71697462c80",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f1cfde41524838197828001208b1f71697462c80",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f1cfde41524838197828001208b1f71697462c80",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-01T13:31:56Z",
+          "commit_title": "Fix admin dashboard crash on specific Elasticsearch connection errors (#34683)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34683,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34683",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34683",
+          "state": "closed",
+          "merged_at": "2025-05-14T15:00:17Z",
+          "pr_title": "Fix admin dashboard crash on specific Elasticsearch connection errors",
+          "pr_body": "Fixes #34647\r\n\r\nI am honestly not sure why those errors are occurring, or why they aren't caught/wrapped by the Chewy, Elasticsearch or Faraday gems.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34647,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34647",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34647,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34647",
+          "state": "closed",
+          "issue_title": "/admin not available to Owner role",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Assign user role of Owner and the path of /admin is not accessible\n2. Assign as user the role of Admin and /admin can now be accessed\n3.\n...\n\n\n### Expected behaviour\n\nOwner should have access to /admin\n\n### Actual behaviour\n\nOwner gets a \"Page is not correct\" redirection when trying to access Administration in web\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nsocial.overton.family\n\n### Mastodon version\n\nv4.2.18\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: 3.1.2p20\n- Node.js version: v18.19.0\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "936827013bbe5e10128454a89e610dc69c9e3136",
+          "html_url": "https://github.com/mastodon/mastodon/commit/936827013bbe5e10128454a89e610dc69c9e3136",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/936827013bbe5e10128454a89e610dc69c9e3136",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-19T08:29:31Z",
+          "commit_title": "Change passthrough video processing to emit `moov` atom at start of video (#34726)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34726,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34726",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34726",
+          "state": "closed",
+          "merged_at": "2025-05-19T08:40:51Z",
+          "pr_title": "Change passthrough video processing to emit `moov` atom at start of video",
+          "pr_body": "Fixes #34723",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34723,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34723",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34723,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34723",
+          "state": "closed",
+          "issue_title": "Video/gifv attachments aren’t encoded for fast start",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Download a video or gifv attachment in mp4 format from Mastodon\n2. Use `atomicparsley [file] -T` to view the structure of the video file\n\n### Expected behaviour\n\n`moov` atom should occur immediately after `ftyp` at the beginning of the file (this is what the ffmpeg `faststart` option does)\n\n### Actual behaviour\n\n`moov` atom is the last thing at the end of the file\n\n### Detailed description\n\nDepending on the browser/client implementation, this results in the video not being able to start until the entire file is downloaded.\n\nIn Safari 18.5 at least, *some* videos are still able to start playing before the download finishes, but still with a few seconds delay. From watching the Network tab in the web inspector, I can see that the browser is doing some kind of workaround where it makes a request for the bytes at the beginning of the file, sees that the `moov` atom isn’t there, makes another request for the entire file in order to get the file size, immediately cancels that request, makes a third request for the bytes at the end of the file where the `moov` atom is located, then makes more request(s) for the actual video data. This adds a lot of latency – I would imagine they would start faster if this data was at the beginning of the file to begin with.\n\nIn addition, I’m not sure exactly how Mastodon’s remote media proxy/caching interacts with this, but I don’t think Safari’s workaround is working for videos federated from other servers, which always take 10+ seconds to start for me.\n\nAn example of a video I ran across where this occurs is https://mastodon.durrans.com/@dan/114530514378397295 – it doesn’t seem to be encoded for fast start regardless of whether I view it on the original server (4.3.8) or mastodon.online (v4.4.0-alpha.5+pr-34450-b0f4baf). I also did a search for “has:video” and checked a few of the results; none of them were encoded for fast start.\n\n### Mastodon instance\n\nmastodon.online\n\n### Mastodon version\n\nv4.4.0-alpha.5+pr-34450-b0f4baf\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/media processing"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "bd0c865bbba9b7d2ea083abf475ccdc460259104",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bd0c865bbba9b7d2ea083abf475ccdc460259104",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bd0c865bbba9b7d2ea083abf475ccdc460259104",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-23T15:01:07Z",
+          "commit_title": "Fix handling of inlined `featured` collections in ActivityPub actor objects (#34789)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34789,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34789",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34789",
+          "state": "closed",
+          "merged_at": "2025-05-23T15:12:12Z",
+          "pr_title": "Fix handling of inlined `featured` collections in ActivityPub actor objects",
+          "pr_body": "Fixes #34779\r\n\r\nThis passes the collection as job arguments instead of a database column. The database column is still updated as expected when the collection is an URL, and used if no job argument is provided, so as not to break existing queued jobs.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34779,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34779",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34779,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34779",
+          "state": "closed",
+          "issue_title": "ActivityPub::SynchronizeFeaturedCollectionWorker causes Invalid scheme format error",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Follow some account on bsky.brid.gy\n2. Wait for  `ActivityPub::SynchronizeFeaturedCollectionWorker`\n3.\n...\n\n\n### Expected behaviour\n\nCollects featured collection as well\n\n### Actual behaviour\n\nFailed with Invalid scheme format\n\n### Detailed description\n\nOn sidekiq log:\n```Addressable::URI::InvalidURIError: Invalid scheme format: '{\"orderedItems\" => [\"https'```\n\n### Mastodon instance\n\nqdon.space\n\n### Mastodon version\n\nv4.4.0-alpha.5\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: (from `ruby --version`, eg. v3.4.1)\n- Node.js version: (from `node --version`, eg. v20.18.0)\n\nMastodon expects that `featured` to be URL string. But bsky bridge returns as object\n\nHere's an example reponse from bsky.brid.gy (https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur)\n\n```json\n{\n    \"@context\": [\n        \"https://www.w3.org/ns/activitystreams\",\n        \"https://purl.archive.org/miscellany\",\n        {\n            \"discoverable\": \"http://joinmastodon.org/ns#discoverable\",\n            \"indexable\": \"http://joinmastodon.org/ns#indexable\"\n        },\n        {\n            \"PropertyValue\": \"http://schema.org#PropertyValue\"\n        },\n        \"https://w3id.org/security/v1\",\n        {\n            \"alsoKnownAs\": {\n                \"@id\": \"as:alsoKnownAs\",\n                \"@type\": \"@id\"\n            }\n        }\n    ],\n    \"alsoKnownAs\": [\n        \"at://did:plc:z72i7hdynmk6r22z27h6tvur\"\n    ],\n    \"attachment\": [\n        {\n            \"name\": \"Web site\",\n            \"type\": \"PropertyValue\",\n            \"value\": \"<a rel=\\\"me\\\" href=\\\"https://bsky.app/profile/bsky.app\\\"><span class=\\\"invisible\\\">https://</span>bsky.app/profile/bsky.app</a>\"\n        },\n        {\n            \"name\": \"Link\",\n            \"type\": \"PropertyValue\",\n            \"value\": \"<a rel=\\\"me\\\" href=\\\"https://bsky.app\\\"><span class=\\\"invisible\\\">https://</span>bsky.app</a>\"\n        }\n    ],\n    \"discoverable\": true,\n    \"endpoints\": {\n        \"sharedInbox\": \"https://bsky.brid.gy/ap/sharedInbox\"\n    },\n    \"featured\": {\n        \"orderedItems\": [\n            \"https://bsky.brid.gy/convert/ap/at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3ii2l\"\n        ],\n        \"totalItems\": 1,\n        \"type\": \"OrderedCollection\"\n    },\n    \"followers\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur/followers\",\n    \"following\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur/following\",\n    \"icon\": {\n        \"type\": \"Image\",\n        \"url\": \"https://puffball.us-east.host.bsky.network/xrpc/com.atproto.sync.getBlob?did=did:plc:z72i7hdynmk6r22z27h6tvur&cid=bafkreihagr2cmvl2jt4mgx3sppwe2it3fwolkrbtjrhcnwjk4jdijhsoze\"\n    },\n    \"id\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur\",\n    \"image\": [\n        {\n            \"type\": \"Image\",\n            \"url\": \"https://puffball.us-east.host.bsky.network/xrpc/com.atproto.sync.getBlob?did=did:plc:z72i7hdynmk6r22z27h6tvur&cid=bafkreichzyovokfzmymz36p5jibbjrhsur6n7hjnzxrpbt5jaydp2szvna\"\n        },\n        {\n            \"type\": \"Image\",\n            \"url\": \"https://puffball.us-east.host.bsky.network/xrpc/com.atproto.sync.getBlob?did=did:plc:z72i7hdynmk6r22z27h6tvur&cid=bafkreihagr2cmvl2jt4mgx3sppwe2it3fwolkrbtjrhcnwjk4jdijhsoze\"\n        }\n    ],\n    \"inbox\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur/inbox\",\n    \"indexable\": true,\n    \"manuallyApprovesFollowers\": false,\n    \"name\": \"Bluesky\",\n    \"outbox\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur/outbox\",\n    \"preferredUsername\": \"bsky.app\",\n    \"publicKey\": {\n        \"id\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur#key\",\n        \"owner\": \"https://bsky.brid.gy/ap/did:plc:z72i7hdynmk6r22z27h6tvur\",\n        \"publicKeyPem\": \"-----BEGIN PUBLIC KEY-----\\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwpFwsH7WzlRvvcv/rFID\\nI9V7WVmRtW5AS7WB7TilhvosECE27e5y1oSEclaqvhVa9oLYIFufv164V9TbQPYH\\nxiLPbA88mHmffyHu2jFfa7nEaIhJjTpMwXq+vPa4LaNAfxCY4xTFzgdR/Sz5zdMu\\nZeiMPKwdR2WNSF60qHE9thWYIpcuMRjNGOkZDOvl8t9dMScO7f//C3VIpn61Lhxi\\n/mcdCLVxbVuWwIpL2/c78MsGNJo2t3CjQJOzlMahy9c7qZoiKbkRWVQx2NEYUY7j\\nAFc5LuV+yy3hNdfFATCU0kwgJpgrrJSGJvhDX06FByx28QG2MNQi9Uvg7pCB2FiS\\nqwIDAQAB\\n-----END PUBLIC KEY-----\"\n    },\n    \"summary\": \"official Bluesky account (check username👆)\\n\\nBugs, feature requests, feedback: support@bsky.app<br><br>[<a href=\\\"https://fed.brid.gy/bsky/bsky.app\\\">bridged</a> from <a href=\\\"https://bsky.app/profile/bsky.app\\\">bsky.app</a> on Bluesky by <a href=\\\"https://fed.brid.gy/\\\">Bridgy Fed</a>]\",\n    \"type\": \"Person\",\n    \"url\": [\n        \"https://bsky.brid.gy/r/https://bsky.app/profile/bsky.app\",\n        \"https://bsky.app/\"\n    ]\n}\n```",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "b38bbd04ea976d74ef972160a4897433cd26c640",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b38bbd04ea976d74ef972160a4897433cd26c640",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b38bbd04ea976d74ef972160a4897433cd26c640",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-26T08:24:46Z",
+          "commit_title": "Fix `NoMethodError` in `ActivityPub::FetchFeaturedCollectionService` (#34811)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34811,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34811",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34811",
+          "state": "closed",
+          "merged_at": "2025-05-26T08:41:08Z",
+          "pr_title": "Fix `NoMethodError` in `ActivityPub::FetchFeaturedCollectionService`",
+          "pr_body": "Follow-up to #34789\r\n\r\nThe removed check for `supported_context?(@json)` also covered `@json` being `nil`, which may happen with some HTTP responses, or the collection being hosted on another domain than the author.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8db52f2e66dec09c4e5fd28470b4d12cadb0200a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8db52f2e66dec09c4e5fd28470b4d12cadb0200a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8db52f2e66dec09c4e5fd28470b4d12cadb0200a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-30T13:13:24Z",
+          "commit_title": "Increase capybara default timeout to reduce test flakiness (#34859)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34859,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34859",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34859",
+          "state": "closed",
+          "merged_at": "2025-05-30T13:25:33Z",
+          "pr_title": "Increase capybara default timeout to reduce test flakiness",
+          "pr_body": "I have been investigating e2e test flakiness, and while I don't have a good explanation of some of them, I was able to reliably reproduce some of the common test failures by reducing Capybara's default wait time, suggesting that some of the test failures may simply be due to Github runner performance.",
+          "labels": [
+            "pipeline"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4632be68ebb7a74e84d55747c21e8f639cebf0f3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4632be68ebb7a74e84d55747c21e8f639cebf0f3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4632be68ebb7a74e84d55747c21e8f639cebf0f3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-05-30T13:20:51Z",
+          "commit_title": "Fix inconsistent filtering of silenced accounts for other silenced accounts (#34863)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34863,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34863",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34863",
+          "state": "closed",
+          "merged_at": "2025-05-30T13:31:50Z",
+          "pr_title": "Fix inconsistent filtering of silenced accounts for other silenced accounts",
+          "pr_body": "Long ago, silenced accounts could see posts from other silenced accounts without filtering.\r\n\r\nBefore this PR, this was still the case in some specific contexts, but this was inconsistent.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "980c336ca4fd2eae8f3b5296e8deb8bf261eda16",
+          "html_url": "https://github.com/mastodon/mastodon/commit/980c336ca4fd2eae8f3b5296e8deb8bf261eda16",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/980c336ca4fd2eae8f3b5296e8deb8bf261eda16",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-06-02T13:38:47Z",
+          "commit_title": "Fix blocked accounts not being automatically removed from trending statuses (#34891)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34891,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34891",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34891",
+          "state": "closed",
+          "merged_at": "2025-06-02T13:49:25Z",
+          "pr_title": "Fix blocked accounts not being automatically removed from trending statuses",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5039e9d474b271146ef7c0abd1d2b42a1b943bbb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5039e9d474b271146ef7c0abd1d2b42a1b943bbb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5039e9d474b271146ef7c0abd1d2b42a1b943bbb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-06-10T13:26:29Z",
+          "commit_title": "Add basic support for remote attachments with multiple media types (#34996)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34996,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34996",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34996",
+          "state": "closed",
+          "merged_at": "2025-06-10T13:41:08Z",
+          "pr_title": "Add basic support for remote attachments with multiple media types",
+          "pr_body": "Fixes #34979",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34979,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34979",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34979,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34979",
+          "state": "closed",
+          "issue_title": "Mastodon drops posts completely with a 500 error when attachment[*].url is an array",
+          "issue_body": "### Steps to reproduce the problem\n\nhttps://honk.tedunangst.com/u/tedu/h/d21rx2s3jrsbNP2Nbc\n\nhttps://browser.pub/https://honk.tedunangst.com/u/tedu/h/d21rx2s3jrsbNP2Nbc\n\n```json\n\n{\n  \"@context\": \"https://www.w3.org/ns/activitystreams\",\n  \"attachment\": [\n    {\n      \"name\": \"XPM2r2NKdD4x1Pwj25.jpg\",\n      \"summary\": \"Del Monte carrier with a bit of a back lean\",\n      \"type\": \"Document\",\n      \"url\": [\n        {\n          \"href\": \"https://honk.tedunangst.com/d/G1b2bZ5yFSwNwSWsqKsn1.jpg\",\n          \"mediaType\": \"image/jpeg\",\n          \"type\": \"Link\"\n        },\n        {\n          \"href\": \"https://honk.tedunangst.com/d/G1b2bZ5yFSwNwSWsqKsn1.avif\",\n          \"mediaType\": \"image/avif\",\n          \"type\": \"Link\"\n        }\n      ]\n    }\n  ],\n  \"attributedTo\": \"https://honk.tedunangst.com/u/tedu\",\n  \"cc\": [\n    \"https://honk.tedunangst.com/u/tedu/followers\"\n  ],\n  \"content\": \"<p>The big boat looks a bit back heavy. Like, dude, I can see your bulb. I don't think I've seen one so visibly slanted.</p>\\n<p>But also, the big question is whether masto see or mastodont see it?</p>\\n\",\n  \"context\": \"data:,electrichonkytonk-5lHtc1mwgj89dBKbKt\",\n  \"conversation\": \"data:,electrichonkytonk-5lHtc1mwgj89dBKbKt\",\n  \"id\": \"https://honk.tedunangst.com/u/tedu/h/d21rx2s3jrsbNP2Nbc\",\n  \"published\": \"2025-06-06T18:17:31Z\",\n  \"to\": \"https://www.w3.org/ns/activitystreams#Public\",\n  \"type\": \"Note\",\n  \"url\": \"https://honk.tedunangst.com/u/tedu/h/d21rx2s3jrsbNP2Nbc\"\n}\n```\n\n### Expected behaviour\n\nPost is created with a media attachment\n\n### Actual behaviour\n\nPost is dropped entirely\n\n### Detailed description\n\nI get a toast notification saying “500” when attempting to search for the URL in Mastodon’s web frontend.\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.4.0-beta.1\n\n### Technical details\n\nhttps://honk.tedunangst.com/u/tedu/h/2Qtt2J35kLQ2v8q82k\n\n> If I've read the code in app/lib/activitypub/parser/media_attachment_parser.rb right, mastodon only supports a single string value for the url property. No arrays, no Link types. Curiously, this seems to prevent the entire activity from appearing, not just the image.",
+          "labels": [
+            "activitypub",
+            "area/media processing"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "973eb0a1d3cce228ca44b5d14c337d2c4d165b55",
+          "html_url": "https://github.com/mastodon/mastodon/commit/973eb0a1d3cce228ca44b5d14c337d2c4d165b55",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/973eb0a1d3cce228ca44b5d14c337d2c4d165b55",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-06-24T09:04:26Z",
+          "commit_title": "Fix “Alt text” button submitting form in moderation interface (#35147)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35147,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35147",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35147",
+          "state": "closed",
+          "merged_at": "2025-06-24T09:16:56Z",
+          "pr_title": "Fix “Alt text” button submitting form in moderation interface",
+          "pr_body": "Fixes #35145\r\n\r\nNeeds to be backported to 4.3 as well.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35145,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35145",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35145,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35145",
+          "state": "closed",
+          "issue_title": "\"No posts were changed as none were selected\" error when viewing alt text on reported post",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Report a post containing an image with alt text\n2. View the report in the moderation interface\n3. Click the image to view it, then click the [ALT] label in the bottom right to view the alt text\n\n\n\n### Expected behaviour\n\nAlt text is displayed, and no other action occurs\n\n### Actual behaviour\n\nAlt text is breifly displayed, then the page reloads and displays a red warning at the top: No posts were changed as none were selected\n\n### Detailed description\n\n![Image](https://github.com/user-attachments/assets/e8eaa6cb-b07f-40d6-9f86-c4763a606204)\n\n### Mastodon instance\n\nsunny.garden\n\n### Mastodon version\n\nv4.3.8\n\n### Browser name and version\n\nFirefox 139.0.4 (64-bit)\n\n### Operating system\n\nMicrosoft Windows [Version 10.0.19045.5965]\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/identified",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "447527c1547564c92555a3408f90cd4b8b287c14",
+          "html_url": "https://github.com/mastodon/mastodon/commit/447527c1547564c92555a3408f90cd4b8b287c14",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/447527c1547564c92555a3408f90cd4b8b287c14",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-06-26T10:35:49Z",
+          "commit_title": "Fix search operators sometimes getting lost (#35190)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35190,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35190",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35190",
+          "state": "closed",
+          "merged_at": "2025-06-26T10:46:37Z",
+          "pr_title": "Fix search operators sometimes getting lost",
+          "pr_body": "This fixes stuff like `from:me foo has:media` losing the `from:me` search operator.\r\n\r\nThis is a long-standing issue I kind of forgot about but rediscovered.\r\n\r\nIn the case of `from:me has:media foo`, `@clauses.compact.chunk(&:operator)` would create two chunks, one for `filter` clauses containing both `from:me` and `has:media`, and one for the `foo` `must` clause. However, for `from:me foo has:media`, it would create three chunks, since the `filter` clauses are separated by a `must` clause, and `to_h` would only keep one.\r\n\r\nI believe `#group_by` directly does what we expect here.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "9ee5872f14e0b868b1944afaf47f53ebf4070fbf",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9ee5872f14e0b868b1944afaf47f53ebf4070fbf",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9ee5872f14e0b868b1944afaf47f53ebf4070fbf",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-11-19T20:21:12Z",
+          "commit_title": "Fix error when viewing statuses to deleted replies in moderation view (#32986)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32986,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32986",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32986",
+          "state": "closed",
+          "merged_at": "2024-11-19T20:30:02Z",
+          "pr_title": "Fix error when viewing statuses to deleted replies in moderation view",
+          "pr_body": "One of those occurrences was fairly old, the others were recent regressions.\r\n\r\nThis crashed in the particular case of displaying a reply to a reported-but-deleted post.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ea6736681bf283896f5b6c01a6cd22c41d71c925",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ea6736681bf283896f5b6c01a6cd22c41d71c925",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ea6736681bf283896f5b6c01a6cd22c41d71c925",
+          "author_login": "dariusk",
+          "commit_author_date": "2025-05-28T09:39:55Z",
+          "commit_title": "Fix `NoMethodError` in edge case of emoji cache handling (#34749)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34749,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34749",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34749",
+          "state": "closed",
+          "merged_at": "2025-05-28T09:50:42Z",
+          "pr_title": "Fix `NoMethodError` in edge case of emoji cache handling",
+          "pr_body": "https://github.com/mastodon/mastodon/blob/f7182ddc8b44f71f6991941b9356454e4468bcd7/app/lib/entity_cache.rb#L34\r\n\r\nIn the rare case where `cached[to_key(:emoji, shortcode, domain)]` resolves to `nil` and `uncached` is also `nil`, this can throw an error while attempting to access `nil[shortcode]` that causes the `/api/v1/timelines/home` to return an error 500 and no data. Safely accessing `uncached` here results in the ultimate error state of \"we have no cached or uncached data for this emoji\" to be a simple rendering of the emoji shortcode in the text of the post, like so:\r\n\r\n![image](https://github.com/user-attachments/assets/1993023b-fb5d-4dfc-a3b3-0b2f82132e86)\r\n\r\nNote: I have no idea what's idiomatic in Ruby these days but it seems like the Mastodon source code in general prefers appending `if uncached` for safety rather than something like `uncached&.[](shortcode)`",
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f6dbb2206c5a4c1b27ce1395b477492139cfcbcc",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f6dbb2206c5a4c1b27ce1395b477492139cfcbcc",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f6dbb2206c5a4c1b27ce1395b477492139cfcbcc",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-01T13:56:14Z",
+          "commit_title": "Bump version to v4.3.9"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35228,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35228",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35228",
+          "state": "closed",
+          "merged_at": "2025-07-02T10:51:47Z",
+          "pr_title": "Bump version to v4.3.9",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.4",
+  "compare": "v4.4.5",
+  "counts": {
+    "commits": 9,
+    "prs": 10,
+    "issues": 1,
+    "commit_pr": 9,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.4...v4.4.5.compare.json",
+    "commits": "commits/v4.4/v4.4.4...v4.4.5.commits.json",
+    "pulls": "pulls/v4.4/v4.4.4...v4.4.5.pulls.json",
+    "issues": "issues/v4.4/v4.4.4...v4.4.5.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "4e85b9073bc996ff04fbd540dab217d7fed4b4c0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4e85b9073bc996ff04fbd540dab217d7fed4b4c0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4e85b9073bc996ff04fbd540dab217d7fed4b4c0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-16T15:39:45Z",
+          "commit_title": "Fix typo in changelog (#36140)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36140,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36140",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36140",
+          "state": "closed",
+          "merged_at": "2025-09-16T15:39:45Z",
+          "pr_title": "Fix typo in changelog",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "06c2393805eee6b2e4b4aa17787129a2d542b71d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/06c2393805eee6b2e4b4aa17787129a2d542b71d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/06c2393805eee6b2e4b4aa17787129a2d542b71d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-17T12:00:58Z",
+          "commit_title": "Fix quote with CW but no text being shown without CW (#36150)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36156,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36156",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36156",
+          "state": "closed",
+          "merged_at": "2025-09-17T16:01:19Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36150,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36150",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36150",
+          "state": "closed",
+          "merged_at": "2025-09-17T12:14:40Z",
+          "pr_title": "Fix quote with CW but no text being shown without CW",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c8551a3eca59752a4a8eeef4941221a654746895",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c8551a3eca59752a4a8eeef4941221a654746895",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c8551a3eca59752a4a8eeef4941221a654746895",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-18T12:46:31Z",
+          "commit_title": "Add click-through for quoted limited accounts (#36167)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36195,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36195",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36195",
+          "state": "closed",
+          "merged_at": "2025-09-22T14:54:05Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The quote component has diverged a bit, so it could use some careful reviewing.",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36167,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36167",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36167",
+          "state": "closed",
+          "merged_at": "2025-09-18T13:01:06Z",
+          "pr_title": "Add click-through for quoted limited accounts",
+          "pr_body": "See #36166\r\n\r\n<img width=\"598\" height=\"230\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5340507e-95fe-485f-b3a0-808148b6933b\" />",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a94d7bf520ccb1b21555fa6cff1c45e1dc015bd9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a94d7bf520ccb1b21555fa6cff1c45e1dc015bd9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a94d7bf520ccb1b21555fa6cff1c45e1dc015bd9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-18T13:21:17Z",
+          "commit_title": "Change quoted posts from silenced accounts not to be hidden (#36166)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36195,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36195",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36195",
+          "state": "closed",
+          "merged_at": "2025-09-22T14:54:05Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The quote component has diverged a bit, so it could use some careful reviewing.",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36166,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36166",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36166",
+          "state": "closed",
+          "merged_at": "2025-09-18T13:34:30Z",
+          "pr_title": "Change quoted posts from silenced accounts not to be hidden",
+          "pr_body": "Fixes #36162",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 36162,
+              "html_url": "https://github.com/mastodon/mastodon/issues/36162",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 36162,
+          "html_url": "https://github.com/mastodon/mastodon/issues/36162",
+          "state": "closed",
+          "issue_title": "Inconsistency in quote filtering with limited accounts",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Follow someone\n2. Have them boost a limited account\n\n### Expected behaviour\n\nThe quoted post can be read, perhaps after a click-through\n\n### Actual behaviour\n\nThe quoted post is replaced with a “This post cannot be displayed as you are not authorized to view it.” placeholder\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\n_No response_\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: (from `ruby --version`, eg. v3.4.4)\n- Node.js version: (from `node --version`, eg. v22.16.0)\n",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "0b66bd591fde350419f8544ae5e05b9ea8e52ef9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0b66bd591fde350419f8544ae5e05b9ea8e52ef9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0b66bd591fde350419f8544ae5e05b9ea8e52ef9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-19T08:45:13Z",
+          "commit_title": "Fix getting `Create` and `Update` out of order (#36176)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36195,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36195",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36195",
+          "state": "closed",
+          "merged_at": "2025-09-22T14:54:05Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The quote component has diverged a bit, so it could use some careful reviewing.",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36176,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36176",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36176",
+          "state": "closed",
+          "merged_at": "2025-09-19T08:59:36Z",
+          "pr_title": "Fix getting `Create` and `Update` out of order",
+          "pr_body": "This might be the cause of some quote posts not displaying as approved.\r\n\r\nThe idea is as follows:\r\n- if the post is not found, the post may or may not be of interest to us\r\n- if it is of no interest to us, the `Create` handler will discard it\r\n- if it is of interest to us, we either missed the `Create` or are likely to get it, so process the more-up-to-date version of the post immediately\r\n\r\nThis may cover the case when a post is `Create`d then `Update`d to add a `quoteApproval` and thus are received out-of-order.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bef28b2e518032db2d3b5af92491faca21b84484",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bef28b2e518032db2d3b5af92491faca21b84484",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bef28b2e518032db2d3b5af92491faca21b84484",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-19T09:52:17Z",
+          "commit_title": "Fix processing of out-of-order `Update` as implicit updates (#36190)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36195,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36195",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36195",
+          "state": "closed",
+          "merged_at": "2025-09-22T14:54:05Z",
+          "pr_title": "Backport changes to stable-4.4",
+          "pr_body": "The quote component has diverged a bit, so it could use some careful reviewing.",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36190,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36190",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36190",
+          "state": "closed",
+          "merged_at": "2025-09-19T10:05:16Z",
+          "pr_title": "Fix processing of out-of-order `Update` as implicit updates",
+          "pr_body": "We handle “implicit” (able to update some metadata) and “explicit” (able to change the contents of the post) updates to statuses.\r\n\r\nWe consider an `Update` to be explicit if it has an `updated` attribute and this field is more recent than the last recorded one.\r\n\r\nEverything else was considered an implicit update, but that included updates with an earlier `updated` attribute. This PR rejects such updates to avoid reverting metadata to an earlier state if activities are received out-of-order.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "70e2eb49dfafce173b3c6b5976d0aae0b9c261c3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/70e2eb49dfafce173b3c6b5976d0aae0b9c261c3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/70e2eb49dfafce173b3c6b5976d0aae0b9c261c3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-22T16:03:22Z",
+          "commit_title": "Add support for `has:quote` in search (#36217)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36232,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36232",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36232",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:16Z",
+          "pr_title": "Bump version to v4.4.5",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36217,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36217",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36217",
+          "state": "closed",
+          "merged_at": "2025-09-22T16:15:32Z",
+          "pr_title": "Add support for `has:quote` in search",
+          "pr_body": "May require re-indexation of statuses",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "dd0647ca45529f46450943898d9124c5cdca1f38",
+          "html_url": "https://github.com/mastodon/mastodon/commit/dd0647ca45529f46450943898d9124c5cdca1f38",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/dd0647ca45529f46450943898d9124c5cdca1f38",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-23T08:46:42Z",
+          "commit_title": "Update dependency `rexml`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36232,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36232",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36232",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:16Z",
+          "pr_title": "Bump version to v4.4.5",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "dc6d8f882528803c06b2a71c23d6c1467880a7e1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/dc6d8f882528803c06b2a71c23d6c1467880a7e1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/dc6d8f882528803c06b2a71c23d6c1467880a7e1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-23T09:12:26Z",
+          "commit_title": "Bump version to v4.4.5"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36232,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36232",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36232",
+          "state": "closed",
+          "merged_at": "2025-09-23T12:33:16Z",
+          "pr_title": "Bump version to v4.4.5",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

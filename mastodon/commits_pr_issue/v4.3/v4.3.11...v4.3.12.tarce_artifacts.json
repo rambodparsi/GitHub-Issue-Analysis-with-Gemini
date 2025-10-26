@@ -1,0 +1,246 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.11",
+  "compare": "v4.3.12",
+  "counts": {
+    "commits": 7,
+    "prs": 7,
+    "issues": 0,
+    "commit_pr": 7,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.11...v4.3.12.compare.json",
+    "commits": "commits/v4.3/v4.3.11...v4.3.12.commits.json",
+    "pulls": "pulls/v4.3/v4.3.11...v4.3.12.pulls.json",
+    "issues": "issues/v4.3/v4.3.11...v4.3.12.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "84c5ffb565b9aff3d143d3316315773bc9a805db",
+          "html_url": "https://github.com/mastodon/mastodon/commit/84c5ffb565b9aff3d143d3316315773bc9a805db",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/84c5ffb565b9aff3d143d3316315773bc9a805db",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-19T14:16:30Z",
+          "commit_title": "Fix self-destruct scheduler behavior on some Redis setups (#35823)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36016,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36016",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36016",
+          "state": "closed",
+          "merged_at": "2025-09-04T13:44:53Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": "(Not to be squash-merged)",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 35823,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35823",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35823",
+          "state": "closed",
+          "merged_at": "2025-08-19T14:28:50Z",
+          "pr_title": "Fix self-destruct scheduler behavior on some Redis setups",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d2b544e5843589db60e440fb6c638e7d647d68b3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d2b544e5843589db60e440fb6c638e7d647d68b3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d2b544e5843589db60e440fb6c638e7d647d68b3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-25T12:25:35Z",
+          "commit_title": "Fix Edit as well as “Delete & Redraft” on a poll not inserting empty option (#35892)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36016,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36016",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36016",
+          "state": "closed",
+          "merged_at": "2025-09-04T13:44:53Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": "(Not to be squash-merged)",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 35892,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35892",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35892",
+          "state": "closed",
+          "merged_at": "2025-08-25T12:40:37Z",
+          "pr_title": "Fix Edit as well as “Delete & Redraft” on a poll not inserting empty option",
+          "pr_body": "The poll authoring interface does not have an explicit “Add option” button anymore, it just adds an empty option whenever previous options have been filled.\r\n\r\nHowever, this does not occur when using “Edit” or “Delete & Redraft”, which cause the form to be pre-populated with the post's options, without a blank option to add more.\r\n\r\nThis PR fixes that, but the way it retrieves and passes the `maxOptions` is a bit awkward.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a3d4b7c9b9759e12d3e2bc3b4afbec195647caf9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a3d4b7c9b9759e12d3e2bc3b4afbec195647caf9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a3d4b7c9b9759e12d3e2bc3b4afbec195647caf9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-27T08:13:34Z",
+          "commit_title": "Fix API return types for interaction API helpers (#35915)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36016,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36016",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36016",
+          "state": "closed",
+          "merged_at": "2025-09-04T13:44:53Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": "(Not to be squash-merged)",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 35915,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35915",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35915",
+          "state": "closed",
+          "merged_at": "2025-08-27T08:26:11Z",
+          "pr_title": "Fix API return types for interaction API helpers",
+          "pr_body": "I believe those types were incorrect, the parameterized types are those of the expected API response, not of the internal model.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6b78be274b3410b8657e44edd6e95dd628dbe971",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6b78be274b3410b8657e44edd6e95dd628dbe971",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6b78be274b3410b8657e44edd6e95dd628dbe971",
+          "author_login": "unfokus",
+          "commit_author_date": "2025-09-02T12:25:55Z",
+          "commit_title": "Fix handling of edited status with new media and no text (#35970)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36016,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36016",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36016",
+          "state": "closed",
+          "merged_at": "2025-09-04T13:44:53Z",
+          "pr_title": "Backport changes to stable-4.3",
+          "pr_body": "(Not to be squash-merged)",
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 35970,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35970",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35970",
+          "state": "closed",
+          "merged_at": "2025-09-02T12:38:17Z",
+          "pr_title": "Fix handling of edited status with new media and no text",
+          "pr_body": "Under certain conditions a valid edit of a status doesn't federate to Mastodon.\r\n\r\nThe conditions being:\r\n1. The status edit contains neither text nor content warning\r\n2. The status edit contains one or more media attachments\r\n3. None of those media attachments were attached to the original post\r\n\r\n## Reproduction\r\n\r\nFor reproduction we need accounts on two instances. One to post from, and a remote instance to observe the bug on.\r\n\r\n1. Post a status\r\n2. Observe the status from a remote instance\r\n3. Edit the status:\r\n  a. Keep text/CW empty\r\n  b. Delete any existing images\r\n  c. Add a new image\r\n4. Observe that the status hasn't changed on the remote instance.\r\n5. Refresh the post by pasting its source URL into the Mastodon search. The following error message should appear:\r\n  `422 Validation failed: Text can't be blank`\r\n\r\n## Analysis\r\n\r\nAs someone who's not deep into the Rails and Mastodon ecosystem investigating the issue sent me on a wild goose chase.\r\n\r\nPost edits are processed in `app/services/activitypub/process_status_update_service.rb`. One of the steps is processing the changed media files. The fields `ordered_media_attachment_ids` on the post is overwritten with the new list.\r\nThe `media_attachments` object, which dynamically returns all media files that reference the post, is not refreshed, so it still returns an old cached state of attachments.\r\nThat results in the following constraint on the status object being violated:\r\n\r\nhttps://github.com/mastodon/mastodon/blob/ab698ff52108dfbe6c9c27ba36a110532f97fdc2/app/models/status.rb#L103\r\n\r\nThis happens because `with_media?` checks `ordered_media_attachments`, which returns basically the intersection of `ordered_media_attachment_ids` and `media_attachment`, which is empty when none of the original media items are retained during the edit, due to the cached values.\r\n\r\nhttps://github.com/mastodon/mastodon/blob/ab698ff52108dfbe6c9c27ba36a110532f97fdc2/app/models/status.rb#L287-L288\r\n\r\n## Fix\r\n\r\nThe fix is simply reloading the `media_attachment` object right after processing changed media files. The existing [reload in `download_media_files`](https://github.com/mastodon/mastodon/blob/6f8187e595c7df471444c5d0536bcaaf40b0edc5/app/services/activitypub/process_status_update_service.rb#L130) is not sufficient, as it's happening too late in the process.\r\n\r\n\r\nThis is my first contribution to a Ruby project, please let me know if I made a mistake or misunderstood something. :)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "055be70c5908a030196d21201fc50705a5409a19",
+          "html_url": "https://github.com/mastodon/mastodon/commit/055be70c5908a030196d21201fc50705a5409a19",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/055be70c5908a030196d21201fc50705a5409a19",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-05T10:17:02Z",
+          "commit_title": "Fix editing or deleting and redrafting polls in 4.3 (#36036)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36036,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36036",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36036",
+          "state": "closed",
+          "merged_at": "2025-09-05T10:17:02Z",
+          "pr_title": "Fix editing or deleting and redrafting polls in 4.3",
+          "pr_body": "I overlooked changes in our redux store when backporting a fix.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0ec46833fa48432acc7e2f377bbc705af3132c98",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0ec46833fa48432acc7e2f377bbc705af3132c98",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0ec46833fa48432acc7e2f377bbc705af3132c98",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T12:48:26Z",
+          "commit_title": "Update rails dependencies"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36125,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36125",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36125",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:37Z",
+          "pr_title": "Bump version to v4.3.12",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "51b29f4c30ef40d6f4ca6f8589b6093a5665c3a3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/51b29f4c30ef40d6f4ca6f8589b6093a5665c3a3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/51b29f4c30ef40d6f4ca6f8589b6093a5665c3a3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T12:54:01Z",
+          "commit_title": "Bump version to v4.3.12"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36125,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36125",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36125",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:37Z",
+          "pr_title": "Bump version to v4.3.12",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

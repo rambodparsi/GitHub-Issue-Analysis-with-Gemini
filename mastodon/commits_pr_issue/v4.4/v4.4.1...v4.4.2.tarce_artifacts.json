@@ -1,0 +1,691 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.1",
+  "compare": "v4.4.2",
+  "counts": {
+    "commits": 26,
+    "prs": 19,
+    "issues": 4,
+    "commit_pr": 19,
+    "commit_pr_issue": 4
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.1...v4.4.2.compare.json",
+    "commits": "commits/v4.4/v4.4.1...v4.4.2.commits.json",
+    "pulls": "pulls/v4.4/v4.4.1...v4.4.2.pulls.json",
+    "issues": "issues/v4.4/v4.4.1...v4.4.2.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "c0e242cb73c8e77983f1eec1df70d5421d6179fa",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c0e242cb73c8e77983f1eec1df70d5421d6179fa",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c0e242cb73c8e77983f1eec1df70d5421d6179fa",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-10T06:56:40Z",
+          "commit_title": "Fix styling of external log-in button (#35320)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35320,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35320",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35320",
+          "state": "closed",
+          "merged_at": "2025-07-10T07:09:04Z",
+          "pr_title": "Fix styling of external log-in button",
+          "pr_body": "Fixes #35313",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35313,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35313",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35313,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35313",
+          "state": "closed",
+          "issue_title": "External login button is no longer 100% width in 4.4",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Configure external login provider (SAML in my case)\n2. Click login button\n3. Observe that button width/positioning looks off\n\nBefore 4.4:\n\n<img width=\"2550\" height=\"1384\" alt=\"Screenshot showing the button centered and wide\" src=\"https://github.com/user-attachments/assets/0bd5a7f4-574e-4d00-929d-4245ed6a65e3\" />\n\nStarting from 4.4:\n\n<img width=\"1950\" height=\"952\" alt=\"Screenshot showing the button small and left-aligned\" src=\"https://github.com/user-attachments/assets/3fcf74c6-beba-4e48-8923-d9c43bbb69c6\" />\n\n### Expected behaviour\n\nButton is rendered centered in the page under the \"Login with\" text\n\n### Actual behaviour\n\nButton is rendered to the left, not under the \"Login with\" text\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nsocial.edu.nl\n\n### Mastodon version\n\nv4.4.0\n\n### Browser name and version\n\nFirefox 140.0.2\n\n### Operating system\n\nmacOS 15.5\n\n### Technical details\n\nIt seems the CSS `width` property of this button changed from `100%` to `auto` in 4.4.",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f65f6ad6f11e0377878fbae6e0b34816c465c6a1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f65f6ad6f11e0377878fbae6e0b34816c465c6a1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f65f6ad6f11e0377878fbae6e0b34816c465c6a1",
+          "author_login": "ChaosExAnima",
+          "commit_author_date": "2025-07-11T15:18:34Z",
+          "commit_title": "Make bio hashtags open the local page instead of the remote instance (#35349)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35349,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35349",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35349",
+          "state": "closed",
+          "merged_at": "2025-07-11T15:32:30Z",
+          "pr_title": "Make bio hashtags open the local page instead of the remote instance",
+          "pr_body": "Fixes #34981.\r\n\r\nThis replaces the current account bio with the new `AccountBio` component, and changes that component to add the hashtag menu instead. Also there are minor bugfixes that clean empty bios with `<p>` tags on API input instead of inside components and prevent `mention` functionality from being applied to hashtags.\r\n\r\nhttps://github.com/user-attachments/assets/e4abebbb-46e0-47da-b0e8-6ab1590968f1\r\n\r\n",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34981,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34981",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34981,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34981",
+          "state": "closed",
+          "issue_title": "Clicking on hashtags in the bio jumps to their instance (v4.4.0-beta.1)",
+          "issue_body": "### Steps to reproduce the problem\n\n1. go to a profile with a hashtag in the bio\n2. click on a hashtag in the bio\n3. it opens the website of their instance with that hashtag\n...\n\n\n### Expected behaviour\n\nshould open in my instance\n\n### Actual behaviour\n\ndoes not open in my instance\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nafterspace.rocks\n\n### Mastodon version\n\nv4.4.0-beta.1\n\n### Browser name and version\n\nFirefox 139.0.1 (64-Bit)\n\n### Operating system\n\nWin 10 Pro\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "ef6f5f9357d39c28ce726eebc403abf752f6313c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ef6f5f9357d39c28ce726eebc403abf752f6313c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ef6f5f9357d39c28ce726eebc403abf752f6313c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-11T16:35:06Z",
+          "commit_title": "Fix quote attributes missing from Mastodon's context (#35354)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35354,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35354",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35354",
+          "state": "closed",
+          "merged_at": "2025-07-11T16:46:57Z",
+          "pr_title": "Fix quote attributes missing from Mastodon's context",
+          "pr_body": "Without those, Mastodon would essentially discard the `quote`, `quoteUri`, `_misskey_quote` and `quoteAuthorization` attributes when compacting incoming JSON-LD against its own context.\r\n\r\nThis needs to be backported to 4.4.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a79dbf833488191278d27af00fbf0ba360e4f452",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a79dbf833488191278d27af00fbf0ba360e4f452",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a79dbf833488191278d27af00fbf0ba360e4f452",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-15T07:52:34Z",
+          "commit_title": "fix: Improve `Dropdown` component accessibility (#35373)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35373,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35373",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35373",
+          "state": "closed",
+          "merged_at": "2025-07-15T08:04:55Z",
+          "pr_title": "fix: Improve `Dropdown` component accessibility",
+          "pr_body": "Fixes #35338\r\n\r\n### Changes proposed in this PR:\r\n- Fixes keyboard accessibility of `Dropdown` component, adding missing aria attributes and simplifying focus handling:\r\n  - When closing the menu, focus now always returns to the button that opened the menu as per [this WCAG Example implementation](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/)\r\n- Makes the \"More\" menu item take up the whole width of the menu, increasing its click target\r\n- Adds a `placement` prop to customise the dropdown menu's position per component\r\n- Removes deprecated `onKeyPress` prop from `IconButton` which was only used by the `Dropdown` component and is not needed anymore now since `onClick` handles keyboard interactions fine\r\n\r\n### Screencap\r\n\r\nThis video shows the menu being opened by <kbd>Enter</kbd> key first, then <kbd>Space</kbd>, then by clicking on the empty space to the right of the \"More\" button. Each time the menu is navigated briefly and closed via <kbd>Esc</kbd>\r\n\r\nhttps://github.com/user-attachments/assets/bb68a706-f335-4735-9e8a-f16f6624ad0c",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35338,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35338",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35338,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35338",
+          "state": "closed",
+          "issue_title": "Accessibility with \"more\" button on sidebar",
+          "issue_body": "### Steps to reproduce the problem\n\n### Clickable size\n1. Click blank area next to \"More\" button2.\n\n### Keyboard\n1. Tab to navigate \"More\" button (Alt click any near button and press tab guides you easier)\n2. Press space bar or enter to access more menu\n...\n\n\n### Expected behaviour\n\nWorks fine\n\n### Actual behaviour\n\nClickable size is smaller than other buttons, Menu only appeared on holding button when keyboard navigating\n\n### Detailed description\n\nThis is visualised clickable area\n<img width=\"393\" height=\"622\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/b99dcdb8-b9bf-41dc-8d67-1bdbdf43c9e8\" />\n\nThis menu only appears while holding space bar. tapping not works\n<img width=\"393\" height=\"963\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7a515893-1a00-45d3-932c-4923094cfe71\" />\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.5.0-nightly.2025-07-08\n\n### Browser name and version\n\nFirefox 140.0.2\n\n### Operating system\n\nUbuntu 24.10\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "c4b7c3bddad385c9afabb88eadacc326101ad441",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c4b7c3bddad385c9afabb88eadacc326101ad441",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c4b7c3bddad385c9afabb88eadacc326101ad441",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-15T09:32:02Z",
+          "commit_title": "Fix `quoteAuthorization` type in JSON-LD context (#35380)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35380,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35380",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35380",
+          "state": "closed",
+          "merged_at": "2025-07-15T09:43:45Z",
+          "pr_title": "Fix `quoteAuthorization` type in JSON-LD context",
+          "pr_body": "See https://codeberg.org/fediverse/fep/pulls/654",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7ae78b1032a25a0d9244d616ba716c102fedf0ea",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7ae78b1032a25a0d9244d616ba716c102fedf0ea",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7ae78b1032a25a0d9244d616ba716c102fedf0ea",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-15T13:18:37Z",
+          "commit_title": "Refactor `ActivityPub::Activity::Accept` and `ActivityPub::Activity::Reject` specs (#35382)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35382,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35382",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35382",
+          "state": "closed",
+          "merged_at": "2025-07-15T13:32:38Z",
+          "pr_title": "Refactor `ActivityPub::Activity::Accept` and `ActivityPub::Activity::Reject` specs",
+          "pr_body": null,
+          "labels": [
+            "refactoring",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ee83f3a8b97d0d54b087765226f02e498d0b50d4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ee83f3a8b97d0d54b087765226f02e498d0b50d4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ee83f3a8b97d0d54b087765226f02e498d0b50d4",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-15T13:01:03Z",
+          "commit_title": "Always give local quote of remote posts a quote request URI (#35383)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35383,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35383",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35383",
+          "state": "closed",
+          "merged_at": "2025-07-15T13:12:10Z",
+          "pr_title": "Always give local quote of remote posts a quote request URI",
+          "pr_body": "Populate the `activity_uri` with a `before_validation` callback, instead of relying on the calling sites for that.\r\n\r\nAlso remove the buggy `id` fallback, and mark the PR as to be backported for that.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "da0cc0f5b97886b29bdd12347672a06babd81cb9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/da0cc0f5b97886b29bdd12347672a06babd81cb9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/da0cc0f5b97886b29bdd12347672a06babd81cb9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-07-15T15:36:12Z",
+          "commit_title": "Fix support for quote verification in implicit status updates (#35384)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35384,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35384",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35384",
+          "state": "closed",
+          "merged_at": "2025-07-15T15:48:00Z",
+          "pr_title": "Fix support for quote verification in implicit status updates",
+          "pr_body": "In 4.4, updating a quote's approval after discovery was supported, but only through the explicit update path (post edition).\r\n\r\nWe do not want quote approvals to be tied to post edition, and we don't want a quote to be swapped without going through edition, so tweaked the code to handle the quote approval part in implicit updates as well. This will need to be backported for Mastodon 4.4 to properly process third-party quote approval.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "77fe044f0366bc8a03ad76703a104c27db5cc305",
+          "html_url": "https://github.com/mastodon/mastodon/commit/77fe044f0366bc8a03ad76703a104c27db5cc305",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/77fe044f0366bc8a03ad76703a104c27db5cc305",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-15T15:46:44Z",
+          "commit_title": "Update age limit wording (#35387)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35387,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35387",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35387",
+          "state": "closed",
+          "merged_at": "2025-07-15T16:00:18Z",
+          "pr_title": "Update age limit wording",
+          "pr_body": "Fixes MAS-489\r\n\r\n### Changes proposed in this PR:\r\n- Update age limit wording to mention the site's domain specifically rather than all of Mastodon\r\n\r\n### Screenshots\r\n\r\n<img width=\"482\" height=\"131\" alt=\"image\" src=\"https://github.com/user-attachments/assets/712ca6d2-2ddb-4c44-81b9-58cbb6ccc03e\" />\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a2888f1bb2a43fc82e222a1e1f3d3f41d50c89a5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a2888f1bb2a43fc82e222a1e1f3d3f41d50c89a5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a2888f1bb2a43fc82e222a1e1f3d3f41d50c89a5",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-15T15:57:31Z",
+          "commit_title": "refactor: Only remove pointer-events when necessary (#35390)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35390,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35390",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35390",
+          "state": "closed",
+          "merged_at": "2025-07-15T16:10:52Z",
+          "pr_title": "refactor: Only remove pointer-events when necessary",
+          "pr_body": "Speculative fix for #35328\r\n\r\n### Changes proposed in this PR:\r\n\r\n- Removes `pointer-events: none` declarations where not necessary (i.e. on large viewports where the menu won't be displayed as an overlay), in the hopes that it'll fix an issue clicking menu items using graphics tablets.\r\n   \r\n   I confirmed that on mobile, `pointer-events: none/auto` is still applied via the `columns-area__panels__pane--navigational` class and I tested this in firefox dev tools mobile mode and Xcode Simulator to ensure that the mobile menu behaviour isn't affected.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8c3c1faaecadd27895d945fc3bbbab8801b96d54",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8c3c1faaecadd27895d945fc3bbbab8801b96d54",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8c3c1faaecadd27895d945fc3bbbab8801b96d54",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-16T12:03:39Z",
+          "commit_title": "fix: Fix selected item in poll select menus is unreadable in Firefox (#35402)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35402,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35402",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35402",
+          "state": "closed",
+          "merged_at": "2025-07-16T12:16:11Z",
+          "pr_title": "fix: Fix selected item in poll select menus is unreadable in Firefox",
+          "pr_body": "Fixes #35371\r\n\r\n### Changes proposed in this PR:\r\n- Fixes the selected item being unreadable in the select menus of the composer (poll options)\r\n  Cause of this issue is a quirk in Firefox whereby the popover menu of `<select>` elements inherits the background colour of the select element, and ours didn't have one set\r\n\r\n### Screenshots\r\n\r\n| **Before** | **After** |\r\n|--------|--------|\r\n| <img width=\"278\" height=\"284\" alt=\"Screenshot 2025-07-16 at 13 37 14\" src=\"https://github.com/user-attachments/assets/679d0c4b-d8b8-438d-aab6-638cd1f8de93\" /> | <img width=\"222\" height=\"260\" alt=\"Screenshot 2025-07-16 at 13 36 34\" src=\"https://github.com/user-attachments/assets/ad0db5ad-3d3e-46e4-b484-ed76d4e96b1b\" /> | ",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35371,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35371",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35371,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35371",
+          "state": "closed",
+          "issue_title": "Firefox/Windows <select> on poll duration is ugly on dark theme.",
+          "issue_body": "### Steps to reproduce the problem\n\n<img width=\"285\" height=\"319\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/84c8e254-5d37-468f-bcf7-afcbf27c9260\" />\n\nselect poll duration.\n\n### Expected behaviour\n\nthe selected period should be darker instead of white on a light background\n\n### Actual behaviour\n\nwhite on light selection.\n\n### Detailed description\n\n_No response_\n\n### Mastodon instance\n\nM.S\n\n### Mastodon version\n\nv4.5.0-nightly.2025-07-11\n\n### Browser name and version\n\nFirefox\n\n### Operating system\n\nWindows 11\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "2aff51013cfa96d199a11f1c3a344a8aa103cf44",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2aff51013cfa96d199a11f1c3a344a8aa103cf44",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2aff51013cfa96d199a11f1c3a344a8aa103cf44",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-17T08:56:00Z",
+          "commit_title": "fix: Improve a11y of custom select menus in notifications settings (#35403)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35403,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35403",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35403",
+          "state": "closed",
+          "merged_at": "2025-07-17T09:11:33Z",
+          "pr_title": "fix: Improve a11y of custom select menus in notifications settings",
+          "pr_body": "### Changes proposed in this PR:\r\n- Applies the accessibility fixes from earlier PR #35373 to the `SelectWithLabel` component, allowing screen reader users to access the menu's selected value as well as the menu's open/closed state. (Previously, both the label and description were announced as the button's label, overriding the button's content with the selected value.)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1d1b17b04b45218233179081f5dd20b0d436fa50",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1d1b17b04b45218233179081f5dd20b0d436fa50",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1d1b17b04b45218233179081f5dd20b0d436fa50",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-17T17:28:30Z",
+          "commit_title": "fix: Fix quote posts styling on notifications page (#35411)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35411,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35411",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35411",
+          "state": "closed",
+          "merged_at": "2025-07-17T17:41:20Z",
+          "pr_title": "fix: Fix quote posts styling on notifications page",
+          "pr_body": "### Changes proposed in this PR:\r\n- Fixes messy spacing within quote posts on the notifications page.\r\n  \r\n  (The status spacing on this page is implemented using rather messy CSS overrides, so rather than overriding the overrides, I moved the spacing amount into a custom property and set it to `0` for quote posts.)\r\n\r\n### Screenshots\r\n\r\n| **Before** | **After** |\r\n|--------|--------|\r\n| <img width=\"600\" height=\"1000\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f5919639-8f72-45a9-8d26-ab701b7d22a6\" /> | <img width=\"601\" height=\"1078\" alt=\"image\" src=\"https://github.com/user-attachments/assets/262e4e57-b8fb-4ffa-9116-1100feb3ddb2\" /> | ",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a250928934d23f027c052189b4ef203d266ede79",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a250928934d23f027c052189b4ef203d266ede79",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a250928934d23f027c052189b4ef203d266ede79",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-17T11:12:54Z",
+          "commit_title": "fix: Add `lang` attribute to current composer language in alt text modal (#35412)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35412,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35412",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35412",
+          "state": "closed",
+          "merged_at": "2025-07-17T11:25:36Z",
+          "pr_title": "fix: Add `lang` attribute to current composer language in alt text modal",
+          "pr_body": "### Changes proposed in this PR:\r\n- Fixes the `lang` attribute in the alt text modal not being properly retrieved from state",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a89d11bc08d8efab2d8a3cafe8a22575c165da0a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a89d11bc08d8efab2d8a3cafe8a22575c165da0a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a89d11bc08d8efab2d8a3cafe8a22575c165da0a",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-17T12:39:40Z",
+          "commit_title": "refactor: Disable `useDrag` hook when main menu is not openable (#35414)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35414,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35414",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35414",
+          "state": "closed",
+          "merged_at": "2025-07-17T12:51:10Z",
+          "pr_title": "refactor: Disable `useDrag` hook when main menu is not openable",
+          "pr_body": "This is another speculative fix for #35328\r\n\r\n### Changes proposed in this PR:\r\n- Disable drag handling when the main menu isn't \"openable\" (e.g. on non-mobile viewport sizes). This should cause no functional changes",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d73b9fba9052bd19a6ffdb66ebbe73806a84e915",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d73b9fba9052bd19a6ffdb66ebbe73806a84e915",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d73b9fba9052bd19a6ffdb66ebbe73806a84e915",
+          "author_login": "renovate[bot]",
+          "commit_author_date": "2025-07-21T12:25:28Z",
+          "commit_title": "chore(deps): update dependency nokogiri to v1.18.9 (#35433)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35433,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35433",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35433",
+          "state": "closed",
+          "merged_at": "2025-07-21T12:39:54Z",
+          "pr_title": "chore(deps): update dependency nokogiri to v1.18.9",
+          "pr_body": "This PR contains the following updates:\n\n| Package | Change | Age | Confidence |\n|---|---|---|---|\n| nokogiri | `1.18.8` -> `1.18.9` | [![age](https://developer.mend.io/api/mc/badges/age/rubygems/nokogiri/1.18.9?slim=true)](https://docs.renovatebot.com/merge-confidence/) | [![confidence](https://developer.mend.io/api/mc/badges/confidence/rubygems/nokogiri/1.18.8/1.18.9?slim=true)](https://docs.renovatebot.com/merge-confidence/) |\n\n---\n\n### Configuration\n\n📅 **Schedule**: Branch creation - At any time (no schedule defined), Automerge - At any time (no schedule defined).\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you are satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the rebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update again.\n\n---\n\n - [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check this box\n\n---\n\nThis PR was generated by [Mend Renovate](https://mend.io/renovate/). View the [repository job log](https://developer.mend.io/github/mastodon/mastodon).\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0MS4yMy4yIiwidXBkYXRlZEluVmVyIjoiNDEuMjMuMiIsInRhcmdldEJyYW5jaCI6Im1haW4iLCJsYWJlbHMiOlsiZGVwZW5kZW5jaWVzIiwicnVieSJdfQ==-->\n",
+          "labels": [
+            "dependencies",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e103815d2d1603f83f30f1a1e8a7a4f9aea80ac6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e103815d2d1603f83f30f1a1e8a7a4f9aea80ac6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e103815d2d1603f83f30f1a1e8a7a4f9aea80ac6",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-07-18T18:34:04Z",
+          "commit_title": "Don't require JSDoc params & return in TS (#35426)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35426,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35426",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35426",
+          "state": "closed",
+          "merged_at": "2025-07-18T18:45:44Z",
+          "pr_title": "Don't require JSDoc params & return in TS",
+          "pr_body": "### Changes proposed in this PR:\r\n- Removes the need to define `@params` and `@returns` in JSDoc-style comments in TS/TSX files, allowing us to write simple comments like this one that can be picked up by an IDE\r\n  <img width=\"325\" height=\"126\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7ae3d57e-e5c5-45de-a0bb-a522a829f309\" />\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "aec6d0f8076aeef0e4ac0712e75eac425bde2290",
+          "html_url": "https://github.com/mastodon/mastodon/commit/aec6d0f8076aeef0e4ac0712e75eac425bde2290",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/aec6d0f8076aeef0e4ac0712e75eac425bde2290",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-21T14:02:49Z",
+          "commit_title": "Bump version to v4.4.2"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35440,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35440",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35440",
+          "state": "closed",
+          "merged_at": "2025-07-23T14:08:43Z",
+          "pr_title": "Bump version to v4.4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "713965467d8130baccee0b9fd93b9e9f69c5a037",
+          "html_url": "https://github.com/mastodon/mastodon/commit/713965467d8130baccee0b9fd93b9e9f69c5a037",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/713965467d8130baccee0b9fd93b9e9f69c5a037",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T09:44:09Z",
+          "commit_title": "Update dependency axios"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4558cfadd867049ff1ec3aa20975552d90b71954",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4558cfadd867049ff1ec3aa20975552d90b71954",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4558cfadd867049ff1ec3aa20975552d90b71954",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T09:55:12Z",
+          "commit_title": "Update dependency thor"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d664b9d8ffb93d1a800421bee94714d921f83608",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d664b9d8ffb93d1a800421bee94714d921f83608",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d664b9d8ffb93d1a800421bee94714d921f83608",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T09:55:57Z",
+          "commit_title": "Update \"Security\" section..."
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7924a27ae7610c70987b6e4796e37e0d4a7682ab",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7924a27ae7610c70987b6e4796e37e0d4a7682ab",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7924a27ae7610c70987b6e4796e37e0d4a7682ab",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T12:53:19Z",
+          "commit_title": "Update CHANGELOG.md"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7a9e98f4d6c690e2a65db040108d68b0649f2ef8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7a9e98f4d6c690e2a65db040108d68b0649f2ef8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7a9e98f4d6c690e2a65db040108d68b0649f2ef8",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T12:53:38Z",
+          "commit_title": "Update CHANGELOG.md"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d6859c9658b96b20576a7cd5f6128d584758bbd8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d6859c9658b96b20576a7cd5f6128d584758bbd8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d6859c9658b96b20576a7cd5f6128d584758bbd8",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T12:53:47Z",
+          "commit_title": "Update CHANGELOG.md"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c727197760bee936aa537aa686da798b9b9af2a0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c727197760bee936aa537aa686da798b9b9af2a0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c727197760bee936aa537aa686da798b9b9af2a0",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-07-23T12:59:35Z",
+          "commit_title": "Combine two items"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "77d2cdb30230ae6292bd247f6c6f97d00bd38084",
+          "html_url": "https://github.com/mastodon/mastodon/commit/77d2cdb30230ae6292bd247f6c6f97d00bd38084",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/77d2cdb30230ae6292bd247f6c6f97d00bd38084",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-07-23T14:28:50Z",
+          "commit_title": "New Crowdin Translations for stable-4.4 (automated) (#35477)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35477,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35477",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35477",
+          "state": "closed",
+          "merged_at": "2025-07-23T14:28:51Z",
+          "pr_title": "New Crowdin Translations for stable-4.4 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

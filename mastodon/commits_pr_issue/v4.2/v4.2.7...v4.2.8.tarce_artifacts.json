@@ -1,0 +1,228 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.7",
+  "compare": "v4.2.8",
+  "counts": {
+    "commits": 8,
+    "prs": 7,
+    "issues": 0,
+    "commit_pr": 7,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.7...v4.2.8.compare.json",
+    "commits": "commits/v4.2/v4.2.7...v4.2.8.commits.json",
+    "pulls": "pulls/v4.2/v4.2.7...v4.2.8.pulls.json",
+    "issues": "issues/v4.2/v4.2.7...v4.2.8.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "c5d56de98d784825edc464b6e5e47884294ea701",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c5d56de98d784825edc464b6e5e47884294ea701",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c5d56de98d784825edc464b6e5e47884294ea701",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-16T12:57:04Z",
+          "commit_title": "Fix linting failure"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "fbb07893b82002686a144699ded4401ccd5b8ea7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/fbb07893b82002686a144699ded4401ccd5b8ea7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/fbb07893b82002686a144699ded4401ccd5b8ea7",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-22T12:25:53Z",
+          "commit_title": "Update dependencies (#29346)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29346,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29346",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29346",
+          "state": "closed",
+          "merged_at": "2024-02-22T12:25:53Z",
+          "pr_title": "Update dependencies",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "28b666b0d522071e38a5a0a3376d4548c36ee3e9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/28b666b0d522071e38a5a0a3376d4548c36ee3e9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/28b666b0d522071e38a5a0a3376d4548c36ee3e9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-22T13:39:42Z",
+          "commit_title": "Automatically switch from open to approved registrations in absence of moderators (#29337)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29337,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29337",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29337",
+          "state": "closed",
+          "merged_at": "2024-02-22T13:39:42Z",
+          "pr_title": "Automatically switch from open to approved registrations in absence of moderators",
+          "pr_body": "Backport of #29318",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4fd22acb4ad625b263794afa6d4383e73ce9e5b1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4fd22acb4ad625b263794afa6d4383e73ce9e5b1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4fd22acb4ad625b263794afa6d4383e73ce9e5b1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-22T17:15:38Z",
+          "commit_title": "Fix auto-close email being sent to users with devops permissions instead of settings permissions (#29356)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29356,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29356",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29356",
+          "state": "closed",
+          "merged_at": "2024-02-22T17:15:38Z",
+          "pr_title": "Fix auto-close email being sent to users with devops permissions instead of settings permissions",
+          "pr_body": "Backport #29355 to 4.2",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "328a9b81574baf1644df9b0792f716c64be12a5c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/328a9b81574baf1644df9b0792f716c64be12a5c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/328a9b81574baf1644df9b0792f716c64be12a5c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-22T17:15:59Z",
+          "commit_title": "Change registrations to be disabled by default for new servers (#29353)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29353,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29353",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29353",
+          "state": "closed",
+          "merged_at": "2024-02-22T17:15:59Z",
+          "pr_title": "Change registrations to be disabled by default for new servers",
+          "pr_body": "Backport of #29280 to 4.2",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "9a7802655f652524be58fe73efa0e6077ff65ea2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9a7802655f652524be58fe73efa0e6077ff65ea2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9a7802655f652524be58fe73efa0e6077ff65ea2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-22T18:12:53Z",
+          "commit_title": "Fix link verifications when page size exceeds 1MB (#29361)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29361,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29361",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29361",
+          "state": "closed",
+          "merged_at": "2024-02-22T18:12:53Z",
+          "pr_title": "Fix link verifications when page size exceeds 1MB",
+          "pr_body": "Backport #29358 to 4.2",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "f3ad91895028c0d593a9412f2754ecbf9400ad39",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f3ad91895028c0d593a9412f2754ecbf9400ad39",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f3ad91895028c0d593a9412f2754ecbf9400ad39",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-23T08:53:04Z",
+          "commit_title": "Fix processing of `Link` objects in `Image` objects (#29363)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29363,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29363",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29363",
+          "state": "closed",
+          "merged_at": "2024-02-23T08:53:04Z",
+          "pr_title": "Fix processing of `Link` objects in `Image` objects",
+          "pr_body": "Backport #29335 to 4.2",
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bdb6650ebc73566a09482521a43b457270b3c44a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bdb6650ebc73566a09482521a43b457270b3c44a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bdb6650ebc73566a09482521a43b457270b3c44a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-02-23T13:09:41Z",
+          "commit_title": "Bump version to v4.2.8 (#29370)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 29370,
+          "html_url": "https://github.com/mastodon/mastodon/pull/29370",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/29370",
+          "state": "closed",
+          "merged_at": "2024-02-23T13:09:42Z",
+          "pr_title": "Bump version to v4.2.8",
+          "pr_body": "### Added\r\n\r\n- Add hourly task to automatically require approval for new registrations in the absence of moderators ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29318), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/29355))\r\n  In order to prevent future abandoned Mastodon servers from being used for spam, harassment and other malicious activity, Mastodon will now automatically switch new user registrations to require moderator approval whenever they are left open and no activity (including non-moderation actions from apps) from any logged-in user with permission to access moderation reports has been detected in a full week.\r\n  When this happens, users with the permission to change server settings will receive an email notification.\r\n  This feature is disabled when `EMAIL_DOMAIN_ALLOWLIST` is used, and can also be disabled with `DISABLE_AUTOMATIC_SWITCHING_TO_APPROVED_REGISTRATIONS=true`.\r\n\r\n### Changed\r\n\r\n- Change registrations to be closed by default on new installations ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29280))\r\n  If you are running a server and never changed your registrations mode from the default, updating will automatically close your registrations.\r\n  Simply re-enable them through the administration interface or using `tootctl settings registrations open` if you want to enable them again.\r\n\r\n### Fixed\r\n\r\n- Fix processing of remote ActivityPub actors making use of `Link` objects as `Image` `url` ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29335))\r\n- Fix link verifications when page size exceeds 1MB ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/29358))",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

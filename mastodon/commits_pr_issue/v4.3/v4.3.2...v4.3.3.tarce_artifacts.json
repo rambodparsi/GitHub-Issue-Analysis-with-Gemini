@@ -1,0 +1,426 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.2",
+  "compare": "v4.3.3",
+  "counts": {
+    "commits": 14,
+    "prs": 12,
+    "issues": 3,
+    "commit_pr": 12,
+    "commit_pr_issue": 3
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.2...v4.3.3.compare.json",
+    "commits": "commits/v4.3/v4.3.2...v4.3.3.commits.json",
+    "pulls": "pulls/v4.3/v4.3.2...v4.3.3.pulls.json",
+    "issues": "issues/v4.3/v4.3.2...v4.3.3.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "23376cb6913caca4c36db77cecfe8d24cd92946f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/23376cb6913caca4c36db77cecfe8d24cd92946f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/23376cb6913caca4c36db77cecfe8d24cd92946f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-04T07:41:21Z",
+          "commit_title": "Fix `NameError` in status update processing (#33161)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33161,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33161",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33161",
+          "state": "closed",
+          "merged_at": "2024-12-04T07:41:22Z",
+          "pr_title": "Fix `NameError` in status update processing",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "3a4242ce016692d990bb8fdb2c91646f92996f27",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3a4242ce016692d990bb8fdb2c91646f92996f27",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3a4242ce016692d990bb8fdb2c91646f92996f27",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-16T10:10:08Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bcc798d6a78535ef69700349c9eefc1554ea365d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bcc798d6a78535ef69700349c9eefc1554ea365d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bcc798d6a78535ef69700349c9eefc1554ea365d",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-12-04T09:05:58Z",
+          "commit_title": "Fix empty authors preview card serialization (#33151)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33151,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33151",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33151",
+          "state": "closed",
+          "merged_at": "2024-12-04T09:13:34Z",
+          "pr_title": "Fix empty authors preview card serialization",
+          "pr_body": "Resolves https://github.com/mastodon/mastodon/issues/33139\r\n\r\n",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 33139,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33139",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33139,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33139",
+          "state": "closed",
+          "issue_title": "https://docs.joinmastodon.org/entities/PreviewCard/#authors appears to be broken",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Fetch a status that doesn't have author metadata, e.g., https://mastodon.social/api/v1/statuses/113584533489478255\n2. Look at the `authors` property.\n\n\n### Expected behaviour\n\nPer the documentation, the `authors` property is a non-optional, non-nullable list. If there are no authors this should be an empty list.\n\n### Actual behaviour\n\nIt's a single-element list with no author information.\n\n### Detailed description\n\nPer the above. The relevant bit of the response looks like:\n\n```json\n  \"card\": {\n    \"url\": \"https://accessibleandroid.com/gemini-live-on-android-real-time-updates-or-real-time-letdowns/#Android\",\n    \"title\": \"Gemini Live on Android: Real-Time Updates or Real-Time Letdowns? - Accessible Android\",\n    \"description\": \"When Google launched the Gemini app with its Gemini Live feature for all users, I couldn’t help but get excited about the promise of real-time, web-enabled\",\n    \"language\": \"en\",\n    \"type\": \"link\",\n    \"author_name\": \"\",\n    \"author_url\": \"\",\n    \"provider_name\": \"Accessible Android\",\n    \"provider_url\": \"\",\n    \"html\": \"\",\n    \"width\": 0,\n    \"height\": 0,\n    \"image\": null,\n    \"image_description\": \"\",\n    \"embed_url\": \"\",\n    \"blurhash\": null,\n    \"published_at\": \"2024-12-02T18:00:17.000Z\",\n    \"authors\": [\n      {\n        \"name\": \"\",\n        \"url\": \"\",\n        \"account\": null\n      }\n    ]\n  },\n```\n\nNote the `authors` property at the bottom of the card.\n\n### Mastodon instance\n\nmastodon.social\n\n### Mastodon version\n\nv4.4.0-nightly.2024-12-02\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "734f0dd182208f351d65b7fceba88c9a53109cc9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/734f0dd182208f351d65b7fceba88c9a53109cc9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/734f0dd182208f351d65b7fceba88c9a53109cc9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-06T10:04:25Z",
+          "commit_title": "Fix `fediverse:creator` metadata not showing up in REST API (#33466)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33466,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33466",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33466",
+          "state": "closed",
+          "merged_at": "2025-01-06T10:13:31Z",
+          "pr_title": "Fix `fediverse:creator` metadata not showing up in REST API",
+          "pr_body": "Fix regression from #33151",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "afcfc6400759729fb2870b70ff1f854cc3e2736d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/afcfc6400759729fb2870b70ff1f854cc3e2736d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/afcfc6400759729fb2870b70ff1f854cc3e2736d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-05T09:38:48Z",
+          "commit_title": "Fix deletion of unconfirmed users with Webauthn set (#33186)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33186,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33186",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33186",
+          "state": "closed",
+          "merged_at": "2024-12-05T09:46:44Z",
+          "pr_title": "Fix deletion of unconfirmed users with Webauthn set",
+          "pr_body": "This foreign key could use a `on_delete: :cascade`, but this fix doesn't rely on this, to avoid complicating backports with database migrations.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "533477e77cf5255125a565e8404d4249e8f8b86e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/533477e77cf5255125a565e8404d4249e8f8b86e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/533477e77cf5255125a565e8404d4249e8f8b86e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T10:59:28Z",
+          "commit_title": "Fix processing of mentions for post edits with an existing corresponding silent mention (#33227)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33227,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33227",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33227",
+          "state": "closed",
+          "merged_at": "2024-12-11T13:07:48Z",
+          "pr_title": "Fix processing of mentions for post edits with an existing corresponding silent mention",
+          "pr_body": "Fixes #33208",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 33208,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33208",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33208,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33208",
+          "state": "closed",
+          "issue_title": "Toot edit appears to fail due to invalid mention",
+          "issue_body": "## Description\n\nAt least on a few toots (not every toot) I'm experiencing a bug where I try to edit the toot, Mastodon shows an error,  `422 Mention is invalid`. Despite the visible error, the edit DOES go through, but mentions on the toot lose their special highlighting.\n\nAs far as I can tell, these should be valid mentions.\n\n![Image](https://github.com/user-attachments/assets/b4d25987-ed9c-491c-a68a-9471257914fe)\n\n## Reproduce steps\n\n1. Edit the toot by adding a period at the end or something and hit save.\n2. Mastodon shows \"422 Mention is invalid\".\n3. Any mentions in the toot that were previously highlighted will now lose their highlight. If this is a reply toot, the Mastodon UI will now show in plain text the mention of the person you're replying to (it normally hides this).\n\nIf you refresh the page, your toot will show your new update. So, it actually didn't lose your edit. But, the mentions are still broken.\n\nExperienced on FOSStodon.org, server version `4.3.2`.\n\n## Examples\n\n💡  It may be of note that the 2 examples I have below are mentions of Mastodon servers that are on subdomains. My \"counter example\" further down where the edit works, mentions servers that are not on a subdomain.\n\n### 1. https://fosstodon.org/@chris_hayes/113601188329843140\n\nI cannot edit this toot without Mastodon claiming the mention to be invalid. As you can see in the toot, the mention is not highlighted.\n\nBoth FOSStodon.org and the server of the user mentioned (mastodon.gamedev.place) are on `4.3.2`.\n\n**Network request details:**\n\n❌ PUT 422\n\n**Request payload**\n\n```json\n{\n  \"status\": \"@GameDeveloperDotCom@mastodon.gamedev.place Kind of funny they had to clarify this, but I can appreciate when you're explaining technical topics in non-technical terms, sometimes you have to talk like this.\",\n  \"in_reply_to_id\": \"113601048795197020\",\n  \"media_ids\": [\n    \"113601183876992602\"\n  ],\n  \"media_attributes\": [\n    {\n      \"id\": \"113601183876992602\",\n      \"description\": \"Highlighted text from a document about multiplayer video games, stating: 'Computer systems have relied on players to specifically input the actual voice message and/or the typed message ... because computers are unable to read players' minds to determine what the players want to say to each other.\"\n    }\n  ],\n  \"sensitive\": false,\n  \"spoiler_text\": \"\",\n  \"visibility\": \"unlisted\",\n  \"poll\": null,\n  \"language\": \"en\"\n}\n```\n\n**Response payload**\n\n```json\n{\"error\":\"Validation failed: Mentions is invalid\"}\n```\n\n### 2. https://fosstodon.org/@chris_hayes/113601138476058347\n\nSame issue but with a mention of a user from a different server (peertube.kaleidos.net).\n\n**Network request details**\n\n❌  PUT 422\n\n**Request payload**\n\n```json\n{\n  \"status\": \"@penpot_app@peertube.kaleidos.net Is the thumbnail right? January 29, 2024 at 3 PM UTC\",\n  \"in_reply_to_id\": \"113600977448739941\",\n  \"media_ids\": [],\n  \"media_attributes\": [],\n  \"sensitive\": false,\n  \"spoiler_text\": \"\",\n  \"visibility\": \"unlisted\",\n  \"poll\": null,\n  \"language\": \"en\"\n}\n```\n\n**Response payload**\n\n```json\n{\n  \"error\": \"Validation failed: Mentions is invalid\"\n}\n```\n\n## Counter examples\n\n✅  This edit worked fine without any errors and the mentions also highlight correctly.\n\n### 1. https://fosstodon.org/@chris_hayes/113595569877203984\n\nRequest payload\n\n```json\n{\n  \"status\": \"@jencmars@mastodon.art @KeithAmmann@dice.camp Ooh, very cool. Out of curiosity - any specific reason for using a blue pencil? I've seen that in 2d animation in combination with red, but I'm not that familiar with illustrator tools.\",\n  \"in_reply_to_id\": \"113595546472505158\",\n  \"media_ids\": [],\n  \"media_attributes\": [],\n  \"sensitive\": false,\n  \"spoiler_text\": \"\",\n  \"visibility\": \"unlisted\",\n  \"poll\": null,\n  \"language\": \"en\"\n}\n```\n\nResponse payload\n\n```json\n{\n  \"id\": \"113595569877203984\",\n  \"created_at\": \"2024-12-04T16:47:19.191Z\",\n  \"in_reply_to_id\": \"113595546472505158\",\n  \"in_reply_to_account_id\": \"109246683751549830\",\n  \"sensitive\": false,\n  \"spoiler_text\": \"\",\n  \"visibility\": \"unlisted\",\n  \"language\": \"en\",\n  \"uri\": \"https://fosstodon.org/users/chris_hayes/statuses/113595569877203984\",\n  \"url\": \"https://fosstodon.org/@chris_hayes/113595569877203984\",\n  \"replies_count\": 1,\n  \"reblogs_count\": 0,\n  \"favourites_count\": 0,\n  \"edited_at\": \"2024-12-06T22:53:15.171Z\",\n  \"favourited\": false,\n  \"reblogged\": false,\n  \"muted\": false,\n  \"bookmarked\": false,\n  \"pinned\": false,\n  \"content\": \"<p><span class=\\\"h-card\\\" translate=\\\"no\\\"><a href=\\\"https://mastodon.art/@jencmars\\\" class=\\\"u-url mention\\\">@<span>jencmars</span></a></span> <span class=\\\"h-card\\\" translate=\\\"no\\\"><a href=\\\"https://dice.camp/@KeithAmmann\\\" class=\\\"u-url mention\\\">@<span>KeithAmmann</span></a></span> Ooh, very cool. Out of curiosity - any specific reason for using a blue pencil? I&#39;ve seen that in 2d animation in combination with red, but I&#39;m not that familiar with illustrator tools.</p>\",\n  \"filtered\": [],\n  \"reblog\": null,\n  \"application\": {\n    \"name\": \"Elk\",\n    \"website\": \"https://elk.zone\"\n  },\n  \"account\": {\n    \"id\": \"109260516197188241\",\n    \"username\": \"chris_hayes\",\n    \"acct\": \"chris_hayes\",\n    \"display_name\": \"Chris​‌​‬ Hayes‌​​​\",\n    \"locked\": false,\n    \"bot\": false,\n    \"discoverable\": true,\n    \"indexable\": true,\n    \"group\": false,\n    \"created_at\": \"2022-10-31T00:00:00.000Z\",\n    \"note\": \"<p>👨‍💻 Creative Frontend Developer</p><p>🪄 The web needs more whimsy<br />🏠 <a href=\\\"https://fosstodon.org/tags/Connecticut\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>Connecticut</span></a>, USA</p><p>🔥 I post <a href=\\\"https://fosstodon.org/tags/foss\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>foss</span></a>, <a href=\\\"https://fosstodon.org/tags/webdev\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>webdev</span></a>, <a href=\\\"https://fosstodon.org/tags/ai\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>ai</span></a>, <a href=\\\"https://fosstodon.org/tags/design\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>design</span></a>, <a href=\\\"https://fosstodon.org/tags/space\\\" class=\\\"mention hashtag\\\" rel=\\\"tag\\\">#<span>space</span></a><br />Will ⭐ toots with rats, corvids, ants</p><p>♻️❤️🌎 - 🇺🇸🤝🇺🇦</p>\",\n    \"url\": \"https://fosstodon.org/@chris_hayes\",\n    \"uri\": \"https://fosstodon.org/users/chris_hayes\",\n    \"avatar\": \"https://cdn.fosstodon.org/accounts/avatars/109/260/516/197/188/241/original/1102267ae3078e60.png\",\n    \"avatar_static\": \"https://cdn.fosstodon.org/accounts/avatars/109/260/516/197/188/241/original/1102267ae3078e60.png\",\n    \"header\": \"https://cdn.fosstodon.org/accounts/headers/109/260/516/197/188/241/original/b36b3e77ce0396df.png\",\n    \"header_static\": \"https://cdn.fosstodon.org/accounts/headers/109/260/516/197/188/241/original/b36b3e77ce0396df.png\",\n    \"followers_count\": 294,\n    \"following_count\": 687,\n    \"statuses_count\": 3242,\n    \"last_status_at\": \"2024-12-06\",\n    \"hide_collections\": false,\n    \"noindex\": false,\n    \"emojis\": [],\n    \"roles\": [\n      {\n        \"id\": \"8\",\n        \"name\": \"Supporter 💰♥️\",\n        \"color\": \"#4f7a28\"\n      }\n    ],\n    \"fields\": [\n      {\n        \"name\": \"Blog\",\n        \"value\": \"<a href=\\\"https://hayes.software\\\" target=\\\"_blank\\\" rel=\\\"nofollow noopener noreferrer me\\\" translate=\\\"no\\\"><span class=\\\"invisible\\\">https://</span><span class=\\\"\\\">hayes.software</span><span class=\\\"invisible\\\"></span></a>\",\n        \"verified_at\": \"2022-11-24T05:43:11.167+00:00\"\n      },\n      {\n        \"name\": \"GitHub\",\n        \"value\": \"<a href=\\\"https://github.com/christopher-hayes\\\" target=\\\"_blank\\\" rel=\\\"nofollow noopener noreferrer me\\\" translate=\\\"no\\\"><span class=\\\"invisible\\\">https://</span><span class=\\\"\\\">github.com/christopher-hayes</span><span class=\\\"invisible\\\"></span></a>\",\n        \"verified_at\": \"2022-11-22T17:23:43.140+00:00\"\n      },\n      {\n        \"name\": \"Pronouns\",\n        \"value\": \"He/Him\",\n        \"verified_at\": null\n      }\n    ]\n  },\n  \"media_attachments\": [],\n  \"mentions\": [\n    {\n      \"id\": \"109246683751549830\",\n      \"username\": \"jencmars\",\n      \"url\": \"https://mastodon.art/@jencmars\",\n      \"acct\": \"jencmars@mastodon.art\"\n    },\n    {\n      \"id\": \"108195503596938380\",\n      \"username\": \"KeithAmmann\",\n      \"url\": \"https://dice.camp/@KeithAmmann\",\n      \"acct\": \"KeithAmmann@dice.camp\"\n    }\n  ],\n  \"tags\": [],\n  \"emojis\": [],\n  \"card\": null,\n  \"poll\": null\n}\n```\n\n---\n\n_Originally posted by @Christopher-Hayes in https://github.com/mastodon/mastodon/issues/33161#issuecomment-2520908927_",
+          "labels": [
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "3cff7caffd704521a89a78398fa719cf1609c5bb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/3cff7caffd704521a89a78398fa719cf1609c5bb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/3cff7caffd704521a89a78398fa719cf1609c5bb",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-09T13:47:12Z",
+          "commit_title": "Fix last paginated notification group only including data on a single notification (#33271)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33271,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33271",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33271",
+          "state": "closed",
+          "merged_at": "2025-01-09T13:56:24Z",
+          "pr_title": "Fix last paginated notification group only including data on a single notification",
+          "pr_body": "Notification group details get filled with the range of fetched notifications, inclusive of first and last notifications of a group within a page.\r\n\r\nHowever, when reaching the last page, this means a single notification is taken into account, even if the group contains more notification.\r\n\r\nThis PR changes it so that upon reaching the last page (fewer groups than expected are returned), the corresponding bound is ignored, and all notifications of the group in the paging direction are taken into account when backfilling the group information.\r\n\r\nThe code for this is a lot more awkward than I would like, in part due to not being able to use ActiveRecord scopes here.",
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "757aed32907c5a8744234a61621e54c4858a1712",
+          "html_url": "https://github.com/mastodon/mastodon/commit/757aed32907c5a8744234a61621e54c4858a1712",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/757aed32907c5a8744234a61621e54c4858a1712",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-16T12:33:55Z",
+          "commit_title": "Fix error decrementing status count when `FeaturedTags#last_status_at` is `nil` (#33320)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33320,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33320",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33320",
+          "state": "closed",
+          "merged_at": "2024-12-16T12:42:12Z",
+          "pr_title": "Fix error decrementing status count when `FeaturedTags#last_status_at` is `nil`",
+          "pr_body": "Fixes half of #33319",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d764ae017d5b80c585ea92d2f433eaa0c09ecd7f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d764ae017d5b80c585ea92d2f433eaa0c09ecd7f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d764ae017d5b80c585ea92d2f433eaa0c09ecd7f",
+          "author_login": "jesseplusplus",
+          "commit_author_date": "2024-12-18T08:52:47Z",
+          "commit_title": "Fix down clause for notification policy v2 migrations (#33340)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33340,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33340",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33340",
+          "state": "closed",
+          "merged_at": "2024-12-18T09:01:31Z",
+          "pr_title": "Fix down clause for notification policy v2 migrations",
+          "pr_body": "I was testing rolling back an upgrade from 4.2.x to 4.3.x and ran into the following error when rolling back the migrations:\r\n\r\n```\r\nPostDeploymentMigrateNotificationsPolicyV2::NotificationPolicy Update All (2.4ms)  UPDATE \"notification_policies\" SET filter_not_following = CASE for_not_following WHEN 0 THEN false ELSE true END, filter_not_following = CASE for_not_followers WHEN 0 THEN false ELSE true END, filter_new_accounts = CASE for_new_accounts WHEN 0 THEN false ELSE true END, filter_private_mentions = CASE for_private_mentions WHEN 0 THEN false ELSE true END WHERE \"notification_policies\".\"id\" <= $1  [[\"id\", 5]]\r\n   (0.2ms)  SELECT pg_advisory_unlock(5881450594042647960)\r\nbin/rails aborted!\r\nStandardError: An error has occurred, all later migrations canceled: (StandardError)\r\n\r\nPG::SyntaxError: ERROR:  multiple assignments to same column \"filter_not_following\"\r\n~/mastodon/db/post_migrate/20240808124339_post_deployment_migrate_notifications_policy_v2.rb:19:in `down'\r\n\r\nCaused by:\r\nActiveRecord::StatementInvalid: PG::SyntaxError: ERROR:  multiple assignments to same column \"filter_not_following\" (ActiveRecord::StatementInvalid)\r\n~/mastodon/db/post_migrate/20240808124339_post_deployment_migrate_notifications_policy_v2.rb:19:in `down'\r\n\r\nCaused by:\r\nPG::SyntaxError: ERROR:  multiple assignments to same column \"filter_not_following\" (PG::SyntaxError)\r\n~/mastodon/db/post_migrate/20240808124339_post_deployment_migrate_notifications_policy_v2.rb:19:in `down'\r\nTasks: TOP => db:migrate:down\r\n(See full trace by running task with --trace)\r\n\r\n```\r\n\r\nThe same issue also happened for `MigrateNotificationsPolicyV2`.\r\n\r\n------\r\n\r\n\r\nThis fixes the typos to match the columns touched in the `up` clause.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "512bfc0a54e104bd581d629fb1b9a0eef6e7e7e5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/512bfc0a54e104bd581d629fb1b9a0eef6e7e7e5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/512bfc0a54e104bd581d629fb1b9a0eef6e7e7e5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-12-18T12:25:40Z",
+          "commit_title": "Fix incorrect notification settings migration for non-followers (#33348)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33348,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33348",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33348",
+          "state": "closed",
+          "merged_at": "2024-12-18T12:34:26Z",
+          "pr_title": "Fix incorrect notification settings migration for non-followers",
+          "pr_body": "See https://github.com/mastodon/mastodon/pull/33340#issuecomment-2549791241\r\n\r\nThis fixes incorrect migrations, but unfortunately, not retroactively.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "90072f4367a3c2d6a477119b0e79a09a03eb3fd8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/90072f4367a3c2d6a477119b0e79a09a03eb3fd8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/90072f4367a3c2d6a477119b0e79a09a03eb3fd8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-03T13:23:01Z",
+          "commit_title": "Fix incorrect `relationship_severance_event` attribute name in changelog (#33443)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33443,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33443",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33443",
+          "state": "closed",
+          "merged_at": "2025-01-03T13:31:51Z",
+          "pr_title": "Fix incorrect `relationship_severance_event` attribute name in changelog",
+          "pr_body": "Fixes #33411",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 33411,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33411",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33411,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33411",
+          "state": "closed",
+          "issue_title": "attribute name relationship_severance_event  is really correct?",
+          "issue_body": "### Steps to reproduce the problem\n\n- make `severed_relationships` notification on test server or test account.\n- get notifications from REST API\n- check `event` attribute in `severed_relationships` notification.\n\n\n### Expected behaviour\n\nREST API document and API result is match.\n\n### Actual behaviour\n\nREST API document and API result is not match.\n\n### Detailed description\n\nJoinMastodon.org says \"if notitication type is `severed_relationships`, Notification have attribute `relationship_severance_event`\".\n- https://docs.joinmastodon.org/entities/Notification/#relationship_severance_event\n\nalso CHANGELOG.md says \"This adds the severed_relationships notification type to the REST API and streaming, with a new relationship_severance_event attribute\".\n\non Mastodon 4.3.2, I got attribute 'event'.\n- JSON data: https://gist.github.com/tateisu/07932b3941c653120c2a404931c36ca7\n\nalso I searched `relationship_severance_event` on CHANGELOG.md, no mention about this mismatch.\n\nattribute name relationship_severance_event  is really correct?\n\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\nv4.3.2\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "5c8d2be23b5bf4224878d1503c55b81cc972ec18",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5c8d2be23b5bf4224878d1503c55b81cc972ec18",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5c8d2be23b5bf4224878d1503c55b81cc972ec18",
+          "author_login": "vmstan",
+          "commit_author_date": "2025-01-14T16:35:58Z",
+          "commit_title": "Fix libyaml missing from Dockerfile build stage (#33591)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33591,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33591",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33591",
+          "state": "closed",
+          "merged_at": "2025-01-14T16:51:49Z",
+          "pr_title": "Fix libyaml missing from Dockerfile build stage",
+          "pr_body": "Fixes missing dependency of libyaml during Dockerfile build stage. This package was previously installed on the Ruby base image or by another Debian package (still sorting out) but now needs to be called for install otherwise `bundler` fails.\r\n\r\n```\r\n40.16 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.\r\n40.16\r\n40.16     current directory: /usr/local/bundle/gems/psych-5.2.2/ext/psych\r\n40.16 /usr/local/bin/ruby extconf.rb\r\n40.16 checking for pkg-config for yaml-0.1... not found\r\n40.16 checking for yaml.h... no\r\n40.16 yaml.h not found\r\n40.16 *** extconf.rb failed ***\r\n```\r\n\r\nWill need to back port to 4.3 branch as well, otherwise it will fail to build.",
+          "labels": [
+            "docker"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "10f10844ffa4bed5e0978d151ba5fa9cd8dc87bd",
+          "html_url": "https://github.com/mastodon/mastodon/commit/10f10844ffa4bed5e0978d151ba5fa9cd8dc87bd",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/10f10844ffa4bed5e0978d151ba5fa9cd8dc87bd",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T11:45:39Z",
+          "commit_title": "Update dependencies rails and rails-html-sanitizer"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "faed9bf9f14f077443374f5eb3075b9878e24214",
+          "html_url": "https://github.com/mastodon/mastodon/commit/faed9bf9f14f077443374f5eb3075b9878e24214",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/faed9bf9f14f077443374f5eb3075b9878e24214",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-15T11:43:54Z",
+          "commit_title": "Bump version to v4.3.3"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33598,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33598",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33598",
+          "state": "closed",
+          "merged_at": "2025-01-16T10:42:36Z",
+          "pr_title": "Backport recent fixes to v4.3",
+          "pr_body": "### Security\r\n\r\n- Update dependencies\r\n\r\n### Fixed\r\n\r\n- Fix `libyaml` missing from `Dockerfile` build stage (#33591 by `@vmstan`)\r\n- Fix incorrect notification settings migration for non-followers (#33348 by `@ClearlyClaire`)\r\n- Fix down clause for notification policy v2 migrations (#33340 by `@jesseplusplus`)\r\n- Fix error decrementing status count when `FeaturedTags#last_status_at` is `nil` (#33320 by `@ClearlyClaire`)\r\n- Fix last paginated notification group only including data on a single notification (#33271 by `@ClearlyClaire`)\r\n- Fix processing of mentions for post edits with an existing corresponding silent mention (#33227 by `@ClearlyClaire`)\r\n- Fix deletion of unconfirmed users with Webauthn set (#33186 by `@ClearlyClaire`)\r\n- Fix empty authors preview card serialization (#33151, #33466 by `@mjankowski` and `@ClearlyClaire`)",
+          "labels": [
+            "backport",
+            "build-image"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

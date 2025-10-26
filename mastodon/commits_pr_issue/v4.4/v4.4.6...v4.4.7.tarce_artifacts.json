@@ -1,0 +1,125 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.6",
+  "compare": "v4.4.7",
+  "counts": {
+    "commits": 3,
+    "prs": 4,
+    "issues": 0,
+    "commit_pr": 3,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.6...v4.4.7.compare.json",
+    "commits": "commits/v4.4/v4.4.6...v4.4.7.commits.json",
+    "pulls": "pulls/v4.4/v4.4.6...v4.4.7.pulls.json",
+    "issues": "issues/v4.4/v4.4.6...v4.4.7.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "cef2c50a716fb59f5d6d01b7c2ba17efc9c70aed",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cef2c50a716fb59f5d6d01b7c2ba17efc9c70aed",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cef2c50a716fb59f5d6d01b7c2ba17efc9c70aed",
+          "author_login": "ShadowJonathan",
+          "commit_author_date": "2025-10-14T12:07:15Z",
+          "commit_title": "Fix allow_referrer_origin typo (#36460)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36465,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36465",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36465",
+          "state": "closed",
+          "merged_at": "2025-10-14T15:15:58Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36460,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36460",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36460",
+          "state": "closed",
+          "merged_at": "2025-10-14T12:22:03Z",
+          "pr_title": "Fix allow_referrer_origin typo",
+          "pr_body": "Found while looking at defaults; it seems that this config option was typo'd",
+          "labels": [
+            "to backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1e27ab088514e9eb013abba5a6f8d580c53f74f1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1e27ab088514e9eb013abba5a6f8d580c53f74f1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1e27ab088514e9eb013abba5a6f8d580c53f74f1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-14T11:48:51Z",
+          "commit_title": "Fix moderation warning e-mails that include posts (#36462)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36465,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36465",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36465",
+          "state": "closed",
+          "merged_at": "2025-10-14T15:15:58Z",
+          "pr_title": "Backport changes to 4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        },
+        {
+          "number": 36462,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36462",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36462",
+          "state": "closed",
+          "merged_at": "2025-10-14T12:04:49Z",
+          "pr_title": "Fix moderation warning e-mails that include posts",
+          "pr_body": null,
+          "labels": [
+            "bug",
+            "to backport"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8965e1bfa9ce958ab16083a555ec6677b5f0f690",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8965e1bfa9ce958ab16083a555ec6677b5f0f690",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8965e1bfa9ce958ab16083a555ec6677b5f0f690",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-15T08:12:23Z",
+          "commit_title": "Bump version to v4.4.7 (#36473)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36473,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36473",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36473",
+          "state": "closed",
+          "merged_at": "2025-10-15T08:12:24Z",
+          "pr_title": "Bump version to v4.4.7",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

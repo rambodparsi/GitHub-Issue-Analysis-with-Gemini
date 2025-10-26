@@ -1,0 +1,60 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.7",
+  "compare": "v4.4.8",
+  "counts": {
+    "commits": 2,
+    "prs": 1,
+    "issues": 0,
+    "commit_pr": 1,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.7...v4.4.8.compare.json",
+    "commits": "commits/v4.4/v4.4.7...v4.4.8.commits.json",
+    "pulls": "pulls/v4.4/v4.4.7...v4.4.8.pulls.json",
+    "issues": "issues/v4.4/v4.4.7...v4.4.8.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "2dc4552229b55e2e4adaef675e68ed7ae123d78e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2dc4552229b55e2e4adaef675e68ed7ae123d78e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2dc4552229b55e2e4adaef675e68ed7ae123d78e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-21T13:00:28Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c2fb12d22d52872b5905822c3d05f65516fa7f1d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c2fb12d22d52872b5905822c3d05f65516fa7f1d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c2fb12d22d52872b5905822c3d05f65516fa7f1d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-21T13:12:37Z",
+          "commit_title": "Bump version to v4.4.8 (#36542)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36542,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36542",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36542",
+          "state": "closed",
+          "merged_at": "2025-10-21T13:12:37Z",
+          "pr_title": "Bump version to v4.4.8",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

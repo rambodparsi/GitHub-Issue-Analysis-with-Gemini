@@ -1,0 +1,244 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.26",
+  "compare": "v4.2.27",
+  "counts": {
+    "commits": 10,
+    "prs": 5,
+    "issues": 0,
+    "commit_pr": 7,
+    "commit_pr_issue": 0
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.26...v4.2.27.compare.json",
+    "commits": "commits/v4.2/v4.2.26...v4.2.27.commits.json",
+    "pulls": "pulls/v4.2/v4.2.26...v4.2.27.pulls.json",
+    "issues": "issues/v4.2/v4.2.26...v4.2.27.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "83fff75dbec141c2647b715c53f95118a61305ef",
+          "html_url": "https://github.com/mastodon/mastodon/commit/83fff75dbec141c2647b715c53f95118a61305ef",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/83fff75dbec141c2647b715c53f95118a61305ef",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T13:14:16Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36398,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36398",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36398",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:46:01Z",
+          "pr_title": "Backport changes to stable-4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7a46c72d7a8177fe5d08b366a38f018932c76cf2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7a46c72d7a8177fe5d08b366a38f018932c76cf2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7a46c72d7a8177fe5d08b366a38f018932c76cf2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-08T13:14:35Z",
+          "commit_title": "Update dependency `uri`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36398,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36398",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36398",
+          "state": "closed",
+          "merged_at": "2025-10-08T13:46:01Z",
+          "pr_title": "Backport changes to stable-4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d987c3629f7e58c98be6d32a4bf98a4b42b9fedd",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d987c3629f7e58c98be6d32a4bf98a4b42b9fedd",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d987c3629f7e58c98be6d32a4bf98a4b42b9fedd",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-10T15:20:36Z",
+          "commit_title": "Ignore dotenv .local files in stable-4.2 (#36426)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36426,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36426",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36426",
+          "state": "closed",
+          "merged_at": "2025-10-10T15:20:36Z",
+          "pr_title": "Ignore dotenv .local files in stable-4.2",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "039bde19db2f51d4ac3e11d104f9bc8004c50d40",
+          "html_url": "https://github.com/mastodon/mastodon/commit/039bde19db2f51d4ac3e11d104f9bc8004c50d40",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/039bde19db2f51d4ac3e11d104f9bc8004c50d40",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:52:05Z",
+          "commit_title": "Update dependency `rack`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36442,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36442",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36442",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:12:57Z",
+          "pr_title": "Update stable-4.2 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5226b757fe519a74151f30e4e5923a5ae9ed3f95",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5226b757fe519a74151f30e4e5923a5ae9ed3f95",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5226b757fe519a74151f30e4e5923a5ae9ed3f95",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T08:52:48Z",
+          "commit_title": "Update dependency `openssl`"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36442,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36442",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36442",
+          "state": "closed",
+          "merged_at": "2025-10-13T09:12:57Z",
+          "pr_title": "Update stable-4.2 dependencies",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "4bd193cdfec58bf2818d8d1f58328cc5c7f8eded",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4bd193cdfec58bf2818d8d1f58328cc5c7f8eded",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4bd193cdfec58bf2818d8d1f58328cc5c7f8eded",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:19:14Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "40b619a91611dafe7b4f978c6c3341a1130e040f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/40b619a91611dafe7b4f978c6c3341a1130e040f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/40b619a91611dafe7b4f978c6c3341a1130e040f",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T12:20:22Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "68de818b868cf946939ff7eee8057fdf6ca75d88",
+          "html_url": "https://github.com/mastodon/mastodon/commit/68de818b868cf946939ff7eee8057fdf6ca75d88",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/68de818b868cf946939ff7eee8057fdf6ca75d88",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-10-13T12:20:57Z",
+          "commit_title": "Merge commit from fork"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "7a60edf0bd3258fdd3078ecee0a68aecbbccdcf5",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7a60edf0bd3258fdd3078ecee0a68aecbbccdcf5",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7a60edf0bd3258fdd3078ecee0a68aecbbccdcf5",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T14:03:15Z",
+          "commit_title": "Fix streaming still being authorized for suspended accounts (#36451)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36451,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36451",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36451",
+          "state": "closed",
+          "merged_at": "2025-10-13T14:03:15Z",
+          "pr_title": "Fix streaming still being authorized for suspended accounts",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "956ac0e3389457b58995312c599d735b0c7f00be",
+          "html_url": "https://github.com/mastodon/mastodon/commit/956ac0e3389457b58995312c599d735b0c7f00be",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/956ac0e3389457b58995312c599d735b0c7f00be",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-10-13T14:03:29Z",
+          "commit_title": "Bump version to v4.2.27 (#36446)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36446,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36446",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36446",
+          "state": "closed",
+          "merged_at": "2025-10-13T14:03:29Z",
+          "pr_title": "Bump version to v4.2.27",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

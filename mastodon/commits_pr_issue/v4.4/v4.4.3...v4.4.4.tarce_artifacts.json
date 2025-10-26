@@ -1,0 +1,802 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.4.3",
+  "compare": "v4.4.4",
+  "counts": {
+    "commits": 29,
+    "prs": 25,
+    "issues": 2,
+    "commit_pr": 28,
+    "commit_pr_issue": 2
+  },
+  "source_files": {
+    "pairs": "pairs/v4.4/v4.4.3...v4.4.4.compare.json",
+    "commits": "commits/v4.4/v4.4.3...v4.4.4.commits.json",
+    "pulls": "pulls/v4.4/v4.4.3...v4.4.4.pulls.json",
+    "issues": "issues/v4.4/v4.4.3...v4.4.4.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "4ef0ce033e6ae088a99230ab7c5c4f0f3d7ca04a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4ef0ce033e6ae088a99230ab7c5c4f0f3d7ca04a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4ef0ce033e6ae088a99230ab7c5c4f0f3d7ca04a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-22T23:59:11Z",
+          "commit_title": "Fix export of large user archives on 4.4 by enabling Zip64 (#35850)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35850,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35850",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35850",
+          "state": "closed",
+          "merged_at": "2025-08-22T23:59:11Z",
+          "pr_title": "Fix export of large user archives on 4.4 by enabling Zip64",
+          "pr_body": "As far as I understand, Zip64 is required for archives over 4GB, which can happen when some Mastodon users request an archive of their account.\r\n\r\nRubyzip 3 enables Zip64 by default, but not earlier versions, which are used in current Mastodon stable releases.\r\n\r\nA downside of this change is that Zip64 is a breaking change from earlier versions of the Zip format, but support should now be widespread.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "cbb9a4dbe3fabf7caa6c75ec81515c41299d15bb",
+          "html_url": "https://github.com/mastodon/mastodon/commit/cbb9a4dbe3fabf7caa6c75ec81515c41299d15bb",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/cbb9a4dbe3fabf7caa6c75ec81515c41299d15bb",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-08-21T14:51:11Z",
+          "commit_title": "Refactor to reuse the one status partial across moderation tools (#35644)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35644,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35644",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35644",
+          "state": "closed",
+          "merged_at": "2025-08-21T15:04:45Z",
+          "pr_title": "Refactor to reuse the one status partial across moderation tools",
+          "pr_body": "This is a continuation of #30813 — previously we had multiple different \"render a status\" pieces of code, when there wasn't too much variation between each.\r\n\r\nThis allows us to more easily improve rendering of the statuses across the moderation tools such that they appear consistently in each case. The new shared partials will be reused by appeals and report action previews in future PRs.\r\n\r\nI'll also be doing follow up PRs to add rendering of polls and link previews within statuses in the moderation tools. ",
+          "labels": [
+            "ui",
+            "refactoring",
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "e61900cadc43e1c2cabeb8503df608827e923a41",
+          "html_url": "https://github.com/mastodon/mastodon/commit/e61900cadc43e1c2cabeb8503df608827e923a41",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/e61900cadc43e1c2cabeb8503df608827e923a41",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-07T08:03:15Z",
+          "commit_title": "Fix quote revocation not being streamed (#35710)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35710,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35710",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35710",
+          "state": "closed",
+          "merged_at": "2025-08-07T08:16:07Z",
+          "pr_title": "Fix quote revocation not being streamed",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0741381670007041312a90c0960c254dbfcd5dd3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0741381670007041312a90c0960c254dbfcd5dd3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0741381670007041312a90c0960c254dbfcd5dd3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-11T08:55:23Z",
+          "commit_title": "Add test for `Delete` of inlined `QuoteAuthorization` (#35724)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35724,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35724",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35724",
+          "state": "closed",
+          "merged_at": "2025-08-11T09:07:23Z",
+          "pr_title": "Add test for `Delete` of inlined `QuoteAuthorization`",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "5f4116a3113de1e04ada08a23790ab033d937fb9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/5f4116a3113de1e04ada08a23790ab033d937fb9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/5f4116a3113de1e04ada08a23790ab033d937fb9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-12T12:19:29Z",
+          "commit_title": "Fix interaction policy changes in implicit updates not being saved (#35751)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35751,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35751",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35751",
+          "state": "closed",
+          "merged_at": "2025-08-12T12:30:59Z",
+          "pr_title": "Fix interaction policy changes in implicit updates not being saved",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1675eab56145152dfbc7858efb36f3c30d89dcf4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1675eab56145152dfbc7858efb36f3c30d89dcf4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1675eab56145152dfbc7858efb36f3c30d89dcf4",
+          "author_login": "ChaosExAnima",
+          "commit_author_date": "2025-08-13T13:52:29Z",
+          "commit_title": "Redirect on success for standalone compose (#35763)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35763,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35763",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35763",
+          "state": "closed",
+          "merged_at": "2025-08-13T14:06:45Z",
+          "pr_title": "Redirect on success for standalone compose",
+          "pr_body": "Fixes #35322.\r\n\r\nRight now, on the `/share` standalone composer page, with the status creation we show an alert in the corner with a link to open the newly created post, but otherwise reset the composer. The aforementioned bug was how the open button does not work.\r\n\r\nAs the standalone share page doesn't load any other routes in the main Mastodon app, the button was silently failing. And as we directly import the history as a const throughout the application, there isn't a clean way to tell it to do a direct page refresh instead of navigating to a non-existent route.\r\n\r\nThis PR bypasses that whole issue by just redirecting on status submission via an optional callback. I feel this makes more sense as the `/share` screen is designed for authoring a single status with prefilled text, so the standard behavior of resetting the composer is not correct.",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35322,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35322",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35322,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35322",
+          "state": "closed",
+          "issue_title": "Issue with Mathstodon Sharing API \"Open\" Link",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Share some text with the api https://mathstodon.xyz/share?text=some_text\n2. Click the \"Post\" button\n3.  A prompt appears with the message \"Post published\" and an \"Open\" link\n4. Click the \"Open\" link. Nothing happens!\n\n### Expected behaviour\n\nopen the newly created post\n\n### Actual behaviour\n\ndoes nothing\n\n### Detailed description\n\nWhen using the Mathstodon sharing API (https://mathstodon.xyz/share?text=some_text) to post content, the post is successfully published and a confirmation prompt appears with the message \"Post published\" and an \"Open\" link. However, clicking the \"Open\" link does nothing — it fails to open the newly created post as expected.\n\n### Mastodon instance\n\nmathstodon.xyz\n\n### Mastodon version\n\nv4.3.8\n\n### Browser name and version\n\nMicrosoft Edge  138.0.3351.77\n\n### Operating system\n\nWin 11\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "7a862d33084f8df9da492abee88a78b3c4af28c1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/7a862d33084f8df9da492abee88a78b3c4af28c1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/7a862d33084f8df9da492abee88a78b3c4af28c1",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-08-14T07:57:18Z",
+          "commit_title": "First pass coverage addition for antispam class (#35771)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35771,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35771",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35771",
+          "state": "closed",
+          "merged_at": "2025-08-14T08:09:20Z",
+          "pr_title": "First pass coverage addition for antispam class",
+          "pr_body": "The coverage does not exhaustively hit every code path, but hits the few most obvious high level flows.\r\n\r\nMinor refactor to use existing association in the class.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ea5d1f02972455ac6f991bc01b52f2ddb1456834",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ea5d1f02972455ac6f991bc01b52f2ddb1456834",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ea5d1f02972455ac6f991bc01b52f2ddb1456834",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-14T13:35:19Z",
+          "commit_title": "Fix `tootctl admin create` not bypassing reserved username checks (#35779)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35779,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35779",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35779",
+          "state": "closed",
+          "merged_at": "2025-08-14T13:46:54Z",
+          "pr_title": "Fix `tootctl admin create` not bypassing reserved username checks",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "97f118013a739530c9c4ae56fc400695d686b94f",
+          "html_url": "https://github.com/mastodon/mastodon/commit/97f118013a739530c9c4ae56fc400695d686b94f",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/97f118013a739530c9c4ae56fc400695d686b94f",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-08-18T07:35:56Z",
+          "commit_title": "Include `update` in the resources args for api/web/push_subscriptions route (#35801)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35801,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35801",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35801",
+          "state": "closed",
+          "merged_at": "2025-08-18T07:47:30Z",
+          "pr_title": "Include `update` in the resources args for api/web/push_subscriptions route",
+          "pr_body": "This has been this way since the original PR - https://github.com/mastodon/mastodon/pull/3243 - but I can't find a good explanation for why it was done that way. There's some vaguely related discussion of `resource` -vs- `resources` in there, so may have been a case of copy/paste or lack of familiarity with what those generate by default?\r\n\r\nEither way, it seems odd to declare `update` that way, and the before/after route generation yields same thing.\r\n\r\nSpec typo fix while in there.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "567f337db3ce7364fab489d887439c6f0841dc8d",
+          "html_url": "https://github.com/mastodon/mastodon/commit/567f337db3ce7364fab489d887439c6f0841dc8d",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/567f337db3ce7364fab489d887439c6f0841dc8d",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-19T14:16:30Z",
+          "commit_title": "Fix self-destruct scheduler behavior on some Redis setups (#35823)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35823,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35823",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35823",
+          "state": "closed",
+          "merged_at": "2025-08-19T14:28:50Z",
+          "pr_title": "Fix self-destruct scheduler behavior on some Redis setups",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "36974aaa9997edbcb5b8bf00bff9f9fb17314e7c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/36974aaa9997edbcb5b8bf00bff9f9fb17314e7c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/36974aaa9997edbcb5b8bf00bff9f9fb17314e7c",
+          "author_login": "mjankowski",
+          "commit_author_date": "2025-08-20T12:06:35Z",
+          "commit_title": "Use `debug?` query method on httplog initializer check (#35833)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35833,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35833",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35833",
+          "state": "closed",
+          "merged_at": "2025-08-20T12:17:53Z",
+          "pr_title": "Use `debug?` query method on httplog initializer check",
+          "pr_body": "Background: https://github.com/mastodon/mastodon/pull/35825#pullrequestreview-3133081044\r\n\r\nMay be more resilient level check re: string/symbol thing in linked issue. ",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "b71216a08a2c567bc908bacc961a1d100ccb1ebe",
+          "html_url": "https://github.com/mastodon/mastodon/commit/b71216a08a2c567bc908bacc961a1d100ccb1ebe",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/b71216a08a2c567bc908bacc961a1d100ccb1ebe",
+          "author_login": "shleeable",
+          "commit_author_date": "2025-08-25T06:54:47Z",
+          "commit_title": "Add crossorigin back to inert css (regression? of #30687) (#35876)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35876,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35876",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35876",
+          "state": "closed",
+          "merged_at": "2025-08-25T07:08:14Z",
+          "pr_title": "Add crossorigin back to inert css (regression? of #30687)",
+          "pr_body": "<img width=\"938\" height=\"42\" alt=\"image\" src=\"https://github.com/user-attachments/assets/012b83ea-338e-412e-84e5-242f7fe9c272\" />\r\n\r\nThis is showing on my instance running main.\r\n\r\nedit: recently changed in #34450 ",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a48567784c1d57b6f5016697514812af85389d2e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a48567784c1d57b6f5016697514812af85389d2e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a48567784c1d57b6f5016697514812af85389d2e",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-25T12:25:35Z",
+          "commit_title": "Fix Edit as well as “Delete & Redraft” on a poll not inserting empty option (#35892)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35892,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35892",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35892",
+          "state": "closed",
+          "merged_at": "2025-08-25T12:40:37Z",
+          "pr_title": "Fix Edit as well as “Delete & Redraft” on a poll not inserting empty option",
+          "pr_body": "The poll authoring interface does not have an explicit “Add option” button anymore, it just adds an empty option whenever previous options have been filled.\r\n\r\nHowever, this does not occur when using “Edit” or “Delete & Redraft”, which cause the form to be pre-populated with the post's options, without a blank option to add more.\r\n\r\nThis PR fixes that, but the way it retrieves and passes the `maxOptions` is a bit awkward.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1a1a23f6f014c3c0c98a07be6b3d23a8862ac0c8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1a1a23f6f014c3c0c98a07be6b3d23a8862ac0c8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1a1a23f6f014c3c0c98a07be6b3d23a8862ac0c8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-25T12:30:37Z",
+          "commit_title": "Consolidate labels for quote policy settings (#35893)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35893,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35893",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35893",
+          "state": "closed",
+          "merged_at": "2025-08-25T12:44:32Z",
+          "pr_title": "Consolidate labels for quote policy settings",
+          "pr_body": "The labels were not consistent between the settings area and the post visibility and controls modal.\r\n\r\nThe 3 quote policy settings are now the following across the whole app:\r\n- “Anyone” (previously “Anyone” or “Everyone” depending on interface)\r\n- “Followers only” (previously “Followers only” or “Only my followers” depending on interface)\r\n- “Just me” (previously “No one”)\r\n\r\nAlso update the hint copies to:\r\n- “Follower-only posts authored on Mastodon can't be quoted by others.”\r\n- “Private mentions authored on Mastodon can't be quoted by others.”\r\n\r\n<img width=\"621\" height=\"438\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2b64d8dd-0403-4bcf-818f-ae55d2a83054\" />\r\n",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "bd6d1f0e3f71b90c1e64f5673c4439f3706619d8",
+          "html_url": "https://github.com/mastodon/mastodon/commit/bd6d1f0e3f71b90c1e64f5673c4439f3706619d8",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/bd6d1f0e3f71b90c1e64f5673c4439f3706619d8",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-26T10:07:02Z",
+          "commit_title": "Fix WebUI fetching deleted quote in an endless loop (#35909)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35909,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35909",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35909",
+          "state": "closed",
+          "merged_at": "2025-08-26T10:19:03Z",
+          "pr_title": "Fix WebUI fetching deleted quote in an endless loop",
+          "pr_body": "Partial fix to #35869\r\n\r\nTriggering a fetch would create a dummy status in the redux store with `isLoading: true`, causing the `status` prop to change and the effect to fire in a loop (post missing causing the effect to trigger → fire `fetchStatus` and create dummy status → effect triggered because of `status` change, but `fetchStatus` skipped due to `status` being truthy → `fetchStatus` fails and deletes the dummy status → effect triggers again).\r\n\r\nThis PR fixes that so that the effect doesn't re-trigger in that scenario.\r\n\r\nThis is only a partial solution because it will show a 404 error each time the component is instantiated (but only once per instantiation).",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8777443c9bec554bc50d222511df7915c57c4170",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8777443c9bec554bc50d222511df7915c57c4170",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8777443c9bec554bc50d222511df7915c57c4170",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-08-27T08:13:34Z",
+          "commit_title": "Fix API return types for interaction API helpers (#35915)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35915,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35915",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35915",
+          "state": "closed",
+          "merged_at": "2025-08-27T08:26:11Z",
+          "pr_title": "Fix API return types for interaction API helpers",
+          "pr_body": "I believe those types were incorrect, the parameterized types are those of the expected API response, not of the internal model.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1faf520ce4b8cc34b1304b6ffc52df1d580eb8b6",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1faf520ce4b8cc34b1304b6ffc52df1d580eb8b6",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1faf520ce4b8cc34b1304b6ffc52df1d580eb8b6",
+          "author_login": "diondiondion",
+          "commit_author_date": "2025-08-26T16:34:14Z",
+          "commit_title": "Fix error alerts for deleted quotes (#35918)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35918,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35918",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35918",
+          "state": "closed",
+          "merged_at": "2025-08-26T16:48:26Z",
+          "pr_title": "Fix error alerts for deleted quotes",
+          "pr_body": "Fixes #35869\r\n\r\n### Changes proposed in this PR:\r\n- Prevents deleted quotes from being fetched repeatedly by updating the quote post's Redux state to `'deleted'` on error\r\n",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 35869,
+              "html_url": "https://github.com/mastodon/mastodon/issues/35869",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 35869,
+          "html_url": "https://github.com/mastodon/mastodon/issues/35869",
+          "state": "closed",
+          "issue_title": "When quoted toot is deleted there's a flood of \"404 Record not found\"",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Create a new local toot or use a remote one\n2. Quote the desired toot\n3. The mentioned toot is deleted\n4. Now there's a flood of \"404 Record not found\" in the screen corner\n\n\n### Expected behaviour\n\nNot a infinite flood of 404 errors\n\n### Actual behaviour\n\nInfinite flood of 404 errors\n\n### Detailed description\n\nThe errors only stop when the toot that mentioned the other (now-deleted) post is also deleted.\n\nAnd that's about it. I guess that in place of the now-deleted quoted toot, there should be a message saying what happened to it instead of the current flood of errors popping in the screen corner.\n\n### Mastodon instance\n\n`bolha.one`, `ursal.zone`\n\n### Mastodon version\n\n`v4.5.0-alpha.2@4f49478+bolhinha`\n\n### Browser name and version\n\nLibreWolf 142\n\n### Operating system\n\nLinux Debian 13\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "1137a0ca3aaf740e200e39534658d0a24faadb35",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1137a0ca3aaf740e200e39534658d0a24faadb35",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1137a0ca3aaf740e200e39534658d0a24faadb35",
+          "author_login": "ThisIsMissEm",
+          "commit_author_date": "2025-09-01T14:59:03Z",
+          "commit_title": "Support displaying polls in Admin UI (#35933)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35933,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35933",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35933",
+          "state": "closed",
+          "merged_at": "2025-09-01T15:11:03Z",
+          "pr_title": "Support displaying polls in Admin UI",
+          "pr_body": "This adds support for showing polls in the Admin UI.\r\n\r\nI probably don't need the changes the the API endpoints, originally I had these in here because I was using the react widget to render the poll, rather than using haml.\r\n\r\nResults:\r\n\r\n<img width=\"3456\" height=\"3108\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5006a98f-a69c-47ba-ada4-79cc93e6ee26\" />\r\n\r\nSomething to note: in the status edits, polls will always show has single choice and never multiple choice, because we don't persist the poll type when we make edits to statuses. That's why the current version shows multiple, but the history of edits looks like it's single choice.\r\n\r\nThere is a PR here that adds the persistence of the poll type to status edits: https://github.com/mastodon/mastodon/pull/35934",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c0f9e7f4c30b16dfdd8f7ee2ab9115dfe940837c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c0f9e7f4c30b16dfdd8f7ee2ab9115dfe940837c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c0f9e7f4c30b16dfdd8f7ee2ab9115dfe940837c",
+          "author_login": "unfokus",
+          "commit_author_date": "2025-09-02T12:25:55Z",
+          "commit_title": "Fix handling of edited status with new media and no text (#35970)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 35970,
+          "html_url": "https://github.com/mastodon/mastodon/pull/35970",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/35970",
+          "state": "closed",
+          "merged_at": "2025-09-02T12:38:17Z",
+          "pr_title": "Fix handling of edited status with new media and no text",
+          "pr_body": "Under certain conditions a valid edit of a status doesn't federate to Mastodon.\r\n\r\nThe conditions being:\r\n1. The status edit contains neither text nor content warning\r\n2. The status edit contains one or more media attachments\r\n3. None of those media attachments were attached to the original post\r\n\r\n## Reproduction\r\n\r\nFor reproduction we need accounts on two instances. One to post from, and a remote instance to observe the bug on.\r\n\r\n1. Post a status\r\n2. Observe the status from a remote instance\r\n3. Edit the status:\r\n  a. Keep text/CW empty\r\n  b. Delete any existing images\r\n  c. Add a new image\r\n4. Observe that the status hasn't changed on the remote instance.\r\n5. Refresh the post by pasting its source URL into the Mastodon search. The following error message should appear:\r\n  `422 Validation failed: Text can't be blank`\r\n\r\n## Analysis\r\n\r\nAs someone who's not deep into the Rails and Mastodon ecosystem investigating the issue sent me on a wild goose chase.\r\n\r\nPost edits are processed in `app/services/activitypub/process_status_update_service.rb`. One of the steps is processing the changed media files. The fields `ordered_media_attachment_ids` on the post is overwritten with the new list.\r\nThe `media_attachments` object, which dynamically returns all media files that reference the post, is not refreshed, so it still returns an old cached state of attachments.\r\nThat results in the following constraint on the status object being violated:\r\n\r\nhttps://github.com/mastodon/mastodon/blob/ab698ff52108dfbe6c9c27ba36a110532f97fdc2/app/models/status.rb#L103\r\n\r\nThis happens because `with_media?` checks `ordered_media_attachments`, which returns basically the intersection of `ordered_media_attachment_ids` and `media_attachment`, which is empty when none of the original media items are retained during the edit, due to the cached values.\r\n\r\nhttps://github.com/mastodon/mastodon/blob/ab698ff52108dfbe6c9c27ba36a110532f97fdc2/app/models/status.rb#L287-L288\r\n\r\n## Fix\r\n\r\nThe fix is simply reloading the `media_attachment` object right after processing changed media files. The existing [reload in `download_media_files`](https://github.com/mastodon/mastodon/blob/6f8187e595c7df471444c5d0536bcaaf40b0edc5/app/services/activitypub/process_status_update_service.rb#L130) is not sufficient, as it's happening too late in the process.\r\n\r\n\r\nThis is my first contribution to a Ruby project, please let me know if I made a mistake or misunderstood something. :)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "ec5128bc1fed3f02e359c91f39161e7e64cc362c",
+          "html_url": "https://github.com/mastodon/mastodon/commit/ec5128bc1fed3f02e359c91f39161e7e64cc362c",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/ec5128bc1fed3f02e359c91f39161e7e64cc362c",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-05T08:07:59Z",
+          "commit_title": "Fix missing `beforeUnload` confirmation when a poll is being authored (#36030)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36030,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36030",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36030",
+          "state": "closed",
+          "merged_at": "2025-09-05T08:20:25Z",
+          "pr_title": "Fix missing `beforeUnload` confirmation when a poll is being authored",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "34cd5a716fe3e655939fec03ca836e6d1b862497",
+          "html_url": "https://github.com/mastodon/mastodon/commit/34cd5a716fe3e655939fec03ca836e6d1b862497",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/34cd5a716fe3e655939fec03ca836e6d1b862497",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-08T15:31:36Z",
+          "commit_title": "Move quote post fallback removal import-time (#36055)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36055,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36055",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36055",
+          "state": "closed",
+          "merged_at": "2025-09-08T15:46:43Z",
+          "pr_title": "Move quote post fallback removal import-time",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "be1bd91e6d33981115c1a953753be784ee5d0677",
+          "html_url": "https://github.com/mastodon/mastodon/commit/be1bd91e6d33981115c1a953753be784ee5d0677",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/be1bd91e6d33981115c1a953753be784ee5d0677",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-08T14:11:10Z",
+          "commit_title": "Fix unresponsive areas around GIFV modals in some cases (#36059)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36059,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36059",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36059",
+          "state": "closed",
+          "merged_at": "2025-09-08T14:26:21Z",
+          "pr_title": "Fix unresponsive areas around GIFV modals in some cases",
+          "pr_body": "When vertical videos don't fit the viewport, they are scaled down, but the `width` passed to the `<video>` tag still reserves some space that is unnecessarily wide for the video. This cause dead areas left and right of the video which do not close the video when clicked.\r\n\r\nThis PR fixes that. It also removes the `width` and `height` attributes passed to `<Video>` as those attributes have been dropped in #24686.\r\n\r\nNote that in the `Video` case, we are still passing an aspect ratio, which we are not passing in the `GIFV` case. This might cause issues, although I did not run into any.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6044270d697924070e992f95241b1e0565a50816",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6044270d697924070e992f95241b1e0565a50816",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6044270d697924070e992f95241b1e0565a50816",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-11T12:32:56Z",
+          "commit_title": "Fix missing memoization in `Web::PushNotificationWorker` (#36085)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36085,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36085",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36085",
+          "state": "closed",
+          "merged_at": "2025-09-11T12:45:24Z",
+          "pr_title": "Fix missing memoization in `Web::PushNotificationWorker`",
+          "pr_body": "cc @mjankowski, I assume this was intended to be the usual memoization pattern here",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "48f55e32246edd1e15c4f42b42ace3779981cb67",
+          "html_url": "https://github.com/mastodon/mastodon/commit/48f55e32246edd1e15c4f42b42ace3779981cb67",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/48f55e32246edd1e15c4f42b42ace3779981cb67",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-12T12:25:56Z",
+          "commit_title": "Fix quote posts with CW and no text being rejected"
+        }
+      ],
+      "prs": [],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "1ab5ea9bfbf16cc11ac0737f1fe67e6290ddd95e",
+          "html_url": "https://github.com/mastodon/mastodon/commit/1ab5ea9bfbf16cc11ac0737f1fe67e6290ddd95e",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/1ab5ea9bfbf16cc11ac0737f1fe67e6290ddd95e",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-09-15T12:31:53Z",
+          "commit_title": "New Crowdin Translations for stable-4.4 (automated) (#36122)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36122,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36122",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36122",
+          "state": "closed",
+          "merged_at": "2025-09-15T12:31:53Z",
+          "pr_title": "New Crowdin Translations for stable-4.4 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "a795743c3f10efacf49ebcf5406bd5e256bf63f2",
+          "html_url": "https://github.com/mastodon/mastodon/commit/a795743c3f10efacf49ebcf5406bd5e256bf63f2",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/a795743c3f10efacf49ebcf5406bd5e256bf63f2",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T09:21:30Z",
+          "commit_title": "Update rails dependencies"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36123,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36123",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36123",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:28Z",
+          "pr_title": "Bump version to v4.4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "68c219e7532f3388f5e5b0bd6bfd722f80bdf383",
+          "html_url": "https://github.com/mastodon/mastodon/commit/68c219e7532f3388f5e5b0bd6bfd722f80bdf383",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/68c219e7532f3388f5e5b0bd6bfd722f80bdf383",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T09:43:55Z",
+          "commit_title": "Update `vite` dependency"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36123,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36123",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36123",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:28Z",
+          "pr_title": "Bump version to v4.4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6f1fd0c2a759c6becbf8c9f00f6c797e7495667a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6f1fd0c2a759c6becbf8c9f00f6c797e7495667a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6f1fd0c2a759c6becbf8c9f00f6c797e7495667a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T09:56:39Z",
+          "commit_title": "Update `axios` dependency"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36123,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36123",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36123",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:28Z",
+          "pr_title": "Bump version to v4.4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "c966d756007e0e4c4eb020055c999e4cf7a07ed0",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c966d756007e0e4c4eb020055c999e4cf7a07ed0",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c966d756007e0e4c4eb020055c999e4cf7a07ed0",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-09-15T12:35:04Z",
+          "commit_title": "Bump version to v4.4.4"
+        }
+      ],
+      "prs": [
+        {
+          "number": 36123,
+          "html_url": "https://github.com/mastodon/mastodon/pull/36123",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/36123",
+          "state": "closed",
+          "merged_at": "2025-09-16T11:54:28Z",
+          "pr_title": "Bump version to v4.4.4",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

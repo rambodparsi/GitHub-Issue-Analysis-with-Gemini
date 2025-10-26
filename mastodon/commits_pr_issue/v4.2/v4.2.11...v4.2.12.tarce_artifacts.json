@@ -1,0 +1,92 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.2.11",
+  "compare": "v4.2.12",
+  "counts": {
+    "commits": 2,
+    "prs": 2,
+    "issues": 1,
+    "commit_pr": 2,
+    "commit_pr_issue": 1
+  },
+  "source_files": {
+    "pairs": "pairs/v4.2/v4.2.11...v4.2.12.compare.json",
+    "commits": "commits/v4.2/v4.2.11...v4.2.12.commits.json",
+    "pulls": "pulls/v4.2/v4.2.11...v4.2.12.pulls.json",
+    "issues": "issues/v4.2/v4.2.11...v4.2.12.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "d675803f0768eb7479226acd370147c7e3c7f4a3",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d675803f0768eb7479226acd370147c7e3c7f4a3",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d675803f0768eb7479226acd370147c7e3c7f4a3",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-08-19T07:52:32Z",
+          "commit_title": "Fix broken notifications for mentions from local moderators in 4.2.11 (#31484)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 31484,
+          "html_url": "https://github.com/mastodon/mastodon/pull/31484",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/31484",
+          "state": "closed",
+          "merged_at": "2024-08-19T07:52:33Z",
+          "pr_title": "Fix broken notifications for mentions from local moderators in 4.2.11",
+          "pr_body": "This was caused by an incorrect backport of #31271 to v4.2.11.",
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": [
+            {
+              "number": 31467,
+              "html_url": "https://github.com/mastodon/mastodon/issues/31467",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 31467,
+          "html_url": "https://github.com/mastodon/mastodon/issues/31467",
+          "state": "closed",
+          "issue_title": "/streaming/user and /streaming/user/notification are not working on version 4.2.11",
+          "issue_body": "### Steps to reproduce the problem\r\n\r\n1. Initiate a Streaming Request:\r\n\r\n- Make a GET streaming request to either the /streaming/user/notification or /streaming/user endpoint.\r\n\r\n2. Wait for Incoming Data:\r\n\r\n-  Keep the connection open and wait for new messages or data to be received through the streaming connection.\r\n\r\n3. Observe Received Data:\r\n\r\n- Notice that while heartbeat messages appear as expected, mention notifications are not being received.\r\n\r\n\r\n### Expected behaviour\r\n\r\nnotifications should appear in stream as expected\r\n\r\n### Actual behaviour\r\n\r\nno notifications in stream\r\n\r\n### Detailed description\r\n\r\nI was using \"/streaming/user/notification\" to manage replays in my elixir based application. However, after last update it stopped to work. Not sure if some params need to changed or if API was changed somehow. I still see heartbeat but no other messages appear.\r\n\r\n### Mastodon instance\r\n\r\nmastodon.kaiman.uk\r\n\r\n### Mastodon version\r\n\r\nv4.2.11\r\n\r\n### Technical details\r\n\r\nI use docker compose with \"ghcr.io/mastodon/mastodon:v4.2.11\"\r\n\r\n\r\nNote: not sure if it is related/helpful but I saw this error in logs \r\n\r\n```\r\nsidekiq-1    | 2024-08-16T19:05:52.706Z pid=7 tid=2khf WARN: {\"context\":\"Job raised exception\",\"job\":{\"retry\":true,\"queue\":\"default\",\"class\":\"LocalNotificationWorker\",\"args\":[112933604811709660,17338,\"Mention\",\"mention\"],\"jid\":\"08bd729d56691160284a8051\",\"created_at\":1723834936.1009328,\"enqueued_at\":1723835152.5992892,\"error_message\":\"undefined method `user_role' for nil:NilClass\",\"error_class\":\"NoMethodError\",\"failed_at\":1723834936.327193,\"retry_count\":3,\"retried_at\":1723835034.2850657}}\r\nsidekiq-1    | 2024-08-16T19:05:52.706Z pid=7 tid=2khf WARN: NoMethodError: undefined method `user_role' for nil:NilClass\r\nsidekiq-1    | 2024-08-16T19:05:52.707Z pid=7 tid=2khf WARN: /opt/mastodon/app/services/notify_service.rb:90:in `from_staff?'\r\nsidekiq-1    | /opt/mastodon/app/services/notify_service.rb:116:in `blocked?'\r\nsidekiq-1    | /opt/mastodon/app/services/notify_service.rb:19:in `call'\r\n(indexing_scheduler)\r\n\r\n```",
+          "labels": [
+            "bug",
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "f9a929ed5c71e0aaf42c124e96d499d81507c2ac",
+          "html_url": "https://github.com/mastodon/mastodon/commit/f9a929ed5c71e0aaf42c124e96d499d81507c2ac",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/f9a929ed5c71e0aaf42c124e96d499d81507c2ac",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2024-08-19T09:13:45Z",
+          "commit_title": "Bump version to v4.2.12 (#31491)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 31491,
+          "html_url": "https://github.com/mastodon/mastodon/pull/31491",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/31491",
+          "state": "closed",
+          "merged_at": "2024-08-19T09:13:45Z",
+          "pr_title": "Bump version to v4.2.12",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,603 @@
+{
+  "repo": "mastodon/mastodon",
+  "base": "v4.3.6",
+  "compare": "v4.3.7",
+  "counts": {
+    "commits": 18,
+    "prs": 19,
+    "issues": 5,
+    "commit_pr": 18,
+    "commit_pr_issue": 5
+  },
+  "source_files": {
+    "pairs": "pairs/v4.3/v4.3.6...v4.3.7.compare.json",
+    "commits": "commits/v4.3/v4.3.6...v4.3.7.commits.json",
+    "pulls": "pulls/v4.3/v4.3.6...v4.3.7.pulls.json",
+    "issues": "issues/v4.3/v4.3.6...v4.3.7.issues.json"
+  },
+  "commit_pr_issue": [
+    {
+      "commit": [
+        {
+          "sha": "2340f4df81fccad0a0a53c71abb61c387eafcef9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/2340f4df81fccad0a0a53c71abb61c387eafcef9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/2340f4df81fccad0a0a53c71abb61c387eafcef9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-01-29T10:15:32Z",
+          "commit_title": "Fix “x” hotkey not working on boosted filtered posts (#33758)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 33758,
+          "html_url": "https://github.com/mastodon/mastodon/pull/33758",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/33758",
+          "state": "closed",
+          "merged_at": "2025-01-29T10:26:21Z",
+          "pr_title": "Fix “x” hotkey not working on boosted filtered posts",
+          "pr_body": "Fixes #33741",
+          "labels": [
+            "bug",
+            "area/web interface"
+          ],
+          "issue_refs": [
+            {
+              "number": 33741,
+              "html_url": "https://github.com/mastodon/mastodon/issues/33741",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 33741,
+          "html_url": "https://github.com/mastodon/mastodon/issues/33741",
+          "state": "closed",
+          "issue_title": "Keyboard: `x` doesn't always work on  \"Show anyway\" on filtered posts",
+          "issue_body": "### Pitch\n\nI recently learned of the `x` keyboard binding for opening Content Warning'd posts, but was surprised to find out that this doesn't also work for \"Show anyway\" on filtered posts.\n\n### Motivation\n\nI primarily use keyboard navigation, any need to instead click with mouse is a break to my workflow.  The presentation of a Content Warning post and a Show Anyway filtered post is very similar, so it makes sense to use the same keyboard binding to \"open up\" either of these.\n\nThe functionality of `o` is different, as it opens up the post in a different column in the \"advanced\" view.  This is particularly significant if you're viewing the post in the middle of a number of custom columns (the \"opening\" is always in the right most column, causing a lateral shift in the view).",
+          "labels": [
+            "status/identified"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "9be391514bae4ddc144a455f578cff9f1ce74087",
+          "html_url": "https://github.com/mastodon/mastodon/commit/9be391514bae4ddc144a455f578cff9f1ce74087",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/9be391514bae4ddc144a455f578cff9f1ce74087",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-24T14:07:27Z",
+          "commit_title": "Fix streaming server refusing unix socket path in `DATABASE_URL` (#34091)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34091,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34091",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34091",
+          "state": "closed",
+          "merged_at": "2025-03-24T14:18:31Z",
+          "pr_title": "Fix streaming server refusing unix socket path in `DATABASE_URL`",
+          "pr_body": "Fixes #34080",
+          "labels": [
+            "deployment",
+            "javascript"
+          ],
+          "issue_refs": [
+            {
+              "number": 34080,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34080",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34080,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34080",
+          "state": "closed",
+          "issue_title": "Streaming server can't deal with unix socket path in DATABASE_URL",
+          "issue_body": "### Steps to reproduce the problem\n\nUse unix socket as the method to access Postgres, with username and password set, by setting `DATABASE_URL` to this value:\n\n```\nDATABASE_URL=postgresql://<username>:<password>@%2F<path>%2F<to>%2F<socket>/<database_name>?host=/<path>/<to>/<socket>\n```\n\nThis URL works well with `web` container.\n\n### Expected behaviour\n\nStreaming server boots up\n\n### Actual behaviour\n\nStreaming server won't boot due to missing port number\n\n### Detailed description\n\nI can add this small patch in `database.js`:\n\n```js\n//...\n  if (env.DATABASE_URL_STREAMING) {\n    baseConfig = pgConnectionString.parse(env.DATABASE_URL_STREAMING);\n  } else if (env.DATABASE_URL) {\n//...\n```\n\nAnd add a additional environment variable as workaround:\n\n```\nDATABASE_URL_STREAMING=socket://<username>:<password>@/<path>/<to>/<socket>?db=<database_name>\n```\n\n### Mastodon instance\n\nN/A\n\n### Mastodon version\n\nv4.3.4\n\n### Environment\n\nN/A\n\n### Technical details\n\nError before mitigation applied:\n\n```\nNode.js v20.18.0\nfile:///opt/mastodon/streaming/database.js:55\n        throw new Error('Invalid port specified in DATABASE_URL environment variable');\n              ^\n\nError: Invalid port specified in DATABASE_URL environment variable\n    at Module.configFromEnv (file:///opt/mastodon/streaming/database.js:55:15)\n    at startServer (file:///opt/mastodon/streaming/index.js:104:44)\n    at file:///opt/mastodon/streaming/index.js:1401:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:234:25)\n    at async ModuleLoader.import (node:internal/modules/esm/loader:473:24)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:123:5)\n```",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "c48413ad4c5ede89c51723fc4a0ca42e488e3c14",
+          "html_url": "https://github.com/mastodon/mastodon/commit/c48413ad4c5ede89c51723fc4a0ca42e488e3c14",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/c48413ad4c5ede89c51723fc4a0ca42e488e3c14",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-17T16:40:28Z",
+          "commit_title": "Fix incorrect URL being used when cache busting (#34189)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34189,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34189",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34189",
+          "state": "closed",
+          "merged_at": "2025-03-17T16:49:58Z",
+          "pr_title": "Fix incorrect URL being used when cache busting",
+          "pr_body": null,
+          "labels": [
+            "bug"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8197e65cb3615c8d3903bd3160bbb9b8cee70cc9",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8197e65cb3615c8d3903bd3160bbb9b8cee70cc9",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8197e65cb3615c8d3903bd3160bbb9b8cee70cc9",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-24T08:58:15Z",
+          "commit_title": "Fix `CacheBuster` being queued for missing media attachments (#34253)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34253,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34253",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34253",
+          "state": "closed",
+          "merged_at": "2025-03-24T09:07:49Z",
+          "pr_title": "Fix `CacheBuster` being queued for missing media attachments",
+          "pr_body": "Fixes #34251",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34251,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34251",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34251,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34251",
+          "state": "closed",
+          "issue_title": "Too many CacheBuster queues after run tootctl",
+          "issue_body": "### Steps to reproduce the problem\n\n1. run `tootctl status remove`\n2. Check /sidekiq\n...\n\n\n### Expected behaviour\n\nNothing weird happens\n\n### Actual behaviour\n\nA lot of CacheBusterWorker queue for \"/thumbnails/original/missing.png\"\n\n### Detailed description\n\n![Image](https://github.com/user-attachments/assets/6242650d-3532-402a-afaf-fe0374cf9577)\n\n### Mastodon instance\n\nqdon.space\n\n### Mastodon version\n\nv4.4.0-alpha.4 (30e334b51a4e7add05401895bff5a2ea4a97e0bd)\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: v3.4.2\n- Node.js version: v22.14\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "4cb3fe35beb5f85186d68f174179e9d67c704113",
+          "html_url": "https://github.com/mastodon/mastodon/commit/4cb3fe35beb5f85186d68f174179e9d67c704113",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/4cb3fe35beb5f85186d68f174179e9d67c704113",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-18T14:50:41Z",
+          "commit_title": "Fix handling of malformed/unusual HTML (#34201)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34201,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34201",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34201",
+          "state": "closed",
+          "merged_at": "2025-03-18T15:05:10Z",
+          "pr_title": "Fix handling of malformed/unusual HTML",
+          "pr_body": "We encountered at least one status with accidentally malformed HTML and a very large number of tag attributes as a result.\r\n\r\nNokgoiri's HTML5 parser, which we use, by default, raises `ArgumentError` when a tag has too many attributes: https://nokogiri.org/rdoc/Nokogiri/HTML5.html#module-Nokogiri::HTML5-label-Attribute+limit+per+element-3A+max_attributes-3A",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "653868bb0c381044522690a6c4f1f8727c621c95",
+          "html_url": "https://github.com/mastodon/mastodon/commit/653868bb0c381044522690a6c4f1f8727c621c95",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/653868bb0c381044522690a6c4f1f8727c621c95",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-24T09:59:05Z",
+          "commit_title": "Change user archive signed URL TTL from 10 seconds to 1 hour (#34254)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34254,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34254",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34254",
+          "state": "closed",
+          "merged_at": "2025-03-24T10:08:20Z",
+          "pr_title": "Change user archive signed URL TTL from 10 seconds to 1 hour",
+          "pr_body": "Fixes #34235",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34235,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34235",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34235,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34235",
+          "state": "closed",
+          "issue_title": "User export link timeout too short",
+          "issue_body": "### Steps to reproduce the problem\n\n1. download archive from `/settings/export`\n2. the archive fails to download\n\n\n### Expected behaviour\n\nthe archive should download\n\n### Actual behaviour\n\nit didn't\n\n### Detailed description\n\ni notice that in https://github.com/mastodon/mastodon/blob/1960aac90b16fce1ec620ac990aa931efcf04700/app/controllers/backups_controller.rb#L15 the timeout is `10`, given that nothing indicates else, i believe that this is seconds, which is super short, and gives no chances for retrying a download\n\n### Mastodon instance\n\n_No response_\n\n### Mastodon version\n\n_No response_\n\n### Technical details\n\nIf this is happening on your own Mastodon server, please fill out those:\n- Ruby version: (from `ruby --version`, eg. v3.4.1)\n- Node.js version: (from `node --version`, eg. v20.18.0)\n",
+          "labels": [
+            "status/to triage"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "d6442b5455de734e84ee5ecfec4ea007f19d788a",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d6442b5455de734e84ee5ecfec4ea007f19d788a",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d6442b5455de734e84ee5ecfec4ea007f19d788a",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-25T13:11:49Z",
+          "commit_title": "Fix filters not applying in detailed view (#34259)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34259,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34259",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34259",
+          "state": "closed",
+          "merged_at": "2025-03-25T13:23:58Z",
+          "pr_title": "Fix filters not applying in detailed view",
+          "pr_body": null,
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "105e5b1d76a56f9fd9b3165f71be7d44fa706a52",
+          "html_url": "https://github.com/mastodon/mastodon/commit/105e5b1d76a56f9fd9b3165f71be7d44fa706a52",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/105e5b1d76a56f9fd9b3165f71be7d44fa706a52",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-25T15:20:36Z",
+          "commit_title": "Fix bookmarks and favourites not being filtered (#34260)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34260,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34260",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34260",
+          "state": "closed",
+          "merged_at": "2025-03-25T15:31:42Z",
+          "pr_title": "Fix bookmarks and favourites not being filtered",
+          "pr_body": "This also treats `hide` filter action as `warn` in those contexts, since those contexts are entirely controlled by the user and a missing post may be more confusing than anything else.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "86d8df0c03d73463293ef35b2a70f20d21ab5da4",
+          "html_url": "https://github.com/mastodon/mastodon/commit/86d8df0c03d73463293ef35b2a70f20d21ab5da4",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/86d8df0c03d73463293ef35b2a70f20d21ab5da4",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-25T15:50:05Z",
+          "commit_title": "Fix follower synchronization mechanism erroneously removing followers from multi-page collections (#34272)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34272,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34272",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34272",
+          "state": "closed",
+          "merged_at": "2025-03-25T16:00:08Z",
+          "pr_title": "Fix follower synchronization mechanism erroneously removing followers from multi-page collections",
+          "pr_body": "Mastodon implements [FEP-8fcf: Followers collection synchronization across servers](https://codeberg.org/fediverse/fep/src/branch/main/fep/8fcf/fep-8fcf.md), but requires every identifier to be in a single page.\r\n\r\nThe reasons for only supporting one page are:\r\n- Mastodon must hold all the identifiers in memory anyway\r\n- this puts a bound on the number of network requests required\r\n- this is easier to implement and less error-prone\r\n\r\nHowever, when such a partial collection is split in multiple pages, Mastodon currently ignores everything past the first page, effectively incorrectly removing every follower represented by other pages.\r\n\r\nThis PR fixes that by aborting if there are multiple pages involved.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "0615febd84755174ca5dfe2e442cfe0cc64fed54",
+          "html_url": "https://github.com/mastodon/mastodon/commit/0615febd84755174ca5dfe2e442cfe0cc64fed54",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/0615febd84755174ca5dfe2e442cfe0cc64fed54",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-26T11:33:59Z",
+          "commit_title": "Add support for paginating partial collections in `SynchronizeFollowersService` (#34277)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34277,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34277",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34277",
+          "state": "closed",
+          "merged_at": "2025-03-26T11:45:56Z",
+          "pr_title": "Add support for paginating partial collections in `SynchronizeFollowersService`",
+          "pr_body": "Follow-up to #34272, actually implementing going through multiple pages.\r\n\r\nIt treats accepted pending follow requests immediately in each page (as this is safe to do), but only removes followers if it managed to go through all pages (as detecting missing followers requires knowing the whole collection).\r\n\r\nAborts if the collection has more than 10 pages.\r\n\r\nThis PR also addresses a N+1 when resolving local accounts.",
+          "labels": [
+            "activitypub"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "8a3f25a4fa1019acd41e30c7c08590a4977c5d6b",
+          "html_url": "https://github.com/mastodon/mastodon/commit/8a3f25a4fa1019acd41e30c7c08590a4977c5d6b",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/8a3f25a4fa1019acd41e30c7c08590a4977c5d6b",
+          "author_login": "oneiros",
+          "commit_author_date": "2025-03-26T13:26:24Z",
+          "commit_title": "Use fixed order in flaky spec (#34279)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34279,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34279",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34279",
+          "state": "closed",
+          "merged_at": "2025-03-26T13:35:36Z",
+          "pr_title": "Use fixed order in flaky spec",
+          "pr_body": "This spec fails on rare occasions such as here: https://github.com/mastodon/mastodon/actions/runs/14077970162/job/39424468411#step:9:1\r\n\r\nThis is an attempt to remove the flakiness of that test.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "29eae75ca0005c2f29130a9c1250b872270fe103",
+          "html_url": "https://github.com/mastodon/mastodon/commit/29eae75ca0005c2f29130a9c1250b872270fe103",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/29eae75ca0005c2f29130a9c1250b872270fe103",
+          "author_login": "mjankowski",
+          "commit_author_date": "2024-11-12T08:38:08Z",
+          "commit_title": "Define constants for sampling sizes in `AccountReachFinder` (#32805)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 32805,
+          "html_url": "https://github.com/mastodon/mastodon/pull/32805",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/32805",
+          "state": "closed",
+          "merged_at": "2024-11-12T08:54:23Z",
+          "pr_title": "Define constants for sampling sizes in `AccountReachFinder`",
+          "pr_body": null,
+          "labels": [
+            "ruby"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6af733d1d8ba1ae2b7c14d3b15d10955d62e5226",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6af733d1d8ba1ae2b7c14d3b15d10955d62e5226",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6af733d1d8ba1ae2b7c14d3b15d10955d62e5226",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-27T13:41:13Z",
+          "commit_title": "Change `AccountReachFinder` to consider statuses based on suspension date (#34291)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34291,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34291",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34291",
+          "state": "closed",
+          "merged_at": "2025-03-27T13:50:59Z",
+          "pr_title": "Change `AccountReachFinder` to consider statuses based on suspension date",
+          "pr_body": "When suspending or unsuspending an account, an `Update` is currently sent to:\r\n- anyone who is following the account\r\n- anyone who has reported the account\r\n- anyone who was recently messaged by the account\r\n\r\nHowever, “recently” in the last step means “2 days ago”, creating a discrepancy between suspension and unsuspension.\r\n\r\nThis PR treats suspended users as “2 days before the suspension” to reach the same audience.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "d9fb61f3053b9e8e765e067b8317b27d48597321",
+          "html_url": "https://github.com/mastodon/mastodon/commit/d9fb61f3053b9e8e765e067b8317b27d48597321",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/d9fb61f3053b9e8e765e067b8317b27d48597321",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T09:20:32Z",
+          "commit_title": "Change account suspensions to be federated to recently-followed accounts as well (#34294)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34294,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34294",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34294",
+          "state": "closed",
+          "merged_at": "2025-03-28T09:32:35Z",
+          "pr_title": "Change account suspensions to be federated to recently-followed accounts as well",
+          "pr_body": "Currently, Mastodon sends suspension notice to servers which have followed it, reported it, or were recently mentioned.\r\n\r\nThis adds recently-followed and recently-requested accounts to the mix, to address the issue of follow bots.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "6d53e8c6c5273bc8405ed8cf10ec6455ad7cc677",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6d53e8c6c5273bc8405ed8cf10ec6455ad7cc677",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6d53e8c6c5273bc8405ed8cf10ec6455ad7cc677",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-03-28T15:30:28Z",
+          "commit_title": "Add delay to profile updates to debounce them (#34137)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34137,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34137",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34137",
+          "state": "closed",
+          "merged_at": "2025-03-11T16:27:34Z",
+          "pr_title": "Add delay to profile updates to debounce them",
+          "pr_body": "Useful when e.g. updating both avatars and header, as those are separate operations.",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "527d9200d046926d1685b11bd0c3081a68d85be7",
+          "html_url": "https://github.com/mastodon/mastodon/commit/527d9200d046926d1685b11bd0c3081a68d85be7",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/527d9200d046926d1685b11bd0c3081a68d85be7",
+          "author_login": "github-actions[bot]",
+          "commit_author_date": "2025-04-01T09:10:20Z",
+          "commit_title": "New Crowdin Translations for stable-4.3 (automated) (#34336)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34336,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34336",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34336",
+          "state": "closed",
+          "merged_at": "2025-04-01T09:10:20Z",
+          "pr_title": "New Crowdin Translations for stable-4.3 (automated)",
+          "pr_body": "New Crowdin translations, automated with GitHub Actions\n\nSee `.github/workflows/crowdin-download.yml`\n\nThis PR will be updated every day with new translations.\n\nDue to a limitation in GitHub Actions, checks are not running on this PR without manual action.\nIf you want to run the checks, then close and re-open it.",
+          "labels": [
+            "i18n"
+          ],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "commit": [
+        {
+          "sha": "65a6840f71c0851ac16008200cc170f901ba1659",
+          "html_url": "https://github.com/mastodon/mastodon/commit/65a6840f71c0851ac16008200cc170f901ba1659",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/65a6840f71c0851ac16008200cc170f901ba1659",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-04-01T08:53:49Z",
+          "commit_title": "Fix static version of animated PNG emojis not being properly extracted (#34337)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34338,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34338",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34338",
+          "state": "closed",
+          "merged_at": "2025-04-01T14:01:14Z",
+          "pr_title": "Backport changes to v4.3",
+          "pr_body": null,
+          "labels": [
+            "backport"
+          ],
+          "issue_refs": []
+        },
+        {
+          "number": 34337,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34337",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34337",
+          "state": "closed",
+          "merged_at": "2025-04-01T09:05:26Z",
+          "pr_title": "Fix static version of animated PNG emojis not being properly extracted",
+          "pr_body": "Fixes #34275\r\n\r\nBackground: https://github.com/mastodon/mastodon/issues/34275#issuecomment-2768476081",
+          "labels": [],
+          "issue_refs": [
+            {
+              "number": 34275,
+              "html_url": "https://github.com/mastodon/mastodon/issues/34275",
+              "relationship": "closes"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "number": 34275,
+          "html_url": "https://github.com/mastodon/mastodon/issues/34275",
+          "state": "closed",
+          "issue_title": "Cannot disable animations of custom emojis in user name",
+          "issue_body": "### Steps to reproduce the problem\n\n1. Disable \"Auto-play animated GIFs\" at Preference > Appearance\n2. Enable \"Reduce motion in animations\" at Preference > Appearance\n3. Visit a post or profile of someone whose name has animated custom emojis\n    + Example: Accessing <https://mystical.garden/@fionafokus/114224269339074787> from the search box (as of 2025-03-26) (contains `:loading:` custom emoji in the user name)\n4. You'll see the animated loading animation regardless of the preference.\n\n### Expected behaviour\n\nweb UI shows still image instead of playing animated custom emojis\n\n### Actual behaviour\n\nanimated emojis in the user name are always played\n\n### Detailed description\n\nAccount icons are not auto-played (if some options set?) even when they are animated images. User can play them by mouse hover if they want. This is the expected behaviour of disabled \"auto-play animated GIFs\" (and/or enabled \"Reduce motions in animation\") for images in general, not only for account icons but also for custom emojis in user names.\n\nHowever, this option does not work to the custom emojis in the user name, so currently users cannot disable animations in that position. This is very distracting.\n\n### Mastodon instance\n\nmastodon.cardina1.red\n\n### Mastodon version\n\nv4.3.6\n\n### Browser name and version\n\nFirefox 136.0.2\n\n### Operating system\n\nGentoo Linux (amd64, Linux 6.13.8)\n\n### Technical details\n\n_No response_",
+          "labels": [
+            "status/to triage",
+            "area/web interface"
+          ]
+        }
+      ]
+    },
+    {
+      "commit": [
+        {
+          "sha": "6f16011c5a46bfa131cc1d6be89347dcff1b0fc1",
+          "html_url": "https://github.com/mastodon/mastodon/commit/6f16011c5a46bfa131cc1d6be89347dcff1b0fc1",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/commits/6f16011c5a46bfa131cc1d6be89347dcff1b0fc1",
+          "author_login": "ClearlyClaire",
+          "commit_author_date": "2025-04-02T07:14:21Z",
+          "commit_title": "Bump version to v4.3.7 (#34328)"
+        }
+      ],
+      "prs": [
+        {
+          "number": 34328,
+          "html_url": "https://github.com/mastodon/mastodon/pull/34328",
+          "api_url": "https://api.github.com/repos/mastodon/mastodon/pulls/34328",
+          "state": "closed",
+          "merged_at": "2025-04-02T07:14:21Z",
+          "pr_title": "Bump version to v4.3.7",
+          "pr_body": "### Add\r\n\r\n- Add delay to profile updates to debounce them (#34137 by `@ClearlyClaire`)\r\n- Add support for paginating partial collections in `SynchronizeFollowersService` (#34272 and #34277 by `@ClearlyClaire`)\r\n\r\n### Changed\r\n\r\n- Change account suspensions to be federated to recently-followed accounts as well (#34294 by `@ClearlyClaire`)\r\n- Change `AccountReachFinder` to consider statuses based on suspension date (#32805 and #34291 by `@ClearlyClaire` and `@mjankowski`)\r\n- Change user archive signed URL TTL from 10 seconds to 1 hour (#34254 by `@ClearlyClaire`)\r\n\r\n### Fixed\r\n\r\n- Fix static version of animated PNG emojis not being properly extracted (#34337 by `@ClearlyClaire`)\r\n- Fix filters not applying in detailed view, favourites and bookmarks (#34259 and #34260 by `@ClearlyClaire`)\r\n- Fix handling of malformed/unusual HTML (#34201 by `@ClearlyClaire`)\r\n- Fix `CacheBuster` being queued for missing media attachments (#34253 by `@ClearlyClaire`)\r\n- Fix incorrect URL being used when cache busting (#34189 by `@ClearlyClaire`)\r\n- Fix streaming server refusing unix socket path in `DATABASE_URL` (#34091 by `@ClearlyClaire`)\r\n- Fix “x” hotkey not working on boosted filtered posts (#33758 by `@ClearlyClaire`)",
+          "labels": [],
+          "issue_refs": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

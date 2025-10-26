@@ -1,0 +1,23 @@
+# REQUIRED: "owner/name"
+repo: "mastodon/mastodon"
+
+# null -> "<name>" inferred from repo (e.g., "mastodon")
+out_root: null
+
+# Pair building
+pairs_mode: "series"          # "all" | "series" | "explicit"
+series_whitelist: ["v4.3"]    # used only if pairs_mode == "series"
+explicit_pairs: []            # e.g., [{"base":"v4.2.3","compare":"v4.2.4"}]
+optional_branch: null         # e.g., "stable-4.2"
+
+# API / networking
+github_token_env: "GITHUB_TOKEN"
+request_timeout_sec: 30
+max_retries: 4
+backoff_base_ms: 400
+backoff_jitter_ms: 250
+respect_rate_limits: true
+
+# Behavior
+overwrite: true
+verbose_logs: true
