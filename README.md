@@ -132,7 +132,8 @@ ADDITIONAL RULES:
 
 ISSUE TO CLASSIFY:
 
-
+sample_issue_title:
+sample_issue_body
 
 <img width="944" height="702" alt="issue_analysis_github_label_counts" src="https://github.com/user-attachments/assets/4e3237bc-ae26-4551-aaa8-ec259b70d688" />
 
