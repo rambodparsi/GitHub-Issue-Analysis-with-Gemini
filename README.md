@@ -163,8 +163,4 @@ This grouped chart compares maintainer labels (github_label) against Gemini mode
 <img width="628" height="84" alt="image" src="https://github.com/user-attachments/assets/ca39390f-b2f9-4355-b1d1-71abba1eee56" />
 
 
-Typical interpretations
 
-- High precision_UI, moderate recall_UI: Gemini’s UI calls are trustworthy, but it likely misses subtler UI bugs. Consider prompt tweaks to nudge recall.
-- Moderate precision_UI, high recall_UI: Good at surfacing most UI issues, but you’ll want a quick triage pass to filter false positives.
-- Balanced precision/recall with solid F1: Healthy trade-off; use this setting as your baseline across versions.
